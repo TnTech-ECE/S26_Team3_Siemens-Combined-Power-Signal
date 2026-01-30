@@ -5,7 +5,6 @@
 *Electrical and Computer Engineering Department*  
 *Tennessee Technological University*
 
-The following are suggestions for items to include in your team contract. You get to customize this document as you see fit. Note that your final contract, must be approved by your instructor.
 
 ## **Introduction**
 
