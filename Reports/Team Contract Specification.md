@@ -9,7 +9,7 @@ The following are suggestions for items to include in your team contract. You ge
 
 ## **Introduction**
 
-*This teamwork contract outlines the agreed-upon expectations, responsibilities, and guidelines for effective collaboration among the members of Team X. By adhering to this contract, we aim to foster a productive, respectful, and supportive team environment conducive to the success of our project.*
+*This teamwork contract outlines the agreed-upon expectations, responsibilities, and guidelines for effective collaboration among the members of Team 3. By adhering to this contract, we aim to foster a productive, respectful, and supportive team environment conducive to the success of our project.*
 
 
 ## **Team Expectations**
@@ -43,8 +43,8 @@ In this section, the team will discuss and clearly define their collective expec
   - **Quorum:** A minimum of four people is required to start an official meeting.
   - **Group Decisions:** Formal group decisions such as final documentation submissions, or any decision that is outside of the scope of the subsystem must be made with a unanimous decisions among all affected parties. Informal decisions within a group that have no bearing on other systems can be made among only affected parties. 
 - **Expectation:** Regarding team meetings:
-  - **Frequency:** The team will meet [specify frequency, e.g., twice a week on Mondays and Thursdays at 4 PM].
-  - **Attendance:** Members are expected to attend all meetings; absences should be communicated in advance.
+  - **Frequency:** The team will meet for a total of three hours a week.
+  - **Attendance:** Members are expected to attend all meetings; absences should be communicated by 6 pm the previous day, barring extenous circumstances, such as sickness or emergencies.
   - **Preparation:** Members should come prepared, having completed any agreed-upon tasks or research.
 
 ### **5. Conduct**
@@ -76,7 +76,7 @@ In this section, the team will discuss and clearly define their collective expec
 
 Assigning specific roles can help streamline team operations. Below, define any unique roles, their responsibilities, the powers granted, and any changes to expectations.
 
-**a. Project Lead: Tyler Chan** 
+**1. Project Lead: Tyler Chan** 
 
 - **Responsibilities:**
   - Schedule and coordinate team meetings.
@@ -88,7 +88,7 @@ Assigning specific roles can help streamline team operations. Below, define any 
 - **Expectation Changes:**
   - In addition to regular duties, the Team Leader will handle organizational tasks but remains equally responsible for project work.
 
-**b. Secretary: Jonas Cross**
+**2. Secretary: Jonas Cross**
 
 - **Responsibilities:**
   - Take detailed notes during meetings.
@@ -98,7 +98,7 @@ Assigning specific roles can help streamline team operations. Below, define any 
 - **Expectation Changes:**
   - Ensures documentation is maintained without reducing their responsibility in other project areas.
 
-**c. Assistant Project Lead: Harry Rudd**
+**3. Assistant Project Lead: Harry Rudd**
 
 - **Responsibilities:**
   - Assume Project Lead responsibilites, such as running calls with the client [Add more here]
