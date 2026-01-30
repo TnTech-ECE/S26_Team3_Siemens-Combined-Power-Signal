@@ -70,6 +70,8 @@ In this section, the team will discuss and clearly define their collective expec
   - Focus on finding mutually acceptable solutions.
   - If the instructor has been extensively consulted and the team member still consistently does not change their behavior, an official meeting will be called. If all other group members unanimously agree that the group member at fault should be fired, a vote should be taken to make the decision official.
   - Additionally, in the event that a event that a change in group structure happens, the contract will be updated to reflect these changes.
+  - In the even that a team member is late in submitting an assignment or negatively impacts the functionality/grade of the group, we will address the matter at the next group meeting.
+  - In the event that this continues on a consistent basis, we will follow the steps outlined above as follows for our disciplinary process.
 
 ### **7. Deadlines**
 
@@ -78,35 +80,29 @@ In this section, the team will discuss and clearly define their collective expec
   - If a member anticipates difficulty meeting a deadline, they must inform the team as soon as possible.
   - The team will collaboratively adjust workloads to ensure project timelines are maintained.
 
-### **8. Formatting**
-
-- **Expectation:** Naming Conventions and File Naming Structure:
-  - Every beginning character in a filename will be capitalized. Use date convention "yyyy-mm-dd" when applicable.
-  - Ex. "yyyy-mm-dd_Example.File.txt"
-
-
 ## **Unique Roles**
-
-Assigning specific roles can help streamline team operations. Below, define any unique roles, their responsibilities, the powers granted, and any changes to expectations.
 
 **1. Project Lead: Tyler Chan** 
 
 - **Responsibilities:**
   - Schedule and coordinate team meetings.
-  - Keep meetings on track 
+  - Keep meetings on track.
   - Facilitate meetings to ensure all voices are heard.
   - Monitor project timelines and milestones.
   - In the event that a team member cannot attend, member will call Team Lead. In event that Team Lead does not respond, call Assistant Project lead instead.
+  - Serves as the primary point of contact between the group and the customer.
 - **Powers Granted:**
   - Authority to make minor decisions to keep the project on track after team consultation.
 - **Expectation Changes:**
-  - In addition to regular duties, the Team Leader will handle organizational tasks but remains equally responsible for project work.
+  - In addition to regular duties, the Project Lead will handle organizational tasks but remains equally responsible for project work.
 
 **2. Secretary: Jonas Cross**
 
 - **Responsibilities:**
   - Take detailed notes during meetings.
   - Distribute meeting minutes to all team members within 24 hours.
+  - Primary moderator of the format of the GitHub Repository and Discord Server.
+  - Ensures that Team Documentation Reports are submitted properly to iLearn before the deadline.
 - **Powers Granted:**
   - May request clarifications during meetings to ensure accurate record-keeping.
 - **Expectation Changes:**
@@ -115,19 +111,21 @@ Assigning specific roles can help streamline team operations. Below, define any 
 **3. Assistant Project Lead: Harry Rudd**
 
 - **Responsibilities:**
-  - Assume Project Lead responsibilites, such as running calls with the client [Add more here]
-  - Distribute meeting minutes to all team members within 24 hours.
+  - Assume Project Lead responsibilites, such as running calls with the client if the Project Lead is unable to fulfill these responsiblities.
+  - Ensures that the team has a centralized location to meet for general weekly meetings and customer calls.
 - **Powers Granted:**
-  - May request clarifications during meetings to ensure accurate record-keeping.
+  - Any powers granted to the Project Lead are granted to the Assistant Project Lead if the Project Lead is absent or unable to fulfill his responsibilities.
 - **Expectation Changes:**
-  - Ensures documentation is maintained without reducing their responsibility in other project areas.
-
-FILL IN EXTRA STUFF HERE
+  - In addition to regular duties, the Assistant Project Lead will handle organizational tasks if the Project Lead is absent or unable to fulfill his responsibilities but remains equally responsible for project work.
 
 ## **Additional Agreements**
 
-Include any other important agreements the team decides upon.
+### **Formatting**
 
+- **Expectation:** Naming Conventions and File Naming Structure:
+  - Every word in a filename will begin with a capital letter, and words will be separated by underscores. Use date convention "yyyy-mm-dd" when applicable.
+  - Ex. "yyyy-mm-dd_Example_File.txt"
+  - When committing updates, ...
 
 ## **Team Member Signatures**
 
