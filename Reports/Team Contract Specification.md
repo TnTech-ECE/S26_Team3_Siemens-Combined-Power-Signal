@@ -1,7 +1,7 @@
 # **Teamwork Contract**
 
-**Team X**  
-**Team Members:** [List all student names here]   
+**Team 3**  
+**Team Members:**    
 *Electrical and Computer Engineering Department*  
 *Tennessee Technological University*
 
