@@ -38,7 +38,10 @@ In this section, the team will discuss and clearly define their collective expec
   - Responsive, with replies to inquiries within 24 hours on weekdays.
 
 ### **4. Meetings**
-
+- **Procedures:** Regarding Decisions
+  - **Changes to the Contract:** Changes to the contract or a temporary suspension of the rules if required can be made with a unanimous five member decision.
+  - **Quorum:** A minimum of four people is required to start an official meeting.
+  - **Group Decisions:** Formal group decisions such as final documentation submissions, or any decision that is outside of the scope of the subsystem must be made with a unanimous decisions among all affected parties. Informal decisions within a group that have no bearing on other systems can be made among only affected parties. 
 - **Expectation:** Regarding team meetings:
   - **Frequency:** The team will meet [specify frequency, e.g., twice a week on Mondays and Thursdays at 4 PM].
   - **Attendance:** Members are expected to attend all meetings; absences should be communicated in advance.
@@ -79,6 +82,7 @@ Assigning specific roles can help streamline team operations. Below, define any 
   - Schedule and coordinate team meetings.
   - Facilitate meetings to ensure all voices are heard.
   - Monitor project timelines and milestones.
+  - In the event that a team member cannot attend, member will call Team Lead. In event that Team Lead does not respond, call Assistant Project lead instead.
 - **Powers Granted:**
   - Authority to make minor decisions to keep the project on track after team consultation.
 - **Expectation Changes:**
@@ -97,14 +101,14 @@ Assigning specific roles can help streamline team operations. Below, define any 
 **c. Assistant Project Lead: Harry Rudd**
 
 - **Responsibilities:**
-  - [Fill in here]
+  - Assume Project Lead responsibilites, such as running calls with the client [Add more here]
   - Distribute meeting minutes to all team members within 24 hours.
 - **Powers Granted:**
   - May request clarifications during meetings to ensure accurate record-keeping.
 - **Expectation Changes:**
   - Ensures documentation is maintained without reducing their responsibility in other project areas.
 
-**d. 
+FILL IN EXTRA STUFF HERE
 
 ## **Additional Agreements**
 
