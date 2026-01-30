@@ -34,8 +34,8 @@ In this section, the team will discuss and clearly define their collective expec
 
 - **Expectation:** Team communication should be:
   - Professional, respectful, and considerate.
-  - Conducted through agreed-upon channels (e.g., email, Slack, Microsoft Teams).
-  - Responsive, with replies to inquiries within 24 hours on weekdays.
+  - Conducted primarily through Discord. Emergency calls to convey brief information should be done via phone calls.
+  - Responsive, with replies to inquiries within 1 business day.
 
 ### **4. Meetings**
 - **Procedures:** Regarding Decisions
@@ -45,7 +45,11 @@ In this section, the team will discuss and clearly define their collective expec
 - **Expectation:** Regarding team meetings:
   - **Frequency:** The team will meet for a total of three hours a week.
   - **Attendance:** Members are expected to attend all meetings; absences should be communicated by 6 pm the previous day, barring extenous circumstances, such as sickness or emergencies.
+    - **Virtual Meetings:** Members who cannot attend in person may join through virtual means if required. This would be conducted through Discord. If it becomes necessary, other group members can invoke the right for the virtual team member to share their screen or turn on their camera if possible.
   - **Preparation:** Members should come prepared, having completed any agreed-upon tasks or research.
+- **Meetings With the Customer:** Regarding Meetings With the Customer.
+  - **Meeting Times:** Meeting times will be determined after discussion with the customer.
+  - **Attendance:** As many relevant members as possible must attend. Exceptions will be made for members who have scheduling conflicts as needed.
 
 ### **5. Conduct**
 
@@ -53,6 +57,7 @@ In this section, the team will discuss and clearly define their collective expec
   - Treat each other with respect and courtesy.
   - Listen actively and allow others to express their ideas without interruption.
   - Address disagreements professionally and constructively.
+  - All team members must be dressed in business casual for meetings conducted with Siemens Healthineers. 
 
 ### **6. Conflict Resolution**
 
@@ -71,6 +76,12 @@ In this section, the team will discuss and clearly define their collective expec
   - If a member anticipates difficulty meeting a deadline, they must inform the team as soon as possible.
   - The team will collaboratively adjust workloads to ensure project timelines are maintained.
 
+### **8. Formatting**
+
+- **Expectation:** Naming Conventions and File Naming Structure:
+  - Every beginning character in a filename will be capitalized. Use date strcuture "yyyy-mm-dd".
+  - Ex. "yyyy-mm-dd_Example.File.txt"
+
 
 ## **Unique Roles**
 
@@ -80,6 +91,7 @@ Assigning specific roles can help streamline team operations. Below, define any 
 
 - **Responsibilities:**
   - Schedule and coordinate team meetings.
+  - Keep meetings on track 
   - Facilitate meetings to ensure all voices are heard.
   - Monitor project timelines and milestones.
   - In the event that a team member cannot attend, member will call Team Lead. In event that Team Lead does not respond, call Assistant Project lead instead.
