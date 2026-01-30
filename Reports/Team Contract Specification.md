@@ -126,4 +126,4 @@
 
 By typing our names below, we acknowledge that we have read, understand, and agree to abide by the terms of this Teamwork Contract.
 
-Tyler Chan, Harry Rudd
+Levi Cantrell, Tyler Chan, Harry Rudd
