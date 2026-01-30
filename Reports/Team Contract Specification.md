@@ -43,7 +43,7 @@ In this section, the team will discuss and clearly define their collective expec
   - **Quorum:** A minimum of four people is required to start an official meeting.
   - **Group Decisions:** Formal group decisions such as final documentation submissions, or any decision that is outside of the scope of the subsystem must be made with a unanimous decisions among all affected parties. Informal decisions within a group that have no bearing on other systems can be made among only affected parties. 
 - **Expectation:** Regarding team meetings:
-  - **Frequency:** The team will meet for a total of three hours a week.
+  - **Frequency:** The team will meet for a total of three hours a week, in person or virtually.
   - **Attendance:** Members are expected to attend all meetings; absences should be communicated by 6 pm the previous day, barring extenous circumstances, such as sickness or emergencies.
     - **Virtual Meetings:** Members who cannot attend in person may join through virtual means if required. This would be conducted through Discord. If it becomes necessary, other group members can invoke the right for the virtual team member to share their screen or turn on their camera if possible.
   - **Preparation:** Members should come prepared, having completed any agreed-upon tasks or research.
@@ -68,6 +68,8 @@ In this section, the team will discuss and clearly define their collective expec
     2. If unresolved, bring the issue to the team for discussion.
     3. Seek input from the instructor if necessary.
   - Focus on finding mutually acceptable solutions.
+  - If the instructor has been extensively consulted and the team member still consistently does not change their behavior, an official meeting will be called. If all other group members unanimously agree that the group member at fault should be fired, a vote should be taken to make the decision official.
+  - Additionally, in the event that a event that a change in group structure happens, the contract will be updated to reflect these changes.
 
 ### **7. Deadlines**
 
@@ -79,7 +81,7 @@ In this section, the team will discuss and clearly define their collective expec
 ### **8. Formatting**
 
 - **Expectation:** Naming Conventions and File Naming Structure:
-  - Every beginning character in a filename will be capitalized. Use date strcuture "yyyy-mm-dd".
+  - Every beginning character in a filename will be capitalized. Use date convention "yyyy-mm-dd" when applicable.
   - Ex. "yyyy-mm-dd_Example.File.txt"
 
 
