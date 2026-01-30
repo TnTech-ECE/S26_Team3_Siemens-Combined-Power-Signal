@@ -65,7 +65,7 @@
   - Focus on finding mutually acceptable solutions.
   - If the instructor has been extensively consulted and the team member still consistently does not change their behavior, an official meeting will be called. If all other group members unanimously agree that the group member at fault should be fired, a vote should be taken to make the decision official.
   - Additionally, in the event that a event that a change in group structure happens, the contract will be updated to reflect these changes.
-  - In the even that a team member fails to meet deadlines or negatively impacts the functionality/grade of the group, the matter will be addressed at the next group meeting.
+  - In the event that a team member fails to meet deadlines or negatively impacts the functionality/grade of the group, the matter will be addressed at the next group meeting.
   - In the event that this continues on a consistent basis, we will follow the steps outlined above as follows for our disciplinary process.
 
 ### **7. Deadlines**
@@ -126,4 +126,4 @@
 
 By typing our names below, we acknowledge that we have read, understand, and agree to abide by the terms of this Teamwork Contract.
 
-Levi Cantrell, Tyler Chan, Harry Rudd, Jonas Cross
+Levi Cantrell, Tyler Chan, Jonas Cross, Harry Rudd, Ryan Shipwash
