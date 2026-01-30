@@ -73,7 +73,7 @@ In this section, the team will discuss and clearly define their collective expec
 
 Assigning specific roles can help streamline team operations. Below, define any unique roles, their responsibilities, the powers granted, and any changes to expectations.
 
-**a. Team Leader/Coordinator: Tyler Chan** 
+**a. Project Lead: Tyler Chan** 
 
 - **Responsibilities:**
   - Schedule and coordinate team meetings.
@@ -84,7 +84,7 @@ Assigning specific roles can help streamline team operations. Below, define any 
 - **Expectation Changes:**
   - In addition to regular duties, the Team Leader will handle organizational tasks but remains equally responsible for project work.
 
-**b. Recorder/Secretary: Jonas Cross**
+**b. Secretary: Jonas Cross**
 
 - **Responsibilities:**
   - Take detailed notes during meetings.
@@ -94,8 +94,17 @@ Assigning specific roles can help streamline team operations. Below, define any 
 - **Expectation Changes:**
   - Ensures documentation is maintained without reducing their responsibility in other project areas.
 
-*(Add or modify roles based on your team's needs.)*
+**c. Assistant Project Lead: Harry Rudd**
 
+- **Responsibilities:**
+  - [Fill in here]
+  - Distribute meeting minutes to all team members within 24 hours.
+- **Powers Granted:**
+  - May request clarifications during meetings to ensure accurate record-keeping.
+- **Expectation Changes:**
+  - Ensures documentation is maintained without reducing their responsibility in other project areas.
+
+**d. 
 
 ## **Additional Agreements**
 
