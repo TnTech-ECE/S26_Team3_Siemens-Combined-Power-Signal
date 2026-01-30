@@ -1,7 +1,7 @@
 # **Teamwork Contract**
 
 **Team 3**  
-**Team Members:**    
+**Team Members: Levi Cantrell, Tyler Chan, Jonas Cross, Harry Rudd, Ryan Shipwash**    
 *Electrical and Computer Engineering Department*  
 *Tennessee Technological University*
 
@@ -73,7 +73,7 @@ In this section, the team will discuss and clearly define their collective expec
 
 Assigning specific roles can help streamline team operations. Below, define any unique roles, their responsibilities, the powers granted, and any changes to expectations.
 
-**a. Team Leader/Coordinator: (Required)** [Name of student who will fill this role]
+**a. Team Leader/Coordinator: Tyler Chan** 
 
 - **Responsibilities:**
   - Schedule and coordinate team meetings.
@@ -84,7 +84,7 @@ Assigning specific roles can help streamline team operations. Below, define any 
 - **Expectation Changes:**
   - In addition to regular duties, the Team Leader will handle organizational tasks but remains equally responsible for project work.
 
-**b. Recorder/Secretary: (Optional)** [Name of student who will fill this role]
+**b. Recorder/Secretary: Jonas Cross**
 
 - **Responsibilities:**
   - Take detailed notes during meetings.
