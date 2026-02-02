@@ -39,7 +39,7 @@
   - **Group Decisions:** Formal group decisions such as final documentation submissions, or any decision that is outside of the scope of the subsystem, must be made with a unanimous decisions among all affected parties. Informal decisions within a group that have no bearing on other systems can be made between its members. 
 - **Expectation:** Regarding team meetings:
   - **Frequency:** The team will meet for a total of three hours a week, in person or virtually.
-  - **Attendance:** Members are expected to attend all meetings; absences should be communicated by 6 pm the previous day, barring extenous circumstances, such as sickness or emergencies.
+  - **Attendance:** Members are expected to attend all meetings; absences should be communicated by 6 pm the previous day, barring extenuating circumstances, such as sickness or emergencies.
     - **Virtual Meetings:** Members who cannot attend in person may join through virtual means if required. This would be conducted through Discord. If it becomes necessary, other group members can invoke the right for the virtual team member to share their screen or turn on their camera if possible.
   - **Preparation:** Members should come prepared, having completed any agreed-upon tasks or research.
 - **Meetings With the Customer:** Regarding Meetings With the Customer:
@@ -106,7 +106,7 @@
 **3. Assistant Project Lead: Harry Rudd**
 
 - **Responsibilities:**
-  - Assume Project Lead responsibilites, such as running calls with the client if the Project Lead is unable to fulfill these responsiblities.
+  - Assume Project Lead Responsibilities, such as running calls with the client if the Project Lead is unable to fulfill these Responsibilities.
   - Ensures that the team has a centralized location to meet for general weekly meetings and customer calls.
 - **Powers Granted:**
   - Any powers granted to the Project Lead are granted to the Assistant Project Lead if the Project Lead is absent or unable to fulfill his responsibilities.
