@@ -34,9 +34,9 @@
 
 ### **4. Meetings**
 - **Procedures:** Regarding Decisions:
-  - **Changes to the Contract:** Changes or temporary suspensions of the contract, if required, can be made with a unanimous five member decision.
+  - **Changes to the Contract:** Changes or temporary suspensions of the contract, if required, can be made with a unanimous five-member decision.
   - **Quorum:** A minimum of four people is required to start an official meeting.
-  - **Group Decisions:** Formal group decisions such as final documentation submissions, or any decision that is outside of the scope of the subsystem, must be made with a unanimous decisions among all affected parties. Informal decisions within a group that have no bearing on other systems can be made between its members. 
+  - **Group Decisions:** Formal group decisions, such as final documentation submissions or any decision outside the scope of the subsystem, must be made with unanimous agreement among all affected parties. Informal decisions within a group that have no bearing on other systems can be made between its members. 
 - **Expectation:** Regarding team meetings:
   - **Frequency:** The team will meet for a total of three hours a week, in person or virtually.
   - **Attendance:** Members are expected to attend all meetings; absences should be communicated by 6 pm the previous day, barring extenuating circumstances, such as sickness or emergencies.
