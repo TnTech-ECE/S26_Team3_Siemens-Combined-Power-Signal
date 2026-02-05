@@ -1,7 +1,7 @@
 # **Teamwork Contract**
 
 **Team 3: The Mho**  
-**Team Members: Levi Cantrell, Tyler Chan, Jonas Cross, Harry Rudd, Ryan Shipwash**    
+**Team Members: Levi Cantrell, Tyler Chan, Jonas Cross, Harry Rudd, Ryan Shipwash**
 *Electrical and Computer Engineering Department*  
 *Tennessee Technological University*
 
@@ -31,12 +31,15 @@
   - Professional, respectful, and considerate.
   - Conducted primarily through Discord. Emergency calls to convey brief information should be done via phone calls.
   - Responsive, with replies to inquiries within 1 business day, barring extenuating circumstances.
+  - Conducted through email to maintain a more permanent paper trail regarding conflict.
 
 ### **4. Meetings**
+
 - **Procedures:** Regarding Decisions:
+
   - **Changes to the Contract:** Changes or temporary suspensions of the contract, if required, can be made with a unanimous five-member decision.
   - **Quorum:** A minimum of four people is required to start an official meeting.
-  - **Group Decisions:** Formal group decisions, such as final documentation submissions or any decision outside the scope of the subsystem, must be made with unanimous agreement among all affected parties. Informal decisions within a group that have no bearing on other systems can be made between its members. 
+  - **Group Decisions:** Formal group decisions, such as final documentation submissions or any decision outside the scope of the subsystem, must be made with unanimous agreement among all affected parties. Informal decisions within a group that have no bearing on other systems can be made between its members.
 - **Expectation:** Regarding team meetings:
   - **Frequency:** The team will meet for a total of three hours a week, in person or virtually.
   - **Attendance:** Members are expected to attend all meetings; absences should be communicated by 6 pm the previous day, barring extenuating circumstances, such as sickness or emergencies.
@@ -59,7 +62,6 @@
 - **Expectation:**
   - The team will document all conflict which will be discussed in the team meetings. These events will be detailed in the meeting minutes.
   - Records from GitHub and meeting minutes will be used as proof for conflict resolution when conflict is discussed.
-  - Any communication regarding conflict will be handled over email to provide a more permanent paper trail.
   - The team will address conflicts promptly through open dialogue.
   - The team will use a step-by-step approach to resolve issues:
     1. Discuss the issue privately between involved parties.
@@ -88,7 +90,7 @@
 
 ## **Unique Roles**
 
-**1. Project Lead: Tyler Chan** 
+**1. Project Lead: Tyler Chan**
 
 - **Responsibilities:**
   - Schedule and coordinate team meetings.
