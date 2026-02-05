@@ -58,6 +58,7 @@
 
 - **Expectation:**
   - The team will document all conflict which will be discussed in the team meetings. These events will be detailed in the meeting minutes.
+  - Records from GitHub and meeting minutes will be used as proof for conflict resolution when conflict is discussed.
   - Any communication regarding conflict will be handled over email to provide a more permanent paper trail.
   - The team will address conflicts promptly through open dialogue.
   - The team will use a step-by-step approach to resolve issues:
