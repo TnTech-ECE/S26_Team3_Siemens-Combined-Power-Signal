@@ -67,6 +67,14 @@
   - Additionally, in the event that a change in group structure happens, the contract will be updated to reflect these changes.
   - In the event that a team member fails to meet deadlines or negatively impacts the functionality/grade of the group, the matter will be addressed at the next group meeting.
   - In the event that this continues on a consistent basis, we will follow the steps outlined above as follows for our disciplinary process.
+  - Disciplinary Action for Internal Conflict:
+    - There are 5 strikes that can be accumulated with increasing severity of punishment.
+      - Strike 1-2: Discussion in team meeting.
+      - Strike 3: Team member must do a short presentation detailing the work they have completed since the past meeting every meeting following the third strike.
+      - Strike 4: Consequence from Strike 3 still applies, but now the team member must complete "Collaboration Principles and Process" in LinkedIn Learning within two weeks, including one page of notes, and six discussion questions each in increasing complexity which will be discussed in the team meeting following completion.
+      - Strike 5: Immediate scheduling of a conversation with instructor to determine if the team member should be fired.
+  - If a team member misses an internal group deadline or negatively affects thr group in some way, they will gain one strike.
+  - Additionally, if the team misses an instructor-set deadline due to the negligence (lack of communication, dishonesty, indolence, etc.), then 5 strikes will immediately be gained and all punishments detailed above will be taken into effect.
 
 ### **7. Deadlines**
 
