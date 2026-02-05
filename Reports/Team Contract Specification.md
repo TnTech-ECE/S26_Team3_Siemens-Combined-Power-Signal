@@ -52,17 +52,19 @@
   - Treat each other with respect and courtesy.
   - Listen actively and allow others to express their ideas without interruption.
   - Address disagreements professionally and constructively.
-  - All team members must be dressed in business casual for meetings conducted with Siemens Healthineers. 
+  - All team members must be dressed in business casual for meetings conducted with Siemens Healthineers.
 
 ### **6. Conflict Resolution**
 
-- **Expectation:** The team will:
-  - Address conflicts promptly through open dialogue.
-  - Use a step-by-step approach to resolve issues:
+- **Expectation:**
+  - The team will document all conflict which will be discussed in the team meetings. These events will be detailed in the meeting minutes.
+  - Any communication regarding conflict will be handled over email to provide a more permanent paper trail.
+  - The team will address conflicts promptly through open dialogue.
+  - The team will use a step-by-step approach to resolve issues:
     1. Discuss the issue privately between involved parties.
     2. If unresolved, bring the issue to the team for discussion.
     3. Seek input from the instructor if necessary.
-  - Focus on finding mutually acceptable solutions.
+  - The team will focus on finding mutually acceptable solutions.
   - If the instructor has been extensively consulted and the team member still consistently does not change their behavior, an official meeting will be called. If all other group members unanimously agree that the group member at fault should be fired, a vote should be taken to make the decision official.
   - Additionally, in the event that a change in group structure happens, the contract will be updated to reflect these changes.
   - In the event that a team member fails to meet deadlines or negatively impacts the functionality/grade of the group, the matter will be addressed at the next group meeting.
