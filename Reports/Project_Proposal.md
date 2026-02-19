@@ -76,13 +76,15 @@ Each project proposal must include a comprehensive description of the necessary 
 
 Provide a budget proposal with justifications for expenses such as software, equipment, components, testing machinery, and prototyping costs. This should be an estimate, not a detailed bill of materials.
 
-### Personel
+### Personnel
 
 Identify the skills present in the team and compare them to those required to complete the project. Address any skill gaps with a plan to acquire the necessary knowledge.
 
 Besides the team, also state who you choose to be you supervisor and why.
 
 State who your instrucotr is and what role you expect them to play in the project.
+
+The instructor of this course is Dr. Christopher Storm Johnson. The supervisor of the capstone group is Dr. Charles Van Neste. Dr. Jeffrey Austen is an advisor for the group. The customer is Siemens Healthineers.
 
 ### Timeline
 
