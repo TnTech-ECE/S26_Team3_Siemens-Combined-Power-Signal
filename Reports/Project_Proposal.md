@@ -93,7 +93,7 @@ Provide a detailed timeline, including all major deadlines and tasks. This shoul
 
 ## Specific Implications
 
-By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply.
+By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply. Outlined below are the benefits for Siemens (our customer), demonstrating the project's value in simplifying and minimizing the size of Siemen's existing solution for their PET system.
 
 
 ## Broader Implications, Ethics, and Responsibility as Engineers
