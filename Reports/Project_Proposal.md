@@ -84,7 +84,9 @@ Besides the team, also state who you choose to be you supervisor and why.
 
 State who your instrucotr is and what role you expect them to play in the project.
 
-The instructor of this course is Dr. Christopher Storm Johnson. The supervisor of the capstone group is Dr. Charles Van Neste. Dr. Jeffrey Austen is an advisor for the group. The customer is Siemens Healthineers.
+Tyler Chan Primarily has skills in PCB design and logistical knowledge for ordering assembling hardware, as well as simulation and circuit design.
+
+The instructor of this course is Dr. Christopher Storm Johnson. The expectation is that he shall provide guidance as needed when the team goes to him for help. He shall primarily be in the point of contact for documentation and coordination if needed. The supervisor of the capstone group is Dr. Charles Van Neste. He was chosen because he has expertise in some signal processing and hardware aspects of the project. Dr. Jeffrey Austen was selected as a technical expert consultant for the group. He was chosen because he is knowledgeable in signal processing and has experience and guidance to provide, particularly in resources and general direction for the project. The customer is Siemens Healthineers.
 
 ### Timeline
 
