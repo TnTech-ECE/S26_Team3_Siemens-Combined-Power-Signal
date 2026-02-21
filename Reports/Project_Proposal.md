@@ -93,7 +93,7 @@ Provide a detailed timeline, including all major deadlines and tasks. This shoul
 
 ## Specific Implications
 
-Explain the implications of solving the problem for the customer. After reading this section, the reader should understand the tangible benefits and the worthiness of the proposed work.
+By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply.
 
 
 ## Broader Implications, Ethics, and Responsibility as Engineers
