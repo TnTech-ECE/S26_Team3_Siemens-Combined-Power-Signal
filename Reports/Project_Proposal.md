@@ -189,8 +189,8 @@ Estimate of the cost for major materials needed:
 - *Skills to Learn:* [Add Skills Here]
 
 **Harry Rudd**  
-- *Current Skills:* [Add Skills Here]
-- *Skills to Learn:* [Add Skills Here]
+- *Current Skills:* LTSpice, MATLAB, Python
+- *Skills to Learn:* Cable Design, Signal Processing and Filtering, Power Systems
 
 **Ryan Shipwash**  
 - *Current Skills:* LTspice, Signal Processing, C/C++, Matlab, Circuit Design
