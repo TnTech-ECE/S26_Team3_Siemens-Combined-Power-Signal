@@ -152,9 +152,11 @@ Combining the clock and power into one module minimizes the space needed for tho
 
 2. **Simplifying the Existing Solution**
 
-Combining the clock and power systems also simplify 
+Combining the clock and power systems also simplifies the overall PET system by reducing the total number of subsystems.
 
 3. **Removing Common Points of Error**
+
+A common point of error in the PET system are the connections on the cables themselves. By combining the clock and power onto one cable, the number of connections needed are cut in half. Tangibly, this is self explanatory. Less connections means less points of failure and, in the event of a failure, less connections to test. This is worthwhile because it simultaneously reduces the number of places a cable failure can take place and it reduces the time it takes to narrow down where that failure is. Thus, letting a technician fix it in a more timely manner, and reducing the overall downtime of the machine when it fails.
 
 ## Broader Implications, Ethics, and Responsibility as Engineers
 
