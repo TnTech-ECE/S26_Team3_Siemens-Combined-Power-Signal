@@ -70,6 +70,19 @@ Research existing solutions, whether in literature, on the market, or within the
 
 Define how the project’s success will be measured. This involves explaining the experiments and methodologies to verify that the system meets its specifications and constraints.
 
+Siemens will be measuring the success of this project by the completion of the three focuses that have been provided, the first two focuses being required completions while the third is an extra stretch gaol to be approached once the first two are complete. Each focus has its own measure of success determined by PCB designs and simulation analysis. While production of PCBs and physical testing of components is an option, the simulation results will be the primary measurement of functionality of the system.
+
+### Focus 1: Bias-T
+
+For the primary focus, a Bias-T design will be created that will allow for the combining and separating of the power, clock, and potentially back channel communications. The circuit design, components selected, and simulations including a simulated reference clock will represent a completion of focus 1. The design must be cable of supplying the minimum power, operating with the correct voltage with minimal ripple, and providing the correct clock frequency to be successful.
+
+### Focus 2: Reference Clock and Jitter Measurement
+
+For the secondary focus, the path for the clock will be implemented. Simulations and designs will be used to determine the completion of focus 2. The simulations will look at the recovery of the reference clock after decoupling from power. This will require the usage of the given jitter cleaning clock synthesizer, ten times output for jitter measurement, cycle-to-cycle jitter measurement of clock output, and relative jitter measurements of output clock and reference clock all simulated at the correct frequencies to be successful.
+
+### Focus 3: Back-Channel Communications
+
+For the tertiary focus, the back channel communication path will be incorporated in to the design. Similar to the first two focuses, simulations and designs will be used for the measurement of success, However, there is no requirement of completion for overall project, and the focus itself has a large amount of freedom in approach and specifications. 
 
 ## Resources
 
