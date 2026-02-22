@@ -58,7 +58,7 @@ The system shall utelize two Bias-Tee circuits, used for both coupling and decou
 - The line voltage shall be 48 V DC. (subscripting in markdown?)
 - The system shall be capable of supporting up to 100 W of power.
     - A switching power supply(s) shall be provided by Siemens Healthineers.
-- The ripple voltage observed at the receiving unit (RX) shall a soft maximum of 200 mV.
+- The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
 - The total ripple current after current DC-DC conversion shall not exceed ~ 30 mV.
 - External connections for the system are unrestricted, however the following are suggested:
     - Clock input/output: SMA (SubMiniature version A) connectors.
@@ -69,7 +69,7 @@ The system shall utelize two Bias-Tee circuits, used for both coupling and decou
 - The system shall utelize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
     - Bandpass filtering for reference clock recovery shall be fixed at 2.5 MHz, with no requirement for tuneable filtering.
 - The receiver (RX) shall be equiped with a Silicon Labs PLL (Si5345B) for jitter attenuation, currently used by Siemens Healthineers.
-    - Jitter measurement shall be high-fidelity (> 1 ps?).
+    - Jitter measurement shall be high-fidelity (< 1 ps?).
 - A 25 MHz output clock shall be synthesized via PLL for the following jitter measurements:
     - Cycle-to-Cycle
     - Output clock relative to reference clock
@@ -160,11 +160,11 @@ Theory and Analysis: Signal Processing and Filtering
 #### Team Skills
 
 **Levi Cantrell**  
-- *Current Skills:* [Add Skills Here]
-- *Skills to Learn:* [Add Skills Here]
+- *Current Skills:* LTSpice, VHDL, Hardware Analysis and Troubleshooting, Hand Soldering (Rework/Repair), Microcontrollers
+- *Skills to Learn:* Altium,  Signal Processing
 
 **Tyler Chan**  
-- *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab
+- *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab, 
 - *Skills to Learn:* Circuit Design Knowledge, Altium
 
 **Jonas Cross**  
