@@ -101,12 +101,12 @@ For the tertiary focus, the back channel communication path will be incorporated
 
 ## Resources
 
-This project will include primarily hardware components to implement the design: a Bias Tee circuit, the Si5345B Jitter-Cleaning Clock Synthesizer, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
+This project will include primarily hardware components to implement the design: the Bias Tee circuits (Rx and Tx), the Si5345B Jitter-Cleaning Clock Synthesizer, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
 
 #### Hardware Components
 
-1. Capacitors an Inductors: Specific Capacitors and Inductors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
-2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a clock that will be passed over the cable with the power signal. This chip was selected for its ability to maintain a clean signal and reduce jitter [2].
+1. Bias Tee Circuitry: Specific Capacitors, Inductors, and Resistors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
+2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [2].
 3. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
 4. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer.
 5. Cables: Cables will be procured or fabricated to carry the power and signal from the transmitter to the receiver. Present options for the cable are Ethernet or Coaxial cables.
@@ -143,7 +143,7 @@ Estimate of the cost for major materials needed:
 
 **Tyler Chan**  
 
-- *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab, 
+- *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab, VHDL, SystemVerilog
 - *Skills to Learn:* Circuit Design Knowledge, Altium
 
 **Jonas Cross**  
@@ -167,11 +167,11 @@ During the conceptual design phase, group members will determine further what to
 
 #### Supervisor
 
-- **Professor Van Neste:** He was chosen because he has expertise in some signal processing and hardware aspects of the project.
+- **Dr. Charles Van Neste:** He was chosen because he has expertise in some signal processing and hardware aspects of the project.
 
 #### Instructor
 
-- **Professor Storm:** He will provide guidance as needed when the team goes to him for help. He will also approve of various aspects of the project as they progress.
+- **Dr. Christopher Storm Johnson:** He will provide guidance as needed when the team goes to him for help. He will also approve of various aspects of the project as they progress.
 
 #### Technical Expert Consultant
 
