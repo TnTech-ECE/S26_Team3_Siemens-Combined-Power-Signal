@@ -37,7 +37,8 @@ Questions to consider:
 
 ### Background
 
-Provide context and details necessary to define the problem clearly and delineate its boundaries.
+PET Scanners are complicated machines with many components. To start, a patient has a tracer that emits positrons injected into their body. Different tracers can work to image different organs. The patient is then placed on a gantry and moved into a detector ring. Positrons annihilate with electrons and produce two gamma rays approximately 180 degrees out of phase, so with proper timing and position, these detectors can use two detections and that angle to triangulate the position of the annihilation. A plot of these annihilations will image the desired organs. In order to receive accurate data, the ring needs several detectors, which each require a synchonized clock, power, and data communication. 
+
 
 ### Specifications and Constraints
 
