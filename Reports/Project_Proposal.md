@@ -78,20 +78,53 @@ Provide a budget proposal with justifications for expenses such as software, equ
 
 ### Personnel
 
-Identify the skills present in the team and compare them to those required to complete the project. Address any skill gaps with a plan to acquire the necessary knowledge.
+#### Required Skills
+Hardware and Circuit Design: Circuit design knowledge, Power Systems, Cable Design, PCB Design, Component Sourcing
+Design and Simulations Tools: LTspice, Matlab, Altium, LT Powercad
+Theory and Analysis: Signal Processing and Filtering
 
-Besides the team, also state who you choose to be you supervisor and why.
+#### Team Skills
 
-State who your instrucotr is and what role you expect them to play in the project.
+**Levi Cantrell**  
+- *Current Skills:* [Add Skills Here]
+- *Skills to Learn:* [Add Skills Here]
 
-Tyler Chan Primarily has skills in PCB design and logistical knowledge for ordering assembling hardware, as well as simulation and circuit design.
+**Tyler Chan**  
+- *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab
+- *Skills to Learn:* Circuit Design Knowledge, Altium
 
-The instructor of this course is Dr. Christopher Storm Johnson. The expectation is that he shall provide guidance as needed when the team goes to him for help. He shall primarily be in the point of contact for documentation and coordination if needed. The supervisor of the capstone group is Dr. Charles Van Neste. He was chosen because he has expertise in some signal processing and hardware aspects of the project. Dr. Jeffrey Austen was selected as a technical expert consultant for the group. He was chosen because he is knowledgeable in signal processing and has experience and guidance to provide, particularly in resources and general direction for the project. The customer is Siemens Healthineers.
+**Jonas Cross**  
+- *Current Skills:* [Add Skills Here]
+- *Skills to Learn:* [Add Skills Here]
+
+**Harry Rudd**  
+- *Current Skills:* [Add Skills Here]
+- *Skills to Learn:* [Add Skills Here]
+
+**Ryan Shipwash**  
+- *Current Skills:* [Add Skills Here]
+- *Skills to Learn:* [Add Skills Here]
+
+*Note:* This list emphasizes the members' strongest skills. Depending on the progress and project, required skills or assignments may change.
+
+During the conceptual design phase, group members will determine further what to focus on. Each group member is primarily responsible for their expertise when working on their part of the project. If assistance is needed, the group member may seek advice from the supervisor, technical expert consultant, another group member, or external resource.
+
+#### Supervisor
+- **Professor Van Neste:** He was chosen because he has expertise in some signal processing and hardware aspects of the project.
+
+#### Instructor
+- **Professor Storm:** He will provide guidance as needed when the team goes to him for help. He will also approve of various aspects of the project as they progress.
+
+#### Technical Expert Consultant
+- **Dr. Jeffrey Austen** He was chosen because he is knowledgeable in signal processing and has experience and guidance to provide, particularly in resources and general direction for the project.
+
+#### Customer
+- **Siemens Healthineers**
 
 ### Timeline
 
-Provide a detailed timeline, including all major deadlines and tasks. This should be illustrated with a professional Gantt chart.
-
+#### Gantt Chart (The chart may be subject to modification during project progression)
+# [ADD CHART]
 
 ## Specific Implications
 
