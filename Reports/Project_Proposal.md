@@ -148,6 +148,8 @@ By developing a combined clock and power module, this project aims to address th
 
 1. **Minimizing the Size**
 
+Combining the clock and power into one module minimizes the space needed for those components. Instead of needing two boxes for clock and power individually, the combination will fit in a single box. In a medical environment minimizing space is important as every bit of space saved gives medical professionals more space to use for other things. For our customer, the space saved can help them more effectively sell their PET system. Tangibly, as stated above, the solution will condense two systems into one. This will greatly decrease the space needed for clock and power in the final product. This is worthwhile because space is a great concern in the medical field, and lessening space restrictions can improve the efficiency of the space in the hospital or clinic that is using Siemen's PET system.
+
 2. **Simplifying the Existing Solution**
 
 
