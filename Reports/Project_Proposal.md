@@ -218,7 +218,7 @@ Per Siemens, this project will not need to follow any specific codes or regulati
 
 3. Ethical Responsibilities:
 
-As engineers, we uphold values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics. We will emphasize the health and safety of the public and conduct ourselves in an honest matter. We will use all of our gained knowledge and skills to produce the most effective product we can, without compromising the safety of others. We will be truthful in all of the things that we do, even if that means failure of our project. An unsuccessful product is much better than an unsafe one. We will be transparent in all our actions, as we did not sign an NDA for this project, and we will meticulously document everything we do, so the customer can build upon our solution after we are removed from the project.
+As engineers, we uphold values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [3]. We will emphasize the health and safety of the public and conduct ourselves in an honest matter. We will use all of our gained knowledge and skills to produce the most effective product we can, without compromising the safety of others. We will be truthful in all of the things that we do, even if that means failure of our project. An unsuccessful product is much better than an unsafe one. We will be transparent in all our actions, as we did not sign an NDA for this project, and we will meticulously document everything we do, so the customer can build upon our solution after we are removed from the project.
 
 In summary, this project has the ability to greatly improve the care provided to patients and improve the lives of the doctors performing their duties. By bearing in mind the severity of our work and conducting ourselves in an ethical manner, our team will fulfil its duty to create this project without any harm or deception.
 
@@ -227,6 +227,8 @@ In summary, this project has the ability to greatly improve the care provided to
 [1] "RF/Microwave Bias Tees from Theory to Practice," *blog.minicircuits.com*, July 31, 2023. [Online]. Available: https://blog.minicircuits.com/rf-microwave-bias-tee-basics/. [Accessed Feb. 12, 2026].
 
 [2] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
+
+[3] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026). 
 
 
 ## Statement of Contributions
