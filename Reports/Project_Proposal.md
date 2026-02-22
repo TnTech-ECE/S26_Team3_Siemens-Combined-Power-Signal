@@ -137,7 +137,7 @@ Estimate of the cost for major materials needed:
 | Main PCB                  | Generates clock and regulates power        | 1        | $20-$30                     |
 | Jitter Measurement PCB    | Measures jitter and analyzes power signal  | 1        | $20-$30                     |
 | Passive SMD Components    | Various components for circuits on PCBs    | 1 set    | $40-$50                     |
-| Cable Ports               | Ports for the cabling I/O on the PCB       | 2        | $5-$10                    |
+| Cable Ports               | Ports for the cabling I/O on the PCB       | 2        | $5-$10                      |
 | Prototyping Cost          | Extra material, spares, test components    |          | $150                        |
 
 ### Personnel
