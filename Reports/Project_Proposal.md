@@ -46,11 +46,62 @@ Provide context and details necessary to define the problem clearly and delineat
 
 Specifications and constraints define the system's requirements. They can be positive (do this) or negative (don't do that). They can be mandatory (shall or must) or optional (may). They can cover performance, accuracy, interfaces, or limitations. Regardless of their origin, they must be unambiguous and impose measurable requirements.
 
-#### Specifications
+### Specifications
 
 Specifications are requirements imposed by **stakeholders** to meet their needs. If a specification seems unattainable, it is necessary to discuss and negotiate with the stakeholders.
 
-#### Constraints
+The ComCap system shall meet the following specifications outlined by Siemens Healthineers:
+
+#### Bias-Tee: Primary Focus
+
+The system shall utelize two Bias-Tee circuits, used for both coupling and decoupling the AC information with DC power at the transmitter (TX) and receiver (RX) respectively.
+- The line voltage shall be 48 V DC. (subscripting in markdown?)
+- The system shall be capable of supporting up to 100 W of power.
+    - A switching power supply(s) shall be provided by Siemens Healthineers.
+- The ripple voltage observed at the receiving unit (RX) shall a soft maximum of 200 mV.
+- The total ripple current after current DC-DC conversion shall not exceed ~ 30 mV.
+- External connections for the system are unrestricted, however the following are suggested:
+    - Clock input/output: SMA (SubMiniature version A) connectors.
+    - A dedicated header for GUI connection.
+
+#### Synchronization Path: Secondary Focus
+
+- The system shall utelize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
+    - Bandpass filtering for reference clock recovery shall be fixed at 2.5 MHz, with no requirement for tuneable filtering.
+- The receiver (RX) shall be equiped with a Silicon Labs PLL (Si5345B) for jitter attenuation, currently used by Siemens Healthineers.
+    - Jitter measurement shall be high-fidelity (> 1 ps?).
+- A 25 MHz output clock shall be synthesized via PLL for the following jitter measurements:
+    - Cycle-to-Cycle
+    - Output clock relative to reference clock
+
+#### Back-Channel Communications Path: Tertiary Focus (Time Permitting)
+
+The system may incorperate back-channel communications to assist with debugging, troubleshooting, and lower-level system synchronization messages. (???)
+- There is no definite required buad rate for communications, however the suggested range is 500 kbps to 1 Mbps.
+- There is no definite requirement for the type of modulation used, however FSK (Frequency-Shift Keying) is recommended.
+- There is no definite requirement for modulation hardware, however a PLC (Power Line Communitcation) modem similar to the ST7540 model is recommended for the following reasons:
+    - This modem allows easy interfacing into a microcontroler via UART or SPI interfacing.
+    - This modem provides bi-directional (half-duplex) capabilities.
+- Siemens Healthineers expresses extensive freedom for the implementation of back-channel communications.
+
+#### Analysis & Simulations
+
+Files for measurements obtained via analysis and simulations shall be provided to Seimens Healthineers for the following:
+- Bias-Tee and Line Interface Simulations
+    - AC insertion loss
+    - Behavior under load transients
+    - Ripple and noise analysis of filtered DC output
+- Filtering and Signal-Integrity (via LTSpice)
+    - 2.5 Mhz reference transport
+    - Optional 1 Mhz back-channel carrier path
+
+#### Additional Specifications
+
+- The size of the ComCap system shall not be constricted, however ... (fill in?)
+- PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
+
+
+### Constraints
 
 Constraints often stem from governing bodies, standards organizations, and broader considerations beyond the requirements set by stakeholders.
 
@@ -60,6 +111,13 @@ Questions to consider:
 - What impact will the engineering, manufacturing, or final product have on public health, safety, and welfare?
 - Are there global, cultural, social, environmental, or economic factors that must be considered?
 
+#### Industrial Standards and Regulations
+
+An outline of standards and regulations pertaining to the project shall be provided to the team by Siemens Healthineers.
+
+#### EMC (Electromagnetic Compatibility)
+
+Electromagnetic Interference shall be an optional consideration in the design of the ComCap system.
 
 ## Survey of Existing Solutions
 
