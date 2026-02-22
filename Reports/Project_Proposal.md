@@ -144,7 +144,7 @@ During the conceptual design phase, group members will determine further what to
 
 ## Specific Implications
 
-By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply. Outlined below are the benefits for Siemens (our customer), demonstrating the project's value in simplifying and minimizing the size of Siemen's existing solution for their PET system.
+By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply. Outlined below are the benefits for Siemens (our customer). The project has value in simplifying and minimizing the size of Siemen's existing solution for their PET system as well as removing common points of error.
 
 1. **Minimizing the Size**
 
@@ -152,6 +152,9 @@ Combining the clock and power into one module minimizes the space needed for tho
 
 2. **Simplifying the Existing Solution**
 
+Combining the clock and power systems also simplify 
+
+3. **Removing Common Points of Error**
 
 ## Broader Implications, Ethics, and Responsibility as Engineers
 
