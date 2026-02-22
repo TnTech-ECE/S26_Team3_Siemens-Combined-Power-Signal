@@ -1,4 +1,4 @@
-# Project Proposal
+# ComCaP: Combined Clock and Power
 
 ## Introduction
 
