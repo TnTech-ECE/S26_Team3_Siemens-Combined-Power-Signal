@@ -224,6 +224,8 @@ Our project is tailor made for Siemens and their proprietary PET system, however
 
 1. Public Health Impacts
 
+The combined clock and power device will impact both doctors and patients. For doctors, the device will be smaller than Siemens' existing solution, providing more space for them to use for other medical equipment or devices. For patients, the device will make the PET system more reliable. This will decrease both the number of times the PET system will be down, and decrease the amount of time it takes for the PET system to return back online. Because of that, the PET system can be used more often, and will help diagnose more people with medical conditions. The benefits to both doctors and patients will hopefully lead to more diagnoses and save more lives.
+
 2. Considerations for the Medical Field:
 
 Per Siemens, this project will not need to follow any specific codes or regulations for the medical field. 
