@@ -14,24 +14,18 @@ PET Scanners are complicated machines with many components. To start, a patient 
 
 Their system for managing the clocks, power, and communications are all separate units within the coincidence processing unit. This takes up a lot of space and has many points of failure, since all three need their own cabling. Our proposed solution involves combining as many of these as we can in order to provide for a more efficient scanner. 
 
-### Specifications and Constraints
-
-Specifications and constraints define the system's requirements. They can be positive (do this) or negative (don't do that). They can be mandatory (shall or must) or optional (may). They can cover performance, accuracy, interfaces, or limitations. Regardless of their origin, they must be unambiguous and impose measurable requirements.
-
 ### Specifications
-
-Specifications are requirements imposed by **stakeholders** to meet their needs. If a specification seems unattainable, it is necessary to discuss and negotiate with the stakeholders.
 
 The ComCap system shall meet the following specifications outlined by Siemens Healthineers:
 
 #### Bias-Tee: Primary Focus
 
 The system shall utilize two Bias-Tee circuits, used for both coupling and decoupling the AC information with DC power at the transmitter (TX) and receiver (RX) respectively.
-- The line voltage shall be 48 V DC. (subscripting in markdown?)
+- The line voltage shall be 48 V<sub>DC</sub>.
 - The system shall be capable of supporting up to 100 W of power.
     - A switching power supply(s) shall be provided by Siemens Healthineers.
 - The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
-- The total ripple current after current DC-DC conversion shall not exceed ~ 30 mV.
+- The total ripple current after voltage DC-DC conversion shall not exceed ~ 30 mV.
 - External connections for the system are unrestricted, however the following are suggested:
     - Clock input/output: SMA (SubMiniature version A) connectors.
     - A dedicated header for GUI connection.
@@ -40,16 +34,16 @@ The system shall utilize two Bias-Tee circuits, used for both coupling and decou
 
 - The system shall utilize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
     - Bandpass filtering for reference clock recovery shall be fixed at 2.5 MHz, with no requirement for tuneable filtering.
-- The receiver (RX) shall be equipped with a Silicon Labs PLL (Si5345B) for jitter attenuation, currently used by Siemens Healthineers.
-    - Jitter measurement shall be high-fidelity (< 1 ps?).
+- The receiver (RX) shall be equipped with a Skyworks model Si5345B PLL (Phase Lock Loop) for jitter attenuation, currently used by Siemens Healthineers.
+    - Jitter measurement shall be high-fidelity.
 - A 25 MHz output clock shall be synthesized via PLL for the following jitter measurements:
     - Cycle-to-Cycle
     - Output clock relative to reference clock
 
 #### Back-Channel Communications Path: Tertiary Focus (Time Permitting)
 
-The system may incorporate back-channel communications to assist with debugging, troubleshooting, and lower-level system synchronization messages. (???)
-- There is no definite required buad rate for communications, however the suggested range is 500 kbps to 1 Mbps.
+The system may incorporate back-channel communications to assist with debugging and troubleshooting.
+- There is no definite required baud rate for communications, however the suggested range is 500 kbps to 1 Mbps.
 - There is no definite requirement for the type of modulation used, however FSK (Frequency-Shift Keying) is recommended.
 - There is no definite requirement for modulation hardware, however a PLC (Power Line Communication) modem similar to the ST7540 model is recommended for the following reasons:
     - This modem allows easy interfacing into a microcontroller via UART or SPI interfacing.
@@ -63,46 +57,29 @@ Files for measurements obtained via analysis and simulations shall be provided t
     - AC insertion loss
     - Behavior under load transients
     - Ripple and noise analysis of filtered DC output
-- Filtering and Signal-Integrity (via LTSpice)
+- Filtering and Signal-Integrity
     - 2.5 Mhz reference transport
     - Optional 1 Mhz back-channel carrier path
 
 #### Additional Specifications
 
-- The size of the ComCap system shall not be constricted, however ... (fill in?)
+- The size of the ComCap system shall not be constricted.
 - PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
 
 
 ### Constraints
 
-Constraints often stem from governing bodies, standards organizations, and broader considerations beyond the requirements set by stakeholders.
-
-Questions to consider:
-- Do governing bodies regulate the solution in any way?
-- Are there industrial standards that need to be considered and followed?
-- What impact will the engineering, manufacturing, or final product have on public health, safety, and welfare?
-- Are there global, cultural, social, environmental, or economic factors that must be considered?
-
 #### Industrial Standards and Regulations
 
 An outline of standards and regulations pertaining to the project shall be provided to the team by Siemens Healthineers.
 
-#### EMC (Electromagnetic Compatibility)
+#### EMI (Electromagnetic Interference)
 
-Electromagnetic Interference shall be an optional consideration in the design of the ComCap system.
+EMI shall be an optional consideration in the design of the ComCap system. Siemens Healthineers shall make modifications with the project in order to maintaince compliance with EMI standards.
 
 ## Survey of Existing Solutions
 
-Solutions to this problems exist in many forms. 
-
-Siemens already has an existing solution to this problem that we are iterating upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has more points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than our proposed solution.
-
-Bias Tee modules do exist and could be used, but will not be custom made for the specific frequencies that Siemens will be using in their scanners. In addition to that, any medical machinery requires utmost precision, and a custom-built solution is necessary in this situation.
-
-The Jitter cleaning will mostly be done in the Si5345B chip, so no solutions exist for this focus as we would need a custom solution to be compatible with that IC.
-
-For the back channel communications, we will likely use a pre-existing protocol for digital communication and fit it to our current solution. Like the second focus, this would be a custom solution to make it compatible with the apparatus.
-
+Research existing solutions, whether in literature, on the market, or within the industry. Present these findings in a coherent, organized manner. Remember to cite all information that is not common knowledge.
 
 
 ## Measures of Success
