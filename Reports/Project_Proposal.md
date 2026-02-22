@@ -86,18 +86,35 @@ For the tertiary focus, the back channel communication path will be incorporated
 
 ## Resources
 
-Each project proposal must include a comprehensive description of the necessary resources.
+This project will include primarily hardware components to implement the design: a Bias Tee circuit, the Si5345B Jitter-Cleaning Clock Synthesizer, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
+
+#### Hardware Components
+
+1. Capacitors an Inductors: Specific Capacitors and Inductors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
+2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a clock that will be passed over the cable with the power signal. This chip was selected for its ability to maintain a clean signal and reduce jitter [2].
+3. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
+4. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer.
+5. Cables: Cables will be procured or fabricated to carry the power and signal from the transmitter to the receiver. Present options for the cable are Ethernet or Coaxial cables.
 
 ### Budget
+<!-- This chart will likely change over time as the project progresses, as the exact materials needed is not certain yet -->
+Estimate of the cost for major materials needed:
 
-Provide a budget proposal with justifications for expenses such as software, equipment, components, testing machinery, and prototyping costs. This should be an estimate, not a detailed bill of materials.
+| Item                      | Description / Notes                        | Quantity | Approx. Cost per unit (USD) |
+|---------------------------|--------------------------------------------|----------|-----------------------------|
+| Si53245B Clock Synth      | Generates and cleans clock signal          | 2        | $34.46                      |
+| Cables                    | Cables for I/O                             | 3        | $20–$30                     |
+| Main PCB                  | Generates clock and regulates power        | 1        | $20-$30                     |
+| Jitter Measurement PCB    | Measures jitter and analyzes power signal  | 1        | $20-$30                     |
+| Passive SMD Components    | Various components for circuits on PCBs    | 1 set    | $40-$50                     |
+| Prototyping Cost          | Extra material, spares, test components    |          | $150                        |
 
 ### Personnel
 
 #### Required Skills
 Hardware and Circuit Design: Circuit design knowledge, Power Systems, Cable Design, PCB Design, Component Sourcing
 Design and Simulations Tools: LTspice, Matlab, Altium, LT Powercad
-Theory and Analysis: Signal Processing and Filtering
+Theory and Analysis: Signal Processing and Filtering, Power Systems
 
 #### Team Skills
 
@@ -175,7 +192,9 @@ Per Siemens, this project will not need to follow any specific codes or regulati
 
 ## References
 
-All sources used in the project proposal that are not common knowledge must be cited. Multiple references are required.
+[1] "RF/Microwave Bias Tees from Theory to Practice," *blog.minicircuits.com*, July 31, 2023. [Online]. Available: https://blog.minicircuits.com/rf-microwave-bias-tee-basics/. [Accessed Feb. 12, 2026].
+
+[2] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
 
 
 ## Statement of Contributions
