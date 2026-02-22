@@ -1,28 +1,6 @@
 # Project Proposal
 
-This document provides a comprehensive explanation of what a project proposal should encompass. The content here is detailed and is intended to highlight the guiding principles rather than merely listing expectations. The sections that follow contain all the necessary information to understand the requirements for creating a project proposal.
-
-
-## General Requirements for the Document
-- All submissions must be composed in markdown format.
-- All sources must be cited unless the information is common knowledge for the target audience.
-- The document must be written in third person.
-- The document must identify all stakeholders including the instuctor, supervisor, and customer.
-- The problem must be clearly defined using "shall" statements.
-- Existing solutions or technologies that enable novel solutions must be identified.
-- Success criteria must be explicitly stated.
-- An estimate of required skills, costs, and time to implement the solution must be provided.
-- The document must explain how the customer will benefit from the solution.
-- Broader implications, including ethical considerations and responsibilities as engineers, must be explored.
-- A list of references must be included.
-- A statement detailing the contributions of each team member must be provided.
-
-
 ## Introduction
-
-The introduction must be the opening section of the proposal. It acts as the "elevator pitch" of the project, briefly introducing the objective, its importance, and the proposed solution. Because readers may only read this section, it should effectively capture their attention and encourage them to read further.
-
-Toward the end of the introduction, include a subsection that outlines what the proposal will cover. This helps set reader expectations for the ensuing sections.
 
 Siemens Healthineers is a company that develops medical technologies, PET scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling. This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
 
