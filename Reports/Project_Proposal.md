@@ -93,7 +93,16 @@ Electromagnetic Interference shall be an optional consideration in the design of
 
 ## Survey of Existing Solutions
 
-Research existing solutions, whether in literature, on the market, or within the industry. Present these findings in a coherent, organized manner. Remember to cite all information that is not common knowledge.
+Solutions to this problems exist in many forms. 
+
+Siemens already has an existing solution to this problem that we are iterating upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has more points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than our proposed solution.
+
+Bias Tee modules do exist and could be used, but will not be custom made for the specific frequencies that Siemens will be using in their scanners. In addition to that, any medical machinery requires utmost precision, and a custom-built solution is necessary in this situation.
+
+The Jitter cleaning will mostly be done in the Si5345B chip, so no solutions exist for this focus as we would need a custom solution to be compatible with that IC.
+
+For the back channel communications, we will likely use a pre-existing protocol for digital communication and fit it to our current solution. Like the second focus, this would be a custom solution to make it compatible with the apparatus.
+
 
 
 ## Measures of Success
