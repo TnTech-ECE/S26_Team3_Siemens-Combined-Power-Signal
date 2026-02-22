@@ -24,6 +24,7 @@ The introduction must be the opening section of the proposal. It acts as the "el
 
 Toward the end of the introduction, include a subsection that outlines what the proposal will cover. This helps set reader expectations for the ensuing sections.
 
+Siemens Healthineers is a company that develops medical technologies. PET scanners are one of the technologies they develop. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling. This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
 
 ## Formulating the Problem
 
@@ -34,6 +35,8 @@ Questions to consider:
 - Why do we need this solution?
 - What challenges necessitate a dedicated, multi-person engineering team?
 - Why aren’t off-the-shelf solutions sufficient?
+
+
 
 ### Background
 
