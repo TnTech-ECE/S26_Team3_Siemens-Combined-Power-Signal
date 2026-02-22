@@ -58,7 +58,7 @@ The system shall utelize two Bias-Tee circuits, used for both coupling and decou
 - The line voltage shall be 48 V DC. (subscripting in markdown?)
 - The system shall be capable of supporting up to 100 W of power.
     - A switching power supply(s) shall be provided by Siemens Healthineers.
-- The ripple voltage observed at the receiving unit (RX) shall a soft maximum of 200 mV.
+- The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
 - The total ripple current after current DC-DC conversion shall not exceed ~ 30 mV.
 - External connections for the system are unrestricted, however the following are suggested:
     - Clock input/output: SMA (SubMiniature version A) connectors.
@@ -69,7 +69,7 @@ The system shall utelize two Bias-Tee circuits, used for both coupling and decou
 - The system shall utelize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
     - Bandpass filtering for reference clock recovery shall be fixed at 2.5 MHz, with no requirement for tuneable filtering.
 - The receiver (RX) shall be equiped with a Silicon Labs PLL (Si5345B) for jitter attenuation, currently used by Siemens Healthineers.
-    - Jitter measurement shall be high-fidelity (> 1 ps?).
+    - Jitter measurement shall be high-fidelity (< 1 ps?).
 - A 25 MHz output clock shall be synthesized via PLL for the following jitter measurements:
     - Cycle-to-Cycle
     - Output clock relative to reference clock
@@ -177,11 +177,11 @@ Estimate of the cost for major materials needed:
 #### Team Skills
 
 **Levi Cantrell**  
-- *Current Skills:* [Add Skills Here]
-- *Skills to Learn:* [Add Skills Here]
+- *Current Skills:* LTSpice, VHDL, Hardware Analysis and Troubleshooting, Hand Soldering (Rework/Repair), Microcontrollers
+- *Skills to Learn:* Altium,  Signal Processing
 
 **Tyler Chan**  
-- *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab
+- *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab, 
 - *Skills to Learn:* Circuit Design Knowledge, Altium
 
 **Jonas Cross**  
@@ -193,8 +193,8 @@ Estimate of the cost for major materials needed:
 - *Skills to Learn:* [Add Skills Here]
 
 **Ryan Shipwash**  
-- *Current Skills:* [Add Skills Here]
-- *Skills to Learn:* [Add Skills Here]
+- *Current Skills:* LTspice, Signal Processing, C/C++, Matlab, Circuit Design
+- *Skills to Learn:* Altium, PCB Design
 
 *Note:* This list emphasizes the members' strongest skills. Depending on the progress and project, required skills or assignments may change.
 
@@ -241,9 +241,11 @@ Our project is tailor made for Siemens and their proprietary PET system, however
 
 1. Public Health Impacts
 
+The combined clock and power device will impact both doctors and patients. For doctors, the device will be smaller than Siemens' existing solution, providing more space for them to use for other medical equipment or devices. For patients, the device will make the PET system more reliable. This will decrease both the number of times the PET system will be down, and decrease the amount of time it takes for the PET system to return back online. Because of that, the PET system can be used more often, and will help diagnose more people with medical conditions. The benefits to both doctors and patients will hopefully lead to more diagnoses and save more lives.
+
 2. Considerations for the Medical Field:
 
-Per Siemens, this project will not need to follow any specific codes or regulations for the medical field. 
+Per Siemens, this project will not need to follow any specific codes or regulations for the medical field. However, extra care must be taken, as this project is an integral part of life saving medical equipment. As engineers, we must take into account the implications of our product failing. In this case, if our project fails, that means that there will be more downtime on life saving medical equipment which could lead to a delay medical emergencies being detected. In extreme cases, that extra time could be the difference in life or death. We can't expect the system to be without failure, but we will need to take extra care and consideration in the reliability of our product. Even though it does not come into direct contact with patients, the consequences of failing will still impact them.
 
 3. Ethical Responsibilities:
 
