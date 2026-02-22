@@ -176,8 +176,8 @@ Theory and Analysis: Signal Processing and Filtering
 - *Skills to Learn:* [Add Skills Here]
 
 **Ryan Shipwash**  
-- *Current Skills:* [Add Skills Here]
-- *Skills to Learn:* [Add Skills Here]
+- *Current Skills:* LTspice, Signal Processing, C/C++, Matlab, Circuit Design
+- *Skills to Learn:* Altium, PCB Design
 
 *Note:* This list emphasizes the members' strongest skills. Depending on the progress and project, required skills or assignments may change.
 
