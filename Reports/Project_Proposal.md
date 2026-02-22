@@ -239,12 +239,9 @@ In summary, this project has the ability to greatly improve the care provided to
 
 ## References
 
-[1] "RF/Microwave Bias Tees from Theory to Practice," *blog.minicircuits.com*, July 31, 2023. [Online]. Available: https://blog.minicircuits.com/rf-microwave-bias-tee-basics/. [Accessed Feb. 12, 2026].
+[1] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
 [2] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
-
-[3] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026). 
-
 
 ## Statement of Contributions
 
