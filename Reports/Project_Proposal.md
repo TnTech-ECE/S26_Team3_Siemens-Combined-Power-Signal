@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Siemens Healthineers is a company that develops medical technologies, Positron Emission Tomography (PET) scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling. This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
+Siemens Healthineers is a company that develops medical technologies, PET scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling. This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
 
 ## Formulating the Problem
 
@@ -10,7 +10,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 ### Background
 
-PET Scanners are complicated machines with many components. To start, a patient has a tracer that emits positrons injected into their body. Different tracers can work to image different organs. The patient is then placed on a gantry and moved into a detector ring. Positrons annihilate with electrons and produce two gamma rays approximately 180 degrees out of phase, so with proper timing and position, these detectors can use two detections and that 180 degree angle to triangulate the position of the annihilation. A plot of these annihilations will image the desired organs. 
+PET Scanners are complicated machines with many components. To start, a patient has a tracer that emits positrons injected into their body. Different tracers can work to image different organs. The patient is then placed on a gantry and moved into a detector ring. Positrons annihilate with electrons and produce two gamma rays approximately 180 degrees out of phase, so with proper timing and position, these detectors can use two detections and that 180 degree angle to triangulate the position of the annihilation. A plot of these annihilations will image the desired organs.
 
 ### Specifications and Constraints
 
@@ -24,7 +24,7 @@ The ComCap system shall meet the following specifications outlined by Siemens He
 
 #### Bias-Tee: Primary Focus
 
-The system shall utelize two Bias-Tee circuits, used for both coupling and decoupling the AC information with DC power at the transmitter (TX) and receiver (RX) respectively.
+The system shall utilize two Bias-Tee circuits, used for both coupling and decoupling the AC information with DC power at the transmitter (TX) and receiver (RX) respectively.
 - The line voltage shall be 48 V DC. (subscripting in markdown?)
 - The system shall be capable of supporting up to 100 W of power.
     - A switching power supply(s) shall be provided by Siemens Healthineers.
@@ -36,9 +36,9 @@ The system shall utelize two Bias-Tee circuits, used for both coupling and decou
 
 #### Synchronization Path: Secondary Focus
 
-- The system shall utelize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
+- The system shall utilize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
     - Bandpass filtering for reference clock recovery shall be fixed at 2.5 MHz, with no requirement for tuneable filtering.
-- The receiver (RX) shall be equiped with a Silicon Labs PLL (Si5345B) for jitter attenuation, currently used by Siemens Healthineers.
+- The receiver (RX) shall be equipped with a Silicon Labs PLL (Si5345B) for jitter attenuation, currently used by Siemens Healthineers.
     - Jitter measurement shall be high-fidelity (< 1 ps?).
 - A 25 MHz output clock shall be synthesized via PLL for the following jitter measurements:
     - Cycle-to-Cycle
@@ -46,17 +46,17 @@ The system shall utelize two Bias-Tee circuits, used for both coupling and decou
 
 #### Back-Channel Communications Path: Tertiary Focus (Time Permitting)
 
-The system may incorperate back-channel communications to assist with debugging, troubleshooting, and lower-level system synchronization messages. (???)
+The system may incorporate back-channel communications to assist with debugging, troubleshooting, and lower-level system synchronization messages. (???)
 - There is no definite required buad rate for communications, however the suggested range is 500 kbps to 1 Mbps.
 - There is no definite requirement for the type of modulation used, however FSK (Frequency-Shift Keying) is recommended.
-- There is no definite requirement for modulation hardware, however a PLC (Power Line Communitcation) modem similar to the ST7540 model is recommended for the following reasons:
-    - This modem allows easy interfacing into a microcontroler via UART or SPI interfacing.
+- There is no definite requirement for modulation hardware, however a PLC (Power Line Communication) modem similar to the ST7540 model is recommended for the following reasons:
+    - This modem allows easy interfacing into a microcontroller via UART or SPI interfacing.
     - This modem provides bi-directional (half-duplex) capabilities.
 - Siemens Healthineers expresses extensive freedom for the implementation of back-channel communications.
 
 #### Analysis & Simulations
 
-Files for measurements obtained via analysis and simulations shall be provided to Seimens Healthineers for the following:
+Files for measurements obtained via analysis and simulations shall be provided to Siemens Healthineers for the following:
 - Bias-Tee and Line Interface Simulations
     - AC insertion loss
     - Behavior under load transients
@@ -189,7 +189,7 @@ During the conceptual design phase, group members will determine further what to
 
 ## Specific Implications
 
-By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET system to the clock and power supply. Outlined below are the benefits for Siemens (our customer). The project has value in simplifying and minimizing the size of Siemens' existing solution for their PET system as well as removing common points of error.
+By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply. Outlined below are the benefits for Siemens (our customer). The project has value in simplifying and minimizing the size of Siemens' existing solution for their PET system as well as removing common points of error.
 
 1. Minimizing Size:
 
