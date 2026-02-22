@@ -170,9 +170,9 @@ Estimate of the cost for major materials needed:
 ### Personnel
 
 #### Required Skills
-Hardware and Circuit Design: Circuit design knowledge, Power Systems, Cable Design, PCB Design, Component Sourcing
-Design and Simulations Tools: LTspice, Matlab, Altium, LT Powercad
-Theory and Analysis: Signal Processing and Filtering, Power Systems
+- **Hardware and Circuit Design:** Circuit design knowledge, Power Systems, Cable Design, PCB Design, Component Sourcing
+- **Design and Simulations Tools:** LTspice, Matlab, Altium, LT Powercad
+- **Theory and Analysis:** Signal Processing and Filtering, Power Systems
 
 #### Team Skills
 
