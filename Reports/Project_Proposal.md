@@ -167,8 +167,8 @@ Estimate of the cost for major materials needed:
 
 **Harry Rudd**  
 
-- *Current Skills:* LTSpice, MATLAB, Python, EMI, Microcontrollers
-- *Skills to Learn:* Cable Design, Signal Processing and Filtering, Power Systems, Altium
+- *Current Skills:* LTSpice, MATLAB, Python
+- *Skills to Learn:* Cable Design, Signal Processing and Filtering, Power Systems
 
 **Ryan Shipwash**
 
@@ -233,7 +233,7 @@ Per Siemens Healthineers, this project will not need to follow any specific code
 
 3. Ethical Responsibilities:
 
-As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [3]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will use all of its gained knowledge and skills to produce the most effective product possible, without compromising the safety of others. The team will be truthful in all of the things that it does, even if that means failure of the project. An unsuccessful product is much better than an unsafe one. The team will be transparent in all its actions, as an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
+As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [1]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will use all of its gained knowledge and skills to produce the most effective product possible, without compromising the safety of others. The team will be truthful in all of the things that it does, even if that means failure of the project. An unsuccessful product is much better than an unsafe one. The team will be transparent in all its actions, as an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
 
 In summary, this project has the ability to greatly improve the care provided to patients and improve the lives of doctors performing their duties. By bearing in mind the severity of the team's work and conducting itself in an ethical manner, the team will fulfil its duty to create this project without any harm or deception.
 
@@ -245,4 +245,14 @@ In summary, this project has the ability to greatly improve the care provided to
 
 ## Statement of Contributions
 
-Each team member must contribute meaningfully to the project proposal. In this section, each team member is required to document their individual contributions to the report. One team member may not record another member's contributions on their behalf. By submitting, the team certifies that each member's statement of contributions is accurate.
+Levi Cantrell - [Add contributions]
+
+Tyler Chan - Resources, Budget, Personnel
+
+Jonas Cross - [Add contributions]
+
+Harry Rudd - [Add contributions]
+
+Ryan Shipwash - [Add contributions]
+
+All - Proofreading and Editing
