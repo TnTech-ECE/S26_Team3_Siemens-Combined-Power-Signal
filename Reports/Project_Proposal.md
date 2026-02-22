@@ -144,15 +144,15 @@ During the conceptual design phase, group members will determine further what to
 
 ## Specific Implications
 
-By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply. Outlined below are the benefits for Siemens (our customer). The project has value in simplifying and minimizing the size of Siemen's existing solution for their PET system as well as removing common points of error.
+By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply. Outlined below are the benefits for Siemens (our customer). The project has value in simplifying and minimizing the size of Siemens' existing solution for their PET system as well as removing common points of error.
 
 1. **Minimizing the Size**
 
-Combining the clock and power into one module minimizes the space needed for those components. Instead of needing two boxes for clock and power individually, the combination will fit in a single box. In a medical environment minimizing space is important as every bit of space saved gives medical professionals more space to use for other things. For our customer, the space saved can help them more effectively sell their PET system. Tangibly, as stated above, the solution will condense two systems into one. This will greatly decrease the space needed for clock and power in the final product. This is worthwhile because space is a great concern in the medical field, and lessening space restrictions can improve the efficiency of the space in the hospital or clinic that is using Siemen's PET system.
+Combining the clock and power into one module minimizes the space needed for those components. Instead of needing two boxes for clock and power individually, the combination will fit in a single box. In a medical environment minimizing space is important as every bit of space saved gives medical professionals more space to use for other things. For our customer, the space saved can help them more effectively sell their PET system. Tangibly, as stated above, the solution will condense two systems into one. This will greatly decrease the space needed for clock and power in the final product. This is worthwhile because space is a great concern in the medical field, and lessening space restrictions can improve the efficiency of the space in the hospital or clinic that is using Siemens' PET system.
 
 2. **Simplifying the Existing Solution**
 
-Combining the clock and power systems also simplifies the overall PET system by reducing the total number of subsystems.
+Combining the clock and power systems also simplifies the overall PET system by reducing the total number of subsystems. Tangibly, this means removing the extra components required for both a clock and power to be sent to the PET system. This is worthwhile to Siemens, because it decreases the number of systems needed to maintain. It is also potentially cheaper, because there will be less cabling and hardware to manufacture and maintain.
 
 3. **Removing Common Points of Error**
 
