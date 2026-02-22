@@ -12,7 +12,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 PET Scanners are complicated machines with many components. To start, a patient has a tracer that emits positrons injected into their body. Different tracers can work to image different organs. The patient is then placed on a gantry and moved into a detector ring. Positrons annihilate with electrons and produce two gamma rays approximately 180 degrees out of phase, so with proper timing and position, these detectors can use two detections and that 180 degree angle to triangulate the position of the coincidence events. A plot of these coincidence events will image the desired organs.
 
-Their system for managing the clocks, power, and communcations are all separate units within the coincidence processing unit. This takes up a lot of space and has many points of failure, since all three need their own cabling. Our proposed solution involves combining as many of these as we can in order to provide for a more efficient scanner. 
+Their system for managing the clocks, power, and communications are all separate units within the coincidence processing unit. This takes up a lot of space and has many points of failure, since all three need their own cabling. Our proposed solution involves combining as many of these as we can in order to provide for a more efficient scanner. 
 
 ### Specifications and Constraints
 
@@ -92,7 +92,16 @@ Electromagnetic Interference shall be an optional consideration in the design of
 
 ## Survey of Existing Solutions
 
-Research existing solutions, whether in literature, on the market, or within the industry. Present these findings in a coherent, organized manner. Remember to cite all information that is not common knowledge.
+Solutions to this problems exist in many forms. 
+
+Siemens already has an existing solution to this problem that we are iterating upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has more points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than our proposed solution.
+
+Bias Tee modules do exist and could be used, but will not be custom made for the specific frequencies that Siemens will be using in their scanners. In addition to that, any medical machinery requires utmost precision, and a custom-built solution is necessary in this situation.
+
+The Jitter cleaning will mostly be done in the Si5345B chip, so no solutions exist for this focus as we would need a custom solution to be compatible with that IC.
+
+For the back channel communications, we will likely use a pre-existing protocol for digital communication and fit it to our current solution. Like the second focus, this would be a custom solution to make it compatible with the apparatus.
+
 
 
 ## Measures of Success
