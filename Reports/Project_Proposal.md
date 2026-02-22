@@ -158,6 +158,8 @@ Combining the clock and power systems also simplifies the overall PET system by 
 
 A common point of error in the PET system are the connections on the cables themselves. By combining the clock and power onto one cable, the number of connections needed are cut in half. Tangibly, this is self explanatory. Less connections means less points of failure and, in the event of a failure, less connections to test. This is worthwhile because it simultaneously reduces the number of places a cable failure can take place and it reduces the time it takes to narrow down where that failure is. Thus, letting a technician fix it in a more timely manner, and reducing the overall downtime of the machine when it fails.
 
+Overall, this solution streamlines Siemens' existing product without sacrificing any of its existing functionality. It's worthiness lies in its ability to reduce the space required, simplify two separate subsystems into one, and remove common points of error. This senior design projects improves real-world medical equipment, and brings a sleek innovation to an existing product.
+
 ## Broader Implications, Ethics, and Responsibility as Engineers
 
 Consider the project’s broader impacts in global, economic, environmental, and societal contexts. Identify potential negative impacts and propose mitigation strategies. Detail the ethical considerations and responsibilities each team member bears as an engineer.
