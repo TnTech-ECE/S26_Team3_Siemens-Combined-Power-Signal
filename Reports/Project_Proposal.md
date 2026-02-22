@@ -127,7 +127,7 @@ During the conceptual design phase, group members will determine further what to
 ### Timeline
 
 #### Gantt Chart (The chart may be subject to modification during project progression)
-# [ADD CHART]
+<img width="1324" height="321" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Project_Proposal/images/Capstone_1_Team_3_Gantt_Chart.png" />
 
 ## Specific Implications
 
