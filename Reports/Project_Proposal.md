@@ -146,15 +146,15 @@ During the conceptual design phase, group members will determine further what to
 
 By developing a combined clock and power module, this project aims to address the challenges associated with having multiple modules for clock, power, and communication. Those challenges include size constraints as well as simplifying the previous design to include only one cable connecting the PET (Positron Emission Tomography) system to the clock and power supply. Outlined below are the benefits for Siemens (our customer). The project has value in simplifying and minimizing the size of Siemens' existing solution for their PET system as well as removing common points of error.
 
-1. **Minimizing the Size**
+1. Minimizing Size:
 
 Combining the clock and power into one module minimizes the space needed for those components. Instead of needing two boxes for clock and power individually, the combination will fit in a single box. In a medical environment minimizing space is important as every bit of space saved gives medical professionals more space to use for other things. For our customer, the space saved can help them more effectively sell their PET system. Tangibly, as stated above, the solution will condense two systems into one. This will greatly decrease the space needed for clock and power in the final product. This is worthwhile because space is a great concern in the medical field, and lessening space restrictions can improve the efficiency of the space in the hospital or clinic that is using Siemens' PET system.
 
-2. **Simplifying the Existing Solution**
+2. Simplifying the Existing Solution:
 
-Combining the clock and power systems also simplifies the overall PET system by reducing the total number of subsystems. Tangibly, this means removing the extra components required for both a clock and power to be sent to the PET system. This is worthwhile to Siemens, because it decreases the number of systems needed to maintain. It is also potentially cheaper, because there will be less cabling and hardware to manufacture and maintain.
+Combining the clock and power systems also simplifies the overall PET system by reducing the total number of subsystems. This means removing the extra components required for both a clock and power to be sent to the PET system, and combining it into one box. Tangibly, this means less materials to manufacture and maintain. This also means less cabling to and from subsystems. This is worthwhile to Siemens, because it is potentially cheaper. There will be less cabling and hardware to manufacture, and Siemens will not have to spend as much time troubleshooting PET Systems.
 
-3. **Removing Common Points of Error**
+3. Removing Common Points of Error:
 
 A common point of error in the PET system are the connections on the cables themselves. By combining the clock and power onto one cable, the number of connections needed are cut in half. Tangibly, this is self explanatory. Less connections means less points of failure and, in the event of a failure, less connections to test. This is worthwhile because it simultaneously reduces the number of places a cable failure can take place and it reduces the time it takes to narrow down where that failure is. Thus, letting a technician fix it in a more timely manner, and reducing the overall downtime of the machine when it fails.
 
