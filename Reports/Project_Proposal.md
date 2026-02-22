@@ -162,8 +162,8 @@ Estimate of the cost for major materials needed:
 
 **Jonas Cross**  
 
-- *Current Skills:* [Add Skills Here]
-- *Skills to Learn:* [Add Skills Here]
+- *Current Skills:* Analog and Digital Telecommunications, Computer Design, LTSpice, Python, Matlab, C, VHDL, Soldering (SMD and THT),
+- *Skills to Learn:* DSP, Transmission Lines, Altium, Power
 
 **Harry Rudd**  
 
