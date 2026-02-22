@@ -66,7 +66,6 @@ Files for measurements obtained via analysis and simulations shall be provided t
 - The size of the ComCap system shall not be constricted.
 - PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
 
-
 ### Constraints
 
 #### Industrial Standards and Regulations
