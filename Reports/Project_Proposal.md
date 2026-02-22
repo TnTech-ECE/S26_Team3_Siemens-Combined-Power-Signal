@@ -162,7 +162,11 @@ Overall, this solution streamlines Siemens' existing product without sacrificing
 
 ## Broader Implications, Ethics, and Responsibility as Engineers
 
-Consider the project’s broader impacts in global, economic, environmental, and societal contexts. Identify potential negative impacts and propose mitigation strategies. Detail the ethical considerations and responsibilities each team member bears as an engineer.
+Our project is tailor made for Siemens and their proprietary PET system, however that does not entirely mean that there are not broader impacts that our combined clock and power solution will have. While the combined clock and power is not going to come into contact with any patients or the general public, we are still designing it for use in the medical field. Therefore, there are special considerations that we are going to have to make while designing our solution. This section will discuss those impacts in greater detail as well as discussing the general ethical responsibilities we will face in this project.
+
+1. Considerations for the Medical Field:
+
+2. Ethical Responsibilities:
 
 
 ## References
