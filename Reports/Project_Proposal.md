@@ -132,16 +132,18 @@ Estimate of the cost for major materials needed:
 
 | Item                      | Description / Notes                        | Quantity | Approx. Cost per unit (USD) |
 |---------------------------|--------------------------------------------|----------|-----------------------------|
-| Si53245B Clock Synth      | Generates and cleans clock signal          | 2        | $34.46                      |
+| Si5345B Clock Synth       | Generates and cleans clock signal          | 2        | $34.46                      |
 | Cables                    | Cables for I/O                             | 3        | $20–$30                     |
 | Main PCB                  | Generates clock and regulates power        | 1        | $20-$30                     |
 | Jitter Measurement PCB    | Measures jitter and analyzes power signal  | 1        | $20-$30                     |
 | Passive SMD Components    | Various components for circuits on PCBs    | 1 set    | $40-$50                     |
+| Cable Ports               | Ports for the cabling I/O on the PCB       | 2        | $5-$10                    |
 | Prototyping Cost          | Extra material, spares, test components    |          | $150                        |
 
 ### Personnel
 
 #### Required Skills
+
 - **Hardware and Circuit Design:** Circuit design knowledge, Power Systems, Cable Design, PCB Design, Component Sourcing
 - **Design and Simulations Tools:** LTspice, Matlab, Altium, LT Powercad
 - **Theory and Analysis:** Signal Processing and Filtering, Power Systems
@@ -149,22 +151,27 @@ Estimate of the cost for major materials needed:
 #### Team Skills
 
 **Levi Cantrell**  
+
 - *Current Skills:* LTSpice, VHDL, Hardware Analysis and Troubleshooting, Hand Soldering (Rework/Repair), Microcontrollers
 - *Skills to Learn:* Altium,  Signal Processing
 
 **Tyler Chan**  
+
 - *Current Skills:* PCB Design, Component Sourcing, LTspice, Python, Matlab, 
 - *Skills to Learn:* Circuit Design Knowledge, Altium
 
 **Jonas Cross**  
+
 - *Current Skills:* [Add Skills Here]
 - *Skills to Learn:* [Add Skills Here]
 
 **Harry Rudd**  
+
 - *Current Skills:* LTSpice, MATLAB, Python
 - *Skills to Learn:* Cable Design, Signal Processing and Filtering, Power Systems
 
-**Ryan Shipwash**  
+**Ryan Shipwash**
+
 - *Current Skills:* LTspice, Signal Processing, C/C++, Matlab, Circuit Design
 - *Skills to Learn:* Altium, PCB Design
 
@@ -173,20 +180,25 @@ Estimate of the cost for major materials needed:
 During the conceptual design phase, group members will determine further what to focus on. Each group member is primarily responsible for their expertise when working on their part of the project. If assistance is needed, the group member may seek advice from the supervisor, technical expert consultant, another group member, or external resource.
 
 #### Supervisor
+
 - **Professor Van Neste:** He was chosen because he has expertise in some signal processing and hardware aspects of the project.
 
 #### Instructor
+
 - **Professor Storm:** He will provide guidance as needed when the team goes to him for help. He will also approve of various aspects of the project as they progress.
 
 #### Technical Expert Consultant
+
 - **Dr. Jeffrey Austen** He was chosen because he is knowledgeable in signal processing and has experience and guidance to provide, particularly in resources and general direction for the project.
 
 #### Customer
+
 - **Siemens Healthineers**
 
 ### Timeline
 
 #### Gantt Chart (The chart may be subject to modification during project progression)
+
 <img width="1324" height="321" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Project_Proposal/images/Capstone_1_Team_3_Gantt_Chart.png" />
 
 ## Specific Implications
