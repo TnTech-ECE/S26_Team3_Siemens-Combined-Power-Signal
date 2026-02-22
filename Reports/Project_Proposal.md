@@ -228,7 +228,7 @@ The combined clock and power device will impact both doctors and patients. For d
 
 2. Considerations for the Medical Field:
 
-Per Siemens, this project will not need to follow any specific codes or regulations for the medical field. 
+Per Siemens, this project will not need to follow any specific codes or regulations for the medical field. However, extra care must be taken, as this project is an integral part of life saving medical equipment. As engineers, we must take into account the implications of our product failing. In this case, if our project fails, that means that there will be more downtime on life saving medical equipment which could lead to a delay medical emergencies being detected. In extreme cases, that extra time could be the difference in life or death. We can't expect the system to be without failure, but we will need to take extra care and consideration in the reliability of our product. Even though it does not come into direct contact with patients, the consequences of failing will still impact them.
 
 3. Ethical Responsibilities:
 
