@@ -249,6 +249,9 @@ Per Siemens, this project will not need to follow any specific codes or regulati
 
 3. Ethical Responsibilities:
 
+As engineers, we uphold values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics. We will emphasize the health and safety of the public and conduct ourselves in an honest matter. We will use all of our gained knowledge and skills to produce the most effective product we can, without compromising the safety of others. We will be truthful in all of the things that we do, even if that means failure of our project. An unsuccessful product is much better than an unsafe one. We will be transparent in all our actions, as we did not sign an NDA for this project, and we will meticulously document everything we do, so the customer can build upon our solution after we are removed from the project.
+
+In summary, this project has the ability to greatly improve the care provided to patients and improve the lives of the doctors performing their duties. By bearing in mind the severity of our work and conducting ourselves in an ethical manner, our team will fulfil its duty to create this project without any harm or deception.
 
 ## References
 
