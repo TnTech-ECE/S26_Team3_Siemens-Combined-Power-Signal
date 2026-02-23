@@ -80,9 +80,9 @@ EMI shall be an optional consideration in the design of the ComCap system. Sieme
 
 Solutions to this problems exist in many forms. 
 
-Siemens already has an existing solution to this problem that we are iterating upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has more points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than our proposed solution.
+Siemens already has an existing solution to this problem that we are iterating upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has more points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than our proposed solution [3].
 
-An existing solution is Power over Ethernet. Ethernet has four lanes and this necessitated a need for power to be sent over that 
+An existing solution is Power over Ethernet. Ethernet has a limited number of lanes since it needs to be backwards compatible, so it runs power and signal over the same lanes [4]. While this transfers both Data and Communication, it cannot transmit a clock signal, so our solution cannot be replaced by PoE.
 
 Bias Tee modules do exist and could be used, but will not be custom made for the specific frequencies that Siemens will be using in their scanners. In addition to that, any medical machinery requires utmost precision, and a custom-built solution is necessary in this situation. 
 
@@ -242,6 +242,8 @@ In summary, this project has the ability to greatly improve the care provided to
 [2] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
 
 [3] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
+
+[4] "IEEE Standard for Ethernet," in IEEE Std 802.3-2022 (Revision of IEEE Std 802.3-2018) , vol., no., pp.1-7025, 29 July 2022, doi: 10.1109/IEEESTD.2022.9844436.
 
 ## Statement of Contributions
 
