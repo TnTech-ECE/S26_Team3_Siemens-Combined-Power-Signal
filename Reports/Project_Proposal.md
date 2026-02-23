@@ -80,20 +80,17 @@ EMI shall be an optional consideration in the design of the ComCaP system. Sieme
 
 Solutions to this problems exist in many forms. 
 
-Siemens already has an existing solution to this problem that we are iterating upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has more points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than our proposed solution [3].
+Siemens already has an existing solution to this problem that this project would iterate upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has several points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than the proposed project [3].
 
-An existing solution is Power over Ethernet. Ethernet has a limited number of lanes since it needs to be backwards compatible, so it runs power and signal over the same lanes [4]. While this transfers both Data and Communication, it cannot transmit a clock signal, so our solution cannot be replaced by PoE.
+An existing solution is Power over Ethernet (PoE). Ethernet has a limited number of lanes since it needs to be backwards compatible, so it runs power and signal over the same lanes [4]. While this transfers both Data and Communication, it cannot transmit a clock signal, so PoE does not work for Siemens's needs.
 
 Bias Tee modules do exist and could be used, but will not be custom made for the specific frequencies that Siemens will be using in their scanners. In addition to that, any medical machinery requires utmost precision, and a custom-built solution is necessary in this situation. 
 
-<mentionSpecificSolutions>
+An example would be this bias tee from Ciglow (link https://a.co/d/0cw215gX) [6]. This tee mentions that "high frequency is affected by parasitic capacitance" [6] which is natural with any circuit, but for a precision application like this, we need to design a solution to prevent it from being too parasitic. In addition to that, the solution is required to be one box, which a separate bias tee would not qualify for. 
 
-The Jitter cleaning will mostly be done in the Si5345B chip, so no solutions exist for this focus as we would need a custom solution to be compatible with that IC.
+The Jitter cleaning will mostly be done in the Si5345B chip (as required by Siemens[3]). Few if any public solutions use this IC.
 
-For the back channel communications, we will likely use a pre-existing protocol for digital communication and fit it to our current solution. Like the second focus, this would be a custom solution to make it compatible with the apparatus.
-
-<products>
-<CiteSources>
+For the back channel communications, a pre-existing protocol with a compatible IC would work best. Like the second focus, this would be a custom solution to make it compatible with the apparatus.
 
 ## Measures of Success
 
@@ -247,6 +244,7 @@ In summary, this project has the ability to greatly improve the care provided to
 
 [5] STMicroelectronics, "FSK power line transceiver," ST7540 Data Sheet, 15 Mar 2006 Revised [25 Sep 2006].
 
+[6] Amazon.com: Ciglow Bias Tee Broadband, 25K-100MHz coaxial feed RF broadband radio frequency microwave coaxial bias., https://www.amazon.com/Ciglow-Broadband-25K-100MHz-Frequency-Microwave/dp/B07QGD5FCT (accessed Feb. 23, 2026). 
 ## Statement of Contributions
 
 Levi Cantrell - Specifications, Constraints
