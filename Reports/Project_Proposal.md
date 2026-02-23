@@ -14,11 +14,11 @@ PET Scanners are complicated machines with many components. To start, a patient 
 
 Their system for managing the clocks, power, and communications are all separate units within the coincidence processing unit. This takes up a lot of space and has many points of failure, since all three need their own cabling. Our proposed solution involves combining as many of these as we can in order to provide for a more efficient scanner. 
 
-### Specifications
+## Specifications
 
-The ComCap system shall meet the following specifications outlined by Siemens Healthineers:
+The ComCaP system shall meet the following specifications outlined by Siemens Healthineers [3]:
 
-#### Bias-Tee: Primary Focus
+### Bias-Tee: Primary Focus
 
 The system shall utilize two Bias-Tee circuits, used for both coupling and decoupling the AC information with DC power at the transmitter (TX) and receiver (RX) respectively.
 - The line voltage shall be 48 V<sub>DC</sub>.
@@ -30,7 +30,7 @@ The system shall utilize two Bias-Tee circuits, used for both coupling and decou
     - Clock input/output: SMA (SubMiniature version A) connectors.
     - A dedicated header for GUI connection.
 
-#### Synchronization Path: Secondary Focus
+### Synchronization Path: Secondary Focus
 
 - The system shall utilize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
     - Bandpass filtering for reference clock recovery shall be fixed at 2.5 MHz, with no requirement for tuneable filtering.
@@ -40,17 +40,17 @@ The system shall utilize two Bias-Tee circuits, used for both coupling and decou
     - Cycle-to-Cycle
     - Output clock relative to reference clock
 
-#### Back-Channel Communications Path: Tertiary Focus (Time Permitting)
+### Back-Channel Communications Path: Tertiary Focus (Time Permitting)
 
 The system may incorporate back-channel communications to assist with debugging and troubleshooting.
 - There is no definite required baud rate for communications, however the suggested range is 500 kbps to 1 Mbps.
 - There is no definite requirement for the type of modulation used, however FSK (Frequency-Shift Keying) is recommended.
-- There is no definite requirement for modulation hardware, however a PLC (Power Line Communication) modem similar to the ST7540 model is recommended for the following reasons:
+- There is no definite requirement for modulation hardware, however a PLC (Power Line Communication) modem similar to the ST7540 model [5] is recommended for the following reasons:
     - This modem allows easy interfacing into a microcontroller via UART or SPI interfacing.
     - This modem provides bi-directional (half-duplex) capabilities.
 - Siemens Healthineers expresses extensive freedom for the implementation of back-channel communications.
 
-#### Analysis & Simulations
+### Analysis & Simulations
 
 Files for measurements obtained via analysis and simulations shall be provided to Siemens Healthineers for the following:
 - Bias-Tee and Line Interface Simulations
@@ -61,20 +61,20 @@ Files for measurements obtained via analysis and simulations shall be provided t
     - 2.5 Mhz reference transport
     - Optional 1 Mhz back-channel carrier path
 
-#### Additional Specifications
+### Additional Specifications
 
-- The size of the ComCap system shall not be constricted.
+- The size of the ComCaP system shall not be constricted.
 - PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
 
-### Constraints
+## Constraints
 
-#### Industrial Standards and Regulations
+### Industrial Standards and Regulations
 
 An outline of standards and regulations pertaining to the project shall be provided to the team by Siemens Healthineers.
 
-#### EMI (Electromagnetic Interference)
+### EMI (Electromagnetic Interference)
 
-EMI shall be an optional consideration in the design of the ComCap system. Siemens Healthineers shall make modifications with the project in order to maintaince compliance with EMI standards.
+EMI shall be an optional consideration in the design of the ComCaP system. Siemens Healthineers shall make modifications with the project in order to maintaince compliance with EMI standards.
 
 ## Survey of Existing Solutions
 
@@ -245,9 +245,11 @@ In summary, this project has the ability to greatly improve the care provided to
 
 [4] "IEEE Standard for Ethernet," in IEEE Std 802.3-2022 (Revision of IEEE Std 802.3-2018) , vol., no., pp.1-7025, 29 July 2022, doi: 10.1109/IEEESTD.2022.9844436.
 
+[5] STMicroelectronics, "FSK power line transceiver," ST7540 Data Sheet, 15 Mar 2006 Revised [25 Sep 2006].
+
 ## Statement of Contributions
 
-Levi Cantrell - [Add contributions]
+Levi Cantrell - Specifications, Constraints
 
 Tyler Chan - Resources, Budget, Personnel
 
