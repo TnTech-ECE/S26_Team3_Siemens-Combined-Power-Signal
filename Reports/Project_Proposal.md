@@ -251,7 +251,7 @@ Levi Cantrell - Specifications, Constraints
 
 Tyler Chan - Resources, Budget, Personnel
 
-Jonas Cross - [Add contributions]
+Jonas Cross - Background, Survey of Existing Solutions
 
 Harry Rudd - Specific Implications, Broader Implications
 
