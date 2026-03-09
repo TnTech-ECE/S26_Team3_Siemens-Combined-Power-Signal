@@ -73,12 +73,12 @@ Files for measurements obtained via analysis and simulations shall be provided t
 The ComCaP system shall act as a proof of concept for Siemens Healthineers to build upon, improving systems within proprietary medical equipement with no realistic interaction between the system and the operator, patient, and/or general public. As such, the ComCap system is not strictly constrained by any industrial standards or regulations. However, the design of the ComCap system shall consider the following relevant electrical safety guidelines derived from IEC 60601-1 standards for medical electrical equipement [4]:
 
 #### IEC 60601-1
-- Creepage and Clearance: PCB layout shall consider creepage and clearance distances between conductive elements in accordance with guidelines derived from IEC 60601-1. Adequate spacing shall be maintained between high-potential nodes and low-voltage control circuitry to reduce the risk of dielectric breakdown and unintended current paths.
+- **Creepage and Clearance**: PCB layout shall consider creepage and clearance distances between conductive elements in accordance with guidelines derived from IEC 60601-1. Adequate spacing shall be maintained between high-potential nodes and low-voltage control circuitry to reduce the risk of dielectric breakdown and unintended current paths.
     - Power rails and signal traces shall be spaced to minimize electrical coupling and reduce the risk of short circuits. PCB layout rules shall enforce minimum trace spacing consistent with safety-oriented design practices used in IEC-60601-style hardware.
 
-- Operator Protection: The design shall incorporate operator protection considerations for connection and disconnection of external interfaces. Connectors shall be selected and arranged to reduce the likelihood of exposed conductive surfaces and to minimize risk during plugging or unplugging of cables.
+- **Operator Protection**: The design shall incorporate operator protection considerations for connection and disconnection of external interfaces. Connectors shall be selected and arranged to reduce the likelihood of exposed conductive surfaces and to minimize risk during plugging or unplugging of cables.
 
-- Single Fault Testing: Consistent with IEC 60601 design philosophy, the system shall be evaluated under single-fault conditions (e.g., component failure, short circuit, open circuit) to ensure that no hazardous conditions occur and that the system fails safely.
+- **Single Fault Testing**: Consistent with IEC 60601 design philosophy, the system shall be evaluated under single-fault conditions (e.g., component failure, short circuit, open circuit) to ensure that no hazardous conditions occur and that the system fails safely.
 
 ### EMI (Electromagnetic Interference)
 
