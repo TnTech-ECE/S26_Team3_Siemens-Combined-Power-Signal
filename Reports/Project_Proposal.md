@@ -2,11 +2,11 @@
 
 ## Introduction
 
-[1]Siemens Healthineers is a company that develops medical technologies, PET scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling. This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
+Siemens Healthineers is a company that develops medical technologies, PET scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling.[1] This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
 
 ## Formulating the Problem
 
-[1]Traditionally, PET scanners are made up rings of many detectors that need to be precisely synchronized. A separate piece of hardware is necessary to generate the clock and its own cabling to provide the clock to the detectors. Separate cabling is also needed for providing power to the detectors and back channel communication for trouble shooting. With the large number of detectors and the individual cabling for each of these, cabling complexity has become a problem especially with connections points being a common point of failure. The team's goal, set by Siemens, is to reduce complexity by running both the synchronization clock and back channel communications through the power cabling. This solution will lead to a decrease in space usage by combining the different systems into one unit and greatly reduce the volume of cables used. This solution will also reduce the points of failure with the reduction of connection points. The primary challenges will be determining how the separate signals will be delivered and processed to stay within provided constraints and determining the best cables to support the transfer of these combined signals at the required power.
+Traditionally, PET scanners are made up rings of many detectors that need to be precisely synchronized. A separate piece of hardware is necessary to generate the clock and its own cabling to provide the clock to the detectors. Separate cabling is also needed for providing power to the detectors and back channel communication for trouble shooting. With the large number of detectors and the individual cabling for each of these, cabling complexity has become a problem especially with connections points being a common point of failure. The team's goal, set by Siemens, is to reduce complexity by running both the synchronization clock and back channel communications through the power cabling.[1] This solution will lead to a decrease in space usage by combining the different systems into one unit and greatly reduce the volume of cables used. This solution will also reduce the points of failure with the reduction of connection points. The primary challenges will be determining how the separate signals will be delivered and processed to stay within provided constraints and determining the best cables to support the transfer of these combined signals at the required power.
 
 ### Background
 
@@ -34,7 +34,7 @@ The system shall utilize two Bias-Tee circuits, used for both coupling and decou
 
 - The system shall utilize a reference clock with a frequency of 2.5 MHz that is currently used by Siemens Healthineers.
     - Bandpass filtering for reference clock recovery shall be fixed at 2.5 MHz, with no requirement for tuneable filtering.
-- The receiver (RX) shall be equipped with a Skyworks model Si5345B PLL (Phase Lock Loop) for jitter attenuation, currently used by Siemens Healthineers.
+- The receiver (RX) shall be equipped with a Skyworks model Si5345B PLL (Phase Lock Loop) [2] for jitter attenuation, currently used by Siemens Healthineers.
     - Jitter measurement shall be high-fidelity.
 - A 25 MHz output clock shall be synthesized via PLL for the following jitter measurements:
     - Cycle-to-Cycle
@@ -45,7 +45,7 @@ The system shall utilize two Bias-Tee circuits, used for both coupling and decou
 The system may incorporate back-channel communications to assist with debugging and troubleshooting.
 - There is no definite required baud rate for communications, however the suggested range is 500 kbps to 1 Mbps.
 - There is no definite requirement for the type of modulation used, however FSK (Frequency-Shift Keying) is recommended.
-- There is no definite requirement for modulation hardware, however a PLC (Power Line Communication) modem similar to the ST7540 model [2] is recommended for the following reasons:
+- There is no definite requirement for modulation hardware, however a PLC (Power Line Communication) modem similar to the ST7540 model [3] is recommended for the following reasons:
     - This modem allows easy interfacing into a microcontroller via UART or SPI interfacing.
     - This modem provides bi-directional (half-duplex) capabilities.
 - Siemens Healthineers expresses extensive freedom for the implementation of back-channel communications.
@@ -70,7 +70,7 @@ Files for measurements obtained via analysis and simulations shall be provided t
 
 ### Industrial Standards and Regulations
 
-The ComCaP system shall act as a proof of concept for Siemens Healthineers to build upon, improving systems within proprietary medical equipement with no realistic interaction between the system and the operator, patient, and/or general public. As such, the ComCap system is not strictly constrained by any industrial standards or regulations. However, the design of the ComCap system shall consider the following relevant electrical safety guidelines derived from IEC 60601-1 standards for medical electrical equipement [3]:
+The ComCaP system shall act as a proof of concept for Siemens Healthineers to build upon, improving systems within proprietary medical equipement with no realistic interaction between the system and the operator, patient, and/or general public. As such, the ComCap system is not strictly constrained by any industrial standards or regulations. However, the design of the ComCap system shall consider the following relevant electrical safety guidelines derived from IEC 60601-1 standards for medical electrical equipement [4]:
 
 #### IEC 60601-1
 - Creepage and Clearance: PCB layout shall consider creepage and clearance distances between conductive elements in accordance with guidelines derived from IEC 60601-1. Adequate spacing shall be maintained between high-potential nodes and low-voltage control circuitry to reduce the risk of dielectric breakdown and unintended current paths.
@@ -88,24 +88,21 @@ EMI shall be an optional consideration in the design of the ComCaP system. Sieme
 
 Solutions to this problems exist in many forms. 
 
-Siemens already has an existing solution to this problem that we are iterating upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has more points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than our proposed solution [1].
+Siemens already has an existing solution to this problem that this project would iterate upon. Their solution is to send separate power and signal lines, which takes up more physical space in the Coincidence Processing Unit and has several points of failure. This solution does function for the needs of Siemens, but it takes up more space and has more points of failure than the proposed project [1].
 
-An existing solution is Power over Ethernet. Ethernet has a limited number of lanes since it needs to be backwards compatible, so it runs power and signal over the same lanes [4]. While this transfers both Data and Communication, it cannot transmit a clock signal, so our solution cannot be replaced by PoE.
+An existing solution is Power over Ethernet (PoE). Ethernet has a limited number of lanes since it needs to be backwards compatible, so it runs power and signal over the same lanes [5]. While this transfers both Data and Communication, it cannot transmit a clock signal, so PoE does not work for Siemens's needs.
 
 Bias Tee modules do exist and could be used, but will not be custom made for the specific frequencies that Siemens will be using in their scanners. In addition to that, any medical machinery requires utmost precision, and a custom-built solution is necessary in this situation. 
 
-<mentionSpecificSolutions>
+An example would be this bias tee from Ciglow (link https://a.co/d/0cw215gX) [6]. This tee mentions that "high frequency is affected by parasitic capacitance" [6] which is natural with any circuit, but for a precision application like this, we need to design a solution to prevent it from being too parasitic. In addition to that, the solution is required to be one box, which a separate bias tee would not qualify for. 
 
-The Jitter cleaning will mostly be done in the Si5345B chip [5], so no solutions exist for this focus as we would need a custom solution to be compatible with that IC.
+The Jitter cleaning will mostly be done in the Si5345B chip (as required by Siemens[1]). Few if any public solutions use this IC.
 
-For the back channel communications, we will likely use a pre-existing protocol for digital communication and fit it to our current solution. Like the second focus, this would be a custom solution to make it compatible with the apparatus.
-
-<products>
-<CiteSources>
+For the back channel communications, a pre-existing protocol with a compatible IC would work best. Like the second focus, this would be a custom solution to make it compatible with the apparatus.
 
 ## Measures of Success
 
-[1]Siemens will be measuring the success of this project by the completion of the three focuses that have been provided, the first two focuses being required completions while the third is an extra stretch goal to be approached once the first two are complete. Each focus has its own measure of success determined by PCB designs and simulation analysis. While production of PCBs and physical testing of components is an option, the simulation results will be the primary measurement of functionality of the system determined by the specifications provided.
+Siemens will be measuring the success of this project by the completion of the three focuses that have been provided, the first two focuses being required completions while the third is an extra stretch goal to be approached once the first two are complete. Each focus has its own measure of success determined by PCB designs and simulation analysis. While production of PCBs and physical testing of components is an option, the simulation results will be the primary measurement of functionality of the system determined by the specifications provided.
 
 ### Focus 1: Bias-T
 
@@ -126,7 +123,7 @@ This project will include primarily hardware components to implement the design:
 #### Hardware Components
 
 1. Bias Tee Circuitry: Specific Capacitors, Inductors, and Resistors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
-2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [5].
+2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [2].
 3. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
 4. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer.
 5. Cables: Cables will be procured or fabricated to carry the power and signal from the transmitter to the receiver. Present options for the cable are Ethernet or Coaxial cables.
@@ -239,7 +236,7 @@ Per Siemens Healthineers, this project will not need to follow any specific code
 
 3. Ethical Responsibilities:
 
-As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [6]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will use all of its gained knowledge and skills to produce the most effective product possible, without compromising the safety of others. The team will be truthful in all of the things that it does, even if that means failure of the project. An unsuccessful product is much better than an unsafe one. The team will be transparent in all its actions, as an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
+As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [7]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will use all of its gained knowledge and skills to produce the most effective product possible, without compromising the safety of others. The team will be truthful in all of the things that it does, even if that means failure of the project. An unsuccessful product is much better than an unsafe one. The team will be transparent in all its actions, as an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
 
 In summary, this project has the ability to greatly improve the care provided to patients and improve the lives of doctors performing their duties. By bearing in mind the severity of the team's work and conducting itself in an ethical manner, the team will fulfil its duty to create this project without any harm or deception.
 
@@ -247,16 +244,17 @@ In summary, this project has the ability to greatly improve the care provided to
 
 [1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
 
-[2] STMicroelectronics, "FSK power line transceiver," ST7540 Data Sheet, 15 Mar 2006 Revised [25 Sep 2006].
+[2] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
 
-[3] International Electrotechnical Commission, "Medical Electrical Equipment – Part 1: General Requirements for Basic Safety and Essential Performance," IEC 60601-1.
+[3] STMicroelectronics, "FSK power line transceiver," ST7540 Data Sheet, 15 Mar 2006 Revised [25 Sep 2006].
 
-[4] "IEEE Standard for Ethernet," in IEEE Std 802.3-2022 (Revision of IEEE Std 802.3-2018) , vol., no., pp.1-7025, 29 July 2022, doi: 10.1109/IEEESTD.2022.9844436.
+[4] International Electrotechnical Commission, "Medical Electrical Equipment – Part 1: General Requirements for Basic Safety and Essential Performance," IEC 60601-1.
 
-[5] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
+[5] "IEEE Standard for Ethernet," in IEEE Std 802.3-2022 (Revision of IEEE Std 802.3-2018) , vol., no., pp.1-7025, 29 July 2022, doi: 10.1109/IEEESTD.2022.9844436.
 
-[6] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
+[6] Amazon.com: Ciglow Bias Tee Broadband, 25K-100MHz coaxial feed RF broadband radio frequency microwave coaxial bias., https://www.amazon.com/Ciglow-Broadband-25K-100MHz-Frequency-Microwave/dp/B07QGD5FCT (accessed Feb. 23, 2026). 
 
+[7] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
 ## Statement of Contributions
 
@@ -264,9 +262,9 @@ Levi Cantrell - Specifications, Constraints
 
 Tyler Chan - Resources, Budget, Personnel
 
-Jonas Cross - [Add contributions]
+Jonas Cross - Background, Survey of Existing Solutions
 
-Harry Rudd - [Add contributions]
+Harry Rudd - Specific Implications, Broader Implications
 
 Ryan Shipwash - Introduction, Formulating the Problem, Measures of Success
 
