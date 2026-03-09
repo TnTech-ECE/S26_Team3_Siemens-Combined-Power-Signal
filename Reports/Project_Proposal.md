@@ -12,7 +12,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 PET Scanners are complicated machines with many components. To start, a patient has a tracer that emits positrons injected into their body. Different tracers can work to image different organs. The patient is then placed on a gantry and moved into a detector ring. Positrons annihilate with electrons and produce two gamma rays approximately 180 degrees out of phase, so with proper timing and position, these detectors can use two detections and that 180 degree angle to triangulate the position of the coincidence events. A plot of these coincidence events will image the desired organs.
 
-Their system for managing the clocks, power, and communications are all separate units within the coincidence processing unit. This takes up a lot of space and has many points of failure, since all three need their own cabling. Our proposed solution involves combining as many of these as we can in order to provide for a more efficient scanner. 
+Their system for managing the clocks, power, and communications are all separate units within the coincidence processing unit. This takes up a lot of space and has many points of failure, since all three need their own cabling. The team's proposed solution involves combining as many of these as possible in order to provide for a more efficient scanner. 
 
 ## Specifications
 
@@ -94,7 +94,7 @@ An existing solution is Power over Ethernet (PoE). Ethernet has a limited number
 
 Bias Tee modules do exist and could be used, but will not be custom made for the specific frequencies that Siemens will be using in their scanners. In addition to that, any medical machinery requires utmost precision, and a custom-built solution is necessary in this situation. 
 
-An example would be this bias tee from Ciglow (link https://a.co/d/0cw215gX) [6]. This tee mentions that "high frequency is affected by parasitic capacitance" [6] which is natural with any circuit, but for a precision application like this, we need to design a solution to prevent it from being too parasitic. In addition to that, the solution is required to be one box, which a separate bias tee would not qualify for. 
+An example would be this bias tee from Ciglow (link https://a.co/d/0cw215gX) [6]. This tee mentions that "high frequency is affected by parasitic capacitance" [6] which is natural with any circuit, but for a precision application like this, the team needs to design a solution to prevent it from being too parasitic. In addition to that, the solution is required to be one box, which a separate bias tee would not qualify for. 
 
 The Jitter cleaning will mostly be done in the Si5345B chip (as required by Siemens[1]). Few if any public solutions use this IC.
 
@@ -210,7 +210,7 @@ By developing a ComCaP system, this project aims to address the challenges assoc
 
 1. Minimizing Size:
 
-Combining the clock and power into one system minimizes the space needed for those components. Instead of needing two boxes for clock and power individually, the combination will fit in a single box. In a medical environment minimizing space is important as every bit of space saved gives medical professionals more space to use for other things. For our customer, the space saved can help them more effectively sell their PET system. Tangibly, as stated above, the solution will condense two systems into one. This is worthwhile because space is a great concern in the medical field, and lessening space restrictions can improve the efficiency of the space in the hospital or clinic that is using Siemens Healthineers' PET system.
+Combining the clock and power into one system minimizes the space needed for those components. Instead of needing two boxes for clock and power individually, the combination will fit in a single box. In a medical environment minimizing space is important as every bit of space saved gives medical professionals more space to use for other things. For the customer, the space saved can help them more effectively sell their PET system. Tangibly, as stated above, the solution will condense two systems into one. This is worthwhile because space is a great concern in the medical field, and lessening space restrictions can improve the efficiency of the space in the hospital or clinic that is using Siemens Healthineers' PET system.
 
 2. Simplifying the Existing Solution:
 
@@ -224,7 +224,7 @@ Overall, this solution streamlines Siemens Healthineers' existing product withou
 
 ## Broader Implications, Ethics, and Responsibility as Engineers
 
-Our project is tailor made for Siemens Healthineers and their proprietary PET system, however that does not entirely mean that there are not broader impacts that the ComCaP solution will have. While the ComCaP is not going to come into contact with any patients or the general public, the team is still designing it for use in the medical field. Therefore, the solution will have an impact on public health. There will also need to be special care taken, due to the impact that this will have on the medical well being of the patients using the PET machine. This section will discuss those impacts in greater detail as well as discussing the general ethical responsibilities the team will face in this project.
+The project is tailor made for Siemens Healthineers and their proprietary PET system, however that does not entirely mean that there are not broader impacts that the ComCaP solution will have. While the ComCaP is not going to come into contact with any patients or the general public, the team is still designing it for use in the medical field. Therefore, the solution will have an impact on public health. There will also need to be special care taken, due to the impact that this will have on the medical well being of the patients using the PET machine. This section will discuss those impacts in greater detail as well as discussing the general ethical responsibilities the team will face in this project.
 
 1. Public Health Impacts
 
