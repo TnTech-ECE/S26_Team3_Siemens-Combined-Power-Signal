@@ -81,9 +81,7 @@ For all subsystems, formulate detailed "shall" statements. Ensure these statemen
 
 ## Ethical, Professional, and Standards Considerations
 
-In the project proposal, each team must evaluate the broader impacts of the project on culture, society, the environment, public health, public safety, and the economy. Additionally, teams must consider relevant standards organizations that will inform the design process. A comprehensive discussion should be included on how these considerations have influenced the design. This includes detailing constraints, specifications, and practices implemented as a result, and how these address the identified considerations.
-
-## Broader Implications, Ethics, and Responsibility as Engineers
+<!--In the project proposal, each team must evaluate the broader impacts of the project on culture, society, the environment, public health, public safety, and the economy. Additionally, teams must consider relevant standards organizations that will inform the design process. A comprehensive discussion should be included on how these considerations have influenced the design. This includes detailing constraints, specifications, and practices implemented as a result, and how these address the identified considerations.-->
 
 The project is tailor made for Siemens Healthineers and their proprietary PET system, however that does not entirely mean that there are not broader impacts that the ComCaP solution will have. While the ComCaP is not going to come into contact with any patients or the general public, the team is still designing it for use in the medical field. Therefore, the solution will have an impact on public health. There will also need to be special care taken, due to the impact that this will have on the medical well being of the patients using the PET machine. This section will discuss those impacts in greater detail as well as discussing the general ethical responsibilities the team will face in this project.
 
