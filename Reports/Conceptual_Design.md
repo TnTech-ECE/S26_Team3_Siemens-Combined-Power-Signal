@@ -131,6 +131,7 @@ Revise the detailed timeline (Gantt chart) you created in the project proposal. 
 
 All sources utilized in the conceptual design that are not considered common knowledge must be properly cited. Multiple references should be included.
 
+[7] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
 ## Statement of Contributions
 
