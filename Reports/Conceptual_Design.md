@@ -83,6 +83,24 @@ For all subsystems, formulate detailed "shall" statements. Ensure these statemen
 
 In the project proposal, each team must evaluate the broader impacts of the project on culture, society, the environment, public health, public safety, and the economy. Additionally, teams must consider relevant standards organizations that will inform the design process. A comprehensive discussion should be included on how these considerations have influenced the design. This includes detailing constraints, specifications, and practices implemented as a result, and how these address the identified considerations.
 
+## Broader Implications, Ethics, and Responsibility as Engineers
+
+The project is tailor made for Siemens Healthineers and their proprietary PET system, however that does not entirely mean that there are not broader impacts that the ComCaP solution will have. While the ComCaP is not going to come into contact with any patients or the general public, the team is still designing it for use in the medical field. Therefore, the solution will have an impact on public health. There will also need to be special care taken, due to the impact that this will have on the medical well being of the patients using the PET machine. This section will discuss those impacts in greater detail as well as discussing the general ethical responsibilities the team will face in this project.
+
+1. Public Health Impacts
+
+The ComCaP device will impact both doctors and patients. For doctors, the device will be smaller than Siemens Healthineers' existing solution, providing more space for them to use for other medical equipment or devices. For patients, the device will make the PET system more reliable. This will decrease both the number of times the PET system will be down, and decrease the amount of time it takes for the PET system to return back online. Because of that, the PET system can be used more often, and will help diagnose more people with medical conditions. The benefits to both doctors and patients will hopefully lead to more diagnoses and save more lives.
+
+2. Considerations for the Medical Field:
+
+Per Siemens Healthineers, this project will not need to follow any specific codes or regulations for the medical field. However, extra care must be taken, as this project is an integral part of life saving medical equipment. As engineers, the team must take into account the implications of the product failing. In this case, if the project fails, that means that there will be more downtime on life saving medical equipment which could lead to a delay medical emergencies being detected. In extreme cases, that extra time could be the difference in life or death. The team can't expect the system to be without failure, but the team will need to take extra care and consideration in the reliability of the product. Even though it does not come into direct contact with patients, the consequences of failing will still impact them.
+
+3. Ethical Responsibilities:
+
+As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [7]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will use all of its gained knowledge and skills to produce the most effective product possible, without compromising the safety of others. The team will be truthful in all of the things that it does, even if that means failure of the project. An unsuccessful product is much better than an unsafe one. The team will be transparent in all its actions, as an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
+
+In summary, this project has the ability to greatly improve the care provided to patients and improve the lives of doctors performing their duties. By bearing in mind the severity of the team's work and conducting itself in an ethical manner, the team will fulfil its duty to create this project without any harm or deception.
+
 ## Resources
 
 This project will include primarily hardware components to implement the design: the Bias Tee circuits (Rx and Tx), the Si5345B Jitter-Cleaning Clock Synthesizer, ST7540 FSK Power Line Transceiver, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
