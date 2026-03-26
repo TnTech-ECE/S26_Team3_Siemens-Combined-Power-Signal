@@ -114,6 +114,20 @@ This project will include primarily hardware components to implement the design:
 
 Develop a budget proposal with justifications for expenses associated with each subsystem. Note that the total of this budget proposal can also serve as a specification for each subsystem. After creating the budgets for individual subsystems, merge them to create a comprehensive budget for the entire solution.
 
+<!-- This chart will likely change over time as the project progresses, as the exact materials needed is not certain yet -->
+Estimate of the cost for major materials needed:
+
+| Item                                 | Description / Notes                        | Quantity | Approx. Cost per unit (USD) |
+|--------------------------------------|--------------------------------------------|----------|-----------------------------|
+| Si5345B Clock Synth                  | Generates and cleans clock signal          | 2        | $34.46                      |
+| Cables                               | Cables for I/O                             | 3        | $20–$30                     |
+| Main PCB                             | Generates clock and regulates power        | 1        | $20-$30                     |
+| Jitter Measurement PCB               | Measures jitter and analyzes power signal  | 1        | $20-$30                     |
+| Passive SMD Components               | Various components for circuits on PCBs    | 1 set    | $40-$50                     |
+| Cable Ports                          | Ports for the cabling I/O on the PCB       | 2        | $5-$10                      |
+| ST7540 FSK Power Line Transceiver    | Transceiver for FSK Functionality          | 1        | $5-$10                      |
+| Prototyping Cost                     | Extra material, spares, test components    |          | $150                        |
+
 ### Division of Labor
 
 First, conduct a thorough analysis of the skills currently available within the team, and then compare these skills to the specific requirements of each subsystem. Based on this analysis, appoint a team member to take the specifications for each subsystem and generate a corresponding solution (i.e. detailed design). If there are more team members than subsystems, consider further subdividing the solutions into smaller tasks or components, thereby allowing each team member the opportunity to design a subsystem.
