@@ -98,6 +98,12 @@ The back channel communications will also be provided to the system as a not yet
 
 The cable will transport the combined signal produced by the bias tee. The cable will be up ten meters long and be capable of transporting both DC and RF. Currently, coaxial and twisted pair are being considered for the cable used.
 
+##### Functions
+
+##### Inputs
+
+##### Outputs
+
 ### Operational Flow Chart
 
 This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. So, the user involvement for this system is simply turning on the system causing the power and reference clock to pass through the system and allowing for any back channel communications to pass. If the user decides to use the back channel communications, they will be sent through the open channel.
@@ -119,6 +125,10 @@ Detail the operation of the subsystem:
 
 For all subsystems, formulate detailed "shall" statements. Ensure these statements are comprehensive enough so that an engineer who is unfamiliar with your project can design the subsystem based on your specifications. Assume the role of the customer in this context to provide clear and precise requirements.
 
+### Cable
+
+The cable
+- 
 
 ## Ethical, Professional, and Standards Considerations
 
