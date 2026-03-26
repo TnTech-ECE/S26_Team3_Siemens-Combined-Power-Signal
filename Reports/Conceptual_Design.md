@@ -85,7 +85,7 @@ The reference clock will also be provided to the system. It will enter and leave
 
 #### Communications
 
-The back channel communications will also be provided to the system as a not yet specified RF signal. The communications will be used to interact with the PET scanner. The team has freedom to approach this in many different ways, although this is considered a reach goal by the customer.
+The back channel communications will also be provided to the system as a not yet specified RF signal. The communications will be used to interact with the PET scanner. The communications will be able to be transmitted and received from both ends of the system. The team has freedom to approach this in many different ways, although this is considered a reach goal by the customer.
 
 #### Cable
 
