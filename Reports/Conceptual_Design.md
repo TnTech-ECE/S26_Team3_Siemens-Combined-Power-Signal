@@ -28,13 +28,30 @@ With these guidelines, each team is expected to create a suitable document to ac
 
 ## Introduction
 
-The introduction is intended to reintroduce the fully formulated problem. 
-
+Siemens Healthineers is a company that develops medical technologies, PET scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling.[1] This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
 
 ## Restating the Fully Formulated Problem
 
-The fully formulated problem is the overall objective and scope complete with the set of shall statements. This was part of the project proposal. However, it may be that the scope has changed. So, state the fully formulated problem in the introduction of the conceptual design and planning document. For each of the constraints, explain the origin of the constraint (customer specification, standards, ethical concern, broader implication concern, etc).
+Traditionally, PET scanners are made up rings of many detectors that need to be precisely synchronized. A separate piece of hardware is necessary to generate the clock and its own cabling to provide the clock to the detectors. Separate cabling is also needed for providing power to the detectors and back channel communication for trouble shooting. With the large number of detectors and the individual cabling for each of these, cabling complexity has become a problem especially with connections points being a common point of failure. The team's goal, set by Siemens, is to reduce complexity by running both the synchronization clock and back channel communications through the power cabling.[1] This solution will lead to a decrease in space usage by combining the different systems into one unit and greatly reduce the volume of cables used. This solution will also reduce the points of failure with the reduction of connection points. The primary challenges will be determining how the separate signals will be delivered and processed to stay within provided constraints and determining the best cables to support the transfer of these combined signals at the required power.
 
+### Specifications
+
+- The system shall utilize two Bias-Tee circuits, used for both coupling and decoupling the AC information with DC power at the transmitter (TX) and receiver (RX) respectively.
+- The line voltage shall be 48 V<sub>DC</sub>.
+- The system shall be capable of supporting up to 100 W of power.
+- The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
+- The total ripple current after voltage DC-DC conversion shall not exceed ~ 30 mV.
+- The system shall utilize a reference clock with a frequency of 2.5 MHz.
+- Band-pass filtering for reference clock recovery shall be fixed at 2.5 MHz.
+- The receiver (RX) shall be equipped with a Skyworks model Si5345B jitter attenuator.
+- Jitter measurement shall be high-fidelity.
+- A 25 MHz output clock shall be synthesized via PLL for jitter measurements.
+- The system may incorporate back-channel communications to assist with debugging and troubleshooting.
+- PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
+
+### Constraints
+
+- 
 
 ## Comparative Analysis of Potential Solutions
 
@@ -54,10 +71,29 @@ In the block diagram, each subsystem should be depicted by a single block. For e
 
 The end result should present a comprehensive view of a well-defined system, delegating all atomic responsibilities necessary to accomplish the project scope to their respective subsystems.
 
+#### Bias Tee
+
+The bias tee is the primary focus of this project and what brings every other subsection together. The bias tee will use an inductor to pass the DC power and capacitors to pass the RF clock and communications on the input side allowing all three to travel on the single cable. Then the bias tee will separate the signals again using an inductor for the DC and capacitors for the RF clock and communications.
+
+#### Power
+
+The power will be provided to the system in the form of a 48 V DC signal. The power must also output the system as a 48 V DC signal with minimal deviance. This is not being considered as an assigned subsystem due to it's simplicity and the bias tee subsystem handling it. However, it is important to represent it in the block diagram.
+
+#### Clock
+
+The reference clock will also be provided to the system. It will enter and leave the system as a 2.5 MHz RF signal. For the output of the clock from the system, a jitter cleaning clock synthesizer is used (Si5345B). There will also be a second clock output from the system of the reference clock scaled to 25 MHz to measure the cycle-to-cycle jitter.
+
+#### Communications
+
+The back channel communications will also be provided to the system as a not yet specified RF signal. The communications will be used to interact with the PET scanner. The team has freedom to approach this in many different ways, although this is considered a reach goal by the customer.
+
+#### Cable
+
+The cable will transport the combined signal produced by the bias tee. The cable will be up ten meters long and be capable of transporting both DC and RF. Currently, coaxial and twisted pair are being considered for the cable used.
 
 ### Operational Flow Chart
 
-Similar to a block diagram, the flow chart aims to specify the system, but from the user's point of view rather than illustrating the arrangement of each subsystem. It outlines the steps a user needs to perform to use the device and the screens/interfaces they will encounter. A diagram should be drawn to represent this process. Each step should be represented in the diagram to visually depict the sequence of actions and corresponding screens/interfaces the user will encounter while using the device.
+This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. So, the user involvement for this system is simply turning on the system causing the power and reference clock to pass through the system and allowing for any back channel communications to pass. If the user decides to use the back channel communications, they will be sent through the open channel.
 
 
 ## Atomic Subsystem Specifications
@@ -144,6 +180,11 @@ Revise the detailed timeline (Gantt chart) you created in the project proposal. 
 
 All sources utilized in the conceptual design that are not considered common knowledge must be properly cited. Multiple references should be included.
 
+[1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
+
+[2] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
+
+[7] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
 ## Statement of Contributions
 
