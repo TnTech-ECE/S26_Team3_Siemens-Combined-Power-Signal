@@ -94,12 +94,6 @@ The back channel communications will also be provided to the system as a not yet
 
 The cable will transport the combined signal produced by the bias tee. The cable will be up ten meters long and be capable of transporting both DC and RF. Currently, coaxial and twisted pair are being considered for the cable used.
 
-##### Functions
-
-##### Inputs
-
-##### Outputs
-
 ### Operational Flow Chart
 
 <img width="1307" height="448" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Flow%20Chart%201.png" />
