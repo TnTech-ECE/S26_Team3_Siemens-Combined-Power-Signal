@@ -33,8 +33,26 @@ The introduction is intended to reintroduce the fully formulated problem.
 
 ## Restating the Fully Formulated Problem
 
-The fully formulated problem is the overall objective and scope complete with the set of shall statements. This was part of the project proposal. However, it may be that the scope has changed. So, state the fully formulated problem in the introduction of the conceptual design and planning document. For each of the constraints, explain the origin of the constraint (customer specification, standards, ethical concern, broader implication concern, etc).
+Traditionally, PET scanners are made up rings of many detectors that need to be precisely synchronized. A separate piece of hardware is necessary to generate the clock and its own cabling to provide the clock to the detectors. Separate cabling is also needed for providing power to the detectors and back channel communication for trouble shooting. With the large number of detectors and the individual cabling for each of these, cabling complexity has become a problem especially with connections points being a common point of failure. The team's goal, set by Siemens, is to reduce complexity by running both the synchronization clock and back channel communications through the power cabling.[1] This solution will lead to a decrease in space usage by combining the different systems into one unit and greatly reduce the volume of cables used. This solution will also reduce the points of failure with the reduction of connection points. The primary challenges will be determining how the separate signals will be delivered and processed to stay within provided constraints and determining the best cables to support the transfer of these combined signals at the required power.
 
+### Specifications
+
+- The system shall utilize two Bias-Tee circuits, used for both coupling and decoupling the AC information with DC power at the transmitter (TX) and receiver (RX) respectively.
+- The line voltage shall be 48 V<sub>DC</sub>.
+- The system shall be capable of supporting up to 100 W of power.
+- The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
+- The total ripple current after voltage DC-DC conversion shall not exceed ~ 30 mV.
+- The system shall utilize a reference clock with a frequency of 2.5 MHz.
+- Band-pass filtering for reference clock recovery shall be fixed at 2.5 MHz.
+- The receiver (RX) shall be equipped with a Skyworks model Si5345B jitter attenuator.
+- Jitter measurement shall be high-fidelity.
+- A 25 MHz output clock shall be synthesized via PLL for jitter measurements.
+- The system may incorporate back-channel communications to assist with debugging and troubleshooting.
+- PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
+
+### Constraints
+
+- 
 
 ## Comparative Analysis of Potential Solutions
 
