@@ -171,7 +171,7 @@ Interface:
 
 ### Cable
 
-The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. 
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. As of now, a specific type of cable has not been selected. However, a twisted pair or a coaxial cable seem to be the most promising. 
 
 Function:
 - Transmit signals from the Tx to the Rx side of the ComCaP
@@ -187,8 +187,8 @@ Outputs:
 - RF back channel communications signal.
 
 Requirements:
-- Shall be able to connect and disconnect easily
-- Shall minimize electromagnetic interference with the rest of the system
+- Shall be able to connect and disconnect easily.
+- Shall minimize electromagnetic interference with the rest of the system.
 - Shall preserve the inputs and outputs during transmission to the best of its ability.
 
 
