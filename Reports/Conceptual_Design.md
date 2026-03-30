@@ -194,7 +194,7 @@ The primary standards that we will need to follow is the IEC 60601 [4]. These ar
 
 ## Resources
 
-This project will include primarily hardware components to implement the design: the Bias Tee circuits (Rx and Tx), the Si5345B Jitter-Cleaning Clock Synthesizer, the ST7540 FSK Power Line Transceiver, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
+This project will include primarily hardware components to implement the design: the Bias Tee circuits (Rx and Tx), the Si5345B Jitter-Cleaning Clock Synthesizer, the ST7580 FSK Power Line Transceiver, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
 
 #### Hardware Components
 
@@ -207,7 +207,7 @@ This project will include primarily hardware components to implement the design:
 
 ### Budget
 
-Develop a budget proposal with justifications for expenses associated with each subsystem. Note that the total of this budget proposal can also serve as a specification for each subsystem. After creating the budgets for individual subsystems, merge them to create a comprehensive budget for the entire solution.
+<!--Develop a budget proposal with justifications for expenses associated with each subsystem. Note that the total of this budget proposal can also serve as a specification for each subsystem. After creating the budgets for individual subsystems, merge them to create a comprehensive budget for the entire solution.-->
 
 <!-- This chart will likely change over time as the project progresses, as the exact materials needed is not certain yet -->
 Estimate of the cost for major materials needed:
