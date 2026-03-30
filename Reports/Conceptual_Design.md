@@ -70,7 +70,7 @@ An additional point to consider when selecting passive components, inductors and
 To fulfill the goal of reducing complexity of the clock, power, and communication systems, each system needs to be atomically considered along with systems to integrate these together. Following the focuses of the problem introduction presentation from Siemens Healthineers [1], the most integral system for the solution is a bias tee to transmit the frequencies over the transmission line. This is the system that will have the atomized systems built upon it. The atomized systems are as follows:
 
 - The power system takes power from outside and prepares it to be transmitted. The clock system
-- The clock system generates a clock and transmits it on one end, and it recevies and filters jitter on the other end. This system will have accessible measurement to measure the jitter.
+- The clock system generates a clock and transmits it on one end, and it receives and filters jitter on the other end. This system will have accessible measurement to measure the jitter.
 - The communication system takes data input and packages it to be transmitted on one end, then unpackages and outputs the communications on the other end.  
 
 
