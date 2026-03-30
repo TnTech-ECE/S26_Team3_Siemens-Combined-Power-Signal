@@ -47,9 +47,9 @@ The suggestion from Siemens was to use the ST7540, but that product is no longer
 The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is 
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom
+The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50] The primary considerations for the cable is the electromagnetic interference, and the transmission line characteristics of the cable.
 
-
+Siemens suggested that we use a twisted strand cable for our 
 
 
 ## High-Level Solution
@@ -277,7 +277,8 @@ Reference Manual, July 2016 Revised [September 2018]
 [7] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
 [66] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
-‌
+
+[50] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
 
 ## Statement of Contributions
 
