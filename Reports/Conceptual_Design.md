@@ -59,12 +59,16 @@ In this section, various potential solutions are hypothesized, design considerat
 
 ### Bias Tee
 
-The bias tee is the main approach to problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal.
+The bias tee is the main approach to problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. <!--T-->
 
+Another important aspect of the bias tee to consider is the filtering to ensure that the ac signal does not leak into the DC signal and create fluctuations in the voltage supplied. This can be done by including a bypass capacitor to ground from the DC source to remove some of the fluctuation. However, this can result in resonant frequencies that cause a drop in the impedance. The capacitor values can be shifted to change the point of resonance to a frequency that is not within the useful range. Additionally, a series resistor can be added in series to remove this drop. However, this would affect the DC component of the signal and consequently the power transferred. This results in the best option likely using a DC decoupling capacitor shifted where the resonance point is outside of the useful frequency range at 2.5 MHz.
+
+An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity.
 
 ## High-Level Solution
 
-To fulfill the goal of reducing complexity of the clock, power, and communication systems, each system needs to be atomically considered along with systems to integrate these together. Following the focuses of the problem introduction presentation from Siemens [1], the most integral system for the solution is a bias tee to transmit the frequencies over the transmission line. This is the system that will have the atomized systems built upon it. The atomized systems are as follows:  
+To fulfill the goal of reducing complexity of the clock, power, and communication systems, each system needs to be atomically considered along with systems to integrate these together. Following the focuses of the problem introduction presentation from Siemens Healthineers [1], the most integral system for the solution is a bias tee to transmit the frequencies over the transmission line. This is the system that will have the atomized systems built upon it. The atomized systems are as follows:
+
 - The power system takes power from outside and prepares it to be transmitted. The clock system
 - The clock system generates a clock and transmits it on one end, and it recevies and filters jitter on the other end. This system will have accessible measurement to measure the jitter.
 - The communication system takes data input and packages it to be transmitted on one end, then unpackages and outputs the communications on the other end.  
@@ -72,7 +76,7 @@ To fulfill the goal of reducing complexity of the clock, power, and communicatio
 
 ### Hardware Block Diagram
 
-<img width="1291" height="671" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Final%20Block%20Diagram.png" />
+<img width="1291" height="671" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Final%20Block%20Diagram.png"/>
 
 #### Bias Tee
 
@@ -242,7 +246,7 @@ Ryan's knowledge in circuit design and pragmatism in component selection will be
 
 
 ### Timeline
-Most of the subsystems can be developed in parallel, without any specific part needing to be done before another part is completed. The Bias Tee, PLL, Communications, and Cabling subsystems along with simulation work can be completed at the same time. Once each system is done, integrating them together will be the next step. This would involve prototyping and laying out the PCBs as necessary for each system that requires it. This Process is detailed in the Gantt chart as shown below.
+Most of the subsystems can be developed in parallel, without any specific part needing to be done before another part is completed. The Bias Tee, PLL, Communications, and Cabling subsystems along with simulation work can be completed at the same time. Once each system is done, integrating them together will be the next step. This would involve prototyping and laying out the PCBs as necessary for each system that requires it. This process is detailed in the Gantt chart as shown below.
 
 <img width="1324" height="321" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Gannt_Chart_G3_Conceptual_Design_Updated.png" />
 
