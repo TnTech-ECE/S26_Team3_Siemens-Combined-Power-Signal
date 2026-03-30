@@ -44,7 +44,7 @@ The communication system is the tertiary focus of this project and the customer 
 
 The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. 
 
-The ST75XX series IC's are not the only option, considering that was a suggestion. 
+The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is 
  
 
 ## High-Level Solution
