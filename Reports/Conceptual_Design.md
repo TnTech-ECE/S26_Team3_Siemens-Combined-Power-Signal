@@ -216,8 +216,9 @@ Estimate of the cost for major materials needed:
 | Passive SMD Components               | Various components for circuits on PCBs    | 1 set    | $40-$50                     |
 | Cable Ports                          | Ports for the cabling I/O on the PCB       | 2        | $5-$10                      |
 | ST7580 FSK Power Line Transceiver    | Transceiver for FSK Functionality          | 1        | $5-$10                      |
-| X-NUCLEO-PLM01A1                     | Eval board for Power Line Modulator        | 2        | $10-$15                     |
-| NUCLEO-L476RG                        | MCU compatible with eval board             | 2        | $10-$15                     |
+| X-NUCLEO-PLM01A1                     | Eval board for Power Line Modulator        | 2        | $15.88                      |
+| NUCLEO-L476RG                        | MCU compatible with eval board             | 2        | $21.75                      |
+| Si5345 Eval Board                    | Evaluation board for clock synthesizer     | 1        | $388.12                     |
 | Prototyping Cost                     | Extra material, spares, test components    |          | $150                        |
 
 ### Division of Labor
