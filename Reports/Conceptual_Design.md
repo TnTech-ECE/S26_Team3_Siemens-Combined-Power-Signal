@@ -33,7 +33,7 @@ In this section, various potential solutions are hypothesized, design considerat
 
 ### Bias Tee
 
-The bias tee is the main approach to problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. <!--T-->
+The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. <!--T-->
 
 Another important aspect of the bias tee to consider is the filtering to ensure that the ac signal does not leak into the DC signal and create fluctuations in the voltage supplied. This can be done by including a bypass capacitor to ground from the DC source to remove some of the fluctuation. However, this can result in resonant frequencies that cause a drop in the impedance. The capacitor values can be shifted to change the point of resonance to a frequency that is not within the useful range. Additionally, a series resistor can be added in series to remove this drop. However, this would affect the DC component of the signal and consequently the power transferred. This results in the best option likely using a DC decoupling capacitor shifted where the resonance point is outside of the useful frequency range at 2.5 MHz.
 
@@ -105,7 +105,7 @@ For all subsystems, formulate detailed "shall" statements. Ensure these statemen
 
 ### Bias Tee
 
-The bias tee is the main approach to problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. For this design, a bias tee will be used to combine a DC power supply, RF clock signal and RF communications signal then send this combined signal across a cable to another bias tee that will be used to separate the three signals back out.
+The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. For this design, a bias tee will be used to combine a DC power supply, RF clock signal and RF communications signal then send this combined signal across a cable to another bias tee that will be used to separate the three signals back out.
 
 Function:
 - Combine signals and separate signals.
