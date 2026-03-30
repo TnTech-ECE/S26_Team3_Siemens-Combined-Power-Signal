@@ -1,31 +1,5 @@
 # Conceptual Design
 
-This document outlines the objectives of a conceptual design. After reading your conceptual design, the reader should understand:
-
-- The fully formulated problem.
-- The fully decomposed conceptual solution.
-- Specifications for each of the atomic pieces of the solution.
-- Any additional constraints and their origins.
-- How the team will accomplish their goals given the available resources.
-
-With these guidelines, each team is expected to create a suitable document to achieve the intended objectives and effectively inform their stakeholders.
-
-
-## General Requirements for the Document
-- Submissions must be composed in Markdown format. Submitting PDFs or Word documents is not permitted.
-- All information that is not considered common knowledge among the audience must be properly cited.
-- The document should be written in the third person.
-- An introduction section should be included.
-- The latest fully formulated problem must be clearly articulated using explicit "shall" statements.
-- A comparative analysis of potential solutions must be performed
-- The document must present a comprehensive, well-specified high-level solution.
-- The solution must contain a hardware block diagram.
-- The solution must contain an operational flowchart.
-- For every atomic subsystem, a detailed functional description, inputs, outputs, and specifications must be provided.
-- The document should include an acknowledgment of ethical, professional, and standards considerations, explaining the specific constraints imposed.
-- The solution must include a refined estimate of the resources needed, including: costs, allocation of responsibilities for each subsystem, and a Gantt chart.
-
-
 ## Introduction
 
 Siemens Healthineers is a company that develops medical technologies, PET scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling.[1] This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
@@ -64,6 +38,14 @@ The bias tee is the main approach to problem, being specifically required by the
 Another important aspect of the bias tee to consider is the filtering to ensure that the ac signal does not leak into the DC signal and create fluctuations in the voltage supplied. This can be done by including a bypass capacitor to ground from the DC source to remove some of the fluctuation. However, this can result in resonant frequencies that cause a drop in the impedance. The capacitor values can be shifted to change the point of resonance to a frequency that is not within the useful range. Additionally, a series resistor can be added in series to remove this drop. However, this would affect the DC component of the signal and consequently the power transferred. This results in the best option likely using a DC decoupling capacitor shifted where the resonance point is outside of the useful frequency range at 2.5 MHz.
 
 An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity. [66]
+
+### Communication
+The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. This flexibility allows for many possible solutions, so there is quite a bit to compare.  The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
+
+The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. 
+
+The ST75XX series IC's are not the only option, considering that was a suggestion. 
+ 
 
 ## High-Level Solution
 
