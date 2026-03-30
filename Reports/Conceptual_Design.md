@@ -65,6 +65,14 @@ Another important aspect of the bias tee to consider is the filtering to ensure 
 
 An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity.
 
+### Communication
+The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. This flexibility allows for many possible solutions, so there is quite a bit to compare.  The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
+
+The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. 
+
+The ST75XX series IC's are not the only option, considering that was a suggestion. 
+ 
+
 ## High-Level Solution
 
 To fulfill the goal of reducing complexity of the clock, power, and communication systems, each system needs to be atomically considered along with systems to integrate these together. Following the focuses of the problem introduction presentation from Siemens Healthineers [1], the most integral system for the solution is a bias tee to transmit the frequencies over the transmission line. This is the system that will have the atomized systems built upon it. The atomized systems are as follows:
