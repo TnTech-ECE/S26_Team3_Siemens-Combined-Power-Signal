@@ -195,7 +195,7 @@ This project will include primarily hardware components to implement the design:
 
 1. Bias Tee Circuitry: Specific Capacitors, Inductors, and Resistors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
 2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [4].
-3. FSK Power Line Transceiver: ST7540. This chip is used as a modem for powerline 
+3. FSK Power Line Transceiver: ST7580. This chip is a flexible power line networking system-on-chip combining a high performing PHY processor core and a protocol controller with a fully integrated analog front-end (AFE) and line driver for a scalable future-proof, cost effective, single chip, narrow-band power line communication solution [5].
 4. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
 5. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer.
 6. Cables: Cables will be procured or fabricated to carry the power and signal from the transmitter to the receiver. Present options for the cable are Ethernet or Coaxial cables.
@@ -213,7 +213,7 @@ Estimate of the cost for major materials needed:
 | Cables                               | Cables for I/O                             | 3        | $20–$30                     |
 | Main PCB                             | Generates clock and regulates power        | 1        | $20-$30                     |
 | Jitter Measurement PCB               | Measures jitter and analyzes power signal  | 1        | $20-$30                     |
-| Passive SMD Components               | Various components for circuits on PCBs    | 1 set    | $40-$50                     |
+| Passive SMD Components               | Various components for circuits on PCBs    | 1 set    | $70-$80                     |
 | Cable Ports                          | Ports for the cabling I/O on the PCB       | 2        | $5-$10                      |
 | ST7580 FSK Power Line Transceiver    | Transceiver for FSK Functionality          | 1        | $5-$10                      |
 | X-NUCLEO-PLM01A1                     | Eval board for Power Line Modulator        | 2        | $15.88                      |
@@ -261,6 +261,8 @@ All sources utilized in the conceptual design that are not considered common kno
 Reference Manual, July 2016 Revised [September 2018]
 
 [4] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
+
+[5] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
 [7] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
