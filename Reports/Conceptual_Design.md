@@ -167,8 +167,26 @@ Interface:
 
 ### Cable
 
-The cable
-- 
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. 
+
+Function:
+- Transmit signals from the Tx to the Rx side of the ComCaP
+
+Inputs:
+- 48 V DC power signal.
+- 2.5 MHz RF reference clock signal.
+- RF back channel communications signal.
+
+Outputs:
+- 48 V DC power signal.
+- 2.5 MHz RF reference clock signal.
+- RF back channel communications signal.
+
+Requirements:
+- Shall be able to connect and disconnect easily
+- Shall minimize electromagnetic interference with the rest of the system
+- Shall preserve the inputs and outputs during transmission to the best of its ability.
+
 
 ## Ethical, Professional, and Standards Considerations
 
