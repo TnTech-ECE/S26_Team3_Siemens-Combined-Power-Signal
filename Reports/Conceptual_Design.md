@@ -117,6 +117,29 @@ Detail the operation of the subsystem:
 
 For all subsystems, formulate detailed "shall" statements. Ensure these statements are comprehensive enough so that an engineer who is unfamiliar with your project can design the subsystem based on your specifications. Assume the role of the customer in this context to provide clear and precise requirements.
 
+### Bias Tee
+
+The bias tee is the main approach to problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. For this design, a bias tee will be used to combine a DC power supply, RF clock signal and RF communications signal then send this combined signal across a cable to another bias tee that will be used to separate the three signals back out.
+
+Function:
+- Combine signals and separate signals.
+
+Inputs:
+- 48 V DC power signal.
+- 2.5 MHz RF reference clock signal.
+- RF back channel communications signal.
+
+Outputs:
+- 48 V DC power signal.
+- 2.5 MHz RF reference clock signal.
+- RF back channel communications signal.
+
+Requirements:
+- Shall pass DC power through inductor.
+- Shall pass RF signals through capacitors.
+- Shall combine all three signals and send across cable.
+- Shall receive and separate all three signals.
+
 ### Cable
 
 The cable
