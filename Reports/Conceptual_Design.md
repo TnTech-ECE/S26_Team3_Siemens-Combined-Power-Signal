@@ -25,7 +25,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 ### Constraints
 
-- The system shall adhere to the standards set in IEC 60601.
+- The system shall adhere to the standards set in IEC 60601. [See Standards Considerations for more information]
 
 ## Comparative Analysis of Potential Solutions
 
@@ -49,7 +49,7 @@ The ST75XX series IC's are not the only option, considering that was a suggestio
 ### Cable
 The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50] The primary considerations for the cable is the electromagnetic interference, and the transmission line characteristics of the cable.
 
-Siemens suggested that we use a twisted strand cable for our 
+Siemens suggested that we use a twisted strand cable for our design. Some advantages of this are that they are cheaper, 
 
 
 ## High-Level Solution
