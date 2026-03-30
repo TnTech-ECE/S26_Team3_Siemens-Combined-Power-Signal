@@ -171,7 +171,7 @@ Interface:
 
 ### Cable
 
-The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. 
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. As of now, a specific type of cable has not been selected. However, a twisted pair or a coaxial cable seem to be the most promising. 
 
 Function:
 - Transmit signals from the Tx to the Rx side of the ComCaP
@@ -187,8 +187,8 @@ Outputs:
 - RF back channel communications signal.
 
 Requirements:
-- Shall be able to connect and disconnect easily
-- Shall minimize electromagnetic interference with the rest of the system
+- Shall be able to connect and disconnect easily.
+- Shall minimize electromagnetic interference with the rest of the system.
 - Shall preserve the inputs and outputs during transmission to the best of its ability.
 
 
@@ -201,13 +201,14 @@ Requirements:
 The ComCaP device will impact both doctors and patients. For doctors, the device will be smaller than Siemens Healthineers' existing solution, providing more space for them to use for other medical equipment or devices. The PET system will also become more reliable as we are minimizing the points of failure as well as adding communications to help diagnose issues. Added reliability will decrease both the number of times the PET system will be down, and decrease the amount of time it takes for the PET system to return back online. Because of that, the PET system can be used more often, and will help diagnose more people with medical conditions. The benefits to both doctors and patients will hopefully lead to more diagnoses and save more lives.
 
 The implications of the product failing must be taken into account. In this case, if the project fails, that means that there will be more downtime on life saving medical equipment which could lead to a delay medical emergencies being detected. In extreme cases, that extra time could be the difference in life or death. While it is unrealistic to build a perfect product, the team will minimize points of failure to the best of its ability. The team will be truthful in all of the things that it does, even if that means failure of the project. An unsuccessful product is much better than an unsafe one. 
-As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [7]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will be transparent in all its actions, because an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
 
 ### Professional Considerations
 
+As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [7]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will be transparent in all its actions, because an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
+
 ### Standards Considerations
 
-The primary standards that we will need to follow is the IEC 60601. These are the standards outlining the electrical requirements for medical devices. Per Siemens, the scope of the project does not have a requirement to follow these standards directly. However, by adhering to an older version of these standards, the project can be more easily implemented into the greater PET system. Older standards must be used because purchasing the license for the updated standards is not in the budget.
+The primary standards that we will need to follow is the IEC 60601 [4]. These are the standards outlining the electrical requirements for medical devices. Per Siemens, the scope of the project does not have a requirement to follow these standards directly. However, by adhering to an older version of these standards, the project can be more easily implemented into the greater PET system. Older standards must be used because purchasing the license for the updated standards is not in the budget.
 
 ## Resources
 
