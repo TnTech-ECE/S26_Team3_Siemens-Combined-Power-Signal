@@ -40,11 +40,11 @@ Another important aspect of the bias tee to consider is the filtering to ensure 
 An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity. [66]
 
 ### Communication
-The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. This flexibility allows for many possible solutions, so there is quite a bit to compare.  The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
+The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
 
 The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. 
 
-The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is 
+The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms
 
 ### Cable
 The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50] The primary considerations for the cable is the electromagnetic interference, and the transmission line characteristics of the cable.
