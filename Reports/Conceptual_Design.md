@@ -189,8 +189,6 @@ The primary standards that we will need to follow is the IEC 60601. These are th
 
 ## Resources
 
-You have already estimated the resources needed to complete the solution. Now, let's refine those estimates.
-
 This project will include primarily hardware components to implement the design: the Bias Tee circuits (Rx and Tx), the Si5345B Jitter-Cleaning Clock Synthesizer, the ST7540 FSK Power Line Transceiver, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
 
 #### Hardware Components
@@ -217,7 +215,9 @@ Estimate of the cost for major materials needed:
 | Jitter Measurement PCB               | Measures jitter and analyzes power signal  | 1        | $20-$30                     |
 | Passive SMD Components               | Various components for circuits on PCBs    | 1 set    | $40-$50                     |
 | Cable Ports                          | Ports for the cabling I/O on the PCB       | 2        | $5-$10                      |
-| ST7540 FSK Power Line Transceiver    | Transceiver for FSK Functionality          | 1        | $5-$10                      |
+| ST7580 FSK Power Line Transceiver    | Transceiver for FSK Functionality          | 1        | $5-$10                      |
+| X-NUCLEO-PLM01A1                     | Eval board for Power Line Modulator        | 2        | $10-$15                     |
+| NUCLEO-L476RG                        | MCU compatible with eval board             | 2        | $10-$15                     |
 | Prototyping Cost                     | Extra material, spares, test components    |          | $150                        |
 
 ### Division of Labor
@@ -241,11 +241,12 @@ Ryan's knowledge in circuit design and pragmatism in component selection will be
 
 
 ### Timeline
+Most of the subsystems can be developed in parallel, without any specific part needing to be done before another part is completed. The Bias Tee, PLL, Communications, and Cabling subsystems along with simulation work can be completed at the same time. Once each system is done, integrating them together will be the next step. This would involve prototyping and laying out the PCBs as necessary for each system that requires it. This Process is detailed in the Gantt chart as shown below.
 
 <img width="1324" height="321" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Gannt_Chart_G3_Conceptual_Design_Updated.png" />
 
-Revise the detailed timeline (Gantt chart) you created in the project proposal. Ensure that the timeline is optimized for detailed design. Address critical unknowns early and determine if a prototype needs to be constructed before the final build to validate a subsystem. Additionally, if subsystem $A$ imposes constraints on subsystem $B$, generally, subsystem $A$ should be designed first.
 
+<!-- Revise the detailed timeline (Gantt chart) you created in the project proposal. Ensure that the timeline is optimized for detailed design. Address critical unknowns early and determine if a prototype needs to be constructed before the final build to validate a subsystem. Additionally, if subsystem $A$ imposes constraints on subsystem $B$, generally, subsystem $A$ should be designed first. -->
 
 ## References
 
