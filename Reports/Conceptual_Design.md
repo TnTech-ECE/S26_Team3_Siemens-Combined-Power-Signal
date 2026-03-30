@@ -25,7 +25,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 ### Constraints
 
-- 
+- The system shall adhere to the standards set in IEC 60601.
 
 ## Comparative Analysis of Potential Solutions
 
