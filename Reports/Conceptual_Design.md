@@ -47,10 +47,13 @@ The suggestion from Siemens was to use the ST7540, but that product is no longer
 The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50] The primary considerations for the cable is the electromagnetic interference, and the transmission line characteristics of the cable.
+The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities, and the transmission line characteristics of the cable.
 
-Siemens suggested that we use a twisted strand cable for our design. Some advantages of this are that they are cheaper, 
+Siemens suggested that we use a twisted strand cable for our design. The primary advantage of the twisted strand is that it is cheaper. However, it is limited in its possible interference and lower bandwidth.
 
+Coaxial cable is a little more expensive, but it has lower interference and a wider bandwidth than twisted strand.
+
+Although our customer suggested we used twisted strand, they also expressed interest in the opportunities that coaxial cables provide. Therefore, both cables will need to be modeled and experimented with before we decide on a single cable.
 
 ## High-Level Solution
 
