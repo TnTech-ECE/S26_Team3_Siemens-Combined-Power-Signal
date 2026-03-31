@@ -39,6 +39,10 @@ Another important aspect of the bias tee to consider is the filtering to ensure 
 
 An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity. [66]
 
+### Clock Generation & Jitter Measurement
+
+The clock generation and jitter measurements shall utilize the Skyworks Si5345B Integrated Circuit (IC), as directed by the client. This subsystem functionally has a singular solution available as a result, aside from configuration and implementation of the IC onto the circuit board. Configuration will ultimately be written to Non-Volatile Memory (NVM) onboard the IC, however a during the design process this will have to be accomplished manually via I<sup>2</sup>C protocol. Implementation of the IC can be observed by it's pin-out configuration shown in the Atomic Subsystem Specification below, with inputs and outputs described. 
+
 ### Communication
 The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
 
