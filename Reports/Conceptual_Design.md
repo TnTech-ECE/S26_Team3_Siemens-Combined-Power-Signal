@@ -46,9 +46,9 @@ The clock generation and jitter measurements shall utilize the Skyworks Si5345B 
 ### Communication
 The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
 
-The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. 
+The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. Continued support ensures this solution would remain usable for the future.
 
-The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms
+The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms and independent operation. This would add more effort in development for little to no return for this use case. Not having an onboard SoC also allows this modem to be completely controlled by the systems this board will integrate with.
 
 ### Cable
 The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities, and the transmission line characteristics of the cable.
@@ -163,12 +163,40 @@ Interface:
 #### Si5345B Reference Schematic
 <img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_3-29-26.png" />
 
+
+### Communications
+
+The communications of the ComCaP are the tertiary focus of this project [1]. This system must offer an ability to send debugging signals across the transmission line and receive a response back. The ST7580 will be the Power Line Communications (PLC) Modem, which offers several options for modulation. More options for modulation allows for the paradigm with the cleanest output to be chosen. Built-in error correction will be useful in keeping the packet data manageable. 
+
+Function:
+- Transmit/receive debug communications between both boards 
+
+Inputs:
+*Transmit Mode:*
+- UART Debug Commands
+- Digital and Analog Power Sources (modified by buck converters)
+
+*Receive Mode:*
+- Modulated Analog Response signal
+
+Outputs:
+*Transmit Mode:*
+- Modulated communications on a frequency between 9-250 kHz
+
+*Receive Mode:*
+- Demodulated response data
+
+Requirements:
+- Needs to be able to modulate data to output an analog signal. 
+- Must be controllable by an outside system that manages debugging
+
+
 ### Cable
 
 The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. As of now, a specific type of cable has not been selected. However, a twisted pair or a coaxial cable seem to be the most promising. 
 
 Function:
-- Transmit signals from the Tx to the Rx side of the ComCaP
+- Carry signals from the Tx to the Rx side of the ComCaP
 
 Inputs:
 - 48 V DC power signal.
