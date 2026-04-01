@@ -48,7 +48,7 @@ The communication system is the tertiary focus of this project and the customer 
 
 The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. Continued support ensures this solution would remain usable for the future.
 
-The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [reference this]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms and independent operation. This would add more effort in development for little to no return for this use case. Not having an onboard SoC also allows this modem to be completely controlled by the systems this board will integrate with.
+The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [3]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms and independent operation. This would add more effort in development for little to no return for this use case. Not having an onboard SoC also allows this modem to be completely controlled by the systems this board will integrate with.
 
 ### Cable
 The cable is the method by which the power, data, and clock is transmitted and recieved by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities, and the transmission line characteristics of the cable.
@@ -292,29 +292,32 @@ Most of the subsystems can be developed in parallel, without any specific part n
 <img width="1324" height="321" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Gannt_Chart_G3_Conceptual_Design_Updated.png" />
 
 
-<!-- Revise the detailed timeline (Gantt chart) you created in the project proposal. Ensure that the timeline is optimized for detailed design. Address critical unknowns early and determine if a prototype needs to be constructed before the final build to validate a subsystem. Additionally, if subsystem $A$ imposes constraints on subsystem $B$, generally, subsystem $A$ should be designed first. -->
-
 ## References
 
 All sources utilized in the conceptual design that are not considered common knowledge must be properly cited. Multiple references should be included.
 
 [1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
 
-[2] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
+[2] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
 
-[3] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family
+[3]] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+
+[4] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
+
+[5] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
+
+[6] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
+
+[7] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family
 Reference Manual, July 2016 Revised [September 2018]
 
-[4] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
+[8] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
 
-[5] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+[9] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
-[7] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
-
-[66] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
-
-[50] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
 
 ## Statement of Contributions
 
 Levi Cantrell - Restating the Fully Formulated Problem, Specifications, Comparative Analysis of Potential Solutions & Atomic Subsystem Specifications for Clock Generation & Jitter Measurement
+
+Jonas Cross - High level solution summary, Comparative Analysis and Atomic Subsystem of Communications
