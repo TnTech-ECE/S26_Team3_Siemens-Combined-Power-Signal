@@ -264,7 +264,7 @@ Estimate of the cost for major materials needed:
 | X-NUCLEO-PLM01A1                     | Eval board for Power Line Modulator        | 2        | $15.88                      |
 | NUCLEO-L476RG                        | MCU compatible with eval board             | 2        | $21.75                      |
 | Si5345 Eval Board                    | Evaluation board for clock synthesizer     | 1        | $388.12                     |
-| Prototyping Cost                     | Extra material, spares, test components    |          | $150                        |
+| Prototyping Cost                     | Extra material, spares, test components    |          | $200                        |
 
 ### Division of Labor
 
@@ -318,3 +318,5 @@ Reference Manual, July 2016 Revised [September 2018]
 ## Statement of Contributions
 
 Levi Cantrell - Restating the Fully Formulated Problem, Specifications, Comparative Analysis of Potential Solutions & Atomic Subsystem Specifications for Clock Generation & Jitter Measurement
+
+Tyler Chan - Resources, Budget, Timeline, Comparative Analysis of Potential Solutions for Bias Tee
