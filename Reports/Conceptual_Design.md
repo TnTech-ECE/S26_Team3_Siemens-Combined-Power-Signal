@@ -320,3 +320,5 @@ Reference Manual, July 2016 Revised [September 2018]
 Levi Cantrell - Restating the Fully Formulated Problem, Specifications, Comparative Analysis of Potential Solutions & Atomic Subsystem Specifications for Clock Generation & Jitter Measurement
 
 Tyler Chan - Resources, Budget, Timeline, Comparative Analysis of Potential Solutions for Bias Tee
+
+Ryan Shipwash - Introduction, Hardware Block Diagram, Operational Flow Chart, Atomic Subsystem Specifications for Bias Tee
