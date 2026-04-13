@@ -14,7 +14,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 - The line voltage shall be 48 V<sub>DC</sub>.
 - The system shall be capable of supporting up to 100 W of power.
 - The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
-- The total ripple current after voltage DC-DC conversion shall not exceed ~ 30 mV.
+- The total ripple current after voltage DC-DC conversion shall not exceed ~ 30 mA.
 - The system shall utilize a reference clock with a frequency of 2.5 MHz.
 - Band-pass filtering for reference clock recovery shall be fixed at 2.5 MHz.
 - The receiver (RX) shall be equipped with a Skyworks model Si5345B jitter attenuator.
