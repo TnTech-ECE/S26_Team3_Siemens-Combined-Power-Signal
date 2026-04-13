@@ -100,7 +100,7 @@ This system has minimal user input since it is an automatic system that receives
 
 
 ## Atomic Subsystem Specifications
-
+<!-->
 Based on the high-level design, provide a comprehensive description of the functions each subsection will perform.
 
 Inclued a description of the interfaces between this subsystem and other subsystems:
@@ -114,6 +114,7 @@ Detail the operation of the subsystem:
 - Include functional flowcharts that capture the major sequential steps needed to achieve the desired functionalities.
 
 For all subsystems, formulate detailed "shall" statements. Ensure these statements are comprehensive enough so that an engineer who is unfamiliar with your project can design the subsystem based on your specifications. Assume the role of the customer in this context to provide clear and precise requirements.
+<-->
 
 ### Bias Tee
 
