@@ -100,7 +100,7 @@ This system has minimal user input since it is an automatic system that receives
 
 
 ## Atomic Subsystem Specifications
-<!-->
+<!--
 Based on the high-level design, provide a comprehensive description of the functions each subsection will perform.
 
 Inclued a description of the interfaces between this subsystem and other subsystems:
@@ -114,7 +114,7 @@ Detail the operation of the subsystem:
 - Include functional flowcharts that capture the major sequential steps needed to achieve the desired functionalities.
 
 For all subsystems, formulate detailed "shall" statements. Ensure these statements are comprehensive enough so that an engineer who is unfamiliar with your project can design the subsystem based on your specifications. Assume the role of the customer in this context to provide clear and precise requirements.
-<-->
+-->
 
 ### Bias Tee
 
@@ -286,12 +286,10 @@ Harry's skills in circuit simulations and desire to research cable design give h
 **Ryan Shipwash - Bias T**  
 Ryan's knowledge in circuit design and pragmatism in component selection will be useful in his role on the central bias T circuitry. Additionally, Ryan has exceptional communication skills and will benefit from a central role within the project and collaborating with the other members in this design aspect.
 
-
 ### Timeline
 Most of the subsystems can be developed in parallel, without any specific part needing to be done before another part is completed. The Bias Tee, PLL, Communications, and Cabling subsystems along with simulation work can be completed at the same time. Once each system is done, integrating them together will be the next step. This would involve prototyping and laying out the PCBs as necessary for each system that requires it. This process is detailed in the Gantt chart as shown below.
 
 <img width="1324" height="321" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Gannt_Chart_G3_Conceptual_Design_Updated.png" />
-
 
 ## References
 
