@@ -25,7 +25,7 @@ The system shall utilize two Bias-Tee circuits, used for both coupling and decou
 - The system shall be capable of supporting up to 100 W of power.
     - A switching power supply(s) shall be provided by Siemens Healthineers.
 - The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
-- The total ripple current after voltage DC-DC conversion shall not exceed ~ 30 mV.
+- The total ripple after voltage DC-DC conversion shall not exceed ~ 30 mV.
 - External connections for the system are unrestricted, however the following are suggested:
     - Clock input/output: SMA (SubMiniature version A) connectors.
     - A dedicated header for GUI connection.
