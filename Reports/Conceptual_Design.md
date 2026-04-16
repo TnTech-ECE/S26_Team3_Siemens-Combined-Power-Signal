@@ -31,7 +31,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.
 
-### Power for ICs on Tx and Rx ends
+### IC Power
 In the specifications of the project, the system is required to provide 100 W at 48 V from the power supply to the receiving end. In addition to providing power to the system, some power is required to power the ICs that run on both ends of the system. On the transmitting side, there will need to be power available for the PLC Modem, which operates at 11 V and 5 V, requiring less than 150 mA per plane, which falls within the specification of the MAX6791. On the receiving side, there will need to be power available for the receiving end PLC Modem, as well as the Si5345b PLC. The receiving side requires 11 V, 5 V, 3.3 V, and 1.8 V. A combination of two MAX6795  and two MAX6791 chips will supply the power to these planes to operate the ICs.
 
 An important aspect to consider when selecting the voltage regulators is whether the outputs can supply enough current to power the ICs, as well as minimizing hardware to reduce cost and space taken on the PCB. A previous choice that was considered when selecting an LDO was the MAX5092 [2a] which is only able to deliver a maximum of 250 mA. However, this chip only had one output, whereas the MAX6791 has two outputs that can be adjusted to a desired voltage between 1.5 V and 11 V, each at 150 mA. Additionally, the MAX6796 [3a] was selected to handle the higher current requirements for the 3.3 V and 1.8 V power rails since they can provide 300 mA of output current. This is optimal for the proposed design as these chips reduce the number of required LDOs by two, minimizing the hardware.
@@ -138,6 +138,29 @@ For all subsystems, formulate detailed "shall" statements. Ensure these statemen
 -->
 
 ### Bias Tee
+
+The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. For this design, a bias tee will be used to combine a DC power supply, RF clock signal and RF communications signal then send this combined signal across a cable to another bias tee that will be used to separate the three signals back out.
+
+Function:
+- Combine signals and separate signals.
+
+Inputs:
+- 48 V DC power signal.
+- 2.5 MHz RF reference clock signal.
+- RF back channel communications signal.
+
+Outputs:
+- 48 V DC power signal.
+- 2.5 MHz RF reference clock signal.
+- RF back channel communications signal.
+
+Requirements:
+- Shall pass DC power through inductor.
+- Shall pass RF signals through capacitors.
+- Shall combine all three signals and send across cable.
+- Shall receive and separate all three signals.
+
+### IC Power
 
 The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. For this design, a bias tee will be used to combine a DC power supply, RF clock signal and RF communications signal then send this combined signal across a cable to another bias tee that will be used to separate the three signals back out.
 
