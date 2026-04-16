@@ -121,10 +121,7 @@ The cable will transport the combined signal produced by the bias tee. The cable
 
 ### Operational Flow Chart
 
-<img width="1307" height="448" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Flow%20Chart%201.png" />
-
-This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. So, the user involvement for this system is simply turning on the system causing the power and reference clock to pass through the system and allowing for any back channel communications to pass. If the user decides to use the back channel communications, they will be sent through the open channel.
-
+This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. So, the user involvement for this system is simply turning on the external system which causes the power and reference clock to pass through the system and  allowing for any back channel communications to pass. There is also no software in the system. Therefore, an operational flowchart is not applicable.
 
 ## Atomic Subsystem Specifications
 <!--
