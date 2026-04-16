@@ -51,7 +51,7 @@ The suggestion from Siemens was to use the ST7540, but that product is no longer
 The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [3]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms and independent operation. This would add more effort in development for little to no return for this use case. Not having an onboard SoC also allows this modem to be completely controlled by the systems this board will integrate with.
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
+The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others. Power over ethernet was also considered, but according to IEEE802.3bt the maximum power allowed is 90 W [54], which is 10 W lower than what the team needs. While the team was not able to access the standards directly, Texas Instruments posted an informational video outlining the standards.
 
 #### Twisted Pair
 
@@ -71,18 +71,6 @@ The cable is the method by which the power, data, and clock is transmitted and r
 ##### Cons
 - Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69].
 - Coaxial cable is more expensive than twisted pair.
-
-#### Ethernet
-
-##### Pros
-
-
-
-
-##### Cons
-
-
-
 
 Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit our need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
 
@@ -345,6 +333,8 @@ Reference Manual, July 2016 Revised [September 2018]
 [69] C. Li, D. Merillat, and J. Phan, “FPD-Link ADAS Power-Over-Coax Design Guidelines,” Texas Instruments, Oct. 2025.
 
 [251]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
+
+[54]Texas Instruments, “IEEE802.3bt New Features,” Ti.com, May 14, 2018. https://www.ti.com/video/5784668990001 (accessed Apr. 16, 2026).
 
 ## Statement of Contributions
 
