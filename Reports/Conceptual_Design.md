@@ -35,7 +35,11 @@ In this section, various potential solutions are hypothesized, design considerat
 
 #### Separate Delivery (Current)
 
+The current method employed by Siemens is to deliver the power, clock, and comms separately across different wires to every detector. This is the simplest solution as there is no combining or separating of wiring or signals. However, this takes up much more space and has more points of failure,
 
+Pros:
+
+Cons:
 
 #### Combined Delivery (Bias Tee)
 
