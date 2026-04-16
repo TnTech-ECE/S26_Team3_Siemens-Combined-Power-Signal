@@ -59,12 +59,14 @@ The cable is the method by which the power, data, and clock is transmitted and r
 - Siemens suggested we use the twisted pair in their initial analysis. Siemens never said we have to use it, but it is a consideration that needs to be taken into account.
 
 ##### Cons
+- Twisted pair cables are physically longer, therefore there is more likely to be issues with reflection.
 
 #### Coaxial
 
 ##### Pros
 
 ##### Cons
+- Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69]
 
 Coaxial cable is a little more expensive, but it has lower interference and a wider bandwidth than twisted strand.
 
@@ -324,6 +326,8 @@ Reference Manual, July 2016 Revised [September 2018]
 [8] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
 
 [9] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
+
+[69] C. Li, D. Merillat, and J. Phan, “FPD-Link ADAS Power-Over-Coax Design Guidelines,” Texas Instruments, Oct. 2025.
 
 
 ## Statement of Contributions
