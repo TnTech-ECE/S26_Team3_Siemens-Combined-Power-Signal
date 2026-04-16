@@ -31,7 +31,19 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.
 
-### Bias Tee
+### Delivery of Power, Clock, and Back Channel Communications
+
+#### Separate Delivery (Current)
+
+
+
+#### Combined Delivery (Bias Tee)
+
+
+
+#### Wireless Delivery
+
+
 
 The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. <!--T-->
 
