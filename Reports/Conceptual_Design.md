@@ -219,7 +219,7 @@ Requirements:
 
 ### Cable
 
-The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. As of now, a specific type of cable has not been selected. However, a twisted pair or a coaxial cable seem to be the most promising. 
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From our comparative analysis, the twisted pair cable seems to be the most sutable for our design.
 
 Function:
 - Carry signals and power from the Tx to the Rx side of the ComCaP
@@ -359,3 +359,5 @@ Jonas Cross - High level solution summary, Comparative Analysis and Atomic Subsy
 Tyler Chan - Resources, Budget, Timeline, Comparative Analysis of Potential Solutions for Bias Tee
 
 Ryan Shipwash - Introduction, Hardware Block Diagram, Operational Flow Chart, Atomic Subsystem Specifications for Bias Tee
+
+Harry Rudd - Comparative Analysis of the Cable; Atomic Subsystem of the Cable; Ethical, Professional, and Standards Considerations
