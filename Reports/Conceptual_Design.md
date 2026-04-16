@@ -53,7 +53,17 @@ The ST75XX series IC's are not the only option, considering that was a suggestio
 ### Cable
 The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
 
-Siemens suggested that we use a twisted strand cable for our design. The primary advantage of the twisted strand is that it is cheaper. However, it is limited in its possible interference and lower bandwidth.
+#### Twisted Pair
+
+##### Pros
+
+##### Cons
+
+#### Coaxial
+
+##### Pros
+
+##### Cons
 
 Coaxial cable is a little more expensive, but it has lower interference and a wider bandwidth than twisted strand.
 
