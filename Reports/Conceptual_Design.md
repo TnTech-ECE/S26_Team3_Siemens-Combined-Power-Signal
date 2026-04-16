@@ -189,7 +189,7 @@ Interface:
 - Microcontroller with usb connectivity shall be used to interface with the Si5345B chip during development.
 
 #### Si5345B Reference Schematic
-<img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_3-29-26.png" />
+<img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_4-16-26.png" />
 
 
 ### Communications
