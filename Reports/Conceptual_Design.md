@@ -209,7 +209,7 @@ Requirements:
 The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. As of now, a specific type of cable has not been selected. However, a twisted pair or a coaxial cable seem to be the most promising. 
 
 Function:
-- Carry signals from the Tx to the Rx side of the ComCaP
+- Carry signals and power from the Tx to the Rx side of the ComCaP
 
 Inputs:
 - 48 V DC power signal.
@@ -225,6 +225,7 @@ Requirements:
 - Shall be able to connect and disconnect easily.
 - Shall minimize electromagnetic interference with the rest of the system.
 - Shall preserve the inputs and outputs during transmission to the best of its ability.
+- Shall only be one cable, minimizing the points of error to only two connection points.
 
 
 ## Ethical, Professional, and Standards Considerations
