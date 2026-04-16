@@ -29,12 +29,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 ## Comparative Analysis of Potential Solutions
 
-<!--In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.-->
-
-### Power for ICs on Tx and Rx ends
-In the specifications of the project, the system is required to provide 100 W at 48 V from the power supply to the receiving end. In addition to providing power to the system, some power is required to power the ICs that run on both ends of the system. On the transmitting side, there will need to be power available for the PLC Modem, which operates at 11 V and 5 V, requiring less than 150 mA per plane, which falls within the specification of the MAX6791. On the receiving side, there will need to be power available for the receiving end PLC Modem, as well as the Si5345b PLC. The receiving side requires 11 V, 5 V, 3.3 V, and 1.8 V. A combination of two MAX6795  and two MAX6791 chips will supply the power to these planes to operate the ICs.
-
-An important aspect to consider when selecting the voltage regulators is whether the outputs can supply enough current to power the ICs, as well as minimizing hardware to reduce cost and space taken on the PCB. A previous choice that was considered when selecting an LDO was the MAX5092 [2a] which is only able to deliver a maximum of 250 mA. However, this chip only had one output, whereas the MAX6791 has two outputs that can be adjusted to a desired voltage between 1.5 V and 11 V, each at 150 mA. Additionally, the MAX6796 [3a] was selected to handle the higher current requirements for the 3.3 V and 1.8 V power rails since they can provide 300 mA of output current. This is optimal for the proposed design as these chips reduce the number of required LDOs by two, minimizing the hardware.
+In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.
 
 ### Bias Tee
 
@@ -72,6 +67,7 @@ The cable is the method by which the power, data, and clock is transmitted and r
 
 ##### Pros
 - Greater shielding means there is less electromagnetic interference with the coaxial cable.
+- Coaxial cable is optimized for data transmission.
 
 ##### Cons
 - Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69].
@@ -214,7 +210,7 @@ Requirements:
 
 ### Cable
 
-The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. As of now, a specific type of cable has not been selected. However, a twisted pair or a coaxial cable seem to be the most promising. 
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From our comparative analysis, the twisted pair cable seems to be the most sutable for our design.
 
 Function:
 - Carry signals from the Tx to the Rx side of the ComCaP
@@ -254,6 +250,8 @@ As engineers, the team upholds values such as those outlined in the National Soc
 <!--The primary standards that the team will need to follow is the IEC 60601 [4]. These are the standards outlining the electrical requirements for medical devices. Per Siemens, the scope of the project does not have a requirement to follow these standards directly. However, by adhering to an older version of these standards, the project can be more easily implemented into the greater PET system. Older standards must be used because purchasing the license for the updated standards is not in the budget. Unfortunately, the team is still waiting on the customer to provide depreciated versions of the standards, and the team cannot legiatemtly obtain those standards themselves. Therefore, the standards needed to be followed are not stated in this document.-->
 
 Since the customer will be making changes to our final design before implementing it, the customer has accepted responsibility for the adherence of standards for the project. However, that does not mean that the team will ignore the standards. It just means that if there is a set of standards that the team knows about but cannot access through legitimate means those standards cannot be considered. This includes IEC 60601 [4], the standards outlining electrical requirements for medical devices. It also includes BS EN 50065 [251], signalling restrictions on low voltage devices. The latter is a European standard, which the team is not held to in the United States, but was included as Siemens Healthineers is an international company.
+
+As for standards that the team is able to follow, 
 
 ## Resources
 
@@ -329,7 +327,7 @@ All sources utilized in the conceptual design that are not considered common kno
 
 [4] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
-[5] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
+[50] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
 
 [6] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
 
@@ -353,3 +351,5 @@ Jonas Cross - High level solution summary, Comparative Analysis and Atomic Subsy
 Tyler Chan - Resources, Budget, Timeline, Comparative Analysis of Potential Solutions for Bias Tee
 
 Ryan Shipwash - Introduction, Hardware Block Diagram, Operational Flow Chart, Atomic Subsystem Specifications for Bias Tee
+
+Harry Rudd - Comparative Analysis of the Cable; Atomic Subsystem of the Cable; Ethical, Professional, and Standards Considerations
