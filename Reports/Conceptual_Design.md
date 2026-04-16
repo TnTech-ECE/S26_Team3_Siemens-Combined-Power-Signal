@@ -57,18 +57,18 @@ The cable is the method by which the power, data, and clock is transmitted and r
 
 ##### Pros
 - Siemens suggested we use the twisted pair in their initial analysis. Siemens never said we have to use it, but it is a consideration that needs to be taken into account.
+- Twisted pair cable is less expensive than coaxial cable.
 
 ##### Cons
-- Twisted pair cables are physically longer, therefore there is more likely to be issues with reflection.
+- Twisted pair cables are physically longer, therefore there is a greater chance to have issues with reflection.
 
 #### Coaxial
 
 ##### Pros
 
 ##### Cons
-- Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69]
-
-Coaxial cable is a little more expensive, but it has lower interference and a wider bandwidth than twisted strand.
+- Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69].
+- Coaxial cable is more expensive than twisted pair.
 
 Although our customer suggested we used twisted strand, they also expressed interest in the opportunities that coaxial cables provide. Therefore, both cables will need to be modeled and experimented with before we decide on a single cable.
 
