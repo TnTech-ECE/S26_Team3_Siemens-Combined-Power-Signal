@@ -56,6 +56,7 @@ The cable is the method by which the power, data, and clock is transmitted and r
 #### Twisted Pair
 
 ##### Pros
+- Siemens suggested we use the twisted pair in their initial analysis. Siemens never said we have to use it, but it is a consideration that needs to be taken into account.
 
 ##### Cons
 
