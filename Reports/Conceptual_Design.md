@@ -61,10 +61,12 @@ The cable is the method by which the power, data, and clock is transmitted and r
 
 ##### Cons
 - Twisted pair cables are physically longer, therefore there is a greater chance to have issues with reflection.
+- Twisted pair cable generate more electromagnetic interference.
 
 #### Coaxial
 
 ##### Pros
+- Greater shielding means there is less electromagnetic interference with the coaxial cable.
 
 ##### Cons
 - Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69].
