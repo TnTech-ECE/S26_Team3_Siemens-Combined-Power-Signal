@@ -93,7 +93,7 @@ The bias tee is the primary focus of this project and what brings every other su
 
 #### Power
 
-The 100 W power will be provided to the system in the form of a 48 V DC signal. The power must also output the system as a 48 V DC signal with minimal deviance. This is not being considered as an assigned subsystem due to it's simplicity and the bias tee subsystem handling it. However, it is important to represent it in the block diagram. Required voltage and current for the ST7580 is 13 V and 30 mA. Required voltages for the Si5345b are 3.3 V and 1.8 V and 150 mA.
+The 100 W power will be provided to the system in the form of a 48 V DC signal. The power must also output the system as a 48 V DC signal with minimal deviance. This input power will be used to power the chips of the system. Required voltage and current for the ST7580 is 13 V and 30 mA. Required voltages for the Si5345b are 3.3 V and 1.8 V and 150 mA.
 
 #### Clock Generation & Jitter Measurement
 
@@ -109,7 +109,7 @@ The cable will transport the combined signal produced by the bias tee. The cable
 
 ### Operational Flow Chart
 
-This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. So, the user involvement for this system is simply turning on the external system which causes the power and reference clock to pass through the system and  allowing for any back channel communications to pass. There is also no software in the system. Therefore, an operational flowchart is not applicable.
+This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. There is also no software in the system. Therefore, an operational flowchart is not applicable.
 
 ## Atomic Subsystem Specifications
 <!--
