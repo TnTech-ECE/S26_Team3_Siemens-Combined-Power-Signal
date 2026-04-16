@@ -329,7 +329,7 @@ All sources utilized in the conceptual design that are not considered common kno
 
 [2] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
 
-[3]] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+[3] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
 [4] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
