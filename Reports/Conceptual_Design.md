@@ -79,6 +79,7 @@ The cable is the method by which the power, data, and clock is transmitted and r
 
 ##### Pros
 - Greater shielding means there is less electromagnetic interference with the coaxial cable.
+- Coaxial cable is optimized for data transmission.
 
 ##### Cons
 - Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69].
