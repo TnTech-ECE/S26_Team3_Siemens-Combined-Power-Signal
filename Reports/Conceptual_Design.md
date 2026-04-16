@@ -29,7 +29,12 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 
 ## Comparative Analysis of Potential Solutions
 
-In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.
+<!--In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.-->
+
+### Power for ICs on Tx and Rx ends
+In the specifications of the project, the system is required to provide 100 W at 48 V from the power supply to the receiving end. In addition to providing power to the system, some power is required to power the ICs that run on both ends of the system. On the transmitting side, there will need to be power available for the PLC Modem, which operates at 11 V and 5 V, requiring less than 150 mA per plane, which falls within the specification of the MAX6791. On the receiving side, there will need to be power available for the receiving end PLC Modem, as well as the Si5345b PLC. The receiving side requires 11 V, 5 V, 3.3 V, and 1.8 V. A combination of two MAX6795  and two MAX6791 chips will supply the power to these planes to operate the ICs.
+
+An important aspect to consider when selecting the voltage regulators is whether the outputs can supply enough current to power the ICs, as well as minimizing hardware to reduce cost and space taken on the PCB. A previous choice that was considered when selecting an LDO was the MAX5092 [2a] which is only able to deliver a maximum of 250 mA. However, this chip only had one output, whereas the MAX6791 has two outputs that can be adjusted to a desired voltage between 1.5 V and 11 V, each at 150 mA. Additionally, the MAX6796 [3a] was selected to handle the higher current requirements for the 3.3 V and 1.8 V power rails since they can provide 300 mA of output current. This is optimal for the proposed design as these chips reduce the number of required LDOs by two, minimizing the hardware.
 
 ### Bias Tee
 
@@ -51,7 +56,7 @@ The suggestion from Siemens was to use the ST7540, but that product is no longer
 The ST75XX series IC's are not the only option, considering that was a suggestion [1]. ST advertises the ST8500 on their overview of their power line transcievers [3]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms and independent operation. This would add more effort in development for little to no return for this use case. Not having an onboard SoC also allows this modem to be completely controlled by the systems this board will integrate with.
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others. Power over ethernet was also considered, but according to IEEE802.3bt the maximum power allowed is 90 W [54], which is 10 W lower than what the team needs. While the team was not able to access the standards directly, Texas Instruments posted an informational video outlining the standards.
+The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
 
 #### Twisted Pair
 
@@ -85,7 +90,7 @@ To fulfill the goal of reducing complexity of the clock, power, and communicatio
 
 ### Hardware Block Diagram
 
-<img width="1237" height="706" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Block%20Diagram%20Final.png"/>
+<img width="1291" height="671" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Final%20Block%20Diagram.png"/>
 
 #### Bias Tee
 
@@ -93,7 +98,7 @@ The bias tee is the primary focus of this project and what brings every other su
 
 #### Power
 
-The 100 W power will be provided to the system in the form of a 48 V DC signal. The power must also output the system as a 48 V DC signal with minimal deviance. This input power will be used to power the chips of the system. Required voltage and current for the ST7580 is 13 V and 30 mA. Required voltages for the Si5345b are 3.3 V and 1.8 V and 150 mA.
+The 100 W power will be provided to the system in the form of a 48 V DC signal. The power must also output the system as a 48 V DC signal with minimal deviance. This is not being considered as an assigned subsystem due to it's simplicity and the bias tee subsystem handling it. However, it is important to represent it in the block diagram. Required voltage and current for the ST7580 is 13 V and 30 mA. Required voltages for the Si5345b are 3.3 V and 1.8 V and 150 mA. 
 
 #### Clock Generation & Jitter Measurement
 
@@ -109,7 +114,10 @@ The cable will transport the combined signal produced by the bias tee. The cable
 
 ### Operational Flow Chart
 
-This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. There is also no software in the system. Therefore, an operational flowchart is not applicable.
+<img width="1307" height="448" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Flow%20Chart%201.png" />
+
+This system has minimal user input since it is an automatic system that receives inputs when the PET scanner is turned on. So, the user involvement for this system is simply turning on the system causing the power and reference clock to pass through the system and allowing for any back channel communications to pass. If the user decides to use the back channel communications, they will be sent through the open channel.
+
 
 ## Atomic Subsystem Specifications
 <!--
@@ -174,7 +182,7 @@ Interface:
 - Microcontroller with usb connectivity shall be used to interface with the Si5345B chip during development.
 
 #### Si5345B Reference Schematic
-<img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_4-16-26.png" />
+<img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_3-29-26.png" />
 
 
 ### Communications
@@ -209,7 +217,7 @@ Requirements:
 The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. As of now, a specific type of cable has not been selected. However, a twisted pair or a coaxial cable seem to be the most promising. 
 
 Function:
-- Carry signals and power from the Tx to the Rx side of the ComCaP
+- Carry signals from the Tx to the Rx side of the ComCaP
 
 Inputs:
 - 48 V DC power signal.
@@ -225,7 +233,6 @@ Requirements:
 - Shall be able to connect and disconnect easily.
 - Shall minimize electromagnetic interference with the rest of the system.
 - Shall preserve the inputs and outputs during transmission to the best of its ability.
-- Shall only be one cable, minimizing the points of error to only two connection points.
 
 
 ## Ethical, Professional, and Standards Considerations
@@ -247,8 +254,6 @@ As engineers, the team upholds values such as those outlined in the National Soc
 <!--The primary standards that the team will need to follow is the IEC 60601 [4]. These are the standards outlining the electrical requirements for medical devices. Per Siemens, the scope of the project does not have a requirement to follow these standards directly. However, by adhering to an older version of these standards, the project can be more easily implemented into the greater PET system. Older standards must be used because purchasing the license for the updated standards is not in the budget. Unfortunately, the team is still waiting on the customer to provide depreciated versions of the standards, and the team cannot legiatemtly obtain those standards themselves. Therefore, the standards needed to be followed are not stated in this document.-->
 
 Since the customer will be making changes to our final design before implementing it, the customer has accepted responsibility for the adherence of standards for the project. However, that does not mean that the team will ignore the standards. It just means that if there is a set of standards that the team knows about but cannot access through legitimate means those standards cannot be considered. This includes IEC 60601 [4], the standards outlining electrical requirements for medical devices. It also includes BS EN 50065 [251], signalling restrictions on low voltage devices. The latter is a European standard, which the team is not held to in the United States, but was included as Siemens Healthineers is an international company.
-
-
 
 ## Resources
 
@@ -314,9 +319,13 @@ All sources utilized in the conceptual design that are not considered common kno
 
 [1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
 
+[2a] Analog Devices, "MAX5092/MAX5093 4V to 72V Input LDOs with Boost Preregulator," MAX5093 Rev 2 Data Sheet, Oct. 2006 Revised [Oct. 2014].
+
+[3a] Analog Devices, "MAX6791–MAX6796 High-Voltage, Micropower, Single/Dual Linear Regulators with Supervisory Functions," MAX6791 Rev 3 Data Sheet, Oct. 2005 Revised [Oct. 2017].
+
 [2] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
 
-[3]] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+[3] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
 [4] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
@@ -334,8 +343,6 @@ Reference Manual, July 2016 Revised [September 2018]
 [69] C. Li, D. Merillat, and J. Phan, “FPD-Link ADAS Power-Over-Coax Design Guidelines,” Texas Instruments, Oct. 2025.
 
 [251]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
-
-[54]Texas Instruments, “IEEE802.3bt New Features,” Ti.com, May 14, 2018. https://www.ti.com/video/5784668990001 (accessed Apr. 16, 2026).
 
 ## Statement of Contributions
 
