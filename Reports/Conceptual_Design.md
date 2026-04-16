@@ -162,26 +162,21 @@ Requirements:
 
 ### IC Power
 
-The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. For this design, a bias tee will be used to combine a DC power supply, RF clock signal and RF communications signal then send this combined signal across a cable to another bias tee that will be used to separate the three signals back out.
+Power is required to be passed to the ICs that run specific circuitry in the system. The voltage and current will be tapped off of the main power passed over (100 W at 48 V). The MAX6791 was selected to supply 11 V and 5 V for the ST7580 on the transmitting and receiving ends at 150 mA per output, and two MAX6796 chips shall supply 3.3 V and 1.8 V for the Si5345b at 300 mA on the receiving end of the system.
 
 Function:
-- Combine signals and separate signals.
+- Supply power to the IC components in the system.
 
 Inputs:
 - 48 V DC power signal.
-- 2.5 MHz RF reference clock signal.
-- RF back channel communications signal.
 
 Outputs:
-- 48 V DC power signal.
-- 2.5 MHz RF reference clock signal.
-- RF back channel communications signal.
+- 11 V, 5 V, 3.3 V, 1.8 V DC.
+- 150 mA, 150 mA, 300 mA, 300 mA for each power rail respectively.
 
 Requirements:
-- Shall pass DC power through inductor.
-- Shall pass RF signals through capacitors.
-- Shall combine all three signals and send across cable.
-- Shall receive and separate all three signals.
+- Shall supply 150 mA at 11 V and 5 V for the ST7580 and related circuitry.
+- Shall supply 300 mA at 3.3 V and 1.8 V for the Si5345 and related circuitry.
 
 ### Clock Generation & Jitter Measurement
 
