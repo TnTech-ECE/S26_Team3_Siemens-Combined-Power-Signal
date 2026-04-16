@@ -97,7 +97,7 @@ To fulfill the goal of reducing complexity of the clock, power, and communicatio
 
 ### Hardware Block Diagram
 
-<img width="1291" height="671" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Final%20Block%20Diagram.png"/>
+<img width="1237" height="706" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Block%20Diagram%20Final.png"/>
 
 #### Bias Tee
 
