@@ -72,7 +72,7 @@ The cable is the method by which the power, data, and clock is transmitted and r
 - Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69].
 - Coaxial cable is more expensive than twisted pair.
 
-Although our customer suggested we used twisted strand, they also expressed interest in the opportunities that coaxial cables provide. Therefore, both cables will need to be modeled and experimented with before we decide on a single cable.
+Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit our need since those are cheaper and can handle more power. If the team was to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
 
 ## High-Level Solution
 
