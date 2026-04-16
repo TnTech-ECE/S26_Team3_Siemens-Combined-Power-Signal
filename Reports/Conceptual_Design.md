@@ -14,11 +14,12 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 - The line voltage shall be 48 V<sub>DC</sub>.
 - The system shall be capable of supporting up to 100 W of power.
 - The ripple voltage observed at the receiving unit (RX) shall have a soft maximum of 200 mV.
-- The total ripple current after voltage DC-DC conversion shall not exceed ~ 30 mA.
+- The total ripple voltage after voltage DC-DC conversion shall not exceed ~ 30 mV.
 - The system shall utilize a reference clock with a frequency of 2.5 MHz.
 - Band-pass filtering for reference clock recovery shall be fixed at 2.5 MHz.
 - The receiver (RX) shall be equipped with a Skyworks model Si5345B jitter attenuator.
 - Jitter measurement shall be high-fidelity.
+- The slew rate for Si5345B shall be greater than 300 V/$\mu$ s
 - A 25 MHz output clock shall be synthesized via PLL for jitter measurements.
 - The system may incorporate back-channel communications to assist with debugging and troubleshooting.
 - PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
@@ -40,8 +41,38 @@ Another important aspect of the bias tee to consider is the filtering to ensure 
 An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity. [66]
 
 ### Clock Generation & Jitter Measurement
+ 
+While this subsystem shall ultimately utilize the Skyworks Si5345B Integrated Circuit (IC), as this component is specified by the client, two approaches to introducing the sinusoidal clock signal provided by the Bias-T circuit are considered. The Si5345B IC does not support direct interfacing with analog signals, as such the subsystem shall be required to convert the analog signal into a Low-voltage differential signaling (LVDS). The input and outputs of this subsystem were chosen to be LVDS formatted due to advantages in noise immunity compared to single-ended Low-voltage CMOS (LVCMOS) signals, derived from the format's differential nature <!--[https://www.eetimes.com/lvds-interface-technology-of-choice/]-->. This advantage in noise reduction is vital for the intended operation of the subsystem, as it reduces additive jitter caused by such noise. Additionally, the Si5395P IC <!--[Si5395P]--> is considered as a higher performance alternative to the Si5345B that utilizes the same configurability and ease of use.
 
-The clock generation and jitter measurements shall utilize the Skyworks Si5345B Integrated Circuit (IC), as directed by the client. This subsystem functionally has a singular solution available as a result, aside from configuration and implementation of the IC onto the circuit board. Configuration will ultimately be written to Non-Volatile Memory (NVM) onboard the IC, however a during the design process this will have to be accomplished manually via I<sup>2</sup>C protocol. Implementation of the IC can be observed by it's pin-out configuration shown in the Atomic Subsystem Specification below, with inputs and outputs described. 
+#### **Considerations for Clock Signal Conditioning Prior to Si5345B**
+
+**Approach A: Limiting Amplifier**
+
+<img width="761" height="354" alt="Limiting Amplifier Flow Chart" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/LimitAmp.png"/>
+
+This approach utilizes a band-pass filter initially to minimize noise introduced by other frequencies present within the system, which would be amplified and affect jitter measurements significantly. A limiting amplifier would condition the signal by applying very high gain through multiple stages internal the the IC, which would ultimately drive the input signal into controlled saturation. As the 2.5 MHz sine wave from the Bias-T propagates through the amplifier, even small voltage differences are rapidly amplified until the output reaches a fixed amplitude independent of the input level. This process removes amplitude variations and produces a constant envelope of the resulting waveform with very steep rising and falling edges, resulting in a significantly increased slew rate. The resulting waveform would require a simple LVDS driver/buffer to finalize conditioning before entering the Skyworks PLL IC.
+
+**Approach B: High-Speed Comparator with LVDS output capability**
+
+<img width="744" height="397" alt="High-Speed Comparator Flow Chart" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Comp.png"/>
+
+ This approach also utilizes a band-pass filter initially for the same purpose. The signal is then amplified in order to increase the slope of the voltage waveform, particularly affecting the slew rate at its zero-crossing point, before applying a well defined threshold crossing via high-speed comparator for a defined digital timing signal. For ease of design, a comparator with innate LVDS output capabilities shall be considered. The timing accuracy of this approach is governed by the ratio of input noise to signal slope at the comparator threshold, meaning that higher slew rates directly reduce jitter. Unlike the limiting amplifier, this approach allows explicit control over gain and threshold, enabling optimization for specific input conditions. However, because the comparator makes a single threshold decision, it remains sensitive to noise and amplitude variations at the crossing point. When properly designed, the LVDS signal resulting from this approach provides sufficiently fast edges and low jitter for reliable input into either Skyworks PLL IC.
+
+#### **Consideration for Higher Performance PLL IC**
+**Si5395P - Upgraded IC***
+
+#### **Evaluation Criteria**
+
+The overall evaluation of this subsystem is centered around reducing jitter measured via the outputs of the subsystem. As such, the criteria used to evaluate each input signal approach are Additive Jitter, PLL IC Input Slew Rate, Sensitivity to Input Noise, and Flexibility. For selection of PLL IC, the criteria are 
+
+#### **Evaluation & Selection**
+
+| | **Limiting Amplifier** | **Comparator** | 
+|:--|:--|:--|
+| **Additive Jitter** | Very Low: $\approx$ 1-5 ps RMS | Low: $\approx$ 5-10 ps RMS |
+| **Input Slew Rate** | Great: $\approx$ 1000 V/$\mu$ s plus | Good: $\approx$ 300-500 V/$\mu$ s Dependent on Amplifier |
+| **Noise Immunity** | High: Saturation | Moderate: Single Threshold Decision |
+| **Flexibility** | Low: No Adjustable Gain or Logic Threshold | High: Adjustable Gain & Logic Threshold |
 
 ### Communication
 The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
@@ -141,7 +172,7 @@ Requirements:
 
 ### Clock Generation & Jitter Measurement
 
-The Clock Generation and Jitter Measurement subsystem is responsible for conditioning the reference clock frequency of 2.5 MHz, extracted from the high-voltage line by the Bias-T subsystem, into a usable digital signal. The subsystem also generates a low jitter 25 MHz Low-Voltage Differential Signaling (LVDS) output clock utilizing the Skyworks Si5345B jitter cleaner/clock synthesizer via an internal Phase-Locked Loop (PLL) [2]. The subsystem allows for two types of jitter measurements to confirm reference clock integrity. The first measurements, cycle-to-cycle jitter, shall be taken directly from probing the 25 Mhz output signal of the Si5345B via oscilloscope and measuring time between consecutive rising edges of the clock. The second measurements, output clock jitter relative to reference clock, shall be taken in a similar fashion by comparing synchronized oscilloscope readings for the respective signals. The Si5345B chip shall ultimately utilize programmed onboard Non-Volatile Memory (NVM) that determines functionality of the chip and controls clock generation. However, a microcontroller shall be used during development to load registers for this chip manually via I2C due to a constraint of the chip allowing two total alloted NVM writes by the user [3]. A reset input and two additional outputs of the Si5345B, Interrupt and LoLb, may be included during development for monitoring purposes. Interrupt is asserted when a change in the device is detected and LOLb (Loss of Lock) is asserted when phase locking is achieved. The Clock Generation and Jitter Measurement subsystem allows determination for the overall success of the ComCaP system to carry the reference clock over the 40 V power cable.
+The Clock Generation and Jitter Measurement subsystem is responsible for conditioning the reference clock frequency of 2.5 MHz, extracted from the high-voltage line by the Bias-T subsystem, into a usable digital signal. The subsystem also generates a low jitter 25 MHz Low-Voltage Differential Signaling (LVDS) output clock utilizing the Skyworks Si5345B jitter cleaner/clock synthesizer via an internal Phase-Locked Loop (PLL) <!--[reference manual/data sheet]-->. The subsystem allows for two types of jitter measurements to confirm reference clock integrity. The first measurements, cycle-to-cycle jitter, shall be taken directly from probing the 25 Mhz output signal of the Si5345B via oscilloscope and measuring time between consecutive rising edges of the clock. The second measurements, output clock jitter relative to reference clock, shall be taken in a similar fashion by comparing synchronized oscilloscope readings for the respective signals. The Si5345B chip shall ultimately utilize programmed onboard Non-Volatile Memory (NVM) that determines functionality of the chip and controls clock generation. However, a microcontroller shall be used during development to load registers for this chip manually via I2C due to a constraint of the chip allowing two total alloted NVM writes by the user <!--[reference manual]-->. A reset input and two additional outputs of the Si5345B, Interrupt and LoLb, may be included during development for monitoring purposes. Interrupt is asserted when a change in the device is detected and LOLb (Loss of Lock) is asserted when phase locking is achieved. The Clock Generation and Jitter Measurement subsystem allows determination for the overall success of the ComCaP system to carry the reference clock over the 40 V power cable.
 
 Functions:
 - Clean clock signal provided by Bias-T circuit on receiving end of ComCaP system.
@@ -152,7 +183,8 @@ Inputs:
 - I2C serial communication interface Chip Configuration
 - Active Low Reset
 
-Output:
+Outputs:
+- 2.5 MHz LVDS Clock Signal
 - 25 MHz LVDS Clock Signal
 - Interrupt Status Signal
 - Loss of Lock Status Signal
@@ -299,11 +331,15 @@ All sources utilized in the conceptual design that are not considered common kno
 
 [2] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
 
-[3]] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+[3] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
 [4] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
 [5] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
+
+[] "LVDS: Interface technology of choice," EEtimes, https://www.eetimes.com/lvds-interface-technology-of-choice/ (accessed Apr. 11, 2026).
+
+[] Skyworks, "12-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier with Ultra-Low Jitter," Si5395/94/92 Data Sheet, July 2018 Revised [July 2020].
 
 [6] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
 
