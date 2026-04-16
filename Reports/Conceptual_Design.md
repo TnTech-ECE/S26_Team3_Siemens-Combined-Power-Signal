@@ -72,6 +72,18 @@ The cable is the method by which the power, data, and clock is transmitted and r
 - Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [69].
 - Coaxial cable is more expensive than twisted pair.
 
+#### Ethernet
+
+##### Pros
+
+
+
+
+##### Cons
+
+
+
+
 Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit our need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
 
 ## High-Level Solution
@@ -249,6 +261,8 @@ As engineers, the team upholds values such as those outlined in the National Soc
 <!--The primary standards that the team will need to follow is the IEC 60601 [4]. These are the standards outlining the electrical requirements for medical devices. Per Siemens, the scope of the project does not have a requirement to follow these standards directly. However, by adhering to an older version of these standards, the project can be more easily implemented into the greater PET system. Older standards must be used because purchasing the license for the updated standards is not in the budget. Unfortunately, the team is still waiting on the customer to provide depreciated versions of the standards, and the team cannot legiatemtly obtain those standards themselves. Therefore, the standards needed to be followed are not stated in this document.-->
 
 Since the customer will be making changes to our final design before implementing it, the customer has accepted responsibility for the adherence of standards for the project. However, that does not mean that the team will ignore the standards. It just means that if there is a set of standards that the team knows about but cannot access through legitimate means those standards cannot be considered. This includes IEC 60601 [4], the standards outlining electrical requirements for medical devices. It also includes BS EN 50065 [251], signalling restrictions on low voltage devices. The latter is a European standard, which the team is not held to in the United States, but was included as Siemens Healthineers is an international company.
+
+
 
 ## Resources
 
