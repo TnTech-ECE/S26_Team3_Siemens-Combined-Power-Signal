@@ -577,6 +577,6 @@ Jonas Cross - High level solution summary, Comparative Analysis and Atomic Subsy
 
 Tyler Chan - Resources, Budget, Timeline, Comparative Analysis of Potential Solutions for Bias Tee
 
-Ryan Shipwash - Introduction, Hardware Block Diagram, Operational Flow Chart, Atomic Subsystem Specifications for Bias Tee
+Ryan Shipwash - Introduction, Hardware Block Diagram, Operational Flow Chart, Comparative Analysis for Delivery and Atomic Subsystem Specifications for Bias Tee
 
 Harry Rudd - Comparative Analysis of the Cable; Atomic Subsystem of the Cable; Ethical, Professional, and Standards Considerations
