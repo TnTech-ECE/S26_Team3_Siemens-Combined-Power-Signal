@@ -97,41 +97,51 @@ The Si5395P is a newer, higher performance jitter attenuator in the same family 
 
 ### Delivery of Power, Clock, and Back Channel Communications
 
-Consolidating how the power, clock, and back channel communications are delivered is the overall goal of the project. Although a bias tee will be used as the final approach since it is specifically requested by the customer, it is important to analyze other potential approaches including Siemens' current approach
+Consolidating how the power, clock, and back channel communications are delivered is the overall goal of the project. Although a bias tee will be used as the final approach since it is specifically requested by the customer, it is important to analyze other potential approaches including Siemens' current set up for delivery.
 
 #### **Consideration of Separate, Combined, or Wireless Delivery**
 
 **Separate Delivery (Current)**
 
-The current method employed by Siemens is to deliver the power, clock, and comms separately across different wires to every detector. This is the simplest solution as there is no combining or separating of wiring or signals. However, this takes up much more space and has more points of failure,
+The current method employed by Siemens is to deliver the power and clock separately across different cables to every detector. This is the simplest solution conceptually as there is no combining or separating of wiring or signals. However, the cabling into and through the PET scanner can get complex and this takes up much more space and has more points of failure. This also does not currently provide Siemens with any form of back channel communication.
 
 * _Pros:_
 
-    * 
+    * No changing of current system
 
-    * 
+    * Simplest delivery of power and clock
 
 * _Cons:_
 
-    * 
+    * High cabling complexity throughout PET scanner
 
-    * 
+    * High volume of cables with power and clock separately delivering to each detector
+
+	* More points of failures due to more connections
+
+	* No back channel communications
 
 **Combined Delivery (Bias Tee)**
 
-
+Combined Delivery is the approach that Siemens has requested for the team to use, specifically using a bias tee. Combined delivery will combine the power, clock, and back channel communications onto one cable to send to the PET scanner detectors allowing for consolidation of cabling and addition of bach channel communications. A bias tee can be used to combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. The capacitors and inductors used for the filtering of the signals needs to be considered greatly as they have parasitic qualities and could have signal leakage if not properly regulated both leading to output signals outside of allowed tolerances. [4]
 
 * _Pros:_
 
-    * 
+    * Lower cabling complexity
 
-    * 
+    * Lower volume of cables
+
+	* Less points of failure due to less connections
+
+	* Addition of back channel communications
+
+	* 
 
 * _Cons:_
 
-    * 
+    * AC signal leakage on DC power
 
-    * 
+    * Parasitic capacitance and impedance
 
 **Wireless Delivery**
 
