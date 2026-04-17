@@ -493,6 +493,8 @@ Since the customer will be making changes to our final design before implementin
 
 As for standards that the team is able to follow, one is 47 CFR Part 15 Subpart A [16]. These are the federal regulations surrounding radio frequency devices. Under &sect; 15.103(e), since the ComCaP is part of a specialized medical device, it is exempt from 47 CFR Part 15 Subpart B. Subpart B is the regulations surrounding unintentional radiators, which is what the ComCaP would have been otherwise. Subpart A, however, is the general regulations. Therefore the ComCaP still must be upheld to those standards. The standards that pertain to the teams scope of the project are &sect; 15.5(b), &sect; 15.13, and &sect; 15.15(a). &sect; 15.5(b) states that the operation of the device "is subject to the conditions that no harmful interference is caused and that interference must be accepted that may be caused by the operation of an authorized radio station, by another intentional or unintentional radiator, by industrial, scientific and medical (ISM) equipment, or by an incidental radiator". This means that our device must operate within a safe range of interference and that the device must be capable of withstanding any standard interference that it may come into contact with. &sect; 15.13 states that the manufacturers of incidental radiators shall minimize the risk of harmful interference. &sect; 15.15(a) states that the team must construct the device with a sound engineering design. It also states that the device should minimize emanations and it cannot be harmful. &sect; 15.13 and &sect; 15.15(a) are redundant, but &sect; 15.13 refers specifically to incidental radiators, which is what the device will be. All this means for the team is that we shall minimize interference wherever is practical, and the team shall ensure that the device will not generate any harmful interference. Harmful interference is defined in &sect; 15.3(m) as "Any emission, radiation or induction that endangers the functioning of a radio navigation service or of other safety services or seriously degrades, obstructs or repeatedly interrupts a radiocommunications service operating in accordance with this chapter."
 
+Another set of standards that the team is expected to follow is 29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems [17].
+
 ## Resources
 
 This project will include primarily hardware components to implement the design: the Bias Tee circuits (Rx and Tx), the Si5345B Jitter-Cleaning Clock Synthesizer, the ST7580 FSK Power Line Transceiver, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
@@ -589,6 +591,8 @@ Reference Manual, July 2016 Revised [September 2018]
 [15]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
 
 [16]“47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
+
+[17]“29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
 
 ## Statement of Contributions
 
