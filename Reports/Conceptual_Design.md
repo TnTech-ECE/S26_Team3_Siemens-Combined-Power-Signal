@@ -19,7 +19,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 - Band-pass filtering for reference clock recovery shall be fixed at 2.5 MHz.
 - The receiver (RX) shall be equipped with a Skyworks model Si5345B jitter attenuator.
 - Jitter measurement shall be high-fidelity.
-- The slew rate for Si5345B shall be greater than 300 V/$\mu$
+- The slew rate for signal entering the Si5345B shall be greater than 300 V/$\mu s$.
 - A 25 MHz output clock shall be synthesized via PLL for jitter measurements.
 - The system may incorporate back-channel communications to assist with debugging and troubleshooting.
 - PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
@@ -185,7 +185,7 @@ The Si5345B is a high-performance, general purpose jitter attenuator and clock s
 
     * Wide input range.
 
-    * Lower power usage.
+    * Lower power consumption.
 
     * Simple integration.
 
@@ -199,19 +199,29 @@ The Si5345B is a high-performance, general purpose jitter attenuator and clock s
 
 **Si5395P - Upgraded IC**<!--[Si5395]-->
 
-The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 6.5% increase in power usage compared to the Si5345B.
+The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 100% increase in power usage (dependent on configuration and usage) compared to the Si5345B as well as a nearly 30% increase in cost.
 
 * _Pros:_
 
-    * 
+    * Better jitter performance.
 
-    * 
+    * Wide input range.
+
+    * Extensive tunability.
 
 * _Cons:_
 
-    * 
+    * Significant cost increase.
 
-    * 
+    * Significantly greater power consumption.
+
+    * Greatly exceeds the need of the project.
+
+    * More complex features than necessary.
+
+For either chip consideration, the manufacturer warns that the effect of low enough slew rates could greatly affect jitter performance, as seen in the figure below provided by the Skyworks' reference manual. This is the basis for the new specification requiring a >300 V/$\mu s$ slew rate within this document.
+
+<img width="668" height="484" alt="Effect of Low Slew Rate on RMS Jitter" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/SlewRate.png"/> [12]
 
 #### **Considerations for Clock Signal Conditioning Prior to Si5345B**
 
@@ -219,19 +229,25 @@ The Si5395P is a newer, higher performance jitter attenuator in the same family 
 
 <img width="761" height="354" alt="Limiting Amplifier Flow Chart" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/LimitAmp.png"/>
 
-This approach utilizes a band-pass filter initially to minimize noise introduced by other frequencies present within the system, which would be amplified and affect jitter measurements significantly. A limiting amplifier would condition the signal by applying very high gain through multiple stages internal the the IC, which would ultimately drive the input signal into controlled saturation. As the 2.5 MHz sine wave from the Bias-T propagates through the amplifier, even small voltage differences are rapidly amplified until the output reaches a fixed amplitude independent of the input level. This process removes amplitude variations and produces a constant envelope of the resulting waveform with very steep rising and falling edges, resulting in a significantly increased slew rate. The resulting waveform would require a simple LVDS driver/buffer to finalize conditioning before entering the Skyworks PLL IC.
+This approach utilizes a band-pass filter initially to minimize noise introduced by other frequencies present within the system, which would be amplified and affect jitter measurements significantly. A limiting amplifier would condition the signal by applying very high gain through multiple stages internal the the IC, which would ultimately drive the input signal into controlled saturation. As the 2.5 MHz sine wave from the Bias-T propagates through the amplifier, even small voltage differences are rapidly amplified until the output reaches a fixed amplitude independent of the input level. This process removes amplitude variations and produces a constant envelope of the resulting waveform with very steep rising and falling edges, resulting in a significantly increased slew rate. The resulting waveform would require a LVDS driver/buffer to finalize conditioning before entering the Skyworks PLL IC. Commercially available limiting amplifiers are generally designed for high data rate applications. While they remain functionally compatible at 2.5 MHz, their use in this system requires additional input conditioning and output interfacing to ensure proper biasing, signal levels, and compatibility with the jitter cleaner.
 
 * _Pros:_
 
-    * 
+    * Very high effective slew rate.
 
-    * 
+    * Lowest additive jitter.
+
+    * Consistent edge quality.
+
+    * Removes amplitude variations.
 
 * _Cons:_
 
-    * 
+    * Low flexibility for tuning.
 
-    * 
+    * Higher interfacing complexity.
+
+    * Designed for higher frequencies.
 
 **Approach B: High-Speed Comparator with LVDS output capability**
 
@@ -241,28 +257,41 @@ This approach utilizes a band-pass filter initially to minimize noise introduced
 
  * _Pros:_
 
-    * 
+    * High flexibility and control.
 
-    * 
+    * Sufficient slew rate with proper amplification.
+
+    * Sufficient additive jitter.
+
+    * Direct LVDS out capability.
 
 * _Cons:_
 
-    * 
-
-    * 
+    * Higher sensitivity to noise at threshold.
 
 #### **Evaluation Criteria**
 
-The overall evaluation of this subsystem is centered around reducing jitter measured via the outputs of the subsystem. As such, the criteria used to evaluate each input signal approach are Additive Jitter, PLL IC Input Slew Rate, Sensitivity to Input Noise, and Flexibility. For selection of PLL IC, the criteria are 
+The overall evaluation of this subsystem is centered around reducing jitter measured via the outputs of the subsystem. For selection of PLL IC, the criteria are: Output Jitter Performance, Cost, Power Consumption, and Appropriateness pertaining to the project's scope. The criteria used to evaluate each input signal approach are: Additive Jitter, PLL IC Input Slew Rate, Sensitivity to Input Noise, and Flexibility. 
 
 #### **Evaluation & Selection**
+
+| | **Si5345B** | **Si5395P** | 
+|:--|:--|:--|
+| **Output Jitter** | Low: 90-170 fs RMS | Lowest: 69-100 fs RMS |
+| **Cost** | $35.84 | $46.10 |
+| **Power Consumption** | Lowest: $\approx$ 0.4-0.6 W | Higher: $\approx$ 0.8-1.0 W |
+| **Appropriateness** | Exceeds Needs | Greatly Exceeds Needs |
 
 | | **Limiting Amplifier** | **Comparator** | 
 |:--|:--|:--|
 | **Additive Jitter** | Very Low: $\approx$ 1-5 ps RMS | Low: $\approx$ 5-10 ps RMS |
-| **Input Slew Rate** | Great: $\approx$ 1000 V/$\mu$ s plus | Good: $\approx$ 300-500 V/$\mu$ s Dependent on Amplifier |
+| **Input Slew Rate** | Great: $\approx$ 1000 V/$\mu s$ plus | Good: $\approx$ 300-500 V/$\mu s$ Dependent on Amplifier |
 | **Noise Immunity** | High: Saturation | Moderate: Single Threshold Decision |
 | **Flexibility** | Low: No Adjustable Gain or Logic Threshold | High: Adjustable Gain & Logic Threshold |
+
+As previously stated, Siemens Healthineers specifically requires the use of the Si5345B IC within this project, as this chip is currently used. This IC exceeds the jitter needs of the ComCaP project and as such higher performance, more expensive, and higher power consumption models are not necessary or warranted. For these reasons, there is insufficient justification to use the Si5395P IC.
+
+In selecting the appropriate signal conditioning approach for the ComCaP project, jitter considerations are of high importance. While the limiting amplifier approach technically achieves better theoretical jitter performances, the comparator approach also performs sufficiently with acceptable jitter. Flexibility of this subsystem during development is highly important. While simulations may provide estimates for the integrity of the signal after extraction from the Bias-T circuitry, the expectation is that noise introduced throughout the system will affect the signal unpredictably. As such, the highly adjustable configuration of the comparator approach is preferable for this project.
 
 ### Communication
 The communication system is the tertiary focus of this project and the customer allows the most flexibility with this solution. The main consideration with this system is the Power Line Communications Modem (PLC Modem). The PLC Modem modulates the data communications to be sent over the transmission line. 
