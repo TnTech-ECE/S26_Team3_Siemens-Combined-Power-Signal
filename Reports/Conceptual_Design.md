@@ -40,6 +40,8 @@ An important aspect to consider when selecting the voltage regulators is whether
 #### **Consideration Individual Single-Output Vs. Dual Output LDO**
 **MAX5092A/MAX5092B - Single Output Lower Power LDO**
 
+<img width="1015" height="395" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Power_Diagram_MAX5092_.png"/>
+
 The MAX5092A/MAX5092B low quiescent-current, low-dropout (LDO) regulators contain simple boost preregulators operating at a high frequency. The devices seamlessly provide a preset 3.3V (MAX5092A) or 5V (MAX5092B) LDO output voltage from a cold-crank through load-dump (3.5V to 80V) input voltage conditions. The MAX5092_/ MAX5093_ deliver up to 250mA with excellent load and line regulation. During normal operation, when the battery is healthy, the boost preregulator is completely turned off, reducing quiescent current to 65μA (typ). This makes the devices suitable for always-on power supplies.
 * _Pros:_
 
@@ -79,21 +81,23 @@ The MAX6791 ultra-low-quiescent current, dual-output linear regulator that offer
 
     * More complex hardware implementation.
 
-**MAX6796 - Upgraded IC**
+**MAX6796 - Single Output Higher Power LDO**
 
-The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 6.5% increase in power usage compared to the Si5345B.
+The MAX6796 is an LDO similar to the MAX6791 as described above. The primary difference is that there is only a single output option. However, this LDO is capable of delivering up to 300 mA of current, which the current draw requirement for the 3.3 V and 1.8 V power requirements for the system will need. These planes will likely exceed a 150 mA draw making this more suitable for the required supply.
 
 * _Pros:_
 
-    * 
+    * Sufficient current output capabilities for more demanding 3.3 V and 1.8 V power system requirements (up to 300 mA)
 
-    * 
+    * Wide input range
+
+    * Adjustable voltage output
+
+    * Similar price to MAX5092_
 
 * _Cons:_
 
-    * 
-
-    * 
+    * More complex Hardware implementation
 
 ### Delivery of Power, Clock, and Back Channel Communications
 
@@ -305,23 +309,23 @@ The cable is the method by which the power, data, and clock is transmitted and r
 
 #### Twisted Pair
 
-##### Pros
-- Siemens suggested we use the twisted pair in their initial analysis. Siemens never said we have to use it, but it is a consideration that needs to be taken into account.
-- Twisted pair cable is less expensive than coaxial cable.
+ * _Pros:_
+   * Siemens suggested we use the twisted pair in their initial analysis. Siemens never said we have to use it, but it is a consideration that needs to be taken into account.
+   * Twisted pair cable is less expensive than coaxial cable.
 
-##### Cons
-- Twisted pair cables are physically longer, therefore there is a greater chance to have issues with reflection.
-- Twisted pair cable generate more electromagnetic interference.
+* _Cons:_
+   * Twisted pair cables are physically longer, therefore there is a greater chance to have issues with reflection.
+   * Twisted pair cable generate more electromagnetic interference.
 
 #### Coaxial
 
-##### Pros
-- Greater shielding means there is less electromagnetic interference with the coaxial cable.
-- Coaxial cable is optimized for data transmission.
+ * _Pros:_
+   * Greater shielding means there is less electromagnetic interference with the coaxial cable.
+   * Coaxial cable is optimized for data transmission.
 
-##### Cons
-- Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [9].
-- Coaxial cable is more expensive than twisted pair.
+* _Cons:_
+   * Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [9].
+   * Coaxial cable is more expensive than twisted pair.
 
 Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit our need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
 
@@ -477,7 +481,7 @@ Requirements:
 
 ### Cable
 
-The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From our comparative analysis, the twisted pair cable seems to be the most sutable for our design.
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From our comparative analysis, the twisted pair cable seems to be the most suitable for our design.
 
 Function:
 - Carry signals from the Tx to the Rx side of the ComCaP
@@ -518,7 +522,9 @@ As engineers, the team upholds values such as those outlined in the National Soc
 
 Since the customer will be making changes to our final design before implementing it, the customer has accepted responsibility for the adherence of standards for the project. However, that does not mean that the team will ignore the standards. It just means that if there is a set of standards that the team knows about but cannot access through legitimate means those standards cannot be considered. This includes IEC 60601 [14], the standards outlining electrical requirements for medical devices. It also includes BS EN 50065 [15], signalling restrictions on low voltage devices. The latter is a European standard, which the team is not held to in the United States, but was included as Siemens Healthineers is an international company.
 
-As for standards that the team is able to follow, 
+As for standards that the team is able to follow, one is 47 CFR Part 15 Subpart A [16]. These are the federal regulations surrounding radio frequency devices. Under &sect; 15.103(e), since the ComCaP is part of a specialized medical device, it is exempt from 47 CFR Part 15 Subpart B. Subpart B is the regulations surrounding unintentional radiators, which is what the ComCaP would have been otherwise. Subpart A, however, is the general regulations. Therefore the ComCaP still must be upheld to those standards. The standards that pertain to the teams scope of the project are &sect; 15.5(b), &sect; 15.13, and &sect; 15.15(a). &sect; 15.5(b) states that the operation of the device "is subject to the conditions that no harmful interference is caused and that interference must be accepted that may be caused by the operation of an authorized radio station, by another intentional or unintentional radiator, by industrial, scientific and medical (ISM) equipment, or by an incidental radiator". This means that our device must operate within a safe range of interference and that the device must be capable of withstanding any standard interference that it may come into contact with. &sect; 15.13 states that the manufacturers of incidental radiators shall minimize the risk of harmful interference. &sect; 15.15(a) states that the team must construct the device with a sound engineering design. It also states that the device should minimize emanations and it cannot be harmful. &sect; 15.13 and &sect; 15.15(a) are redundant, but &sect; 15.13 refers specifically to incidental radiators, which is what the device will be. All this means for the team is that we shall minimize interference wherever is practical, and the team shall ensure that the device will not generate any harmful interference. Harmful interference is defined in &sect; 15.3(m) as "Any emission, radiation or induction that endangers the functioning of a radio navigation service or of other safety services or seriously degrades, obstructs or repeatedly interrupts a radiocommunications service operating in accordance with this chapter."
+
+Another set of standards that the team is expected to follow is 29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems [17].
 
 ## Resources
 
@@ -614,6 +620,10 @@ Reference Manual, July 2016 Revised [September 2018]
 [14] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
 
 [15]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
+
+[16]“47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
+
+[17]“29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
 
 ## Statement of Contributions
 
