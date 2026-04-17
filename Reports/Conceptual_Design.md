@@ -276,23 +276,23 @@ The cable is the method by which the power, data, and clock is transmitted and r
 
 #### Twisted Pair
 
-##### Pros
-- Siemens suggested we use the twisted pair in their initial analysis. Siemens never said we have to use it, but it is a consideration that needs to be taken into account.
-- Twisted pair cable is less expensive than coaxial cable.
+ * _Pros:_
+   * Siemens suggested we use the twisted pair in their initial analysis. Siemens never said we have to use it, but it is a consideration that needs to be taken into account.
+   * Twisted pair cable is less expensive than coaxial cable.
 
-##### Cons
-- Twisted pair cables are physically longer, therefore there is a greater chance to have issues with reflection.
-- Twisted pair cable generate more electromagnetic interference.
+* _Cons:_
+   * Twisted pair cables are physically longer, therefore there is a greater chance to have issues with reflection.
+   * Twisted pair cable generate more electromagnetic interference.
 
 #### Coaxial
 
-##### Pros
-- Greater shielding means there is less electromagnetic interference with the coaxial cable.
-- Coaxial cable is optimized for data transmission.
+ * _Pros:_
+   * Greater shielding means there is less electromagnetic interference with the coaxial cable.
+   * Coaxial cable is optimized for data transmission.
 
-##### Cons
-- Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [9].
-- Coaxial cable is more expensive than twisted pair.
+* _Cons:_
+   * Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [9].
+   * Coaxial cable is more expensive than twisted pair.
 
 Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit our need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
 
