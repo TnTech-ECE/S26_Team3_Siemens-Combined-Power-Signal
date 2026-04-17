@@ -448,7 +448,7 @@ Requirements:
 
 ### Cable
 
-The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From our comparative analysis, the twisted pair cable seems to be the most sutable for our design.
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From our comparative analysis, the twisted pair cable seems to be the most suitable for our design.
 
 Function:
 - Carry signals from the Tx to the Rx side of the ComCaP
@@ -489,7 +489,7 @@ As engineers, the team upholds values such as those outlined in the National Soc
 
 Since the customer will be making changes to our final design before implementing it, the customer has accepted responsibility for the adherence of standards for the project. However, that does not mean that the team will ignore the standards. It just means that if there is a set of standards that the team knows about but cannot access through legitimate means those standards cannot be considered. This includes IEC 60601 [14], the standards outlining electrical requirements for medical devices. It also includes BS EN 50065 [15], signalling restrictions on low voltage devices. The latter is a European standard, which the team is not held to in the United States, but was included as Siemens Healthineers is an international company.
 
-As for standards that the team is able to follow, 
+As for standards that the team is able to follow, one is Federal Communications Commission (FCC) 47 CFR Part 15 Subpart A. These are the federal regulations surrounding radio frequency devices. Under &sect; 15.103(e), since the ComCaP is part of a specialized medical device, it is exempt from 47 CFR Part 15 Subpart B.
 
 ## Resources
 
