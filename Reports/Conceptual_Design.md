@@ -40,6 +40,8 @@ An important aspect to consider when selecting the voltage regulators is whether
 #### **Consideration Individual Single-Output Vs. Dual Output LDO**
 **MAX5092A/MAX5092B - Single Output Lower Power LDO**
 
+<img width="1015" height="395" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Power_Diagram_MAX5092_.png"/>
+
 The MAX5092A/MAX5092B low quiescent-current, low-dropout (LDO) regulators contain simple boost preregulators operating at a high frequency. The devices seamlessly provide a preset 3.3V (MAX5092A) or 5V (MAX5092B) LDO output voltage from a cold-crank through load-dump (3.5V to 80V) input voltage conditions. The MAX5092_/ MAX5093_ deliver up to 250mA with excellent load and line regulation. During normal operation, when the battery is healthy, the boost preregulator is completely turned off, reducing quiescent current to 65μA (typ). This makes the devices suitable for always-on power supplies.
 * _Pros:_
 
