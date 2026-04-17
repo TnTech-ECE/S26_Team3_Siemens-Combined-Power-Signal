@@ -79,21 +79,23 @@ The MAX6791 ultra-low-quiescent current, dual-output linear regulator that offer
 
     * More complex hardware implementation.
 
-**MAX6796 - Upgraded IC**
+**MAX6796 - Single Output Higher Power LDO**
 
-The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 6.5% increase in power usage compared to the Si5345B.
+The MAX6796 is an LDO similar to the MAX6791 as described above. The primary difference is that there is only a single output option. However, this LDO is capable of delivering up to 300 mA of current, which the current draw requirement for the 3.3 V and 1.8 V power requirements for the system will need. These planes will likely exceed a 150 mA draw making this more suitable for the required supply.
 
 * _Pros:_
 
-    * 
+    * Sufficient current output capabilities for more demanding 3.3 V and 1.8 V power system requirements (up to 300 mA)
 
-    * 
+    * Wide input range
+
+    * Adjustable voltage output
+
+    * Similar price to MAX5092_
 
 * _Cons:_
 
-    * 
-
-    * 
+    * More complex Hardware implementation
 
 ### Delivery of Power, Clock, and Back Channel Communications
 
