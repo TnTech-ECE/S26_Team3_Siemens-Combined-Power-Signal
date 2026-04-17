@@ -65,15 +65,19 @@ The MAX6791 ultra-low-quiescent current, dual-output linear regulator that offer
 
 * _Pros:_
 
-    * 
+    * Sufficient current output capabilities for 5 V and 11 V power system requirements
 
-    * 
+    * Wide input range
+
+    * Low current consumption
+
+    * Adjust able voltage output
 
 * _Cons:_
 
-    * 
+    * Dual output current is not sufficient for 3 V and 1.8 V power system requirements
 
-    * 
+    * More complex hardware implementation.
 
 **MAX6796 - Upgraded IC**
 
