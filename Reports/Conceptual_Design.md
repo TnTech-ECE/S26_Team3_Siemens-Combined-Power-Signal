@@ -524,6 +524,8 @@ As for standards that the team is able to follow, one is 47 CFR Part 15 Subpart 
 
 Another set of standards that the team is expected to follow is 29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems [18]. Since much of this document is related to worker safety and our project is an internal subsystem for Siemens Healthineers' PET scanner, not much of this document pertains to the ComCaP team in particular. However, &sect; 1910.303(b)(1) pertains to the team in that it states that "Electric equipment shall be free from recognized hazards that are likely to cause death or serious physical harm to employees." For the team, that means that anywhere there is 48V DC the team needs to ensure that it is properly insulated and not at risk of overheating. Also, &sect; 1910.303(b)(3) states that the team needs to ensure that the wiring is free from short circuits. The rest of the standard pertains to external connections to the PET scanner, of which the team has no bearing on. At a high level this standard is ensuring that the team constructs the ComCaP safely, and that the 48 V is dealt with in a safe manner.
 
+[19] add info here
+
 ## Resources
 
 This project will include primarily hardware components to implement the design: the Bias Tee circuits (Rx and Tx), the Si5345B Jitter-Cleaning Clock Synthesizer, the ST7580 FSK Power Line Transceiver, various SMD components to support those circuits, the PCB, a power supply, and cables for the I/O. Additionally, LTSpice will be used primarily for simulation files to deliver to the customer.
@@ -618,9 +620,11 @@ All sources utilized in the conceptual design that are not considered common kno
 
 [16]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
 
-[17]“47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
+[17] “47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
 
-[18]“29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
+[18] “29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
+
+[19] "IEEE Standard for Medical Device Communications-Physical Layer Interface-Cable Connected," in IEEE Std 1073.4.1-1994 , vol., no., pp.0_1-, 1995, doi: 10.1109/IEEESTD.1995.122627.
 
 ## Statement of Contributions
 
