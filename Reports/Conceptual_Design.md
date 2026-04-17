@@ -97,21 +97,57 @@ The Si5395P is a newer, higher performance jitter attenuator in the same family 
 
 ### Delivery of Power, Clock, and Back Channel Communications
 
-#### Separate Delivery (Current)
+Consolidating how the power, clock, and back channel communications are delivered is the overall goal of the project. Although a bias tee will be used as the final approach since it is specifically requested by the customer, it is important to analyze other potential approaches including Siemens' current approach
+
+#### **Consideration of Separate, Combined, or Wireless Delivery**
+
+**Separate Delivery (Current)**
 
 The current method employed by Siemens is to deliver the power, clock, and comms separately across different wires to every detector. This is the simplest solution as there is no combining or separating of wiring or signals. However, this takes up much more space and has more points of failure,
 
-Pros:
+* _Pros:_
 
-Cons:
+    * 
 
-#### Combined Delivery (Bias Tee)
+    * 
+
+* _Cons:_
+
+    * 
+
+    * 
+
+**Combined Delivery (Bias Tee)**
 
 
 
-#### Wireless Delivery
+* _Pros:_
+
+    * 
+
+    * 
+
+* _Cons:_
+
+    * 
+
+    * 
+
+**Wireless Delivery**
 
 
+
+* _Pros:_
+
+    * 
+
+    * 
+
+* _Cons:_
+
+    * 
+
+    * 
 
 The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. <!--T-->
 
