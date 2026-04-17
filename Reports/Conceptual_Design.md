@@ -37,7 +37,23 @@ In the specifications of the project, the system is required to provide 100 W at
 
 An important aspect to consider when selecting the voltage regulators is whether the outputs can supply enough current to power the ICs, as well as minimizing hardware to reduce cost and space taken on the PCB. A previous choice that was considered when selecting an LDO was the MAX5092 [2a] which is only able to deliver a maximum of 250 mA. However, this chip only had one output, whereas the MAX6791 has two outputs that can be adjusted to a desired voltage between 1.5 V and 11 V, each at 150 mA. Additionally, the MAX6796 [3a] was selected to handle the higher current requirements for the 3.3 V and 1.8 V power rails since they can provide 300 mA of output current. This is optimal for the proposed design as these chips reduce the number of required LDOs by two, minimizing the hardware.
 
-### Bias Tee
+### Delivery of Power, Clock, and Back Channel Communications
+
+#### Separate Delivery (Current)
+
+The current method employed by Siemens is to deliver the power, clock, and comms separately across different wires to every detector. This is the simplest solution as there is no combining or separating of wiring or signals. However, this takes up much more space and has more points of failure,
+
+Pros:
+
+Cons:
+
+#### Combined Delivery (Bias Tee)
+
+
+
+#### Wireless Delivery
+
+
 
 The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. <!--T-->
 
