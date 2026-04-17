@@ -4,7 +4,7 @@
 
 Siemens Healthineers is a company that develops medical technologies, PET scanners being one of those technologies. Currently, their PET scanners incorporate separate cabling for the power and synchronization clock that are provided to the PET scanner, along with separate back channel communication. Siemens has requested for this team to consolidate these by feeding the clock and back channel communications through the power cabling.[1] This will reduce the volume of cables used as well as the number of points of failure decreasing overall system complexity. This proposal will cover the details of Siemens Healthineers' problem, the constraints and specifications they provided, already existing technology that could be used in the solution, what Siemens expects for the team to deliver, the resources required, the team members and stakeholders, and the potential implications of this new system.
 
-## Restating the Fully Formulated Problem
+## Fully Formulated Problem
 
 Traditionally, PET scanners are made up rings of many detectors that need to be precisely synchronized. A separate piece of hardware is necessary to generate the clock and its own cabling to provide the clock to the detectors. Separate cabling is also needed for providing power to the detectors and back channel communication for trouble shooting. With the large number of detectors and the individual cabling for each of these, cabling complexity has become a problem especially with connections points being a common point of failure. The team's goal, set by Siemens, is to reduce complexity by running both the synchronization clock and back channel communications through the power cabling.[1] This solution will lead to a decrease in space usage by combining the different systems into one unit and greatly reduce the volume of cables used. This solution will also reduce the points of failure with the reduction of connection points. The primary challenges will be determining how the separate signals will be delivered and processed to stay within provided constraints and determining the best cables to support the transfer of these combined signals at the required power.
 
@@ -47,7 +47,46 @@ An additional point to consider when selecting passive components, inductors and
 
 ### Clock Generation & Jitter Measurement
  
-While this subsystem shall ultimately utilize the Skyworks Si5345B Integrated Circuit (IC), as this component is specified by the client, two approaches to introducing the sinusoidal clock signal provided by the Bias-T circuit are considered. The Si5345B IC does not support direct interfacing with analog signals, as such the subsystem shall be required to convert the analog signal into a Low-voltage differential signaling (LVDS). The input and outputs of this subsystem were chosen to be LVDS formatted due to advantages in noise immunity compared to single-ended Low-voltage CMOS (LVCMOS) signals, derived from the format's differential nature <!--[https://www.eetimes.com/lvds-interface-technology-of-choice/]-->. This advantage in noise reduction is vital for the intended operation of the subsystem, as it reduces additive jitter caused by such noise. Additionally, the Si5395P IC <!--[Si5395P]--> is considered as a higher performance alternative to the Si5345B that utilizes the same configurability and ease of use.
+While this subsystem shall ultimately utilize the Skyworks Si5345B Integrated Circuit (IC), as this component is specified by the client, the Si5395P IC <!--[Si5395P]--> is considered as a higher performance alternative  that utilizes the same configurability and ease of use. Additionally, two approaches to introducing the sinusoidal clock signal provided by the Bias-T circuit are considered. The Si5345B IC does not support direct interfacing with analog signals, as such the subsystem shall be required to convert the analog signal into a Low-voltage differential signaling (LVDS). The input and outputs of this subsystem were chosen to be LVDS formatted due to advantages in noise immunity compared to single-ended Low-voltage CMOS (LVCMOS) signals, derived from the format's differential nature <!--[https://www.eetimes.com/lvds-interface-technology-of-choice/]-->. This advantage in noise reduction is vital for the intended operation of the subsystem, as it reduces additive jitter caused by such noise. 
+
+#### **Consideration for Higher Performance PLL IC**
+**Si5345B**<!--[Si5345]-->
+
+The Si5345B is a high-performance, general purpose jitter attenuator and clock synthesizer built around a single digital PLL architecture. It supports an extremely wide range of input frequencies (8 kHz to 750 MHz) making it highly adaptable. This IC can generate virtually any output frequency using fractional synthesis while providing strong jitter attenuation typically between 90 and 170 fs RMS. It also offers up to 10 differential outputs or up to 20 single-ended outputs and flexible input/output format support. The IC can tolerate poor input quality, applying narrow loop bandwidth filtering (down to 0.1 Hz) and generating a low jitter clock.
+
+* _Pros:_
+
+    * Good jitter performance.
+
+    * Wide input range.
+
+    * Lower power usage.
+
+    * Simple integration.
+
+    * Exceeds the needs of the project.
+
+    * Extensive tunability.
+
+* _Cons:_
+
+    * Has a higher jitter floor relative to newer IC's.
+
+**Si5395P - Upgraded IC**<!--[Si5395]-->
+
+The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 6.5% increase in power usage compared to the Si5345B.
+
+* _Pros:_
+
+    * 
+
+    * 
+
+* _Cons:_
+
+    * 
+
+    * 
 
 #### **Considerations for Clock Signal Conditioning Prior to Si5345B**
 
@@ -57,14 +96,35 @@ While this subsystem shall ultimately utilize the Skyworks Si5345B Integrated Ci
 
 This approach utilizes a band-pass filter initially to minimize noise introduced by other frequencies present within the system, which would be amplified and affect jitter measurements significantly. A limiting amplifier would condition the signal by applying very high gain through multiple stages internal the the IC, which would ultimately drive the input signal into controlled saturation. As the 2.5 MHz sine wave from the Bias-T propagates through the amplifier, even small voltage differences are rapidly amplified until the output reaches a fixed amplitude independent of the input level. This process removes amplitude variations and produces a constant envelope of the resulting waveform with very steep rising and falling edges, resulting in a significantly increased slew rate. The resulting waveform would require a simple LVDS driver/buffer to finalize conditioning before entering the Skyworks PLL IC.
 
+* _Pros:_
+
+    * 
+
+    * 
+
+* _Cons:_
+
+    * 
+
+    * 
+
 **Approach B: High-Speed Comparator with LVDS output capability**
 
 <img width="744" height="397" alt="High-Speed Comparator Flow Chart" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Comp.png"/>
 
  This approach also utilizes a band-pass filter initially for the same purpose. The signal is then amplified in order to increase the slope of the voltage waveform, particularly affecting the slew rate at its zero-crossing point, before applying a well defined threshold crossing via high-speed comparator for a defined digital timing signal. For ease of design, a comparator with innate LVDS output capabilities shall be considered. The timing accuracy of this approach is governed by the ratio of input noise to signal slope at the comparator threshold, meaning that higher slew rates directly reduce jitter. Unlike the limiting amplifier, this approach allows explicit control over gain and threshold, enabling optimization for specific input conditions. However, because the comparator makes a single threshold decision, it remains sensitive to noise and amplitude variations at the crossing point. When properly designed, the LVDS signal resulting from this approach provides sufficiently fast edges and low jitter for reliable input into either Skyworks PLL IC.
 
-#### **Consideration for Higher Performance PLL IC**
-**Si5395P - Upgraded IC***
+ * _Pros:_
+
+    * 
+
+    * 
+
+* _Cons:_
+
+    * 
+
+    * 
 
 #### **Evaluation Criteria**
 
@@ -233,7 +293,7 @@ Interface:
 - Microcontroller with usb connectivity shall be used to interface with the Si5345B chip during development.
 
 #### Si5345B Reference Schematic
-<img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_3-29-26.png" />
+<img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_4-16-26.png" />
 
 
 ### Communications
