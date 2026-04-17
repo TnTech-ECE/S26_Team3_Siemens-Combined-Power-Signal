@@ -38,7 +38,7 @@ In the specifications of the project, the system is required to provide 100 W at
 An important aspect to consider when selecting the voltage regulators is whether the outputs can supply enough current to power the ICs, as well as minimizing hardware to reduce cost and space taken on the PCB. A previous choice that was considered when selecting an LDO was the MAX5092 [2] which is only able to deliver a maximum of 250 mA. However, this chip only had one output, whereas the MAX6791 has two outputs that can be adjusted to a desired voltage between 1.5 V and 11 V, each at 150 mA. Additionally, the MAX6796 [3] was selected to handle the higher current requirements for the 3.3 V and 1.8 V power rails since they can provide 300 mA of output current. This is optimal for the proposed design as these chips reduce the number of required LDOs by two, minimizing the hardware.
 
 #### **Consideration Individual Single-Output Vs. Dual Output LDO**
-**MAX5092A/MAX5092B**
+**MAX5092A/MAX5092B - Single Output Lower Power LDO**
 
 The MAX5092A/MAX5092B low quiescent-current, low-dropout (LDO) regulators contain simple boost preregulators operating at a high frequency. The devices seamlessly provide a preset 3.3V (MAX5092A) or 5V (MAX5092B) LDO output voltage from a cold-crank through load-dump (3.5V to 80V) input voltage conditions. The MAX5092_/ MAX5093_ deliver up to 250mA with excellent load and line regulation. During normal operation, when the battery is healthy, the boost preregulator is completely turned off, reducing quiescent current to 65μA (typ). This makes the devices suitable for always-on power supplies.
 * _Pros:_
@@ -59,9 +59,9 @@ The MAX5092A/MAX5092B low quiescent-current, low-dropout (LDO) regulators contai
 
     * Requires more units to fulfill needs of the project
 
-**MAX6791 - Upgraded IC**
+**MAX6791 - Dual Output Lower Power LDO**
 
-The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 6.5% increase in power usage compared to the Si5345B.
+The MAX6791 ultra-low-quiescent current, dual-output linear regulator that offers a wide 5V to 72V operating input range, allowing them to withstand demanding power draws while consuming only 68μA. The MAX6791 is dual-output regulator capable of supplying up to 150mA per output. This device offers standard output-voltage options (5V, 3.3V, 2.5V, or 1.8V) and can be adjusted to any voltage from 1.8V to 11V. The MAX6791 also offers a fixed 5V output.
 
 * _Pros:_
 
