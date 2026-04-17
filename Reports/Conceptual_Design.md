@@ -448,6 +448,12 @@ Interface:
 - No direct user interface is required beyond initial configuration.
 - Microcontroller with usb connectivity shall be used to interface with the Si5345B chip during development.
 
+Requirements:
+- Shall receive an input with a >300 V/$\mu s$ slew rate.
+- Shall be equipped with the Skyworks Si5345B IC.
+- Shall produce a low jitter clock signal observed from high-fidelity measurements.
+- Shall synthesize a 25 MHz output clock for measurements.
+
 #### Si5345B Reference Schematic
 <img width="951" height="747" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Si5345B_config_4-16-26.png" />
 
@@ -584,7 +590,7 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 ## References
 
-All sources utilized in the conceptual design that are not considered common knowledge must be properly cited. Multiple references should be included.
+<!--All sources utilized in the conceptual design that are not considered common knowledge must be properly cited. Multiple references should be included.-->
 
 [1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
 
