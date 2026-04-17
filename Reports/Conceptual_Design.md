@@ -123,7 +123,7 @@ The current method employed by Siemens is to deliver the power and clock separat
 
 **Combined Delivery (Bias Tee)**
 
-Combined Delivery is the approach that Siemens has requested for the team to use, specifically using a bias tee. Combined delivery will combine the power, clock, and back channel communications onto one cable to send to the PET scanner detectors allowing for consolidation of cabling and addition of bach channel communications. A bias tee can be used to combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. The capacitors and inductors used for the filtering of the signals needs to be considered greatly as they have parasitic qualities and could have signal leakage if not properly regulated both leading to output signals outside of allowed tolerances. [4]
+Combined Delivery is the approach that Siemens has requested for the team to use, specifically using a bias tee. Combined delivery will combine the power, clock, and back channel communications onto one cable to send to the PET scanner detectors allowing for consolidation of cabling and addition of bach channel communications. A bias tee can be used to combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. The capacitors and inductors used for the filtering of the signals needs to be considered greatly as they have parasitic qualities, parasitic impedance in capacitors and parasitic capacitance in inductors, and could have AC signal leakage onto the DC signal if not properly designed leading to output signals outside of allowed tolerances. [4]
 
 * _Pros:_
 
@@ -135,17 +135,17 @@ Combined Delivery is the approach that Siemens has requested for the team to use
 
 	* Addition of back channel communications
 
-	* 
-
 * _Cons:_
 
     * AC signal leakage on DC power
 
     * Parasitic capacitance and impedance
 
-**Wireless Delivery**
+	* Less commonly used for more than one RF signal and one DC signal
 
+**Wireless Delivery (Near Field Power Transfer)**
 
+Wireless delivery of RF signals is an extremely common way to deliver information over any distance. Wireless delivery of clock and back channel communications using electromagnetic waves would 
 
 * _Pros:_
 
@@ -159,11 +159,11 @@ Combined Delivery is the approach that Siemens has requested for the team to use
 
     * 
 
-The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. <!--T-->
+<!--The bias tee is the main approach to the problem, being specifically required by the customer. A bias tee can combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. 
 
 Another important aspect of the bias tee to consider is the filtering to ensure that the ac signal does not leak into the DC signal and create fluctuations in the voltage supplied. This can be done by including a bypass capacitor to ground from the DC source to remove some of the fluctuation. However, this can result in resonant frequencies that cause a drop in the impedance. The capacitor values can be shifted to change the point of resonance to a frequency that is not within the useful range. Additionally, a series resistor can be added in series to remove this drop. However, this would affect the DC component of the signal and consequently the power transferred. This results in the best option likely using a DC decoupling capacitor shifted where the resonance point is outside of the useful frequency range at 2.5 MHz.
 
-An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity. [4]
+An additional point to consider when selecting passive components, inductors and capacitors, is the parasitic qualities of each. Capacitors have inductance, and inductors have capacitance. Looking through basic simulations with parasitic capacitance on an inductor, at a high enough frequency, the impedance starts to decrease. For the parasitic inductance of capacitors, another resonance frequency will appear that will cause another impedance dip. The values of the capacitors and inductors will need to be chosen to place the resonance frequencies in a range where that will not affect the functionality of the bias tee regarding power and signal integrity. [4]-->
 
 ### Clock Generation & Jitter Measurement
  
@@ -585,7 +585,7 @@ Levi Cantrell - Restating the Fully Formulated Problem, Specifications, Comparat
 
 Jonas Cross - High level solution summary, Comparative Analysis and Atomic Subsystem of Communications
 
-Tyler Chan - Resources, Budget, Timeline, Comparative Analysis of Potential Solutions for Bias Tee
+Tyler Chan - Resources, Budget, Timeline, Comparative Analysis and Atomic Subsystem for IC Power
 
 Ryan Shipwash - Introduction, Hardware Block Diagram, Operational Flow Chart, Comparative Analysis for Delivery and Atomic Subsystem Specifications for Bias Tee
 
