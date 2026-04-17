@@ -75,6 +75,22 @@ The Si5395P is a newer, higher performance jitter attenuator in the same family 
 
     * 
 
+**MAX6796 - Upgraded IC**
+
+The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 6.5% increase in power usage compared to the Si5345B.
+
+* _Pros:_
+
+    * 
+
+    * 
+
+* _Cons:_
+
+    * 
+
+    * 
+
 ### Delivery of Power, Clock, and Back Channel Communications
 
 #### Separate Delivery (Current)
