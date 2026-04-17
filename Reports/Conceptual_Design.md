@@ -130,7 +130,7 @@ The current method employed by Siemens is to deliver the power and clock separat
 Combined Delivery is the approach that Siemens has requested for the team to use, specifically using a bias tee. Combined delivery will combine the power, clock, and back channel communications onto one cable to send to the PET scanner detectors allowing for consolidation of cabling and addition of bach channel communications. A bias tee can be used to combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. The capacitors and inductors used for the filtering of the signals needs to be considered greatly as they have parasitic qualities, parasitic impedance in capacitors and parasitic capacitance in inductors, and could have AC signal leakage onto the DC signal if not properly designed leading to output signals outside of allowed tolerances. [4]
 
 * _Pros:_
-
+z
     * Lower cabling complexity
 
     * Lower volume of cables
@@ -176,10 +176,10 @@ An additional point to consider when selecting passive components, inductors and
 
 ### Clock Generation & Jitter Measurement
  
-While this subsystem shall ultimately utilize the Skyworks Si5345B Integrated Circuit (IC), as this component is specified by the client, the Si5395P IC <!--[Si5395P]--> is considered as a higher performance alternative  that utilizes the same configurability and ease of use. Additionally, two approaches to introducing the sinusoidal clock signal provided by the Bias-T circuit are considered. The Si5345B IC does not support direct interfacing with analog signals, as such the subsystem shall be required to convert the analog signal into a Low-voltage differential signaling (LVDS). The input and outputs of this subsystem were chosen to be LVDS formatted due to advantages in noise immunity compared to single-ended Low-voltage CMOS (LVCMOS) signals, derived from the format's differential nature <!--[https://www.eetimes.com/lvds-interface-technology-of-choice/]-->. This advantage in noise reduction is vital for the intended operation of the subsystem, as it reduces additive jitter caused by such noise. 
+While this subsystem shall ultimately utilize the Skyworks Si5345B Integrated Circuit (IC), as this component is specified by the client, the Si5395P IC is considered as a higher performance alternative  that utilizes the same configurability and ease of use. Additionally, two approaches to introducing the sinusoidal clock signal provided by the Bias-T circuit are considered. The Si5345B IC does not support direct interfacing with analog signals, as such the subsystem shall be required to convert the analog signal into a Low-voltage differential signaling (LVDS). The input and outputs of this subsystem were chosen to be LVDS formatted due to advantages in noise immunity compared to single-ended Low-voltage CMOS (LVCMOS) signals, derived from the format's differential nature [6]. This advantage in noise reduction is vital for the intended operation of the subsystem, as it reduces additive jitter caused by such noise. 
 
 #### **Consideration for Higher Performance PLL IC**
-**Si5345B**<!--[Si5345]-->
+**Si5345B**[7]
 
 The Si5345B is a high-performance, general purpose jitter attenuator and clock synthesizer built around a single digital PLL architecture. It supports an extremely wide range of input frequencies (8 kHz to 750 MHz) making it highly adaptable. This IC can generate virtually any output frequency using fractional synthesis while providing strong jitter attenuation typically between 90 and 170 fs RMS. It also offers up to 10 differential outputs or up to 20 single-ended outputs and flexible input/output format support. The IC can tolerate poor input quality, applying narrow loop bandwidth filtering (down to 0.1 Hz) and generating a low jitter clock.
 
@@ -201,7 +201,7 @@ The Si5345B is a high-performance, general purpose jitter attenuator and clock s
 
     * Has a higher jitter floor relative to newer IC's.
 
-**Si5395P - Upgraded IC**<!--[Si5395]-->
+**Si5395P - Upgraded IC**[8]
 
 The Si5395P is a newer, higher performance jitter attenuator in the same family but optimized for ultra-low jitter and high end communications systems. It also uses a single PLL architecture but achieves significantly lower output jitter typically between 69 and 100 fs RMS. This model supports the same input frequency range as the Si5345B, but offers more outputs at 12. This IC is designed for demanding applications requiring precision synchronization. The Si5395P incurs a roughly 100% increase in power usage (dependent on configuration and usage) compared to the Si5345B as well as a nearly 30% increase in cost.
 
@@ -225,7 +225,7 @@ The Si5395P is a newer, higher performance jitter attenuator in the same family 
 
 For either chip consideration, the manufacturer warns that the effect of low enough slew rates could greatly affect jitter performance, as seen in the figure below provided by the Skyworks' reference manual. This is the basis for the new specification requiring a >300 V/$\mu s$ slew rate within this document.
 
-<img width="668" height="484" alt="Effect of Low Slew Rate on RMS Jitter" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/SlewRate.png"/> [12]
+<img width="668" height="484" alt="Effect of Low Slew Rate on RMS Jitter" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/SlewRate.png"/> [9]
 
 #### **Considerations for Clock Signal Conditioning Prior to Si5345B**
 
@@ -302,10 +302,10 @@ The communication system is the tertiary focus of this project and the customer 
 
 The suggestion from Siemens was to use the ST7540, but that product is no longer supported by ST. ST's most recent model is the ST7580, which is supported and has more features, and Siemens will iterate upon this project after completion. Continued support ensures this solution would remain usable for the future.
 
-The ST75XX series IC's are not the only option, considering that was a suggestion [6]. ST advertises the ST8500 on their overview of their power line transceivers [7]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms and independent operation. This would add more effort in development for little to no return for this use case. Not having an onboard SoC also allows this modem to be completely controlled by the systems this board will integrate with.
+The ST75XX series IC's are not the only option, considering that was a suggestion [10]. ST advertises the ST8500 on their overview of their power line transceivers [11]. The problems with this IC is that it is too complicated for our use-case. The ST8500 has an SoC for more complicated paradigms and independent operation. This would add more effort in development for little to no return for this use case. Not having an onboard SoC also allows this modem to be completely controlled by the systems this board will integrate with.
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [8]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
+The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [12]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
 
 #### Twisted Pair
 
@@ -324,7 +324,7 @@ The cable is the method by which the power, data, and clock is transmitted and r
    * Coaxial cable is optimized for data transmission.
 
 * _Cons:_
-   * Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [9].
+   * Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [13].
    * Coaxial cable is more expensive than twisted pair.
 
 Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit our need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
@@ -427,7 +427,7 @@ Requirements:
 
 ### Clock Generation & Jitter Measurement
 
-The Clock Generation and Jitter Measurement subsystem is responsible for conditioning the reference clock frequency of 2.5 MHz, extracted from the high-voltage line by the Bias-T subsystem, into a usable digital signal. The subsystem also generates a low jitter 25 MHz Low-Voltage Differential Signaling (LVDS) [10] output clock utilizing the Skyworks Si5345B jitter cleaner/clock synthesizer via an internal Phase-Locked Loop (PLL) <!--[reference manual/data sheet]-->[11]. The subsystem allows for two types of jitter measurements to confirm reference clock integrity. The first measurements, cycle-to-cycle jitter, shall be taken directly from probing the 25 Mhz output signal of the Si5345B via oscilloscope and measuring time between consecutive rising edges of the clock. The second measurements, output clock jitter relative to reference clock, shall be taken in a similar fashion by comparing synchronized oscilloscope readings for the respective signals. The Si5345B chip shall ultimately utilize programmed onboard Non-Volatile Memory (NVM) that determines functionality of the chip and controls clock generation. However, a microcontroller shall be used during development to load registers for this chip manually via I2C due to a constraint of the chip allowing two total alloted NVM writes by the user <!--[reference manual]-->[12]. A reset input and two additional outputs of the Si5345B, Interrupt and LoLb, may be included during development for monitoring purposes. Interrupt is asserted when a change in the device is detected and LOLb (Loss of Lock) is asserted when phase locking is achieved. The Clock Generation and Jitter Measurement subsystem allows determination for the overall success of the ComCaP system to carry the reference clock over the 40 V power cable.
+The Clock Generation and Jitter Measurement subsystem is responsible for conditioning the reference clock frequency of 2.5 MHz, extracted from the high-voltage line by the Bias-T subsystem, into a usable digital signal. The subsystem also generates a low jitter 25 MHz Low-Voltage Differential Signaling (LVDS) output clock utilizing the Skyworks Si5345B jitter cleaner/clock synthesizer via an internal Phase-Locked Loop (PLL)[7]. The subsystem allows for two types of jitter measurements to confirm reference clock integrity. The first measurements, cycle-to-cycle jitter, shall be taken directly from probing the 25 Mhz output signal of the Si5345B via oscilloscope and measuring time between consecutive rising edges of the clock. The second measurements, output clock jitter relative to reference clock, shall be taken in a similar fashion by comparing synchronized oscilloscope readings for the respective signals. The Si5345B chip shall ultimately utilize programmed onboard Non-Volatile Memory (NVM) that determines functionality of the chip and controls clock generation. However, a microcontroller shall be used during development to load registers for this chip manually via I2C due to a constraint of the chip allowing two total alloted NVM writes by the user [9]. A reset input and two additional outputs of the Si5345B, Interrupt and LoLb, may be included during development for monitoring purposes. Interrupt is asserted when a change in the device is detected and LOLb (Loss of Lock) is asserted when phase locking is achieved. The Clock Generation and Jitter Measurement subsystem allows determination for the overall success of the ComCaP system to carry the reference clock over the 48 V power cable.
 
 Functions:
 - Clean clock signal provided by Bias-T circuit on receiving end of ComCaP system.
@@ -514,17 +514,17 @@ The implications of the product failing must be taken into account. In this case
 
 ### Professional Considerations
 
-As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [13]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will be transparent in all its actions, because an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
+As engineers, the team upholds values such as those outlined in the National Society of Professional Engineers (NSPE) code of ethics [14]. The team will emphasize the health and safety of the public and conduct itself in an honest matter. The team will be transparent in all its actions, because an NDA was not signed. The team will meticulously document everything it does, so the customer can build upon the solution after the team is removed from the project.
 
 ### Standards Considerations
 
 <!--The primary standards that the team will need to follow is the IEC 60601 [4]. These are the standards outlining the electrical requirements for medical devices. Per Siemens, the scope of the project does not have a requirement to follow these standards directly. However, by adhering to an older version of these standards, the project can be more easily implemented into the greater PET system. Older standards must be used because purchasing the license for the updated standards is not in the budget. Unfortunately, the team is still waiting on the customer to provide depreciated versions of the standards, and the team cannot legiatemtly obtain those standards themselves. Therefore, the standards needed to be followed are not stated in this document.-->
 
-Since the customer will be making changes to our final design before implementing it, the customer has accepted responsibility for the adherence of standards for the project. However, that does not mean that the team will ignore the standards. It just means that if there is a set of standards that the team knows about but cannot access through legitimate means those standards cannot be considered. This includes IEC 60601 [14], the standards outlining electrical requirements for medical devices. It also includes BS EN 50065 [15], signalling restrictions on low voltage devices. The latter is a European standard, which the team is not held to in the United States, but was included as Siemens Healthineers is an international company.
+Since the customer will be making changes to our final design before implementing it, the customer has accepted responsibility for the adherence of standards for the project. However, that does not mean that the team will ignore the standards. It just means that if there is a set of standards that the team knows about but cannot access through legitimate means those standards cannot be considered. This includes IEC 60601 [15], the standards outlining electrical requirements for medical devices. It also includes BS EN 50065 [16], signalling restrictions on low voltage devices. The latter is a European standard, which the team is not held to in the United States, but was included as Siemens Healthineers is an international company.
 
-As for standards that the team is able to follow, one is 47 CFR Part 15 Subpart A [16]. These are the federal regulations surrounding radio frequency devices. Under &sect; 15.103(e), since the ComCaP is part of a specialized medical device, it is exempt from 47 CFR Part 15 Subpart B. Subpart B is the regulations surrounding unintentional radiators, which is what the ComCaP would have been otherwise. Subpart A, however, is the general regulations. Therefore the ComCaP still must be upheld to those standards. The standards that pertain to the teams scope of the project are &sect; 15.5(b), &sect; 15.13, and &sect; 15.15(a). &sect; 15.5(b) states that the operation of the device "is subject to the conditions that no harmful interference is caused and that interference must be accepted that may be caused by the operation of an authorized radio station, by another intentional or unintentional radiator, by industrial, scientific and medical (ISM) equipment, or by an incidental radiator". This means that our device must operate within a safe range of interference and that the device must be capable of withstanding any standard interference that it may come into contact with. &sect; 15.13 states that the manufacturers of incidental radiators shall minimize the risk of harmful interference. &sect; 15.15(a) states that the team must construct the device with a sound engineering design. It also states that the device should minimize emanations and it cannot be harmful. &sect; 15.13 and &sect; 15.15(a) are redundant, but &sect; 15.13 refers specifically to incidental radiators, which is what the device will be. All this means for the team is that we shall minimize interference wherever is practical, and the team shall ensure that the device will not generate any harmful interference. Harmful interference is defined in &sect; 15.3(m) as "Any emission, radiation or induction that endangers the functioning of a radio navigation service or of other safety services or seriously degrades, obstructs or repeatedly interrupts a radiocommunications service operating in accordance with this chapter."
+As for standards that the team is able to follow, one is 47 CFR Part 15 Subpart A [17]. These are the federal regulations surrounding radio frequency devices. Under &sect; 15.103(e), since the ComCaP is part of a specialized medical device, it is exempt from 47 CFR Part 15 Subpart B. Subpart B is the regulations surrounding unintentional radiators, which is what the ComCaP would have been otherwise. Subpart A, however, is the general regulations. Therefore the ComCaP still must be upheld to those standards. The standards that pertain to the teams scope of the project are &sect; 15.5(b), &sect; 15.13, and &sect; 15.15(a). &sect; 15.5(b) states that the operation of the device "is subject to the conditions that no harmful interference is caused and that interference must be accepted that may be caused by the operation of an authorized radio station, by another intentional or unintentional radiator, by industrial, scientific and medical (ISM) equipment, or by an incidental radiator". This means that our device must operate within a safe range of interference and that the device must be capable of withstanding any standard interference that it may come into contact with. &sect; 15.13 states that the manufacturers of incidental radiators shall minimize the risk of harmful interference. &sect; 15.15(a) states that the team must construct the device with a sound engineering design. It also states that the device should minimize emanations and it cannot be harmful. &sect; 15.13 and &sect; 15.15(a) are redundant, but &sect; 15.13 refers specifically to incidental radiators, which is what the device will be. All this means for the team is that we shall minimize interference wherever is practical, and the team shall ensure that the device will not generate any harmful interference. Harmful interference is defined in &sect; 15.3(m) as "Any emission, radiation or induction that endangers the functioning of a radio navigation service or of other safety services or seriously degrades, obstructs or repeatedly interrupts a radiocommunications service operating in accordance with this chapter."
 
-Another set of standards that the team is expected to follow is 29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems [17].
+Another set of standards that the team is expected to follow is 29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems [18].
 
 ## Resources
 
@@ -533,8 +533,8 @@ This project will include primarily hardware components to implement the design:
 #### Hardware Components
 
 1. Bias Tee Circuitry: Specific Capacitors, Inductors, and Resistors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
-2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [4].
-3. FSK Power Line Transceiver: ST7580. This chip is a flexible power line networking system-on-chip combining a high performing PHY processor core and a protocol controller with a fully integrated analog front-end (AFE) and line driver for a scalable future-proof, cost effective, single chip, narrow-band power line communication solution [6].
+2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [7].
+3. FSK Power Line Transceiver: ST7580. This chip is a flexible power line networking system-on-chip combining a high performing PHY processor core and a protocol controller with a fully integrated analog front-end (AFE) and line driver for a scalable future-proof, cost effective, single chip, narrow-band power line communication solution [10].
 4. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
 5. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer.
 6. Cables: Cables will be procured or fabricated to carry the power and signal from the transmitter to the receiver. Present options for the cable are Ethernet or Coaxial cables.
@@ -598,32 +598,31 @@ All sources utilized in the conceptual design that are not considered common kno
 
 [5] C. Fuentes et al., “Design of a Mobile and Electromagnetic Emissions-Compliant Brain Positron Emission Tomography (PET) Scanner,” Sensors, vol. 25, no. 17, p. 5344, Aug. 2025, doi: https://doi.org/10.3390/s25175344 (accessed Apr. 17, 2026).
 
-[6] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+[6] "LVDS: Interface technology of choice," EEtimes, https://www.eetimes.com/lvds-interface-technology-of-choice/ (accessed Apr. 11, 2026).
 
-[7] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
+[7] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
 
-[8] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
+[8] Skyworks, "12-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier with Ultra-Low Jitter," Si5395/94/92 Data Sheet, July 2018 Revised [July 2020].
 
-[9] C. Li, D. Merillat, and J. Phan, “FPD-Link ADAS Power-Over-Coax Design Guidelines,” Texas Instruments, Oct. 2025.
+[9] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018]
 
-[10] "LVDS: Interface technology of choice," EEtimes, https://www.eetimes.com/lvds-interface-technology-of-choice/ (accessed Apr. 11, 2026).
+[10] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
-<!-- [] Skyworks, "12-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier with Ultra-Low Jitter," Si5395/94/92 Data Sheet, July 2018 Revised [July 2020]. -->
+[11] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
-[11] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
+[12] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
 
-[12] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family
-Reference Manual, July 2016 Revised [September 2018]
+[13] C. Li, D. Merillat, and J. Phan, “FPD-Link ADAS Power-Over-Coax Design Guidelines,” Texas Instruments, Oct. 2025.
 
-[13] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
+[14] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
-[14] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
+[15] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
 
-[15]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
+[16]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
 
-[16]“47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
+[17]“47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
 
-[17]“29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
+[18]“29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
 
 ## Statement of Contributions
 
