@@ -304,7 +304,7 @@ For the communication subsystem, Power Line Communications modems on either side
 The document provided by Siemens suggests the the ST7540, which is a PLC modem without an ARM processor. This model is deprecated, and the current supported model in that series is the ST7580. To consider an IC with similar features and a more advanced ARM processor, the ST8500 would use that same system level approach.
 
 #### **Integrated Circuit Consideration**
-**ST7580 - Turnkey Modem**[7]
+**ST7580 - Turnkey Modem**
 
 The ST7580 has several features to consider. The networking layers have "turnkey embedded software" and the analog front-end is fully integrated. This IC requires no programming to function, but thus is limited in its function. It comes programmed with seven modulation modes. This approach has fewer features, but the turnkey software allows simple UART interfacing with the IC that is more easily made compatible with the data inputs. On the other hand, The ST7580 is less flexible than the ST8500 because its firmware cannot be flashed. The ST7580 only runs the way it comes, save for limited interfacing through pins. The ST7580 also uses a very simple packet design, which while more efficient, can be difficult to network with at scale. This would limit usage in a larger application.
 
@@ -324,7 +324,7 @@ The ST7580 has several features to consider. The networking layers have "turnkey
     
     * Difficult to network with simple packets at scale 
 
-#### **ST8500 - ARM-core modem**[8]
+#### **ST8500 - ARM-core modem**
 
 The ST8500 has more features, but this IC is significantly more difficult to intialize and interface with due to having a more complex processor. It comes with only a bootloader and would need a fully programmed physical and data link layer. The IC is compatible with STM32CubeProg, a free programmer application. This may be an alternative if a more advanced protocol is necessary. The ST8500 has a lot of flexibility in its firmware, but that has risks in developing for it. Programming the processor incorrectly could brick the system or cause the chip to malfunction. This is a risk on the development side, but there are some limitations on the user side. The networking system uses MAC, which has more overhead. This could allow for scaling, but for a single node application like this, MAC addressing is not necessary. 
 
@@ -680,6 +680,7 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [19] “29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
 
+[20] STMicroelectronics, “ST8500: Product,” https://www.st.com/en/interfaces-and-transceivers/st8500.html (accessed Apr. 17, 2026). 
 
 ## Statement of Contributions
 
