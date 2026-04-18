@@ -326,7 +326,7 @@ The ST7580 has several features to consider. The networking layers have "turnkey
 
 #### **ST8500 - ARM-core modem**
 
-The ST8500 has more features, but this IC is significantly more difficult to intialize and interface with due to having a more complex processor. It comes with only a bootloader and would need a fully programmed physical and data link layer. The IC is compatible with STM32CubeProg, a free programmer application. This may be an alternative if a more advanced protocol is necessary. The ST8500 has a lot of flexibility in its firmware, but that has risks in developing for it. Programming the processor incorrectly could brick the system or cause the chip to malfunction. This is a risk on the development side, but there are some limitations on the user side. The networking system uses MAC, which has more overhead. This could allow for scaling, but for a single node application like this, MAC addressing is not necessary. [20]
+The ST8500 has more features, but this IC is significantly more difficult to intialize and interface with due to having a more complex processor. It comes with only a bootloader and would need a fully programmed physical and data link layer. The IC is compatible with STM32CubeProg, a free programmer application. This may be an alternative if a more advanced protocol is necessary. The ST8500 has a lot of flexibility in its firmware, but that has risks in developing for it. Programming the processor incorrectly could brick the system or cause the chip to malfunction. This is a risk on the development side, but there are some limitations on the user side. The networking system uses MAC, which has more overhead. This could allow for scaling, but for a single node application like this, MAC addressing is not necessary. [11]
 
 * _Pros:_
 
@@ -664,6 +664,8 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018]
 
+[11] STMicroelectronics, “Programmable power line communication modem System on Chip”, ST8500 Rev 3 Data Sheet, Oct. 2017 Revised [Jun. 2018].
+
 [12] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
 [13] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
@@ -680,7 +682,7 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [19] “29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
 
-[20] STMicroelectronics, “Programmable power line communication modem System on Chip”, ST8500 Rev 3 Data Sheet, Oct. 2017 Revised [Jun. 2018].
+
 
 ## Statement of Contributions
 
