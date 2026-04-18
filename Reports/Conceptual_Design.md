@@ -621,14 +621,14 @@ The team allowed its members to bid for assignment to subsystems such that each 
 **Levi Cantrell - Clock Generation & Jitter Measurement**  
 Levi's experience and interest in signal processing cater to Rx side clock processing, both filtering and jitter attenuation. Additionally, Levi's background in hardware analysis paired with research conducted on the Si5345B chip make this subsystem well fitted. 
 
-**Tyler Chan - PCB Design, Bias T, Coordination**  
-With experience in PCB design and interest in circuit design pertaining to the bias T circuit, Tyler is well suited to oversee multiple subsystems and coordinate integration with each of them. Additionally, as the project lead, Tyler will oversee the coordinated development of each subsystem within the context of the overall project.
+**Tyler Chan - PCB Design, IC Power Design, Coordination**  
+With experience in PCB design and interest in circuit design pertaining to the power supply to the ICs in the system, Tyler is well suited to oversee multiple subsystems and coordinate integration with each of them. Additionally, as the project lead, Tyler will oversee the coordinated development of each subsystem within the context of the overall project.
 
 **Jonas Cross - Back-Channel Communications**  
 Having diverse telecommunications skills and a computer design background, Jonas complements the back-channel communications subsystem. Jonas's skills and interest involving the back-channel communications will be vital to the proper selection of hardware and software implementation for this subsystem.
 
 **Harry Rudd - Data & Power Transmission Cable**  
-Harry's skills in circuit simulations and desire to research cable design give him useful agency in designing the cable subsystem. With multiple tools to analyze characteristic differences between available cable options, Harry will ensure optimal performance for transmission. 
+Harry's skills in circuit simulations and desire to research cable design give him useful agency in designing the cable subsystem. With multiple tools to analyze characteristic differences between available cable options, Harry will ensure optimal performance for transmission.
 
 **Ryan Shipwash - Bias T**  
 Ryan's knowledge in circuit design and pragmatism in component selection will be useful in his role on the central bias T circuitry. Additionally, Ryan has exceptional communication skills and will benefit from a central role within the project and collaborating with the other members in this design aspect.
