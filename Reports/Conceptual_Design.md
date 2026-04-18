@@ -351,7 +351,7 @@ This system must allow the user to send data over the transmission line for the 
 The simplicity and ease of development on the ST7580 platform justifies what limitations it may have. The development challenges of the ST8500 are not worth it when this application is basic debugging. The turnkey firmware of the ST7580 would make interfacing from the other systems in the coincidence unit simple for Siemens to use.
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. The customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [12]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
+The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others. Power over ethernet was also considered, but according to IEEE802.3bt the maximum power allowed is 90 W [9], which is 10 W lower than what the team needs. While the team was not able to access the standards directly, Texas Instruments posted an informational video outlining the standards.
 
 #### Twisted Pair
 
@@ -658,25 +658,27 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [8] Skyworks, "12-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier with Ultra-Low Jitter," Si5395/94/92 Data Sheet, July 2018 Revised [July 2020].
 
-[9] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018]
+[9]Texas Instruments, “IEEE802.3bt New Features,” Ti.com, May 14, 2018. https://www.ti.com/video/5784668990001 (accessed Apr. 16, 2026).
 
-[10] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+[10] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018]
 
-[11] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
+[11] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
-[12] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
+[12] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
-[13] C. Li, D. Merillat, and J. Phan, “FPD-Link ADAS Power-Over-Coax Design Guidelines,” Texas Instruments, Oct. 2025.
+[13] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
 
-[14] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
+[14] C. Li, D. Merillat, and J. Phan, “FPD-Link ADAS Power-Over-Coax Design Guidelines,” Texas Instruments, Oct. 2025.
 
-[15] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
+[15] “NSPE code of Ethics for Engineers: National Society of Professional Engineers,” NSPE Code of Ethics for Engineers | National Society of Professional Engineers, https://www.nspe.org/career-growth/nspe-code-ethics-engineers (accessed Feb. 22, 2026).
 
-[16]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
+[16] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220. 
 
-[17] “47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
+[17]“BS EN 50065 - Signalling on low-voltage electrical installations in the frequency range 3 kHz to 148,5 kHz and 1,6 MHz to 30 MHz,” Bsigroup.com, 2026. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS%20EN%2050065 (accessed Apr. 16, 2026).
 
-[18] “29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
+[18] “47 CFR Part 15 Subpart A -- General,” Ecfr.gov, Apr. 10, 2026. https://www.ecfr.gov/current/title-47/part-15/subpart-A (accessed Apr. 17, 2026).
+
+[19] “29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
 
 
 ## Statement of Contributions
