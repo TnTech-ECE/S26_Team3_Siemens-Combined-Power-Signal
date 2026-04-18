@@ -132,7 +132,7 @@ The current method employed by Siemens is to deliver the power and clock separat
 Combined Delivery is the approach that Siemens has requested for the team to use, specifically using a bias tee. Combined delivery will combine the power, clock, and back channel communications onto one cable to send to the PET scanner detectors allowing for consolidation of cabling and addition of bach channel communications. A bias tee can be used to combine or separate an RF and DC signal allowing the two signals to be transported on a single cable. Generally, an inductor is used to pass the DC signal, and a capacitor is used to pass the RF signal. The capacitors and inductors used for the filtering of the signals needs to be considered greatly as they have parasitic qualities, parasitic impedance in capacitors and parasitic capacitance in inductors, and could have AC signal leakage onto the DC signal if not properly designed leading to output signals outside of allowed tolerances. [4]
 
 * _Pros:_
-z
+
     * Lower cabling complexity
 
     * Lower volume of cables
@@ -342,7 +342,7 @@ To fulfill the goal of reducing complexity of the clock, power, and communicatio
 
 ### Hardware Block Diagram
 
-<img width="1052" height="569" alt="Hardware block diagram showing the flow of the power, clock, and back channel communications" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Super%20Final%20Completed%20Hardware%20Block%20Diagram.png"/>
+<img width="1052" height="569" alt="Hardware block diagram showing the flow of the power, clock, and back channel communications" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Hardware%20Block%20Diagram.png"/>
 
 #### Bias Tee
 
