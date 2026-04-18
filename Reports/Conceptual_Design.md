@@ -351,7 +351,7 @@ This system must allow the user to send data over the transmission line for the 
 The simplicity and ease of development on the ST7580 platform justifies what limitations it may have. The development challenges of the ST8500 are not worth it when this application is basic debugging. The turnkey firmware of the ST7580 would make interfacing from the other systems in the coincidence unit simple for Siemens to use.
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [50]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities, price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others. Power over ethernet was also considered, but according to IEEE802.3bt the maximum power allowed is 90 W [9], which is 10 W lower than what the team needs. While the team was not able to access the standards directly, Texas Instruments posted an informational video outlining the standards.
+The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [12]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities, price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others. Power over ethernet was also considered, but according to IEEE802.3bt the maximum power allowed is 90 W [13], which is 10 W lower than what the team needs. While the team was not able to access the standards directly, Texas Instruments posted an informational video outlining the standards.
 
 #### Twisted Pair
 
@@ -658,15 +658,15 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [8] Skyworks, "12-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier with Ultra-Low Jitter," Si5395/94/92 Data Sheet, July 2018 Revised [July 2020].
 
-[9]Texas Instruments, “IEEE802.3bt New Features,” Ti.com, May 14, 2018. https://www.ti.com/video/5784668990001 (accessed Apr. 16, 2026).
+[9] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018] https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/reference-manuals/Si5345-44-42-D-RM.pdf
 
 [10] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
-[] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018] https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/reference-manuals/Si5345-44-42-D-RM.pdf
-
 [11] STMicroelectronics, “Programmable power line communication modem System on Chip”, ST8500 Rev 3 Data Sheet, Oct. 2017 Revised [Jun. 2018].
 
-[12] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
+[12]Texas Instruments, “IEEE802.3bt New Features,” Ti.com, May 14, 2018. https://www.ti.com/video/5784668990001 (accessed Apr. 16, 2026).
+
+[13] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
 [13] “Difference between coaxial cable and twisted pair cable,” GeeksforGeeks, https://www.geeksforgeeks.org/computer-networks/difference-between-coaxial-cable-and-twisted-pair-cable/ (accessed Mar. 30, 2026). 
 
