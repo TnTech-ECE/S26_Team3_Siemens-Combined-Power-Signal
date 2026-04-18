@@ -306,7 +306,7 @@ The document provided by Siemens suggests the the ST7540, which is a PLC modem w
 #### **Integrated Circuit Consideration**
 **ST7580 - Turnkey Modem**
 
-The ST7580 has several features to consider. The networking layers have "turnkey embedded software" and the analog front-end is fully integrated. This IC requires no programming to function, but thus is limited in its function. It comes programmed with seven modulation modes. This approach has fewer features, but the turnkey software allows simple UART interfacing with the IC that is more easily made compatible with the data inputs. On the other hand, The ST7580 is less flexible than the ST8500 because its firmware cannot be flashed. The ST7580 only runs the way it comes, save for limited interfacing through pins. The ST7580 also uses a very simple packet design, which while more efficient, can be difficult to network with at scale. This would limit usage in a larger application. [11]
+The ST7580 has several features to consider. The networking layers have "turnkey embedded software" and the analog front-end is fully integrated. This IC requires no programming to function, but thus is limited in its function. It comes programmed with seven modulation modes. This approach has fewer features, but the turnkey software allows simple UART interfacing with the IC that is more easily made compatible with the data inputs. On the other hand, The ST7580 is less flexible than the ST8500 because its firmware cannot be flashed. The ST7580 only runs the way it comes, save for limited interfacing through pins. The ST7580 also uses a very simple packet design, which while more efficient, can be difficult to network with at scale. This would limit usage in a larger application. [10]
 
 * _Pros:_
 
@@ -584,7 +584,7 @@ This project will include primarily hardware components to implement the design:
 
 1. Bias Tee Circuitry: Specific Capacitors, Inductors, and Resistors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
 2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [7]. Circuitry associated with this is a high speed op-amp (ADA4899-1) and a single supply LVDS comparator (ADCMP605).
-3. FSK Power Line Transceiver: ST7580. This chip is a flexible power line networking system-on-chip combining a high performing PHY processor core and a protocol controller with a fully integrated analog front-end (AFE) and line driver for a scalable future-proof, cost effective, single chip, narrow-band power line communication solution [11].
+3. FSK Power Line Transceiver: ST7580. This chip is a flexible power line networking system-on-chip combining a high performing PHY processor core and a protocol controller with a fully integrated analog front-end (AFE) and line driver for a scalable future-proof, cost effective, single chip, narrow-band power line communication solution [10].
 4. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
 5. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer. For the LDO chips that will convert the 48 V down to the required voltages (11 V, 5 V, 3.3 V, 1.8 V), they are the MAX6793 and MAX6795.
 6. Cables: Cables will be procured or fabricated to carry the power and signal from the transmitter to the receiver. Present options for the cable are Ethernet or Coaxial cables.
@@ -660,9 +660,9 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [9]Texas Instruments, “IEEE802.3bt New Features,” Ti.com, May 14, 2018. https://www.ti.com/video/5784668990001 (accessed Apr. 16, 2026).
 
-[10] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018]
+[10] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
-[11] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+[] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018]
 
 [12] “Power-line communication (PLC) ICS, socs, transceivers,” STMicroelectronics, https://www.st.com/en/interfaces-and-transceivers/power-line-transceivers.html (accessed Mar. 31, 2026). 
 
