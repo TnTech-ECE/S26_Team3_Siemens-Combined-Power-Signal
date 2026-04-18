@@ -173,7 +173,7 @@ Wireless delivery of RF signals is an extremely common way to deliver informatio
 
 	* Potentially unstable delivery of signals
 
-While the +
+While the the bias tee is the required approach, it is also the best approach. The current separate delivery of power and clock has too much cable complexity and volume and too many points of failure at connections along with not having back channel communications which is why Siemens are looking for an alternative. Even though wireless would completely solve the issues presented, the EMI and unstable nature makes it an unusable approach. Using the bias tee to combine all three signals will reduce the cabling issues and points of failure and allow for addition of back channel communications. As long as the design takes into account the parasitic qualities and AC leakage, the bias tee is the best approach to this problem.
 
 ### Clock Generation & Jitter Measurement
  
