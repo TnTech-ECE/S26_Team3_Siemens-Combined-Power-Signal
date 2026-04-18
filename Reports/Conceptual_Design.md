@@ -63,7 +63,7 @@ The MAX5092A/MAX5092B low quiescent-current, low-dropout (LDO) regulators contai
 
 **MAX6793 - Dual Output Lower Power LDO**
 
-<img width="1075" height="414" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Power_Diagram_MAX679_.png"/>
+<img width="1075" height="414" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Power_Diagram_MAX679__.png"/>
 
 The MAX6793 ultra-low-quiescent current, dual-output linear regulator that offers a wide 5V to 72V operating input range, allowing them to withstand demanding power draws while consuming only 68μA. The MAX6793 is dual-output regulator capable of supplying up to 150mA per output. This device offers standard output-voltage options (5V, 3.3V, 2.5V, or 1.8V) and can be adjusted to any voltage from 1.8V to 11V. The MAX6793 also offers a fixed 5V output.
 
