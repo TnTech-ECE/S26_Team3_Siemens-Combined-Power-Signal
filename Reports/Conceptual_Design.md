@@ -173,6 +173,7 @@ Wireless delivery of RF signals is an extremely common way to deliver informatio
 
 	* Potentially unstable delivery of signals
 
+While the +
 
 ### Clock Generation & Jitter Measurement
  
@@ -311,7 +312,7 @@ The ST8500 has more features, but this IC is significantly more difficult to int
 The simplicity and ease of development on the ST7580 platform justifies what limitations it may have. The development challenges of the ST8500 are not worth it when this application is basic debugging. The turnkey firmware of the ST7580 would make interfacing from the other systems in the coincidence unit simple for Siemens to use. 
 
 ### Cable
-The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. Our customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [12]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
+The cable is the method by which the power, data, and clock is transmitted and received by both ends of the system. The customer has allowed a lot of freedom on how the cable is selected, so this lends itself to a wide range of possibilities. The two cables that seem to be the most promising are the twisted strand and the coaxial cable [12]. Twisted strand cables are two cables twisted around one another to minimize interference. Coaxial cables are cables in which a metallic shield surrounds a core conductor. The primary considerations for the cable is the electromagnetic interference, data transmission capabilities,price, and the transmission line characteristics of the cable. Although, the electromagnetic interference is a secondary consideration compared to the others.
 
 #### Twisted Pair
 
@@ -333,7 +334,7 @@ The cable is the method by which the power, data, and clock is transmitted and r
    * Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [13].
    * Coaxial cable is more expensive than twisted pair.
 
-Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit our need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
+Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit the team's need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
 
 ## High-Level Solution
 
@@ -493,7 +494,7 @@ Requirements:
 
 ### Cable
 
-The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From our comparative analysis, the twisted pair cable seems to be the most suitable for our design.
+The cable is the physical connection between the transmission and reception side of the ComCaP. It is responsible for carrying the power, clock, and back channel communications over a distance of two to ten meters. Because of the complexity of the system, the transmission line characteristics and the electromagnetic characteristics of the cable must be simulated and taken into account. From the comparative analysis, the twisted pair cable seems to be the most suitable for the team's design.
 
 Function:
 - Carry signals from the Tx to the Rx side of the ComCaP
