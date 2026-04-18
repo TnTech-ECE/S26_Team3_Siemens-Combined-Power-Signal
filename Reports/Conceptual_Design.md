@@ -373,7 +373,7 @@ The cable is the method by which the power, data, and clock is transmitted and r
    * Given current use cases for power over coaxial systems, none have been designed to handle the current that the team is expected to use [14].
    * Coaxial cable is more expensive than twisted pair.
 
-Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit the team's need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult.
+Given the above considerations, the team will use the twisted pair cables in their design. While coaxial cables have better data transmission characteristics and electromagnetic shielding, those characteristics are secondary. The twisted pair cables better fit the team's need since those are cheaper and can handle more power. If the team were to use the coaxial cable, there is a large chance that there will be issues with power. The team can correct any reflections and can design around any bandwidth restrictions, but the risk of overloading the cable is too great and any workarounds will be much more difficult. Luckily, with both of these, the team is still minimizing points of error in that there will be only one connection point rather than the two points that Siemens Healthineers already has.
 
 ## High-Level Solution
 
