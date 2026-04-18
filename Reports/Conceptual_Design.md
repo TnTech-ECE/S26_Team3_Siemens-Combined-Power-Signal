@@ -539,7 +539,7 @@ This project will include primarily hardware components to implement the design:
 #### Hardware Components
 
 1. Bias Tee Circuitry: Specific Capacitors, Inductors, and Resistors will need to be selected to create the bias tee with certain characteristics to operate at ideal functionality.
-2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [7].
+2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [7]. Circuitry associated with this is a high speed op-amp (ADA4899-1) and a single supply LVDS comparator (ADCMP605).
 3. FSK Power Line Transceiver: ST7580. This chip is a flexible power line networking system-on-chip combining a high performing PHY processor core and a protocol controller with a fully integrated analog front-end (AFE) and line driver for a scalable future-proof, cost effective, single chip, narrow-band power line communication solution [10].
 4. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
 5. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer.
@@ -564,6 +564,8 @@ Estimate of the cost for major materials needed:
 | X-NUCLEO-PLM01A1                     | Eval board for Power Line Modulator        | 2        | $15.88                      |
 | NUCLEO-L476RG                        | MCU compatible with eval board             | 2        | $21.75                      |
 | Si5345 Eval Board                    | Evaluation board for clock synthesizer     | 1        | $388.12                     |
+| ADA4899-1                            | High Speed Op-Amp                          | 1        | $2.59                       |
+| ADCMP605                             | Single-Supply LVDS Comparator              | 1        | $3.22                       |
 | Prototyping Cost                     | Extra material, spares, test components    |          | $200                        |
 
 ### Division of Labor
