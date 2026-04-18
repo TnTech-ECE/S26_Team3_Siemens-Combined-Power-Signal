@@ -306,7 +306,7 @@ The document provided by Siemens suggests the the ST7540, which is a PLC modem w
 #### **Integrated Circuit Consideration**
 **ST7580 - Turnkey Modem**
 
-The ST7580 has several features to consider. The networking layers have "turnkey embedded software" and the analog front-end is fully integrated. This IC requires no programming to function, but thus is limited in its function. It comes programmed with seven modulation modes. This approach has fewer features, but the turnkey software allows simple UART interfacing with the IC that is more easily made compatible with the data inputs. On the other hand, The ST7580 is less flexible than the ST8500 because its firmware cannot be flashed. The ST7580 only runs the way it comes, save for limited interfacing through pins. The ST7580 also uses a very simple packet design, which while more efficient, can be difficult to network with at scale. This would limit usage in a larger application.
+The ST7580 has several features to consider. The networking layers have "turnkey embedded software" and the analog front-end is fully integrated. This IC requires no programming to function, but thus is limited in its function. It comes programmed with seven modulation modes. This approach has fewer features, but the turnkey software allows simple UART interfacing with the IC that is more easily made compatible with the data inputs. On the other hand, The ST7580 is less flexible than the ST8500 because its firmware cannot be flashed. The ST7580 only runs the way it comes, save for limited interfacing through pins. The ST7580 also uses a very simple packet design, which while more efficient, can be difficult to network with at scale. This would limit usage in a larger application. [11]
 
 * _Pros:_
 
