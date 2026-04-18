@@ -33,9 +33,9 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.
 
 ### IC Power
-In the specifications of the project, the system is required to provide 100 W at 48 V from the power supply to the receiving end. In addition to providing power to the system, some power is required to power the ICs that run on both ends of the system. On the transmitting side, there will need to be power available for the PLC Modem, which operates at 11 V and 5 V, requiring less than 150 mA per plane, which falls within the specification of the MAX6791. On the receiving side, there will need to be power available for the receiving end PLC Modem, as well as the Si5345b PLC. The receiving side requires 11 V, 5 V, 3.3 V, and 1.8 V. A combination of two MAX6795  and two MAX6791 chips will supply the power to these planes to operate the ICs.
+In the specifications of the project, the system is required to provide 100 W at 48 V from the power supply to the receiving end. In addition to providing power to the system, some power is required to power the ICs that run on both ends of the system. On the transmitting side, there will need to be power available for the PLC Modem, which operates at 11 V and 5 V, requiring less than 150 mA per plane, which falls within the specification of the MAX6793. On the receiving side, there will need to be power available for the receiving end PLC Modem, as well as the Si5345b PLC. The receiving side requires 11 V, 5 V, 3.3 V, and 1.8 V. A combination of two MAX6795  and two MAX6793 chips will supply the power to these planes to operate the ICs.
 
-An important aspect to consider when selecting the voltage regulators is whether the outputs can supply enough current to power the ICs, as well as minimizing hardware to reduce cost and space taken on the PCB. A previous choice that was considered when selecting an LDO was the MAX5092 [2] which is only able to deliver a maximum of 250 mA. However, this chip only had one output, whereas the MAX6791 has two outputs that can be adjusted to a desired voltage between 1.5 V and 11 V, each at 150 mA. Additionally, the MAX6796 [3] was selected to handle the higher current requirements for the 3.3 V and 1.8 V power rails since they can provide 300 mA of output current. This is optimal for the proposed design as these chips reduce the number of required LDOs by two, minimizing the hardware.
+An important aspect to consider when selecting the voltage regulators is whether the outputs can supply enough current to power the ICs, as well as minimizing hardware to reduce cost and space taken on the PCB. A previous choice that was considered when selecting an LDO was the MAX5092 [2] which is only able to deliver a maximum of 250 mA. However, this chip only had one output, whereas the MAX6793 has two outputs that can be adjusted to a desired voltage between 1.5 V and 11 V, each at 150 mA. Additionally, the MAX6795 [3] was selected to handle the higher current requirements for the 3.3 V and 1.8 V power rails since they can provide 300 mA of output current. This is optimal for the proposed design as these chips reduce the number of required LDOs by two, minimizing the hardware.
 
 #### **Consideration Individual Single-Output Vs. Dual Output LDO**
 **MAX5092A/MAX5092B - Single Output Lower Power LDO**
@@ -61,11 +61,11 @@ The MAX5092A/MAX5092B low quiescent-current, low-dropout (LDO) regulators contai
 
     * Requires more units to fulfill needs of the project
 
-**MAX6791 - Dual Output Lower Power LDO**
+**MAX6793 - Dual Output Lower Power LDO**
 
 <img width="1075" height="414" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/Power_Diagram_MAX679_.png"/>
 
-The MAX6791 ultra-low-quiescent current, dual-output linear regulator that offers a wide 5V to 72V operating input range, allowing them to withstand demanding power draws while consuming only 68μA. The MAX6791 is dual-output regulator capable of supplying up to 150mA per output. This device offers standard output-voltage options (5V, 3.3V, 2.5V, or 1.8V) and can be adjusted to any voltage from 1.8V to 11V. The MAX6791 also offers a fixed 5V output.
+The MAX6793 ultra-low-quiescent current, dual-output linear regulator that offers a wide 5V to 72V operating input range, allowing them to withstand demanding power draws while consuming only 68μA. The MAX6793 is dual-output regulator capable of supplying up to 150mA per output. This device offers standard output-voltage options (5V, 3.3V, 2.5V, or 1.8V) and can be adjusted to any voltage from 1.8V to 11V. The MAX6793 also offers a fixed 5V output.
 
 * _Pros:_
 
@@ -83,9 +83,9 @@ The MAX6791 ultra-low-quiescent current, dual-output linear regulator that offer
 
     * More complex hardware implementation.
 
-**MAX6796 - Single Output Higher Power LDO**
+**MAX6795 - Single Output Higher Power LDO**
 
-The MAX6796 is an LDO similar to the MAX6791 as described above. The primary difference is that there is only a single output option. However, this LDO is capable of delivering up to 300 mA of current, which the current draw requirement for the 3.3 V and 1.8 V power requirements for the system will need. These planes will likely exceed a 150 mA draw making this more suitable for the required supply.
+The MAX6795 is an LDO similar to the MAX6793 as described above. The primary difference is that there is only a single output option. However, this LDO is capable of delivering up to 300 mA of current, which the current draw requirement for the 3.3 V and 1.8 V power requirements for the system will need. These planes will likely exceed a 150 mA draw making this more suitable for the required supply.
 
 * _Pros:_
 
@@ -411,7 +411,7 @@ Requirements:
 
 ### IC Power
 
-Power is required to be passed to the ICs that run specific circuitry in the system. The voltage and current will be tapped off of the main power passed over (100 W at 48 V). The MAX6791 was selected to supply 11 V and 5 V for the ST7580 on the transmitting and receiving ends at 150 mA per output, and two MAX6796 chips shall supply 3.3 V and 1.8 V for the Si5345b at 300 mA on the receiving end of the system.
+Power is required to be passed to the ICs that run specific circuitry in the system. The voltage and current will be tapped off of the main power passed over (100 W at 48 V). The MAX6793 was selected to supply 11 V and 5 V for the ST7580 on the transmitting and receiving ends at 150 mA per output, and two MAX6795 chips shall supply 3.3 V and 1.8 V for the Si5345b at 300 mA on the receiving end of the system.
 
 Function:
 - Supply power to the IC components in the system.
@@ -542,7 +542,7 @@ This project will include primarily hardware components to implement the design:
 2. Jitter Cleaning Clock Synthesizer: Si5345B. This chip is used for generating a reference clock. This chip was selected by the customer for its ability to maintain a clean signal and reduce jitter [7]. Circuitry associated with this is a high speed op-amp (ADA4899-1) and a single supply LVDS comparator (ADCMP605).
 3. FSK Power Line Transceiver: ST7580. This chip is a flexible power line networking system-on-chip combining a high performing PHY processor core and a protocol controller with a fully integrated analog front-end (AFE) and line driver for a scalable future-proof, cost effective, single chip, narrow-band power line communication solution [10].
 4. PCB: Two boards will be designed and laid out. One board shall be in charge of producing the clock signal and biasing it to be fed over a cable to the receiver. The other board shall function as the test board to check the jitter measurements and ensure that the design falls within the specifications outlined by the customer.
-5. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer.
+5. Power Supply: Provides power to the board which will then be stepped down to power the the various components and then sent over the cable from the transmitter to the receiver. Power supply will be provided by the customer. For the LDO chips that will convert the 48 V down to the required voltages (11 V, 5 V, 3.3 V, 1.8 V), they are the MAX6793 and MAX6795.
 6. Cables: Cables will be procured or fabricated to carry the power and signal from the transmitter to the receiver. Present options for the cable are Ethernet or Coaxial cables.
 
 ### Budget
@@ -566,6 +566,8 @@ Estimate of the cost for major materials needed:
 | Si5345 Eval Board                    | Evaluation board for clock synthesizer     | 1        | $388.12                     |
 | ADA4899-1                            | High Speed Op-Amp                          | 1        | $2.59                       |
 | ADCMP605                             | Single-Supply LVDS Comparator              | 1        | $3.22                       |
+| MAX6793                              | High-Votlage Single Linear Regulator       | 1        | $2.91                       |
+| MAX6795                              | High Voltage Dual Linear Regulator         | 1        | $3.22                       |
 | Prototyping Cost                     | Extra material, spares, test components    |          | $200                        |
 
 ### Division of Labor
@@ -600,7 +602,7 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [2] Analog Devices, "MAX5092/MAX5093 4V to 72V Input LDOs with Boost Preregulator," MAX5093 Rev 2 Data Sheet, Oct. 2006 Revised [Oct. 2014].
 
-[3] Analog Devices, "MAX6791–MAX6796 High-Voltage, Micropower, Single/Dual Linear Regulators with Supervisory Functions," MAX6791 Rev 3 Data Sheet, Oct. 2005 Revised [Oct. 2017].
+[3] Analog Devices, "MAX6791–MAX6796 High-Voltage, Micropower, Single/Dual Linear Regulators with Supervisory Functions," MAX6793 Rev 3 Data Sheet, Oct. 2005 Revised [Oct. 2017].
 
 [4] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
 
