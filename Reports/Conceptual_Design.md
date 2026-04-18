@@ -662,7 +662,7 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [10] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
 
-[] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018]
+[] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018] https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/reference-manuals/Si5345-44-42-D-RM.pdf
 
 [11] STMicroelectronics, “Programmable power line communication modem System on Chip”, ST8500 Rev 3 Data Sheet, Oct. 2017 Revised [Jun. 2018].
 
