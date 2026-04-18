@@ -680,7 +680,7 @@ Most of the subsystems can be developed in parallel, without any specific part n
 
 [19] “29 CFR Part 1910 Subpart S - Design Safety Standards for Electrical Systems,” Ecfr.gov, Apr. 03, 2026. https://www.ecfr.gov/current/title-29/part-1910/subject-group-ECFR63ab49e215d9639 (accessed Apr. 17, 2026).
 
-[20] STMicroelectronics, “ST8500: Product,” https://www.st.com/en/interfaces-and-transceivers/st8500.html (accessed Apr. 17, 2026). 
+[20] STMicroelectronics, “Programmable power line communication modem System on Chip”, ST8500 Rev 3 Data Sheet, Oct. 2017 Revised [Jun. 2018].
 
 ## Statement of Contributions
 
