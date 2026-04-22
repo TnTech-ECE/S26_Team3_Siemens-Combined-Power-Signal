@@ -36,6 +36,8 @@ The document should include:
 
 <!--This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.-->
 
+The cable subsystem is responsible for 
+
 
 ## Specifications and Constraints
 
@@ -44,6 +46,8 @@ The document should include:
 The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 
 Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
+
+The cable subsystem will 
 
 The ripple cannot exceed 3 mV [@Siemens_Presentation]
 
@@ -71,6 +75,7 @@ The cable transmits the signal between both sides of the ComCaP. Because of this
 
 The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.-->
 
+Siemens wants detailed simulation data delivered to them for the cable, rather than a constructed cable. Since there is no construction element to the cable design, a breakdown of the relevant elements of the cable has been included instead.
 
 ## Flowchart
 
