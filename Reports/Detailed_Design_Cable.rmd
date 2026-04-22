@@ -1,9 +1,7 @@
 ---
 bibliography: Sources.bib
 csl: IEEE.csl
-output: 
-  html_document:
-    keep_md: true
+output: github_document
 ---
 
 # Detailed Design
