@@ -36,7 +36,7 @@ The document should include:
 
 <!--This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.-->
 
-The cable subsystem is responsible for 
+The cable subsystem is responsible for transmitting the output of the Bias Tee on the transmitting side of the ComCaP to the Bias Tee on the recieving side of the ComCap. With that, Siemens also wants detailed simulations 
 
 
 ## Specifications and Constraints

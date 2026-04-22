@@ -7,9 +7,11 @@ import matplotlib.pyplot as plt
 
 # Define constants found in Siemens sheet
 CLOCK_FREQUENCY = 2.5*np.power(10,6)
+CLOCK_AMPLITUDE = 0.1
 DC_VOLTAGE = 48
 MAX_RIPPLE = 0.2
 DC_POWER = 100
+LOAD_IMPEDANCE = 4
 
 # Define cable class so multiple cables can be tested
 class Cable():
@@ -24,5 +26,9 @@ class Cable():
         self.capacitanceCC = capacitanceCC # Conductor to conductor capacitance per meter
         self.capacitanceCS = capacitanceCS # Conductor to shield capacitance per meter
         self.LRRatio = LRRatio # Inductance to resistance ratio
+        self.waveNumber = 2*np.pi*CLOCK_FREQUENCY*delay # k value in textbook
 
 cblArr = np.array([Cable('50021L', 5.2/np.power(10,9), 120, 36.7/np.power(10,3), 1/np.power(10,6), 46/np.power(10,9), 82/np.power(10,9), 25/np.power(10,6))])
+
+def Vin(t):
+    return np.cos(2*np.pi*CLOCK_FREQUENCY*t) + DC_VOLTAGE
