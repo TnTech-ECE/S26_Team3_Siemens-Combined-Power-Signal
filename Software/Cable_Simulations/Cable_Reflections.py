@@ -21,8 +21,8 @@ class Cable():
         self.characteristicImpedance = characteristicImpedance
         self.DCR = DCR # Direct Current Resistance (DCR) is the resistance at 0 Hz
         self.inductance = inductance # Inductance per meter
-        self.capacitanceCC - capacitanceCC # Conductor to conductor capacitance per meter
-        self.capacitanceCS - capacitanceCS # Conductor to shield capacitance per meter
+        self.capacitanceCC = capacitanceCC # Conductor to conductor capacitance per meter
+        self.capacitanceCS = capacitanceCS # Conductor to shield capacitance per meter
         self.LRRatio = LRRatio # Inductance to resistance ratio
 
-cblArr = np.array([Cable('50021L', 5.2*np.power(10,-9), 120, 36.7*np.power(10,-3), np.power(10,-6), 46*np.power(10,-9), 82*np.power(10,-9), 25*np.power(10,-6))])
+cblArr = np.array([Cable('50021L', 5.2/np.power(10,9), 120, 36.7/np.power(10,3), 1/np.power(10,6), 46/np.power(10,9), 82/np.power(10,9), 25/np.power(10,6))])
