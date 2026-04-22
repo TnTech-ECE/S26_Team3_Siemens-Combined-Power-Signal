@@ -1,12 +1,13 @@
 # Detailed Design
 
-This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
+<!--This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
 
 - How the specific subsystem integrates within the broader solution
 - The constraints and specifications relevant to the subsystem
 - The rationale behind each crucial design decision
-- The procedure for constructing the solution
+- The procedure for constructing the solution-->
 
+This document gives an in depth overview of the Bias Tee subsystem as part of the overall five subsystem design of combined clock, power, and back channel communications. 
 
 ## General Requirements for the Document
 
