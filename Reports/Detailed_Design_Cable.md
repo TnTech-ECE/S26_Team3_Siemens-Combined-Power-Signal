@@ -1,3 +1,8 @@
+---
+bibliography: Sources.bib
+csl: IEEE.csl
+---
+
 # Detailed Design
 
 <!--This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
@@ -38,6 +43,8 @@ The document should include:
 The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 
 Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
+
+The ripple cannot exceed 3 mV [@Siemens_Presentation]
 
 
 ## Overview of Proposed Solution
