@@ -5,6 +5,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Define constants found in Siemens sheet
+CLOCK_FREQUENCY = 2.5 * np.power(10,6)
+DC_VOLTAGE = 48
+MAX_RIPPLE = 0.2
+DC_POWER = 100
+
 # Define cable class so multiple cables can be tested
 class Cable():
     def __init__(self, name, delay, characteristicImpedance, DCR, inductance, capacitanceCC, capacitanceCS, LRRatio):
@@ -18,3 +24,4 @@ class Cable():
         self.capacitanceCC - capacitanceCC # Conductor to conductor capacitance per meter
         self.capacitanceCS - capacitanceCS # Conductor to shield capacitance per meter
         self.LRRatio = LRRatio # Inductance to resistance ratio
+
