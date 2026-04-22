@@ -25,11 +25,20 @@
 
 <!--This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.-->
 
+The cable subsystem is responsible for transmitting the output of the
+Bias Tee on the transmitting side of the ComCaP to the input of the Bias
+Tee on the recieving side of the ComCap. Since the clock is expected to
+be $2.5 MHz$, and the maximum cable length is $10 m$ \[1\], transmission
+line characteristics will have a an appreciable impact on the system as
+a whole.
+
 ## Specifications and Constraints
 
 <!--This section should provide a list of constraints applicable to the subsystem, along with the rationale behind these limitations. For instance, constraints can stem from physics-based limitations or requirements, subsystem prerequisites, standards, ethical considerations, or socio-economic factors.
 &#10;The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 &#10;Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
+
+The cable subsystem will
 
 The ripple cannot exceed 3 mV \[1\]
 
@@ -57,6 +66,11 @@ the second bias T.
 
 <!--Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
 &#10;The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.-->
+
+Siemens wants detailed simulation data delivered to them for the cable,
+rather than a constructed cable. Since there is no construction element
+to the cable design, a breakdown of the relevant elements of the cable
+has been included instead.
 
 ## Flowchart
 
