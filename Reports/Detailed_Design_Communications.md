@@ -1,12 +1,6 @@
-# Detailed Design
+# Communications Detailed Design
 
-This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
-
-- How the specific subsystem integrates within the broader solution
-- The constraints and specifications relevant to the subsystem
-- The rationale behind each crucial design decision
-- The procedure for constructing the solution
-
+**NOTE:** Other subsystems call the two parts "transmitter" and receiver, but since both parts transmit and receive, in this document, they will be called "server" and "client" respectively.
 
 ## General Requirements for the Document
 
@@ -28,8 +22,7 @@ The document should include:
 
 ## Function of the Subsystem
 
-This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.
-
+The communications subsystem has two identical parts, the server and client. The server should take a debug signal from the coincidence unit and modulate, then transmit it over the transmission line. The client will then demodulate that signal over the [1] 
 
 ## Specifications and Constraints
 
@@ -83,3 +76,5 @@ Deliver a full and relevant analysis of the design demonstrating that it should 
 ## References
 
 All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.
+
+[1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
