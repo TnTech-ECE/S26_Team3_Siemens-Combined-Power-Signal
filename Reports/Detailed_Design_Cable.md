@@ -1,6 +1,6 @@
 # Detailed Design
 
-This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
+<!--This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
 
 - How the specific subsystem integrates within the broader solution
 - The constraints and specifications relevant to the subsystem
@@ -23,7 +23,7 @@ The document should include:
 - A comprehensive Bill of Materials (BOM)
 - Analysis of crucial design decisions
 
-*Note: These technical documentation elements are mandatory only when relevant to the particular subsystem.
+*Note: These technical documentation elements are mandatory only when relevant to the particular subsystem.-->
 
 
 ## Function of the Subsystem
@@ -48,6 +48,8 @@ Every subsystem must incorporate at least one constraint stemming from standards
 ## Interface with Other Subsystems
 
 <!--Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.-->
+
+The cable transmits the signal between both sides of the ComCaP. Because of this, it interfaces with the bias T and the power subsystems primarily. It interfaces with the bias T as the bias T is both the last point of contact with the input side and the first point of contact for the output side of the system. Therefore, the output of the first bias T is the input of the cable and the output of the cable is the input of the second bias T.
 
 
 ## 3D Model of Custom Mechanical Components
