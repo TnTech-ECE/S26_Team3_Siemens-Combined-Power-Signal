@@ -152,6 +152,12 @@ has been included instead.
 
 <!--Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.-->
 
+### Cable characteristics
+
+In order to analyze the cable, first the data we are given needs to be
+defined. The cable parameters can be found using the 50021L cable
+datasheet \[4\] as an example.
+
 ## References
 
 <!--All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.-->
@@ -181,6 +187,16 @@ digital filters with audio applications*.
 <span class="csl-left-margin">\[3\]
 </span><span class="csl-right-inline">P. Diament, *Wave transmission and
 fiber optics*. London, England: Macmillan, 1990.</span>
+
+</div>
+
+<div id="ref-50021LDatasheet" class="csl-entry">
+
+<span class="csl-left-margin">\[4\]
+</span><span class="csl-right-inline">Belden, “50021L - RS485 FR, 1P
+20AWG str TC, MGT, XLPE ins, OS+TC brd, LSZH jkt, IEC60331-23, ABS
+approved.” 50021L datasheet, 2026. Available:
+<https://catalog.belden.com/techdata/EN/50021L_techdata.pdf></span>
 
 </div>
 

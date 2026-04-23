@@ -108,6 +108,9 @@ Siemens wants detailed simulation data delivered to them for the cable, rather t
 
 <!--Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.-->
 
+### Cable characteristics
+In order to analyze the cable, first the data we are given needs to be defined. The cable parameters can be found using the 50021L cable datasheet [@50021LDatasheet] as an example.
+
 ## References
 
 <!--All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.-->
