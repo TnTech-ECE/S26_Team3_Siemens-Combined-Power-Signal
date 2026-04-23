@@ -22,7 +22,7 @@ The document should include:
 
 ## Function of the Subsystem
 
-The communications subsystem has two identical parts, the server and client. The server should take a debug signal from the coincidence unit and modulate, then transmit it over the transmission line. The client will then demodulate that signal over the [1] 
+The communications subsystem has two identical parts, the server and client. Both parts work in tandem to transmit and receive a debug signal across the line. This system must be able to take any data input and transform it into a modulated packet to receive that data input on the opposite end. [1] 
 
 ## Specifications and Constraints
 
@@ -31,6 +31,8 @@ This section should provide a list of constraints applicable to the subsystem, a
 The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 
 Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.
+
+
 
 
 ## Overview of Proposed Solution
