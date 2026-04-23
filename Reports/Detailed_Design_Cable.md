@@ -158,7 +158,7 @@ In order to analyze the cable, first the data we are given needs to be
 defined. The cable parameters can be found using the 50021L cable
 datasheet \[4\] as an example.
 
-<img src="Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
 
 ## References
 
