@@ -82,11 +82,11 @@ The Clock Generation and Jitter Measurement subsystem
 The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.-->
 
 <!--<img width="" height="" alt="" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/.png" />-->
-<img width="1044" height="822" alt="Signal Conditioning Circuit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigCon(update2).png" />
+<img width="1045" height="820" alt="Signal Conditioning Circuit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigCon(update2).png" />
 
-<img width="1035" height="817" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/Si5345B_config_2_4-23-26.png" />
+<img width="1045" height="820" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/Si5345B_config_2_4-23-26.png" />
 
-<img width="1045" height="825" alt="Micro Control Unit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/MCU(update2).png" />
+<img width="1045" height="820" alt="Micro Control Unit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/MCU(update2).png" />
 
 ## Printed Circuit Board Layout
 
