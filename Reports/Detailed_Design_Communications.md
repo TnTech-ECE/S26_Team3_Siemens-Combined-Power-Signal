@@ -35,13 +35,13 @@ Every subsystem must incorporate at least one constraint stemming from standards
 ------
 
 ### Specifications Requested by Siemens
-The most basic requirements of this system are as follows: The system must take in a generic data signal, modulate it, transmit it, then the other part must do the reverse steps to extract the data signal again. Both parts must serve transmitter and receiver roles. Since integration into the coincidence unit and detectors is not within our responsibility, the subsystem must be able to modulate any generic bit stream. 
-
-Siemens also suggested a bitrate of 500kbps to 1 Mbps, but this has proved infeasible in this application. PLC Modems use frequencies less than 500kHz, which means the theoretical maximum for bitrate would be 500kbps. [1] 
+The most basic requirements of this system are as follows: The system must take in a generic data signal, modulate it, transmit it, then the other part must do the reverse steps to extract the data signal again. Both parts must serve transmitter and receiver roles. Since integration into the coincidence unit and detectors is not within our responsibility, the subsystem must be able to modulate any generic bit stream. [1]
 
 ### FCC Part 15
 
-FCC part 15 Section 113 states  
+FCC part 15 Section 113 states that "signals from this operation shall be contained within the frequency band 9 kHz to 490 kHz" [2]. The document provided by Siemens suggests a bitrate of 500kbps to 1Mbps, but the theoretical (but feasibly impossible) maximum for data transfer on 490 kHz is 490 kbps. [1]
+
+Also, 
 
 ### Other Specifications
 From the conceptual design comparative analysis, turnkey embedded firmware was deemed necessary for the scale of this project. This modem also must be a power line communication modem since the transmission line will have power transmitted across it.
