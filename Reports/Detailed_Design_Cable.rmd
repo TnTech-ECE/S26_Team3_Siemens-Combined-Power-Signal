@@ -79,7 +79,7 @@ Luckily, the Clock Generation and Jitter Measurement Subsystem is extremely robu
 The loss of the cable is directly related to the impedance at the load of the cable. In order to change that load, however, modifications must be made to the circuit at the end of the cable. In order to ensure the ComCap still works as intended, any modifications to the circuit at the recieving end must not impede the functionality of the subsystems on that end.
 
 ### Vendor Restriction
-
+Siemens uses Belden Cable as their primary vendor for cables, therefore the cable subsystem will use a cable sold by that vendor.
 
 ## Overview of Proposed Solution
 

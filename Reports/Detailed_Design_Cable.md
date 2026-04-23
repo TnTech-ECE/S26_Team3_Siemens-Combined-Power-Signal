@@ -115,6 +115,9 @@ that end.
 
 ### Vendor Restriction
 
+Siemens uses Belden Cable as their primary vendor for cables, therefore
+the cable subsystem will use a cable sold by that vendor.
+
 ## Overview of Proposed Solution
 
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
