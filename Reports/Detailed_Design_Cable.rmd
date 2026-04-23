@@ -100,11 +100,6 @@ The schematic should be relevant to the design and provide ample details necessa
 
 Siemens wants detailed simulation data delivered to them for the cable, rather than a constructed cable. Since there is no construction element to the cable design, a breakdown of the relevant elements of the cable has been included instead.
 
-## Flowchart
-
-<!--For sections including a software component, produce a chart that demonstrates the decision-making process of the microcontroller. It should provide an overview of the device's function without exhaustive detail.-->
-
-
 ## BOM
 
 <!--Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).-->
