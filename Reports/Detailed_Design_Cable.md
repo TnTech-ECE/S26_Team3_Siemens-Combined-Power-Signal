@@ -100,9 +100,20 @@ All of this is to say that the cable and the impedance at the end of it
 must be designed in a way that keeps the voltage magnitude drop to a
 point where the clock can still be recovered from the signal.
 
+Luckily, the Clock Generation and Jitter Measurement Subsystem is
+extremely robust and can handle a wide range of distortions, much more
+than would be experienced by our relatively short cable.
+
 ### Impact to Greater system
 
-Since the loss of the cable is directly tied to the
+The loss of the cable is directly related to the impedance at the load
+of the cable. In order to change that load, however, modifications must
+be made to the circuit at the end of the cable. In order to ensure the
+ComCap still works as intended, any modifications to the circuit at the
+recieving end must not impede the functionality of the subsystems on
+that end.
+
+### Vendor Restriction
 
 ## Overview of Proposed Solution
 

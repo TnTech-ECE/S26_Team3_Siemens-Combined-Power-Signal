@@ -12,6 +12,7 @@ DC_VOLTAGE = 48
 MAX_RIPPLE = 0.2
 DC_POWER = 100
 LOAD_IMPEDANCE = 4
+DC_CURRENT = DC_POWER/DC_VOLTAGE
 
 # Define cable class so multiple cables can be tested
 class Cable():
@@ -30,5 +31,17 @@ class Cable():
 
 cblArr = np.array([Cable('50021L', 5.2/np.power(10,9), 120, 36.7/np.power(10,3), 1/np.power(10,6), 46/np.power(10,9), 82/np.power(10,9), 25/np.power(10,6))])
 
+length = np.linspace(1,10,50) # Linspace to check length from 1 m to 10 m cable length (min and max from Siemens)
+
 def Vin(t):
-    return np.cos(2*np.pi*CLOCK_FREQUENCY*t) + DC_VOLTAGE
+    return np.cos(2*np.pi*CLOCK_FREQUENCY*t)
+
+for i, cable in enumerate(cblArr):
+    DCLoss = DC_CURRENT*length*cable.DCR
+    plt.plot(length,DCLoss,label=cable.name)
+
+plt.title('Cable Length vs Voltage Loss')
+plt.xlabel('Cable Length [m]')
+plt.ylabel('Voltage Loss [V]')
+plt.legend()
+plt.show()
