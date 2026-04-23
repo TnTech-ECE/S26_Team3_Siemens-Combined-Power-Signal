@@ -28,9 +28,15 @@
 The cable subsystem is responsible for transmitting the output of the
 Bias Tee on the transmitting side of the ComCaP to the input of the Bias
 Tee on the recieving side of the ComCap. Since the clock is expected to
-be $2.5 MHz$, and the maximum cable length is $10 m$ \[1\], transmission
-line characteristics will have a an appreciable impact on the system as
-a whole.
+be 2.5 MHz, and the maximum cable length is 10 m \[1\], transmission
+line characteristics will have an appreciable impact on the system as a
+whole. Therefore, the subsystem will deliver simulation data to
+accurately model the inputs for the recieving Bias Tee as well as test
+and model the cable in a real world scenario once the prototype is
+built. This will need to be done for multiple lengths of cable up to 10
+m. All of the data will then be sent to Siemens alongside the data for
+the other subsystems. Siemens will then use that data in their actual
+implementation for the PET system.
 
 ## Specifications and Constraints
 
@@ -38,9 +44,38 @@ a whole.
 &#10;The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 &#10;Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
 
-The cable subsystem will
+### Transmission Line Calculation
 
-The ripple cannot exceed 3 mV \[1\]
+The cable subsystem will transmit the clock, power, and back channel
+communications to the best of its ability. In order to do so,
+transmission line calculations will need to be factored in. According to
+Dr. Van Neste, transmission line calculations will have an appreciable
+impact when the length of the cable is at least 10 % of the wavelength.
+This is calculated as
+
+$$\frac{l}{\lambda}*(100) \ge 10\%$$
+
+In the function $l$ is the length of the cable and $\lambda$ is the
+wavelength. The wavelength is calculated as $\lambda = \frac{v}{f}$
+where $v$ is the propogation speed and $f$ is the clock frequency.
+
+### Voltage Loss
+
+According to Siemens Healthineers, the ripple at the output of the Bias
+Tee cannot exceed 30 mV \[1\]. Since no specific guidelines were given
+for the cable, a loss of 15 mV will be acceptable for the transmission
+line. According to \[2\], the voltage at any point $z$ along the cable
+can be shown as
+
+$$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
+
+where the reflection coefficient $\Gamma_ l$ is determined by
+
+$$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
+
+### Impact to Greater system
+
+Since the loss of the cable is directly tied to the
 
 ## Overview of Proposed Solution
 
@@ -96,6 +131,14 @@ has been included instead.
 </span><span class="csl-right-inline">J. Kolb, “Combined power and
 signal delivery: A 48-v clock and communication link,” Siemens
 Healthineers, Dec. 01, 2025.</span>
+
+</div>
+
+<div id="ref-Diament1990" class="csl-entry">
+
+<span class="csl-left-margin">\[2\]
+</span><span class="csl-right-inline">P. Diament, *Wave transmission and
+fiber optics*. London, England: Macmillan, 1990.</span>
 
 </div>
 

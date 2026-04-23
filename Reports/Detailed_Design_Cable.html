@@ -662,18 +662,47 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.mhchemParser=void 0;var r=fun
 <p>The cable subsystem is responsible for transmitting the output of the
 Bias Tee on the transmitting side of the ComCaP to the input of the Bias
 Tee on the recieving side of the ComCap. Since the clock is expected to
-be <span class="math inline">\(2.5 MHz\)</span>, and the maximum cable
-length is <span class="math inline">\(10 m\)</span> [1], transmission
-line characteristics will have a an appreciable impact on the system as
-a whole.</p>
+be 2.5 MHz, and the maximum cable length is 10 m [1], transmission line
+characteristics will have an appreciable impact on the system as a
+whole. Therefore, the subsystem will deliver simulation data to
+accurately model the inputs for the recieving Bias Tee as well as test
+and model the cable in a real world scenario once the prototype is
+built. This will need to be done for multiple lengths of cable up to 10
+m. All of the data will then be sent to Siemens alongside the data for
+the other subsystems. Siemens will then use that data in their actual
+implementation for the PET system.</p>
 <h2 id="specifications-and-constraints">Specifications and
 Constraints</h2>
 <!--This section should provide a list of constraints applicable to the subsystem, along with the rationale behind these limitations. For instance, constraints can stem from physics-based limitations or requirements, subsystem prerequisites, standards, ethical considerations, or socio-economic factors.
 &#10;The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 &#10;Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
 
-<p>The cable subsystem will</p>
-<p>The ripple cannot exceed 3 mV [1]</p>
+<h3 id="transmission-line-calculation">Transmission Line
+Calculation</h3>
+<p>The cable subsystem will transmit the clock, power, and back channel
+communications to the best of its ability. In order to do so,
+transmission line calculations will need to be factored in. According to
+Dr. Van Neste, transmission line calculations will have an appreciable
+impact when the length of the cable is at least 10 % of the wavelength.
+This is calculated as</p>
+<p><span class="math display">\[\frac{l}{\lambda}*(100) \ge
+10\%\]</span></p>
+<p>In the function <span class="math inline">\(l\)</span> is the length
+of the cable and <span class="math inline">\(\lambda\)</span> is the
+wavelength. The wavelength is calculated as <span class="math inline">\(\lambda = \frac{v}{f}\)</span> where <span class="math inline">\(v\)</span> is the propogation speed and <span class="math inline">\(f\)</span> is the clock frequency.</p>
+<h3 id="voltage-loss">Voltage Loss</h3>
+<p>According to Siemens Healthineers, the ripple at the output of the
+Bias Tee cannot exceed 30 mV [1]. Since no specific guidelines were
+given for the cable, a loss of 15 mV will be acceptable for the
+transmission line. According to [2], the voltage at any point <span class="math inline">\(z\)</span> along the cable can be shown as</p>
+<p><span class="math display">\[V(z) = V_0[e^{jk(l-z)} + \Gamma
+_le^{-jk(l-z)}]\]</span></p>
+<p>where the reflection coefficient <span class="math inline">\(\Gamma_
+l\)</span> is determined by</p>
+<p><span class="math display">\[\Gamma _l = \frac{Z_l - Z_0}{Z_l +
+Z_0}\]</span></p>
+<h3 id="impact-to-greater-system">Impact to Greater system</h3>
+<p>Since the loss of the cable is directly tied to the</p>
 <h2 id="overview-of-proposed-solution">Overview of Proposed
 Solution</h2>
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
@@ -721,6 +750,13 @@ cable has been included instead.</p>
 </span><span class="csl-right-inline">J. Kolb, “Combined power and
 signal delivery: A 48-v clock and communication link,” Siemens
 Healthineers, Dec. 01, 2025.</span></p>
+</div>
+
+<div id="ref-Diament1990" class="csl-entry">
+
+<p><span class="csl-left-margin">[2]
+</span><span class="csl-right-inline">P. Diament, <em>Wave transmission
+and fiber optics</em>. London, England: Macmillan, 1990.</span></p>
 </div>
 
 </div>

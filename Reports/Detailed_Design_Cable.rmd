@@ -36,8 +36,7 @@ The document should include:
 
 <!--This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.-->
 
-The cable subsystem is responsible for transmitting the output of the Bias Tee on the transmitting side of the ComCaP to the input of the Bias Tee on the recieving side of the ComCap. Since the clock is expected to be $2.5 MHz$, and the maximum cable length is $10 m$ [@Siemens_Presentation], transmission line characteristics will have a an appreciable impact on the system as a whole. 
-
+The cable subsystem is responsible for transmitting the output of the Bias Tee on the transmitting side of the ComCaP to the input of the Bias Tee on the recieving side of the ComCap. Since the clock is expected to be 2.5 MHz, and the maximum cable length is 10 m [@Siemens_Presentation], transmission line characteristics will have an appreciable impact on the system as a whole. Therefore, the subsystem will deliver simulation data to accurately model the inputs for the recieving Bias Tee as well as test and model the cable in a real world scenario once the prototype is built. This will need to be done for multiple lengths of cable up to 10 m. All of the data will then be sent to Siemens alongside the data for the other subsystems. Siemens will then use that data in their actual implementation for the PET system.
 
 ## Specifications and Constraints
 
@@ -47,10 +46,24 @@ The team should set specifications for each subsystem. These specifications may 
 
 Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
 
-The cable subsystem will 
+### Transmission Line Calculation
+The cable subsystem will transmit the clock, power, and back channel communications to the best of its ability. In order to do so, transmission line calculations will need to be factored in. According to Dr. Van Neste, transmission line calculations will have an appreciable impact when the length of the cable is at least 10 % of the wavelength. This is calculated as
 
-The ripple cannot exceed 3 mV [@Siemens_Presentation]
+$$\frac{l}{\lambda}*(100) \ge 10\%$$
 
+In the function $l$ is the length of the cable and $\lambda$ is the wavelength. The wavelength is calculated as $\lambda = \frac{v}{f}$ where $v$ is the propogation speed and $f$ is the clock frequency.
+
+### Voltage Loss
+According to Siemens Healthineers, the ripple at the output of the Bias Tee cannot exceed 30 mV [@Siemens_Presentation]. Since no specific guidelines were given for the cable, a loss of 15 mV will be acceptable for the transmission line. According to [@Diament1990], the voltage at any point $z$ along the cable can be shown as
+
+$$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
+
+where the reflection coefficient $\Gamma_ l$ is determined by
+
+$$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
+
+### Impact to Greater system
+Since the loss of the cable is directly tied to the 
 
 ## Overview of Proposed Solution
 
