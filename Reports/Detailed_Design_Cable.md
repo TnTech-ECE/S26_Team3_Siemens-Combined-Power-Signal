@@ -128,15 +128,11 @@ the cable subsystem will use a cable sold by that vendor.
 
 The cable transmits the signal between both sides of the ComCaP. Because
 of this, it interfaces with the bias T and the power subsystems
-primarily. It interfaces with the bias T as the bias T is both the last
-point of contact with the input side and the first point of contact for
-the output side of the system. Therefore, the output of the first bias T
-is the input of the cable and the output of the cable is the input of
-the second bias T.
-
-## 3D Model of Custom Mechanical Components
-
-<!--Should there be mechanical elements, display diverse views of the necessary 3D models within the document. Ensure the image's readability and appropriate scaling. Offer explanations as required.-->
+primarily. It interfaces with the bias T as it is both the last point of
+contact with the input side and the first point of contact for the
+output side of the system. Therefore, the output of the first bias T is
+the input of the cable and the output of the cable is the input of the
+second bias T.
 
 ## Buildable Schematic
 
