@@ -64,14 +64,36 @@ where $v$ is the propogation speed and $f$ is the clock frequency.
 According to Siemens Healthineers, the ripple at the output of the Bias
 Tee cannot exceed 30 mV \[1\]. Since no specific guidelines were given
 for the cable, a loss of 15 mV will be acceptable for the transmission
-line. According to \[2\], the voltage at any point $z$ along the cable
-can be shown as
+line. Luckily, because the DC and the clock are added signals, they
+exhibit superposition \[2\].
+
+### Clock Singal Integrity
+
+Since the Bias Tee needs to be able to discern what the clock is and
+recover it at an acceptable amplitude, the transmission line can only
+have so much clock voltage loss. According to the specifications of the
+Clock Generation and Jitter Measurement Subsystem, a minimum clock
+amplitude of 50 mV clock amplitude must be recovered. According to the
+book *Wave Transmission and Fiber Optics* \[3\], the voltage at any
+point $z$ along the cable can be shown as
 
 $$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
 
-where the reflection coefficient $\Gamma_ l$ is determined by
+There is a slight deviation between the above equation and what was
+found in the book as in the book the wave number, $k$, is multiplied by
+the index of refraction, $n$. This is not the case for the above
+equation as it uses $k = \frac{2\pi f}{v}$ where $v$ takes into account
+the index of refraction. The reflection coefficient, $\Gamma_ l$, is
+determined by the below equation which is also in \[3\].
 
 $$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
+
+$Z_0$ is the characteristic impedance of the cable and $Z_l$ is the load
+impedance at the end of the transmission line.
+
+All of this is to say that the cable and the impedance at the end of it
+must be designed in a way that keeps the voltage magnitude drop to a
+point where the clock can still be recovered from the signal.
 
 ### Impact to Greater system
 
@@ -134,9 +156,18 @@ Healthineers, Dec. 01, 2025.</span>
 
 </div>
 
-<div id="ref-Diament1990" class="csl-entry">
+<div id="ref-FILTERSWEB07" class="csl-entry">
 
 <span class="csl-left-margin">\[2\]
+</span><span class="csl-right-inline">J. O. Smith, *Introduction to
+digital filters with audio applications*.
+`//­ccrma.stanford.edu/­~jos/­filters/`, accessed (4/22/2026).</span>
+
+</div>
+
+<div id="ref-Diament1990" class="csl-entry">
+
+<span class="csl-left-margin">\[3\]
 </span><span class="csl-right-inline">P. Diament, *Wave transmission and
 fiber optics*. London, England: Macmillan, 1990.</span>
 

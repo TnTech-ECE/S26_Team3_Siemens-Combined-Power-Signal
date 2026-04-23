@@ -694,13 +694,35 @@ wavelength. The wavelength is calculated as <span class="math inline">\(\lambda 
 <p>According to Siemens Healthineers, the ripple at the output of the
 Bias Tee cannot exceed 30 mV [1]. Since no specific guidelines were
 given for the cable, a loss of 15 mV will be acceptable for the
-transmission line. According to [2], the voltage at any point <span class="math inline">\(z\)</span> along the cable can be shown as</p>
+transmission line. Luckily, because the DC and the clock are added
+signals, they exhibit superposition [2].</p>
+<h3 id="clock-singal-integrity">Clock Singal Integrity</h3>
+<p>Since the Bias Tee needs to be able to discern what the clock is and
+recover it at an acceptable amplitude, the transmission line can only
+have so much clock voltage loss. According to the specifications of the
+Clock Generation and Jitter Measurement Subsystem, a minimum clock
+amplitude of 50 mV clock amplitude must be recovered. According to the
+book <em>Wave Transmission and Fiber Optics</em> [3], the voltage at any
+point <span class="math inline">\(z\)</span> along the cable can be
+shown as</p>
 <p><span class="math display">\[V(z) = V_0[e^{jk(l-z)} + \Gamma
 _le^{-jk(l-z)}]\]</span></p>
-<p>where the reflection coefficient <span class="math inline">\(\Gamma_
-l\)</span> is determined by</p>
+<p>There is a slight deviation between the above equation and what was
+found in the book as in the book the wave number, <span class="math inline">\(k\)</span>, is multiplied by the index of
+refraction, <span class="math inline">\(n\)</span>. This is not the case
+for the above equation as it uses <span class="math inline">\(k =
+\frac{2\pi f}{v}\)</span> where <span class="math inline">\(v\)</span>
+takes into account the index of refraction. The reflection coefficient,
+<span class="math inline">\(\Gamma_ l\)</span>, is determined by the
+below equation which is also in [3].</p>
 <p><span class="math display">\[\Gamma _l = \frac{Z_l - Z_0}{Z_l +
 Z_0}\]</span></p>
+<p><span class="math inline">\(Z_0\)</span> is the characteristic
+impedance of the cable and <span class="math inline">\(Z_l\)</span> is
+the load impedance at the end of the transmission line.</p>
+<p>All of this is to say that the cable and the impedance at the end of
+it must be designed in a way that keeps the voltage magnitude drop to a
+point where the clock can still be recovered from the signal.</p>
 <h3 id="impact-to-greater-system">Impact to Greater system</h3>
 <p>Since the loss of the cable is directly tied to the</p>
 <h2 id="overview-of-proposed-solution">Overview of Proposed
@@ -752,9 +774,18 @@ signal delivery: A 48-v clock and communication link,” Siemens
 Healthineers, Dec. 01, 2025.</span></p>
 </div>
 
-<div id="ref-Diament1990" class="csl-entry">
+<div id="ref-FILTERSWEB07" class="csl-entry">
 
 <p><span class="csl-left-margin">[2]
+</span><span class="csl-right-inline">J. O. Smith, <em>Introduction to
+digital filters with audio applications</em>.
+<code>//­ccrma.stanford.edu/­~jos/­filters/</code>, accessed
+(4/22/2026).</span></p>
+</div>
+
+<div id="ref-Diament1990" class="csl-entry">
+
+<p><span class="csl-left-margin">[3]
 </span><span class="csl-right-inline">P. Diament, <em>Wave transmission
 and fiber optics</em>. London, England: Macmillan, 1990.</span></p>
 </div>
