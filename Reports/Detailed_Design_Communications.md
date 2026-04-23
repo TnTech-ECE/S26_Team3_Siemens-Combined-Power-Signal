@@ -22,7 +22,7 @@ The document should include:
 
 ## Function of the Subsystem
 
-The communications subsystem has two identical parts, the server and client. Both parts work in tandem to transmit and receive a debug signal across the line. This system must be able to take any data input and transform it into a modulated packet to receive that data input on the opposite end. [1] 
+Siemens, the customer, will need to get status updates from the detectors, and ideally, this can be incorporated with the power and clock in the single transmission line. The communications subsystem has two identical parts, the server and client. Both parts work in tandem to transmit and receive a debug signal across the line. This system must be able to take any data input and transform it into a modulated packet to receive that data input on the opposite end. [1] 
 
 ## Specifications and Constraints
 
@@ -31,6 +31,20 @@ This section should provide a list of constraints applicable to the subsystem, a
 The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 
 Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.
+
+------
+
+### Specifications Requested by Siemens
+The most basic requirements of this system are as follows: The system must take in a generic data signal, modulate it, transmit it, then the other part must do the reverse steps to extract the data signal again. Both parts must serve transmitter and receiver roles. Since integration into the coincidence unit and detectors is not within our responsibility, the subsystem must be able to modulate any generic bit stream. 
+
+Siemens also suggested a bitrate of 500kbps to 1 Mbps, but this has proved infeasible in this application. PLC Modems use frequencies less than 500kHz, which means the theoretical maximum for bitrate would be 500kbps. [1] 
+
+### FCC Part 15
+
+FCC part 15 Section 113 states  
+
+### Other Specifications
+From the conceptual design comparative analysis, turnkey embedded firmware was deemed necessary for the scale of this project. This modem also must be a power line communication modem since the transmission line will have power transmitted across it.
 
 
 
@@ -80,3 +94,5 @@ Deliver a full and relevant analysis of the design demonstrating that it should 
 All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.
 
 [1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
+
+[2] “FCC Part 15.” Federal Communications Commission, Washington, DC, Apr. 25, 1989 
