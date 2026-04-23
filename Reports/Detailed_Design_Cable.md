@@ -79,6 +79,11 @@ point $z$ along the cable can be shown as
 
 $$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
 
+Therefore, to find the voltage across the load we can set $z = l$ and
+solve to get
+
+$$V_l = V_0[1 + \Gamma _l]$$
+
 There is a slight deviation between the above equation and what was
 found in the book as in the book the wave number, $k$, is multiplied by
 the index of refraction, $n$. This is not the case for the above
@@ -161,7 +166,7 @@ Healthineers, Dec. 01, 2025.</span>
 <span class="csl-left-margin">\[2\]
 </span><span class="csl-right-inline">J. O. Smith, *Introduction to
 digital filters with audio applications*.
-`//­ccrma.stanford.edu/­~jos/­filters/`, accessed (4/22/2026).</span>
+`//­ccrma.stanford.edu/­~jos/­filters/`, accessed (Apr. 22, 2026).</span>
 
 </div>
 

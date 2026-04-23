@@ -61,6 +61,10 @@ Since the Bias Tee needs to be able to discern what the clock is and recover it 
 
 $$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
 
+Therefore, to find the voltage across the load we can set $z = l$ and solve to get
+
+$$V_l = V_0[1 + \Gamma _l]$$
+
 There is a slight deviation between the above equation and what was found in the book as in the book the wave number, $k$, is multiplied by the index of refraction, $n$. This is not the case for the above equation as it uses $k = \frac{2\pi f}{v}$ where $v$ takes into account the index of refraction. The reflection coefficient, $\Gamma_ l$, is determined by the below equation which is also in [@Diament1990].
 
 $$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
