@@ -112,8 +112,9 @@ Siemens wants detailed simulation data delivered to them for the cable, rather t
 Since we are purchasing the cable using Siemens' wholesale partners, the team is unable to accquire a price or purshasing information. This also applies to the bananna jacks as those will also be purchased through Siemens. Ultimately, the team does not control how parts are purchased, and instead the team will have to list as mush relevant information as possible.
 
 | Manufacturer | Part Number | Quantity | UoM |
-| --- | --- | --- |
-| Belden Cable | 50021L | 30 | meters
+| --- | --- | --- | --- |
+| Belden Cable | 50021L | 60 | meters |
+| Belden Cable | 50061L | 60 | meters |
 
 ## Analysis
 

@@ -178,9 +178,10 @@ Siemens. Ultimately, the team does not control how parts are purchased,
 and instead the team will have to list as mush relevant information as
 possible.
 
-| Manufacturer | Part Number | Quantity |
-|--------------|-------------|----------|
-| Belden Cable | 50021L      | 30       |
+| Manufacturer | Part Number | Quantity | UoM    |
+|--------------|-------------|----------|--------|
+| Belden Cable | 50021L      | 60       | meters |
+| Belden Cable | 50061L      | 60       | meters |
 
 ## Analysis
 
