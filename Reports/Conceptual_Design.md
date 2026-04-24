@@ -19,7 +19,7 @@ Traditionally, PET scanners are made up rings of many detectors that need to be 
 - Band-pass filtering for reference clock recovery shall be fixed at 2.5 MHz.
 - The receiver (RX) shall be equipped with a Skyworks model Si5345B jitter attenuator.
 - Jitter measurement shall be high-fidelity.
-- The slew rate for signal entering the Si5345B shall be greater than 300 V/$\mu s$.
+- The slew rate for signal entering the Si5345B shall be greater than 300 V/μs.
 - A 25 MHz output clock shall be synthesized via PLL for jitter measurements.
 - The system may incorporate back-channel communications to assist with debugging and troubleshooting.
 - PCB design files for the Transmitter (TX) and Receiver (RX) systems shall be provided to Siemens Healthineers for manufacturing.
@@ -224,7 +224,7 @@ The Si5395P is a newer, higher performance jitter attenuator in the same family 
 
     * More complex features than necessary.
 
-For either chip consideration, the manufacturer warns that the effect of low enough slew rates could greatly affect jitter performance, as seen in the figure below provided by the Skyworks' reference manual. This is the basis for the new specification requiring a >300 V/$\mu s$ slew rate within this document.
+For either chip consideration, the manufacturer warns that the effect of low enough slew rates could greatly affect jitter performance, as seen in the figure below provided by the Skyworks' reference manual. This is the basis for the new specification requiring a >300 V/μs slew rate within this document.
 
 <img width="668" height="484" alt="Effect of Low Slew Rate on RMS Jitter" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Conceptual_Design/Documentation/Images/SlewRate.png"/> [9]
 
@@ -495,7 +495,7 @@ Interface:
 - Microcontroller with usb connectivity shall be used to interface with the Si5345B chip during development.
 
 Requirements:
-- Shall receive an input with a >300 V/$\mu s$ slew rate.
+- Shall receive an input with a >300 V/μs slew rate.
 - Shall be equipped with the Skyworks Si5345B IC.
 - Shall produce a low jitter clock signal observed from high-fidelity measurements.
 - Shall synthesize a 25 MHz output clock for measurements.
