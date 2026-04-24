@@ -768,12 +768,19 @@ Subsystems</h2>
 <!--Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.-->
 
 <p>The cable transmits the signal between both sides of the ComCaP.
-Because of this, it interfaces with the bias T and the power subsystems
-primarily. It interfaces with the bias T as it is both the last point of
-contact with the input side and the first point of contact for the
-output side of the system. Therefore, the output of the first bias T is
-the input of the cable and the output of the cable is the input of the
-second bias T.</p>
+Because of this, it interfaces with the Bias Tee and the power
+subsystems primarily. It interfaces with the Bias Tee as it is both the
+last point of contact with the input side and the first point of contact
+for the output side of the system. Therefore, the output of the first
+Bias Tee is the input of the cable and the output of the cable is the
+input of the second Bias Tee. The interface with the power subsystem
+refers to the power subsystem’s impact on the load impedance at the end
+of the cable. All these elements will need to be tuned in a way that
+minimizes reflections back through the cable, and is more of a “living
+restriction”. That means that as the other subsystems perform their
+duties, the load impedance will need to be monitored so that the
+reflection coefficient of the cable does not exceed parameters where
+reflections will cause issues.</p>
 <h2 id="buildable-schematic">Buildable Schematic</h2>
 <!--Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
 &#10;The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.-->
