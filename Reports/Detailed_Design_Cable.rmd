@@ -61,11 +61,11 @@ Since the Bias Tee needs to be able to discern what the clock is and recover it 
 
 $$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
 
-Therefore, to find the voltage across the load we can set $z = l$ and solve to get
+Therefore, to find the voltage across the load the team can set $z = l$ and solve to get
 
 $$V_l = V_0[1 + \Gamma _l]$$
 
-There is a slight deviation between the above equation and what was found in the book as in the book the wave number, $k$, is multiplied by the index of refraction, $n$. This is not the case for the above equation as it uses $k = \frac{2\pi f}{v}$ where $v$ takes into account the index of refraction. The reflection coefficient, $\Gamma_ l$, is determined by the below equation which is also in [@Diament1990].
+There is a slight deviation between the above equation and what was found in the book as in the book the wave number, $k$, is multiplied by the index of refraction, $n$. This is not the case for the above equation as it uses $k = \frac{2\pi f}{v}$ where $v$, the propogation speed of the cable, takes into account the index of refraction. The reflection coefficient, $\Gamma_ l$, is determined by the below equation which is also in [@Diament1990].
 
 $$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
 
@@ -89,7 +89,7 @@ Since $f_{communication} << f_{clock}$, the cable will not be long enough to rea
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
 Since the only aspect of this subsystem is the cable, the proposed solution will be simulations and tests to figure out what cable works best and how the cables perform at different lengths. Siemens stated that the cable lengths will vary from one to ten meters. Therefore repeatable tests and simulations will be necessary to verify that the cable will perform properly at a multitude of different lengths. Unfortunately, the analysis of the cable is the solution as Siemens wants the data as a deliverable rather than a product. Therefore, the bulk of the "solution" will lie in the analysis portion of this document.
 
-The solution is a cable that goes from the tramsitting side of the ComCaP to the recieving side. The team will use bananna jacks as a connector and the team will use the load impedance at the recieving side to simulate the cable. The impedance itself does not need to match exactly, but changes to the Bias Tee may be necessary in order to impedance match the transmission line
+The physical solution is a cable that goes from the tramsitting side of the ComCaP to the recieving side. The team will use bananna jacks as a connector and the team will use the load impedance at the recieving side to simulate the cable. The impedance itself does not need to match exactly, but changes to the Bias Tee may be necessary in order to impedance match the transmission line
 
 ## Interface with Other Subsystems
 
@@ -123,7 +123,7 @@ Below is a graph showing what the bill of material (BOM) is for testing the cabl
 <!--Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.-->
 
 ### Cable characteristics
-In order to analyze the cable, first the data we are given needs to be defined. The cable parameters can be found using the 50021L cable datasheet [@50021LDatasheet] as an example.
+In order to analyze the cable, first the data on the datasheet needs to be defined. The cable parameters can be found using the 50021L cable datasheet [@50021LDatasheet] as an example.
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
 
@@ -154,7 +154,7 @@ Using those equations $VSWR = 3$. Therefore, the Smith chart is as shown.
     <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="450" height="450" alt="Smith chart showing impedances available at VSWR = 3">
 </p>
 
-Any impedance that lies on or within the circle will be able to minimize reflections to a point where the clock signal can be recovered. The phase difference is not as important as the magnitude because the Clock Generation and Jitter Measurement Subsystem will account for this change before passing the clock on to the PET scanner. A characteristic impedance of $120 \Omega$ was listed as it was the resistance found in the datasheet for the example cable [@50021LDatasheet]. In reality, the characteristic impedance of whatever cable the team deems best fits the need of the subsystem will be used.
+Any impedance that lies on or within the circle will be able to minimize reflections to a point where the clock signal can be recovered. The phase difference is not as important as the magnitude because the Clock Generation and Jitter Measurement Subsystem will account for this change before passing the clock on to the PET scanner. A characteristic impedance of $120\ \Omega$ was listed as it was the resistance found in the datasheet for the example cable [@50021LDatasheet]. In reality, the characteristic impedance of whatever cable the team deems best fits the need of the subsystem will be used.
 
 ## References
 

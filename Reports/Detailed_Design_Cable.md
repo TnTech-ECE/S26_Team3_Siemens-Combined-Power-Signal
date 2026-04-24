@@ -77,17 +77,18 @@ voltage at any point $z$ along the cable can be shown as
 
 $$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
 
-Therefore, to find the voltage across the load we can set $z = l$ and
-solve to get
+Therefore, to find the voltage across the load the team can set $z = l$
+and solve to get
 
 $$V_l = V_0[1 + \Gamma _l]$$
 
 There is a slight deviation between the above equation and what was
 found in the book as in the book the wave number, $k$, is multiplied by
 the index of refraction, $n$. This is not the case for the above
-equation as it uses $k = \frac{2\pi f}{v}$ where $v$ takes into account
-the index of refraction. The reflection coefficient, $\Gamma_ l$, is
-determined by the below equation which is also in \[2\].
+equation as it uses $k = \frac{2\pi f}{v}$ where $v$, the propogation
+speed of the cable, takes into account the index of refraction. The
+reflection coefficient, $\Gamma_ l$, is determined by the below equation
+which is also in \[2\].
 
 $$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
 
@@ -138,8 +139,8 @@ wants the data as a deliverable rather than a product. Therefore, the
 bulk of the “solution” will lie in the analysis portion of this
 document.
 
-The solution is a cable that goes from the tramsitting side of the
-ComCaP to the recieving side. The team will use bananna jacks as a
+The physical solution is a cable that goes from the tramsitting side of
+the ComCaP to the recieving side. The team will use bananna jacks as a
 connector and the team will use the load impedance at the recieving side
 to simulate the cable. The impedance itself does not need to match
 exactly, but changes to the Bias Tee may be necessary in order to
@@ -204,8 +205,8 @@ than it would be from another source.
 
 ### Cable characteristics
 
-In order to analyze the cable, first the data we are given needs to be
-defined. The cable parameters can be found using the 50021L cable
+In order to analyze the cable, first the data on the datasheet needs to
+be defined. The cable parameters can be found using the 50021L cable
 datasheet \[3\] as an example.
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
@@ -278,7 +279,7 @@ reflections to a point where the clock signal can be recovered. The
 phase difference is not as important as the magnitude because the Clock
 Generation and Jitter Measurement Subsystem will account for this change
 before passing the clock on to the PET scanner. A characteristic
-impedance of $120 \Omega$ was listed as it was the resistance found in
+impedance of $120\ \Omega$ was listed as it was the resistance found in
 the datasheet for the example cable \[3\]. In reality, the
 characteristic impedance of whatever cable the team deems best fits the
 need of the subsystem will be used.
