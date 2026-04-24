@@ -41,7 +41,7 @@ The most basic requirements of this system are as follows: The system must take 
 
 FCC part 15 Section 113 states that "signals from this operation shall be contained within the frequency band 9 kHz to 490 kHz" [2]. The document provided by Siemens suggests a bitrate of 500kbps to 1Mbps, but the theoretical (but feasibly impossible) maximum for data transfer on 490 kHz is 490 kbps. [1]
 
-Also, 
+FCC part 15 Section 113 also requires that a PLC system should not operate on the 135.7-137.8 kHz band or the 472-479 kHz band when located within one kilometer from an amateur radio station. Since this should work in any location, these bands should be avoided.
 
 ### Other Specifications
 From the conceptual design comparative analysis, turnkey embedded firmware was deemed necessary for the scale of this project. This modem also must be a power line communication modem since the transmission line will have power transmitted across it.
@@ -51,17 +51,12 @@ From the conceptual design comparative analysis, turnkey embedded firmware was d
 
 ## Overview of Proposed Solution
 
-Describe the solution and how it will fulfill the specifications and constraints of this subsystem.
+The proposed solution uses the ST7580 PLC modem to take a data input from a host (either the coincidence unit or detector) and modulate it and send it over the transmission line or take a modulated packet input from the line and send a data output to the host. 
 
 
 ## Interface with Other Subsystems
 
-Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.
-
-
-## 3D Model of Custom Mechanical Components
-
-Should there be mechanical elements, display diverse views of the necessary 3D models within the document. Ensure the image's readability and appropriate scaling. Offer explanations as required.
+This system receives power from the IC Power subsystem. These systems will send 
 
 
 ## Buildable Schematic 
