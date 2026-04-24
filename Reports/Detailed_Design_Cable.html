@@ -738,6 +738,13 @@ that end.</p>
 <h3 id="vendor-restriction">Vendor Restriction</h3>
 <p>Siemens uses Belden Cable as their primary vendor for cables,
 therefore the cable subsystem will use a cable sold by that vendor.</p>
+<h3 id="communications-signal-exemption">Communications Signal
+Exemption</h3>
+<p>Since <span class="math inline">\(f_{communication} &lt;&lt;
+f_{clock}\)</span>, the cable will not be long enough to reach a
+wavelength where there are appreciable reflections impacting the
+integrity of that signal. Therefore, the cable subsystem will not take
+the communications signal into account.</p>
 <h2 id="overview-of-proposed-solution">Overview of Proposed
 Solution</h2>
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
@@ -821,6 +828,8 @@ resulting capacitances can then be modeled as below.</p>
 <p>This diagram shows how the capacitances are “wired” together on the
 cable. Since they can be represented as two parallel capacitors, the
 capacitances add.</p>
+<p>The characteristic impedance is used to calculate the transmission
+line characteristics of the cable.</p>
 <h3 id="reflection-impedance-simulation">Reflection Impedance
 Simulation</h3>
 <p>Using a Smith chart python library [5], the team is able to

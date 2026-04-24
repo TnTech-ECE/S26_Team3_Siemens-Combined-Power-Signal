@@ -118,6 +118,13 @@ that end.
 Siemens uses Belden Cable as their primary vendor for cables, therefore
 the cable subsystem will use a cable sold by that vendor.
 
+### Communications Signal Exemption
+
+Since $f_{communication} << f_{clock}$, the cable will not be long
+enough to reach a wavelength where there are appreciable reflections
+impacting the integrity of that signal. Therefore, the cable subsystem
+will not take the communications signal into account.
+
 ## Overview of Proposed Solution
 
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
@@ -210,6 +217,9 @@ that conductor. The resulting capacitances can then be modeled as below.
 This diagram shows how the capacitances are “wired” together on the
 cable. Since they can be represented as two parallel capacitors, the
 capacitances add.
+
+The characteristic impedance is used to calculate the transmission line
+characteristics of the cable.
 
 ### Reflection Impedance Simulation
 
