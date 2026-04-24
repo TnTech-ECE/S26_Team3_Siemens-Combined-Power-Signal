@@ -290,7 +290,7 @@ The overall evaluation of this subsystem is centered around reducing jitter meas
 | | **Limiting Amplifier** | **Comparator** | 
 |:--|:--|:--|
 | **Additive Jitter** | Very Low: $\approx$ 1-5 ps RMS | Low: $\approx$ 5-10 ps RMS |
-| **Input Slew Rate** | Great: $\approx$ 1000 V/$\mu s$ plus | Good: $\approx$ 300-500 V/$\mu s$ Dependent on Amplifier |
+| **Input Slew Rate** | Great: $\approx$ 1000 V/μs plus | Good: $\approx$ 300-500 V/μs Dependent on Amplifier |
 | **Noise Immunity** | High: Saturation | Moderate: Single Threshold Decision |
 | **Flexibility** | Low: No Adjustable Gain or Logic Threshold | High: Adjustable Gain & Logic Threshold |
 
