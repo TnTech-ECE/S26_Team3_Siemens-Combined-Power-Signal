@@ -37,12 +37,12 @@ def Vin(t):
     return np.cos(2*np.pi*CLOCK_FREQUENCY*t)
 
 for i, cable in enumerate(cblArr):
-    DCLoss = DC_CURRENT*length*cable.DCR
+    DCLoss = np.power(DC_CURRENT,2)*length*cable.DCR
     plt.plot(length,DCLoss,label=cable.name)
 
 plt.title('Cable Length vs Voltage Loss')
 plt.xlabel('Cable Length [m]')
-plt.ylabel('Voltage Loss [V]')
+plt.ylabel('Power Loss [W]')
 plt.legend()
 plt.show()
 
