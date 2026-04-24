@@ -827,9 +827,15 @@ resulting capacitances can then be modeled as below.</p>
 
 <p>This diagram shows how the capacitances are “wired” together on the
 cable. Since they can be represented as two parallel capacitors, the
-capacitances add.</p>
+capacitances add (<span class="math inline">\(C = C_{cs} +
+C_{cc}\)</span>).</p>
 <p>The characteristic impedance is used to calculate the transmission
-line characteristics of the cable.</p>
+line characteristics of the cable and represents the magnitude of the
+load impedance that the team is trying to achieve. The delay is the time
+it takes for the signal to propogate a distance in the cable. The
+propogation speed is calculated using the equation <span class="math inline">\(v = \frac{1}{delay}\)</span>. The inductance has
+the same meaning as the capacitance, without the additional math
+required to figure it out.</p>
 <h3 id="reflection-impedance-simulation">Reflection Impedance
 Simulation</h3>
 <p>Using a Smith chart python library [5], the team is able to

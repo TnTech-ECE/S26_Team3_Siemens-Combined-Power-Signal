@@ -216,10 +216,15 @@ that conductor. The resulting capacitances can then be modeled as below.
 
 This diagram shows how the capacitances are “wired” together on the
 cable. Since they can be represented as two parallel capacitors, the
-capacitances add.
+capacitances add ($C = C_{cs} + C_{cc}$).
 
 The characteristic impedance is used to calculate the transmission line
-characteristics of the cable.
+characteristics of the cable and represents the magnitude of the load
+impedance that the team is trying to achieve. The delay is the time it
+takes for the signal to propogate a distance in the cable. The
+propogation speed is calculated using the equation
+$v = \frac{1}{delay}$. The inductance has the same meaning as the
+capacitance, without the additional math required to figure it out.
 
 ### Reflection Impedance Simulation
 

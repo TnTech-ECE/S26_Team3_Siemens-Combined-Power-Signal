@@ -130,9 +130,9 @@ The above diagram was made using Microsoft Visio and shows how the cable capacit
     <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Equivalent_Capacitance.png" width="675" height="450" alt="Equivalent circuit of the cable capacitance diagram">
 </p>
 
-This diagram shows how the capacitances are "wired" together on the cable. Since they can be represented as two parallel capacitors, the capacitances add.
+This diagram shows how the capacitances are "wired" together on the cable. Since they can be represented as two parallel capacitors, the capacitances add ($C = C_{cs} + C_{cc}$).
 
-The characteristic impedance is used to calculate the transmission line characteristics of the cable. 
+The characteristic impedance is used to calculate the transmission line characteristics of the cable and represents the magnitude of the load impedance that the team is trying to achieve. The delay is the time it takes for the signal to propogate a distance in the cable. The propogation speed is calculated using the equation $v = \frac{1}{delay}$. The inductance has the same meaning as the capacitance, without the additional math required to figure it out.
 
 ### Reflection Impedance Simulation
 
