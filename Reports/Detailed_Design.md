@@ -9,20 +9,29 @@ The Clock Generation and Jitter Measurement subsystem is responsible for conditi
 
 ### Customer Specifications [4]:
 
-The Clock Generation and Jitter Measurement subsystem shall utilize the Skyworks Si5345B jitter cleaner as specified by Siemens Healthineers due to the ongoing utilization of the IC by the company. 
+The Clock Generation and Jitter Measurement subsystem shall utilize the Skyworks Si5345B jitter cleaner as specified by Siemens Healthineers due to the ongoing utilization of the IC by the company. Additionally, jitter measurement targets have been specified for the ComCaP system to achieve a sub 1 ps cycle to cycle jitter for the 25 MHz output clock. The measurement for relative jitter measurements <finnish>
 
 - Shall use the Skyworks Si5345B jitter cleaner/clock synthesizer.
-- Shall 
+
+- Shall produce a 25 MHz output clock signal with sub 1 ps cycle to cycle jitter.
+
+- Shall produce a 2.5 MHz reference clock with clean jitter measurements relative to <finnish>.
 
 ### Component Constraints:
 
-The subsystem shall ensure clock signal integrity by conditioning the reference clock signal provided by the Bias-T subsystem prior to reaching the Si5345B IC. The input to the IC shall meet slew rate requirements provided by the manufacturer in order to minimize jitter.
+The subsystem shall ensure clock signal integrity by conditioning the reference clock signal provided by the Bias-T subsystem prior to reaching the Si5345B IC. The input to the IC shall meet the over 300 V/μs slew rate requirement provided by the manufacturer [5] in order to minimize jitter and be recognizable for use with LVDS signal formatting to minimize noise associated with single ended formats [6]. Sizing constraints are also considered for the ICs involved in the formatting of the subsystem onto a Printed Circuit Board (PCB). Additionally, the configuration of the Si5345B IC via its onboard Non-Volatile Memory (NVM) is limited to two total alloted writes to program the chip into a set configuration determined by the volatile memory registers the chip uses to operate [5]. 
+
+- Shall convert the clock signal introduced to the system into a usable LVDS formatted digital clock signal with an over 300 V/μs slew rate as determined by the figure below, provided by the IC manufacturer Skyworks [5].
+
+- Shall take into account sizing constraints of hardware used in construction of the PCB housing the subsystem.
+
+- Shall use alternative methods to write configuration settings onto the Si5345B volatile memory during development to avoid using the finite amount of NVM aboard the IC.
+
+<img width="669" height="484" alt="Si5345B slew rate requirements" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SlewRate.png" />[5]
 
 ### Standards
 
-JEDEC Standard 65B - This standard specifies that sample sizes pertaining to cycle to cycle jitter measurements should be greater than or equal to 1,000. Below is the complete outlined methodology within the standard for taking  jitter measurements[3]. 
-
-
+JEDEC Standard 65B - This standard specifies that sample sizes pertaining to cycle to cycle jitter measurements shall be greater than or equal to 1,000 [3]. 
 
 ## Overview of Proposed Solution
 
@@ -108,7 +117,7 @@ As mentioned in the Specifications and Constraints section of this document, the
 
 [4] J. Kolb, “Combined power and signal delivery: A 48-v clock and communication link,” Siemens Healthineers, Dec. 01, 2025.
 
-[] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018] https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/reference-manuals/Si5345-44-42-D-RM.pdf
+[5] Skyworks, "Any-frequency, Any-output Jitter-Attenuators/Clock Multipliers Si5345, Si5344, Si5342 Family Reference Manual," Si5345, Si5344, Si5342 Rev. D Family Reference Manual, July 2016 Revised [September 2018] https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/reference-manuals/Si5345-44-42-D-RM.pdf
 
 [] STMicroelectronics, "Arm® Cortex®-M0+ 32-bit MCU, up to 64 KB Flash, 8 KB RAM,  2x USART, timers, ADC, comm. I/Fs, 2.0-3.6 V," STM32G030x6/x8 Data Sheet, June 2019 Revised [June 2025].
 
