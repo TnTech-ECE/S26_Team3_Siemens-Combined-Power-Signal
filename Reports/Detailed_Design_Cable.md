@@ -276,8 +276,6 @@ the datasheet for the example cable \[3\]. In reality, the
 characteristic impedance of whatever cable the team deems best fits the
 need of the subsystem will be used.
 
-### DC Voltage Loss Simulation
-
 ## References
 
 <!--All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.-->
