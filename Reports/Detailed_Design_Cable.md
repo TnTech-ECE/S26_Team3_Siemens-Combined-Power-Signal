@@ -206,7 +206,7 @@ graphically demonstrate the acceptable load impedances for a given
 reflection coefficient. Using the The graphical representation of the
 magnitude of the reflection coefficient is a circle about the center of
 the Smith chart \[6\]. Since our voltage drop constraint sees the
-maximum drop as $V_l = \frac{V_0}{2}$. Reqriting the equation for $V_l$
+maximum drop as $V_l = \frac{V_0}{2}$. Rewriting the equation for $V_l$
 as a function of $\Gamma _l$ leads to $\Gamma _l= 0.5$. According to
 \[5\], the voltage standing wave ratio (VSWR) is defined as below and is
 needed to convert the reflection coefficient to a value the team is able
