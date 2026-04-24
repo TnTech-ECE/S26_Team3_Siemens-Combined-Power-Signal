@@ -191,12 +191,12 @@ conductor capacitance ($C_{cc}$) and the conductor to shield capacitance
 
 <p align="center">
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Diagram.png" width="800" height="400" alt="Diagram showing the wiring of the capacitances of the cable">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Diagram.png" width="450" height="450" alt="Diagram showing the wiring of the capacitances of the cable">
 </p>
 
 <p align="center">
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Equivalent_Capacitance.png" width="450" height="450" alt="Equivalent circuit of the cable capacitance diagram">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Equivalent_Capacitance.png" width="675" height="450" alt="Equivalent circuit of the cable capacitance diagram">
 </p>
 
 ### Reflection Impedance Simulation
