@@ -95,7 +95,7 @@ The solution is a cable that goes from the tramsitting side of the ComCaP to the
 
 <!--Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.-->
 
-The cable transmits the signal between both sides of the ComCaP. Because of this, it interfaces with the bias T and the power subsystems primarily. It interfaces with the bias T as it is both the last point of contact with the input side and the first point of contact for the output side of the system. Therefore, the output of the first bias T is the input of the cable and the output of the cable is the input of the second bias T.
+The cable transmits the signal between both sides of the ComCaP. Because of this, it interfaces with the Bias Tee and the power subsystems primarily. It interfaces with the Bias Tee as it is both the last point of contact with the input side and the first point of contact for the output side of the system. Therefore, the output of the first Bias Tee is the input of the cable and the output of the cable is the input of the second Bias Tee. The interface with the power subsystem refers to the power subsystem's impact on the load impedance at the end of the cable. All these elements will need to be tuned in a way that minimizes reflections back through the cable, and is more of a "living restriction". That means that as the other subsystems perform their duties, the load impedance will need to be monitored so that the reflection coefficient of the cable does not exceed parameters where reflections will cause issues.
 
 ## Buildable Schematic 
 
