@@ -187,17 +187,29 @@ the direct current resistance (DCR) is the resistance of the cable at a
 DC load. Due to the superposition principle, this will be used to
 measure the DC voltage drop of our cable. Next is the conductor to
 conductor capacitance ($C_{cc}$) and the conductor to shield capacitance
-(\$C\_{cs}). This is best explained using a diagram.
+($C_{cs}$). This is best explained using a diagram.
 
 <p align="center">
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Picture.png" width="450" height="450" alt="Diagram showing the wiring of the capacitances of the cable">
 </p>
 
+The above diagram was made using Microsoft Visio and shows how the cable
+capacitances are physically represented on the twisted strand cable. The
+capacitances are listed separately because how the capacitances line up
+depends on how the cable is wired. For the ComCaP, the cable will be
+wired with the shield grounded. This means that one of the conductors
+and the shield will be on the same node, resulting in no $C_{cs}$ for
+that conductor. The resulting capacitances can then be modeled as below.
+
 <p align="center">
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Equivalent_Capacitance.png" width="675" height="450" alt="Equivalent circuit of the cable capacitance diagram">
 </p>
+
+This diagram shows how the capacitances are “wired” together on the
+cable. Since they can be represented as two parallel capacitors, the
+capacitances add.
 
 ### Reflection Impedance Simulation
 
