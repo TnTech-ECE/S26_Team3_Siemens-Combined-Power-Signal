@@ -73,9 +73,9 @@ Since the Bias Tee needs to be able to discern what the clock is and
 recover it at an acceptable amplitude, the transmission line can only
 have so much clock voltage loss. According to the specifications of the
 Clock Generation and Jitter Measurement Subsystem, a minimum clock
-amplitude of 50 mV clock amplitude must be recovered. According to the
-book *Wave Transmission and Fiber Optics* \[3\], the voltage at any
-point $z$ along the cable can be shown as
+amplitude of half that of the input clock amplitude must be recovered.
+According to the book *Wave Transmission and Fiber Optics* \[3\], the
+voltage at any point $z$ along the cable can be shown as
 
 $$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
 
@@ -180,11 +180,22 @@ datasheet \[4\] as an example.
 
 ### Python Simulation
 
-Using a smith chart library \[5\], the team is able to graphically
-demonstrate the acceptable load impedances for a given reflection
-coefficient. The graphical representation of the magnitude of the
-reflection coefficient is a circle about the center of the smith chart
-\[6\].
+Using a Smith chart python library \[5\], the team is able to
+graphically demonstrate the acceptable load impedances for a given
+reflection coefficient. Using the The graphical representation of the
+magnitude of the reflection coefficient is a circle about the center of
+the Smith chart \[6\]. Since our voltage drop constraint sees the
+maximum drop as $V_l = \frac{V_0}{2}$. Reqriting the equation for $V_l$
+as a function of $\Gamma _l$ leads to $\Gamma _l= 0.5$. According to
+\[5\], the voltage standing wave ratio (VSWR) is defined as below and is
+needed to convert the reflection coefficient to a value the team is able
+to plot.
+
+$$|\Gamma _l| = \frac{VSWR - 1}{VSWR + 1} \iff VSWR = \frac{1 + |\Gamma _l|}{1 - |\Gamma _l|}$$
+
+Using those equations $VSWR = 3$. Therefore the Smith chart is as shown.
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="500" height="500" alt="Smith chart showing impedances available at VSWR = 3">
 
 ## References
 
