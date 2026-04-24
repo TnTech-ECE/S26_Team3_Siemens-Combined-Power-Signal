@@ -145,7 +145,7 @@ Using those equations $VSWR = 3$. Therefore, the Smith chart is as shown.
     <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="450" height="450" alt="Smith chart showing impedances available at VSWR = 3">
 </p>
 
-Any impedance that lies on or within the circle will be able to minimize reflections to a point where the clock signal can be recovered. The phase difference is not as important as the magnitude because the Clock Generation and Jitter Measurement Subsystem will account for this change before passing the clock on to the PET scanner.
+Any impedance that lies on or within the circle will be able to minimize reflections to a point where the clock signal can be recovered. The phase difference is not as important as the magnitude because the Clock Generation and Jitter Measurement Subsystem will account for this change before passing the clock on to the PET scanner. A characteristic impedance of $120 \Omega$ was listed as it was the resistance found in the datasheet for the example cable [@50021LDatasheet]. In reality, the characteristic impedance of whatever cable the team deems best fits the need of the subsystem will be used.
 
 ### DC Voltage Loss Simulation
 

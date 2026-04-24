@@ -61,11 +61,9 @@ where $v$ is the propogation speed and $f$ is the clock frequency.
 
 ### Voltage Loss
 
-According to Siemens Healthineers, the ripple at the output of the Bias
-Tee cannot exceed 30 mV \[1\]. Since no specific guidelines were given
-for the cable, a loss of 15 mV will be acceptable for the transmission
-line. Luckily, because the DC and the clock are added signals, they
-exhibit superposition \[2\].
+According to Siemens Healthineers, voltage losses are acceptable as the
+actual system voltage will be ran at around 12 V, so the voltage loss in
+the cable will not be a determining factor.
 
 ### Clock Singal Integrity
 
@@ -74,7 +72,7 @@ recover it at an acceptable amplitude, the transmission line can only
 have so much clock voltage loss. According to the specifications of the
 Clock Generation and Jitter Measurement Subsystem, a minimum clock
 amplitude of half that of the input clock amplitude must be recovered.
-According to the book *Wave Transmission and Fiber Optics* \[3\], the
+According to the book *Wave Transmission and Fiber Optics* \[2\], the
 voltage at any point $z$ along the cable can be shown as
 
 $$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
@@ -89,7 +87,7 @@ found in the book as in the book the wave number, $k$, is multiplied by
 the index of refraction, $n$. This is not the case for the above
 equation as it uses $k = \frac{2\pi f}{v}$ where $v$ takes into account
 the index of refraction. The reflection coefficient, $\Gamma_ l$, is
-determined by the below equation which is also in \[3\].
+determined by the below equation which is also in \[2\].
 
 $$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
 
@@ -181,7 +179,7 @@ has been included instead.
 
 In order to analyze the cable, first the data we are given needs to be
 defined. The cable parameters can be found using the 50021L cable
-datasheet \[4\] as an example.
+datasheet \[3\] as an example.
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
 
@@ -228,14 +226,14 @@ capacitance, without the additional math required to figure it out.
 
 ### Reflection Impedance Simulation
 
-Using a Smith chart python library \[5\], the team is able to
+Using a Smith chart python library \[4\], the team is able to
 graphically demonstrate the acceptable load impedances for a given
 reflection coefficient. Using the The graphical representation of the
 magnitude of the reflection coefficient is a circle about the center of
-the Smith chart \[6\]. Since our voltage drop constraint sees the
+the Smith chart \[5\]. Since our voltage drop constraint sees the
 maximum drop as $V_l = \frac{V_0}{2}$. Rewriting the equation for $V_l$
 as a function of $\Gamma _l$ leads to $\Gamma _l= 0.5$. According to
-\[5\], the voltage standing wave ratio (VSWR) is defined as below and is
+\[4\], the voltage standing wave ratio (VSWR) is defined as below and is
 needed to convert the reflection coefficient to a value the team is able
 to plot.
 
@@ -252,7 +250,11 @@ Any impedance that lies on or within the circle will be able to minimize
 reflections to a point where the clock signal can be recovered. The
 phase difference is not as important as the magnitude because the Clock
 Generation and Jitter Measurement Subsystem will account for this change
-before passing the clock on to the PET scanner.
+before passing the clock on to the PET scanner. A characteristic
+impedance of $120 \Omega$ was listed as it was the resistance found in
+the datasheet for the example cable \[3\]. In reality, the
+characteristic impedance of whatever cable the team deems best fits the
+need of the subsystem will be used.
 
 ### DC Voltage Loss Simulation
 
@@ -271,18 +273,9 @@ Healthineers, Dec. 01, 2025.</span>
 
 </div>
 
-<div id="ref-FILTERSWEB07" class="csl-entry">
-
-<span class="csl-left-margin">\[2\]
-</span><span class="csl-right-inline">J. O. Smith, *Introduction to
-digital filters with audio applications*.
-`//­ccrma.stanford.edu/­~jos/­filters/`, accessed (Apr. 22, 2026).</span>
-
-</div>
-
 <div id="ref-Diament1990" class="csl-entry">
 
-<span class="csl-left-margin">\[3\]
+<span class="csl-left-margin">\[2\]
 </span><span class="csl-right-inline">P. Diament, *Wave transmission and
 fiber optics*. London, England: Macmillan, 1990.</span>
 
@@ -290,7 +283,7 @@ fiber optics*. London, England: Macmillan, 1990.</span>
 
 <div id="ref-50021LDatasheet" class="csl-entry">
 
-<span class="csl-left-margin">\[4\]
+<span class="csl-left-margin">\[3\]
 </span><span class="csl-right-inline">Belden, “50021L - RS485 FR, 1P
 20AWG str TC, MGT, XLPE ins, OS+TC brd, LSZH jkt, IEC60331-23, ABS
 approved.” 50021L datasheet, 2026. Available:
@@ -300,7 +293,7 @@ approved.” 50021L datasheet, 2026. Available:
 
 <div id="ref-pygrin_prahl_2026" class="csl-entry">
 
-<span class="csl-left-margin">\[5\]
+<span class="csl-left-margin">\[4\]
 </span><span class="csl-right-inline">S. Prahl and P. Staerke,
 *Pysmithchart: A python module for smith charts*. (2026). Zenodo. doi:
 [10.5281/zenodo.18409151](https://doi.org/10.5281/zenodo.18409151).</span>
@@ -309,7 +302,7 @@ approved.” 50021L datasheet, 2026. Available:
 
 <div id="ref-Caspers_Smith_Chart" class="csl-entry">
 
-<span class="csl-left-margin">\[6\]
+<span class="csl-left-margin">\[5\]
 </span><span class="csl-right-inline">F. Caspers,
 “<span class="nocase">RF engineering basic concepts: the Smith
 chart</span>,” 2011, doi:
