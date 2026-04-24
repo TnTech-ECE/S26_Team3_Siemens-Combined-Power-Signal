@@ -164,8 +164,14 @@ second bias T.
 
 Siemens wants detailed simulation data delivered to them for the cable,
 rather than a constructed cable. Since there is no construction element
-to the cable design, a breakdown of the relevant elements of the cable
-has been included instead.
+to the cable design, 60 meters of each cable has been requested for
+testing purposes, as well as 8 male and female bananna jack headers. 4
+of the headers are reserved for the prototypes, and the other 4 will be
+attached to the cables while testing for more accurate results to the
+real world cable. Testing will be performed using a spectrum analyzer
+borrowed from the DSP lab as well as function generators and other lab
+equipment in Dr. Van Neste’s lab. The relevant values to be tested for
+are provided in the analysis section alongside python simulations.
 
 ## BOM
 
@@ -178,10 +184,12 @@ Siemens. Ultimately, the team does not control how parts are purchased,
 and instead the team will have to list as mush relevant information as
 possible.
 
-| Manufacturer | Part Number | Quantity | UoM    |
-|--------------|-------------|----------|--------|
-| Belden Cable | 50021L      | 60       | meters |
-| Belden Cable | 50061L      | 60       | meters |
+| Manufacturer | Part Number | Description | Quantity | UoM | Note |
+|----|----|----|----|----|----|
+| Belden Cable | 50021L |  | 60 | meters | Purchased wholesale through Siemens |
+| Belden Cable | 50061L |  | 60 | meters | Purchased wholesale through Siemens |
+| N/A | N/A | Bananna Jack Male Headers | 8 | Each | Requested through Siemens |
+| N/A | N/A | Bananna Jack Female Headers | 8 | Each | Requested through Siemens |
 
 ## Analysis
 
