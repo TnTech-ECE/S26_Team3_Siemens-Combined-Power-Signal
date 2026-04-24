@@ -195,7 +195,7 @@ $$|\Gamma _l| = \frac{VSWR - 1}{VSWR + 1} \iff VSWR = \frac{1 + |\Gamma _l|}{1 -
 
 Using those equations $VSWR = 3$. Therefore the Smith chart is as shown.
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="500" height="500" alt="Smith chart showing impedances available at VSWR = 3">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" style="margin:auto" width="500" height="500" alt="Smith chart showing impedances available at VSWR = 3">
 
 ## References
 
