@@ -146,9 +146,17 @@ Siemens Healthineers has committed to purchasing/sourcing all components for the
 
 ## Analysis
 
+The graphs below demonstrates the signal conditioning path to the Si5345B IC. The IC itself does not have a simulation model and will require laboratory testing to verify results, as the typical operating characteristics provided by Skyworks [1] use much higher frequencies than the provided input signal. 
+
+The below graph depicts the input waveform (bottom, green) compared to the biased and amplified waveform output of the ADA4899-1 IC (top, blue). The amplification accomplishes a slew rate in the 20 V/µs range corresponding to the 10x gain. While this is not meeting the 300 V/µs requirement, it does aid in eliminating noise for the comparator circuit to complete the conditioning.
+
 <img width="1900" height="880" alt="Simulation of signal conditioning from start to amplification" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim.png" />
 
+The below graph depicts the amplifier output (top, blue) compared to the comparator output (bottom, green), which resembles a fairly clean digital signal. It is worth noting that the simulation utilized the ADCMP580 apposed to the ADCMP605, which does not have a simulation model. The ADCMP580 model comparator achieves lower additive jitter and boasts a much lower propagation delay. While actual results from the ADCMP605 model may vary, the relatively low frequency of the reference clock aids in creating a similar performance. The slew rate for the comparator's output waveform averages in the 500 V/µs range, which is well above the requirement for the Si5345B to reduce jitter.
+
 <img width="1900" height="880" alt="Simulation of signal conditioning from amplification to comparator" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(amptocomp).png" />
+
+The below graph depicts the input waveform (green) compared to the final output waveform (red), highlighting the significant amplitude gain and corresponding slew rate hike.
 
 <img width="1900" height="880" alt="Simulation of signal conditioning from start to finish" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(intoout).png" />
 
