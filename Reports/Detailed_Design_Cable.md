@@ -178,7 +178,28 @@ datasheet \[4\] as an example.
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
 
-### Python Simulation
+For the purposes of calculation, the quantities calculated are converted
+to their base SI units (ie: ohms per kilometer is converted to ohms per
+meter). The important quantites to note here are the DCR, conductor to
+conductor capacitance, conductor to shield capacitance, characteristic
+impedance, delay, inductance, and inductance to resistance ratio. First,
+the direct current resistance (DCR) is the resistance of the cable at a
+DC load. Due to the superposition principle, this will be used to
+measure the DC voltage drop of our cable. Next is the conductor to
+conductor capacitance ($C_{cc}$) and the conductor to shield capacitance
+(\$C\_{cs}). This is best explained using a diagram.
+
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Diagram.png" width="800" height="400" alt="Diagram showing the wiring of the capacitances of the cable">
+</p>
+
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Equivalent_Capacitance.png" width="450" height="450" alt="Equivalent circuit of the cable capacitance diagram">
+</p>
+
+### Reflection Impedance Simulation
 
 Using a Smith chart python library \[5\], the team is able to
 graphically demonstrate the acceptable load impedances for a given
@@ -197,7 +218,7 @@ Using those equations $VSWR = 3$. Therefore, the Smith chart is as
 shown.
 <p align="center">
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="500" height="500" alt="Smith chart showing impedances available at VSWR = 3">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="450" height="450" alt="Smith chart showing impedances available at VSWR = 3">
 </p>
 
 Any impedance that lies on or within the circle will be able to minimize
@@ -205,6 +226,8 @@ reflections to a point where the clock signal can be recovered. The
 phase difference is not as important as the magnitude because the Clock
 Generation and Jitter Measurement Subsystem will account for this change
 before passing the clock on to the PET scanner.
+
+### DC Voltage Loss Simulation
 
 ## References
 
