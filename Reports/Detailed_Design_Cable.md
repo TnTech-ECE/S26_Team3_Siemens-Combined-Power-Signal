@@ -193,9 +193,18 @@ to plot.
 
 $$|\Gamma _l| = \frac{VSWR - 1}{VSWR + 1} \iff VSWR = \frac{1 + |\Gamma _l|}{1 - |\Gamma _l|}$$
 
-Using those equations $VSWR = 3$. Therefore the Smith chart is as shown.
+Using those equations $VSWR = 3$. Therefore, the Smith chart is as
+shown.
+<p align="center">
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" style="margin:auto" width="500" height="500" alt="Smith chart showing impedances available at VSWR = 3">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="500" height="500" alt="Smith chart showing impedances available at VSWR = 3">
+</p>
+
+Any impedance that lies on or within the circle will be able to minimize
+reflections to a point where the clock signal can be recovered. The
+phase difference is not as important as the magnitude because the Clock
+Generation and Jitter Measurement Subsystem will account for this change
+before passing the clock on to the PET scanner.
 
 ## References
 
