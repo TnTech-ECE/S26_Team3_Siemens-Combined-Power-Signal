@@ -109,14 +109,14 @@ Siemens wants detailed simulation data delivered to them for the cable, rather t
 
 <!--Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).-->
 
-Since we are purchasing the cable using Siemens' wholesale partners, the team is unable to accquire a price or purshasing information. This also applies to the bananna jacks as those will also be purchased through Siemens. Ultimately, the team does not control how parts are purchased, and instead the team will have to list as mush relevant information as possible.
+Below is a graph showing what the bill of material (BOM) is for testing the cable. Because Siemens purchases their cable and connectors wholesale, there is no price information available for the team to use. The team would purchase parts off the shelf, however, Siemens is paying for the parts, and using their wholesale options is cheaper for them than it would be from another source.
 
-| Manufacturer | Part Number | Description | Quantity | UoM | Note |
-| --- | --- | --- | --- | --- | --- |
-| Belden Cable | 50021L | | 60 | meters | Purchased wholesale through Siemens |
-| Belden Cable | 50061L | | 60 | meters | Purchased wholesale through Siemens |
-| N/A | N/A | Bananna Jack Male Headers | 8 | Each | Requested through Siemens |
-| N/A | N/A | Bananna Jack Female Headers | 8 | Each | Requested through Siemens |
+| Manufacturer | Part Number | Description | Quantity | UoM |
+| --- | --- | --- | --- | --- |
+| Belden Cable | 50021L | RS485 FR, 1PR x 20AWG Stranded Tinned Copper Wire | 60 | meters |
+| Belden Cable | 50061L | RS-485, 1PR x 20AWG Stranded Tinned Copper Wire| 60 | meters | 
+| N/A | N/A | Bananna Jack Male Headers | 8 | Each |
+| N/A | N/A | Bananna Jack Female Headers | 8 | Each |
 
 ## Analysis
 
