@@ -115,15 +115,32 @@ In order to analyze the cable, first the data we are given needs to be defined. 
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
 
-### Python Simulation
+For the purposes of calculation, the quantities calculated are converted to their base SI units (ie: ohms per kilometer is converted to ohms per meter). The important quantites to note here are the DCR, conductor to conductor capacitance, conductor to shield capacitance, characteristic impedance, delay, inductance, and inductance to resistance ratio. First, the direct current resistance (DCR) is the resistance of the cable at a DC load. Due to the superposition principle, this will be used to measure the DC voltage drop of our cable. Next is the conductor to conductor capacitance ($C_{cc}$) and the conductor to shield capacitance ($C_{cs}). This is best explained using a diagram.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Diagram.png" width="800" height="400" alt="Diagram showing the wiring of the capacitances of the cable">
+</p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Equivalent_Capacitance.png" width="450" height="450" alt="Equivalent circuit of the cable capacitance diagram">
+</p>
+
+### Reflection Impedance Simulation
 
 Using a Smith chart python library [@pygrin_prahl_2026], the team is able to graphically demonstrate the acceptable load impedances for a given reflection coefficient. Using the The graphical representation of the magnitude of the reflection coefficient is a circle about the center of the Smith chart [@Caspers_Smith_Chart]. Since our voltage drop constraint sees the maximum drop as $V_l = \frac{V_0}{2}$. Reqriting the equation for $V_l$ as a function of $\Gamma _l$ leads to $\Gamma _l= 0.5$. According to [@pygrin_prahl_2026], the voltage standing wave ratio (VSWR) is defined as below and is needed to convert the reflection coefficient to a value the team is able to plot.
 
 $$|\Gamma _l| = \frac{VSWR - 1}{VSWR + 1} \iff VSWR = \frac{1 + |\Gamma _l|}{1 - |\Gamma _l|}$$
 
-Using those equations $VSWR = 3$. Therefore the Smith chart is as shown.
+Using those equations $VSWR = 3$. Therefore, the Smith chart is as shown.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="450" height="450" alt="Smith chart showing impedances available at VSWR = 3">
+</p>
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" style="margin:auto" width="500" height="500" alt="Smith chart showing impedances available at VSWR = 3">
+Any impedance that lies on or within the circle will be able to minimize reflections to a point where the clock signal can be recovered. The phase difference is not as important as the magnitude because the Clock Generation and Jitter Measurement Subsystem will account for this change before passing the clock on to the PET scanner.
+
+### DC Voltage Loss Simulation
+
+
 
 ## References
 
