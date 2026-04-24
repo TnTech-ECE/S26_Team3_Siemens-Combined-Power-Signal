@@ -86,6 +86,8 @@ Siemens uses Belden Cable as their primary vendor for cables, therefore the cabl
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
 Since the only aspect of this subsystem is the cable, the proposed solution will be simulations and tests to figure out what cable works best and how the cables perform at different lengths. Siemens stated that the cable lengths will vary from one to ten meters. Therefore repeatable tests and simulations will be necessary to verify that the cable will perform properly at a multitude of different lengths. Unfortunately, the analysis of the cable is the solution as Siemens wants the data as a deliverable rather than a product. Therefore, the bulk of the "solution" will lie in the analysis portion of this document.
 
+The solution is a cable that goes from the tramsitting side of the ComCaP to the recieving side. The team will use bananna jacks as a connector and the team will use the load impedance at the recieving side to simulate the cable. The impedance itself does not need to match exactly, but changes to the Bias Tee may be necessary in order to impedance match the transmission line
+
 ## Interface with Other Subsystems
 
 <!--Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.-->
