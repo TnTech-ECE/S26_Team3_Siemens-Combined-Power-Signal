@@ -1,6 +1,6 @@
 # Communications Detailed Design
 
-**NOTE:** Other subsystems call the two parts "transmitter" and receiver, but since both parts transmit and receive, in this document, they will be called "server" and "client" respectively.
+**NOTE:** Other subsystems call the two parts "transmitter" and receiver, but since both parts transmit and receive, in this document, they will be called "server" and "client" respectively. The "external host" refers to either the coincidence unit or detector.
 
 ## General Requirements for the Document
 
@@ -46,17 +46,18 @@ FCC part 15 Section 113 also requires that a PLC system should not operate on th
 ### Other Specifications
 From the conceptual design comparative analysis, turnkey embedded firmware was deemed necessary for the scale of this project. This modem also must be a power line communication modem since the transmission line will have power transmitted across it.
 
-
-
-
 ## Overview of Proposed Solution
 
-The proposed solution uses the ST7580 PLC modem to take a data input from a host (either the coincidence unit or detector) and modulate it and send it over the transmission line or take a modulated packet input from the line and send a data output to the host. 
+The proposed solution uses the ST7580 PLC modem to take a UART data input from a host (either the coincidence unit or detector) and modulate it and send it over the transmission line or take a modulated packet input from the line and send a UART data output to the host. Both the detector and coincidence unit parts will be identical in structure and function.
 
 
 ## Interface with Other Subsystems
 
-This system receives power from the IC Power subsystem. These systems will send 
+This system receives power from the IC Power subsystem. No data needs to be sent from this subsystem to the IC Power Subsystem.
+
+The modulated packet signal will be sent over the bias tee and cable, which are completely passive and take no data input. 
+
+The server part sends data to the client part or vice versa. The external hosts are the only systems that transfers data with this subsystem. In transmit mode, the external host interfaces with a part of the subsystem through UART protocol. 
 
 
 ## Buildable Schematic 
@@ -70,10 +71,6 @@ The schematic should be relevant to the design and provide ample details necessa
 
 Include a manufacturable printed circuit board layout.
 
-
-## Flowchart
-
-For sections including a software component, produce a chart that demonstrates the decision-making process of the microcontroller. It should provide an overview of the device's function without exhaustive detail.
 
 
 ## BOM
