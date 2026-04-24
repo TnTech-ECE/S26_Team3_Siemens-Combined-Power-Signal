@@ -50,9 +50,11 @@ IEC 60601 [10]: The considerations for this subsystem pertaining to this set of 
 
 ## Overview of Proposed Solution
 <finish>
-As mentioned in the Specifications and Constraints section of this document, the reference clock signal entering the subsystem will require alteration before insertion into the Si5345B IC. The IC expects the input signal to meet the over 300 V/μs slew rate requirement, but the maximum slew rate for the 2.5 MHz 0.1 V sine wave clock initially is found via the following equation:
+As mentioned in the Specifications and Constraints section of this document, the reference clock signal entering the subsystem will require alteration before insertion into the Si5345B IC. The IC expects the input signal to meet the over 300 V/μs slew rate requirement, but the maximum slew rate for the 2.5 MHz 0.1 V sine wave clock initially is found via the following equation:    
 
-SR<sub>max</sub> = 2πfV<sub>p</sub> = 2π(2.5 x 10<sup>6</sup>)(0.1) $\approx$ 1.57 V/μs
+<br>
+
+>SR<sub>max</sub> = 2πfV<sub>p</sub> = 2π(2.5 x 10<sup>6</sup>)(0.1) $\approx$ 1.57 V/μs 
 
 The Si5345B chip shall ultimately utilize programmed onboard Non-Volatile Memory (NVM) that determines functionality of the chip and controls clock generation. However, a microcontroller shall be used during development to load registers for this chip manually via I2C due to a constraint of the chip allowing two total alloted NVM writes by the user [5]. A reset input and two additional outputs of the Si5345B, Interrupt and LoLb, shall be included during development for monitoring purposes. Interrupt is asserted when a change in the device is detected and LOLb (Loss of Lock) is asserted when phase locking is achieved.
 
@@ -93,31 +95,54 @@ The Bias-T subsystem interfaces with the Clock Generation and Jitter Measurement
 
 ## Buildable Schematic 
 
+For the purposes of the following schematics, all power sources from the IC Power subsystem are modeled as simulated voltage sources and the input signal from the Bias-T subsystem is modeled similarly.
+
 ### Signal Conditioning Circuit
 
 The below circuit is designed to perform the signal conditioning required to introduce the reference clock signal into the Si5345B. First, the signal is biased to 2.5 V to ensure proper operation of the ADA4899-1 amplifier operating via a single 5 V source. The resistors Rf and Rg are gain control resistors and their values may change as needed during development. Once the signal has been amplified, it is introduced into the ADCMP560 comparator whose threshold is biased to the same 2.5 V. The Rh resistor above the comparator is used to control its hysteresis levels and is subject to adjustment as well. Finally, the comparator emits the LVDS formatted, differential, digital clock signal into the Si5345B input. 
 
 <img width="1045" height="820" alt="Signal Conditioning Circuit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigCon(update2).png" />
 
-### Si5345B Connections
+### Si5345B Jitter Cleaner / Clock Synthesizer
 
-
+The Si5345B IC receives its differential input signals from the previous conditioning circuit, labeled as Ref_Clk_P/N. Y1 designates the external crystal oscillator IC required for proper operation of the Si5345B IC [5]. Three outputs for the Si5345B IC are currently planned for utilization by the MCU and subsequently routed to the STM32 IC, consisting of Interrupt, Reset, and LOL detector. Additionally, the clock signal and data pins necessary for I<sup>2</sup>C interfacing with the MCU are routed into the Si5345B IC and require the biasing seen using 4.7 kΩ resistors. All outputs are terminated as described within the Si5345B data sheet, however the placement of the 100 Ω resistors seen between the differential pairs is subject to change (i.e. being placed before capacitors). The physical connections use to connect the output signals with testing equipment is undetermined, but likely to involve banana jacks.   
 
 <img width="1045" height="820" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/Si5345B_config_2_4-23-26.png" />
+
+### STM32G030 MCU
+
+The STM32G030 IC is connected to the Si5345B IC by the five signals mentioned in the above section: Interrupt, LOL Detector, Reset, Clock, and Bidirectional Data Pin. The connection for the active low reset is biases per the Si5345B data sheet [1]. P1 is a generic header that is temporarily modeling the port the team will use to interface with MCU. An appropriate cable to convert to USB will be required for this method. 
 
 <img width="1045" height="820" alt="Micro Control Unit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/MCU(update2).png" />
 
 ## Printed Circuit Board Layout
 
-
+The PCB layout for this subsystem is required to be coordinated with multiple other subsystems and is still under development.
 
 <!-- ## Flowchart while a flowchart for the MCU blasting register info to the Si5345B might be available upon construction of the circuit, it is too early to determine all required functionality needed to produce the flowchart -->
 
-
-
 ## BOM
 
-<!--Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).-->
+Siemens Healthineers has committed to purchasing/sourcing all components for the ComCaP project and have access to better pricing than the ComCap team, as such the following table is not a true representation of the cost of the Clock Generation and Jitter Measurement but a representation of prices available through standard sourcing methods.
+
+| Manufacturer | Part Number | Distributor | Distributor Part Number | Quantity | Price | URL |
+| ------------ | ----------- | ----------- | ----------------------- | -------- | ----- | --- |
+| Skyworks | Si5345 | DigiKey | SI5345B-D-GM | 1* | $35.84 | https://www.digikey.com/en/products/detail/skyworks-solutions-inc/SI5345B-D-GM/6166371 |
+| TXC Corp. | 7M48072002 | DigiKey | 887-2480-1-ND | 1* | $1.00 | https://www.digikey.com/en/products/detail/txc-corporation/7M48072002/4918837 |
+| Analog Devices Inc. | ADA4899-1 | DigiKey | ADA4899-1YRDZ-R7 | 1* | $6.18 | https://www.digikey.com/en/products/detail/analog-devices-inc/ADA4899-1YRDZ-R7/1199772 |
+| Analog Devices Inc. | ADCMP605 | DigiKey | ADCMP605BCPZ-R7 | 1* | $7.52 | https://www.digikey.com/en/products/detail/analog-devices-inc/ADCMP605BCPZ-R7/1246082 |
+| STMicroelectronics | STM32G030K8T6 | DigiKey | STM32G030K8T6 | 1* | $1.89 | https://www.digikey.com/en/products/detail/stmicroelectronics/stm32g030k8t6/10326689 |
+| Samsung Electro-Mechanics | CL05A104KA5NNNC | DigiKey | 1276-1043-1-ND | 7* | $0.15 | https://www.digikey.com/en/products/detail/samsung-electro-mechanics-america-inc/CL05A104KA5NNNC/3889129 |
+| KEMET | C0603C105K4RACTU | DigiKey | 399-C0603C105K4RACTUCT-ND | 2* | $0.20 | https://www.digikey.com/en/products/detail/kemet/C0603C105K4RAC7867/3471570 |
+| Amphenol ICC (FCI) | 77311-462K05LF | DigiKey | 609-77311-462K05LFCT-ND | 1* | $1.11 | https://www.digikey.com/en/products/detail/amphenol-fci/77311-462K05LF/2665598 |
+| Vishay Dale | CRCW040210K0FKEE | DigiKey | 541-2954-1-ND | 6* | $0.32 | https://www.digikey.com/en/products/detail/vishay-dale/CRCW040210K0FKEE/6073597 |
+| Vishay Dale | CRCW04024K70FKED | DigiKey | 541-4.70KLCT-ND | 2* | $0.20 | https://www.digikey.com/en/products/detail/vishay-dale/CRCW04024K70FKED/1183199 |
+| YAGEO | RC0603FR-10100RL | DigiKey | 13-RC0603FR-10100RLCT-ND | 3* | $0.30 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-10100RL/12756390 |
+| YAGEO | RC0402JR-079K1L | DigiKey | YAG3321CT-ND | 1* | $0.10 | https://www.digikey.com/en/products/detail/yageo/RC0402JR-079K1L/5282187 |
+| YAGEO | RC0603FR-131KL | DigiKey | 13-RC0603FR-131KLCT-ND | 1* | $0.10 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-131KL/12756423 |
+| YAGEO | RC0402FR-07324KL | DigiKey | YAG3117CT-ND | 1* | $0.10 | https://www.digikey.com/en/products/detail/yageo/RC0402FR-07324KL/5281982 |
+
+*Prices assumed for a singular construction of the ComCaP system. Further production will alter quantity of parts accordingly.
 
 ## Analysis
 
