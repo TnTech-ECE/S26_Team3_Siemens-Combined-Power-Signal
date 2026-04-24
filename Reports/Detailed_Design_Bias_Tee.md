@@ -7,8 +7,6 @@
 - The rationale behind each crucial design decision
 - The procedure for constructing the solution-->
 
-This document gives an in depth overview of the Bias Tee subsystem as part of the overall five subsystem design of combined clock, power, and back channel communications. 
-
 ## General Requirements for the Document
 
 The document should include:
@@ -31,6 +29,7 @@ The document should include:
 
 This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.
 
+The Bias Tee 
 
 ## Specifications and Constraints
 
