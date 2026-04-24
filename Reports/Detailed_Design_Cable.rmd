@@ -84,7 +84,7 @@ Siemens uses Belden Cable as their primary vendor for cables, therefore the cabl
 ## Overview of Proposed Solution
 
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
-
+Since the only aspect of this subsystem is the cable, the proposed solution will be simulations and tests to figure out what cable works best and how the cables perform at different lengths. Siemens stated that the cable lengths will vary from one to ten meters. Therefore repeatable tests and simulations will be necessary to verify that the cable will perform properly at a multitude of different lengths. Unfortunately, the analysis of the cable is the solution as Siemens wants the data as a deliverable rather than a product. Therefore, the bulk of the "solution" will lie in the analysis portion of this document.
 
 ## Interface with Other Subsystems
 
