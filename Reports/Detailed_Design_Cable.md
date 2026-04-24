@@ -171,6 +171,17 @@ has been included instead.
 
 <!--Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).-->
 
+Since we are purchasing the cable using Siemens’ wholesale partners, the
+team is unable to accquire a price or purshasing information. This also
+applies to the bananna jacks as those will also be purchased through
+Siemens. Ultimately, the team does not control how parts are purchased,
+and instead the team will have to list as mush relevant information as
+possible.
+
+| Manufacturer | Part Number | Quantity |
+|--------------|-------------|----------|
+| Belden Cable | 50021L      | 30       |
+
 ## Analysis
 
 <!--Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.-->
