@@ -118,7 +118,7 @@ In order to analyze the cable, first the data we are given needs to be defined. 
 For the purposes of calculation, the quantities calculated are converted to their base SI units (ie: ohms per kilometer is converted to ohms per meter). The important quantites to note here are the DCR, conductor to conductor capacitance, conductor to shield capacitance, characteristic impedance, delay, inductance, and inductance to resistance ratio. First, the direct current resistance (DCR) is the resistance of the cable at a DC load. Due to the superposition principle, this will be used to measure the DC voltage drop of our cable. Next is the conductor to conductor capacitance ($C_{cc}$) and the conductor to shield capacitance ($C_{cs}). This is best explained using a diagram.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Diagram.png" width="450" height="450" alt="Diagram showing the wiring of the capacitances of the cable">
+    <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Picture.png" width="450" height="450" alt="Diagram showing the wiring of the capacitances of the cable">
 </p>
 
 <p align="center">
