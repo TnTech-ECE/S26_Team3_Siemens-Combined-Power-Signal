@@ -115,6 +115,10 @@ In order to analyze the cable, first the data we are given needs to be defined. 
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
 
+### Python Simulation
+
+Using a smith chart library [@pygrin_prahl_2026], the team is able to graphically demonstrate the acceptable load impedances for a given reflection coefficient. The graphical representation of the magnitude of the reflection coefficient is a circle about the center of the smith chart [@Caspers_Smith_Chart].
+
 ## References
 
 <!--All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.-->

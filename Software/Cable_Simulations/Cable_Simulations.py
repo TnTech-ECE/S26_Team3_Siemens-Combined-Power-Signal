@@ -45,3 +45,4 @@ plt.xlabel('Cable Length [m]')
 plt.ylabel('Voltage Loss [V]')
 plt.legend()
 plt.show()
+

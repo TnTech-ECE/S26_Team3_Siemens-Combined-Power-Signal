@@ -122,6 +122,24 @@ the cable subsystem will use a cable sold by that vendor.
 
 <!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
 
+Since the only aspect of this subsystem is the cable, the proposed
+solution will be simulations and tests to figure out what cable works
+best and how the cables perform at different lengths. Siemens stated
+that the cable lengths will vary from one to ten meters. Therefore
+repeatable tests and simulations will be necessary to verify that the
+cable will perform properly at a multitude of different lengths.
+Unfortunately, the analysis of the cable is the solution as Siemens
+wants the data as a deliverable rather than a product. Therefore, the
+bulk of the “solution” will lie in the analysis portion of this
+document.
+
+The solution is a cable that goes from the tramsitting side of the
+ComCaP to the recieving side. The team will use bananna jacks as a
+connector and the team will use the load impedance at the recieving side
+to simulate the cable. The impedance itself does not need to match
+exactly, but changes to the Bias Tee may be necessary in order to
+impedance match the transmission line
+
 ## Interface with Other Subsystems
 
 <!--Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.-->
@@ -159,6 +177,14 @@ defined. The cable parameters can be found using the 50021L cable
 datasheet \[4\] as an example.
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
+
+### Python Simulation
+
+Using a smith chart library \[5\], the team is able to graphically
+demonstrate the acceptable load impedances for a given reflection
+coefficient. The graphical representation of the magnitude of the
+reflection coefficient is a circle about the center of the smith chart
+\[6\].
 
 ## References
 
@@ -199,6 +225,25 @@ fiber optics*. London, England: Macmillan, 1990.</span>
 20AWG str TC, MGT, XLPE ins, OS+TC brd, LSZH jkt, IEC60331-23, ABS
 approved.” 50021L datasheet, 2026. Available:
 <https://catalog.belden.com/techdata/EN/50021L_techdata.pdf></span>
+
+</div>
+
+<div id="ref-pygrin_prahl_2026" class="csl-entry">
+
+<span class="csl-left-margin">\[5\]
+</span><span class="csl-right-inline">S. Prahl and P. Staerke,
+*Pysmithchart: A python module for smith charts*. (2026). Zenodo. doi:
+[10.5281/zenodo.18409151](https://doi.org/10.5281/zenodo.18409151).</span>
+
+</div>
+
+<div id="ref-Caspers_Smith_Chart" class="csl-entry">
+
+<span class="csl-left-margin">\[6\]
+</span><span class="csl-right-inline">F. Caspers,
+“<span class="nocase">RF engineering basic concepts: the Smith
+chart</span>,” 2011, doi:
+[10.5170/CERN-2011-007.95](https://doi.org/10.5170/CERN-2011-007.95).</span>
 
 </div>
 
