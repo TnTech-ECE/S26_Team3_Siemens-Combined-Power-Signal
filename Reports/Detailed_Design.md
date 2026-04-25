@@ -145,7 +145,7 @@ There are no custom mechanical components. All components are COTS; the customer
 
 The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned. -->
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-1.png" width="660" height="510" alt="11 V and 5 V LDO Schematic">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-1.png" width="825" height="638" alt="11 V and 5 V LDO Schematic">
 
 ## Printed Circuit Board Layout
 
