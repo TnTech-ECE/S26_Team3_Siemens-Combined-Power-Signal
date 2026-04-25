@@ -84,7 +84,13 @@ The MAX6791-6796 family includes a power fail comparator that can check if the s
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/PFI_Diagram.png" width="256" height="257" alt="Power fail resistor network and hysteresis">
 
-Using the same equation for the voltage divider values as detailed in the Resistor selection for Adjusted Voltage Outputs section where V_SET becomes the failure voltage of 40 V (V_IN in the diagram) and the voltage compared at the node PFI is 1.23 V as detailed in the datasheet [1]. This results in a ratio of R5 to R6 of 3877 : 123. Additionally, the requirements for R5 and R6 are that there should be a current of at least 10 µA flowing through them to ensure that the 100 nA FI input current does not shift the trip point. Therefore, the selected values of R5 and R6 were determined to be 945.6 and 30 kΩ, respectively. This ensures a small margin of difference between the expected ratio of 0.00103 %. Additionally, the current that will be flowing through the two resistors at 40 V is 41 µA, which is larger than the minimum required current. R7 and R8 add hysteresis to the system
+Using the same equation for the voltage divider values as detailed in the Resistor selection for Adjusted Voltage Outputs section where V_SET becomes the failure voltage of 40 V (V_IN in the diagram) and the voltage compared at the node PFI is 1.23 V as detailed in the datasheet [1]. This results in a ratio of R5 to R6 of 3877 : 123. Additionally, the requirements for R5 and R6 are that there should be a current of at least 10 µA flowing through them to ensure that the 100 nA FI input current does not shift the trip point. Therefore, the selected values of R5 and R6 were determined to be 945.6 and 30 kΩ, respectively. This ensures a small margin of difference between the expected ratio of 0.00103 %. Additionally, the current that will be flowing through the two resistors at 40 V is 41 µA, which is larger than the minimum required current. R7 and R8 add hysteresis to the system. The recommended value of R7 is at least an order of magnitude greater than R5 or R6. Since R5 is about 1 MΩ, R7 is selected as being 10 MΩ. R8 was selected as 1 MΩ as it resulted in the hysteresis voltage as being 200 mV. The following equations come from the datasheet and show how the values of R5, R6, R7, and R8 were determined.
+
+$$V_{L\text{-}H} = V_{PFI} \left( 1 + \frac{R_5}{R_6} + \frac{R_5}{R_7} \right)$$
+
+$$V_{H\text{-}L} = V_{PFI} \left( 1 + \frac{R_5}{R_6} \right) + \left( V_{PFI} - V_{TERM} \right) \left( \frac{R_5}{R_7 + R_8} \right)$$
+
+$$V_{HYS} = V_{PFI} \left( \frac{R_5}{R_7} \right) - \left( V_{PFI} - V_{TERM} \right) \left( \frac{R_5}{R_7 + R_8} \right)$$
 
 ### Watchdog System
 
