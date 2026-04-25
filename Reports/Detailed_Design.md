@@ -98,8 +98,34 @@ The MAX6791-6796 family features a watchdog system where a watchdog timer can be
 
 ## Interface with Other Subsystems
 
-Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.
+<!-- Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted. -->
 
+The IC Power distribution interfaces with three other subsystems: The Clock Generation and Jitter Measurement, Bias Tee, and Communications.
+
+### IC Power Distribution Interfacing
+
+The IC Power Distribution subsystem interfaces with the Clock Generation and Jitter Measurement subsystem via multiple power signals at 1.8 V, 3.3 V, and 5 V levels. These are intended to both enable the operation of relevant ICs and to bias inputs for both the OpAmp and comparator.
+
+#### 1.8 V:
+- Si5345B: VDD1-3
+
+#### 3.3 V:
+- ADCMP605: VCCO, LE/HYS (sets hysteresis level)
+- Si5345B: VDDO0, VDDO3, VDDA, I<sup>2</sup>C (held high for selection of format)
+- STM32G030: VDD/VDDA, RST (deactivates device reset)
+
+#### 5 V:
+- ADA4899-1: +VS, Input biasing
+- ADCMP605: VCCI/VCCO, Input biasing
+- Si5345B: VDD_1-3
+
+### Bias-T Interfacing
+
+The Bias-T subsystem interfaces with the IC Power Distribution in that on the receiving end, it takes power delivered from the Bias Tee and steps it down to the desired voltages.
+
+### Communications Interfacing
+
+The Communications subsystem interfaces with the IC Power Distribution in that it supplies voltages to pins on that board.
 
 <!-- ## 3D Model of Custom Mechanical Components
 
