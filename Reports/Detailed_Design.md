@@ -125,7 +125,13 @@ The Bias-T subsystem interfaces with the IC Power Distribution in that on the re
 
 ### Communications Interfacing
 
-The Communications subsystem interfaces with the IC Power Distribution in that it supplies voltages to pins on that board.
+The IC Power Distribution subsystem interfaces with the Communications subsystem via multiple power signals at 5 V, and 11 V levels.
+
+#### 5 V:
+- VDDIO
+
+#### 11 V:
+- VCC
 
 <!-- ## 3D Model of Custom Mechanical Components
 
@@ -133,12 +139,13 @@ Should there be mechanical elements, display diverse views of the necessary 3D m
 
 There are no custom mechanical components. All components are COTS; the customer will create their own custom hardware if they decide to adopt our project into a final design. -->
 
-## Buildable Schematic 
+## Buildable Schematic
 
-Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
+<!-- Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
 
-The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.
+The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned. -->
 
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-1.png" width="660" height="510" alt="11 V and 5 V LDO Schematic">
 
 ## Printed Circuit Board Layout
 
