@@ -145,7 +145,24 @@ There are no custom mechanical components. All components are COTS; the customer
 
 The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned. -->
 
+### LDO: +11 V, +5 V (MAX6793TPSD2+T)
+
+The below circuit is designed to lower the voltage from the 48 V input and step it down to 11 V and 5 V. The values selected were explained in the Overview of the Proposed Solution.
+
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-1.png" width="825" height="638" alt="11 V and 5 V LDO Schematic">
+
+### LDO: +3.3 V (MAX6795TPSD2+T)
+
+The below circuit is designed to lower the voltage from the 48 V input and step it down to 3.3 V. The values selected were explained in the Overview of the Proposed Solution.
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-3.png" width="825" height="638" alt="11 V and 5 V LDO Schematic">
+
+### LDO: +1.8 V (MAX6795TPSD2+T)
+
+The below circuit is designed to lower the voltage from the 48 V input and step it down to 1.8 V. The values selected were explained in the Overview of the Proposed Solution.
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-2.png" width="825" height="638" alt="11 V and 5 V LDO Schematic">
+
 
 ## Printed Circuit Board Layout
 
@@ -160,7 +177,29 @@ For sections including a software component, produce a chart that demonstrates t
 
 ## BOM
 
-Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).
+<!-- Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4). -->
+
+The below bill of materials encompasses the equipment required to produce one subsystem. The integrated system of all components will be more and is spread across the various other subsystems.
+
+| Type       | Designator                  | Quantity | Supplier Unit Price | Value   | MFG No.            | Manufacturer                      | Distributor           | Distributor Part No.        | Purchasing Website                                                                                                    |
+|------------|-----------------------------|----------|---------------------|---------|--------------------|-----------------------------------|-----------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Capacitor  | C1, C2, C4, C5, C7, C8, C10 | 7        |  $0.25              | 10 uf   | GRM188Z71A106KA73D | Murata Electronics                | DigiKey               | 490-GRM188Z71A106KA73DCT-ND | https://www.digikey.com/en/products/detail/murata-electronics/GRM188Z71A106KA73D/13693280?curr=usd                    |
+| Capacitor  | C3, C6, C9                  | 3        |  $0.47              | 1 uF    | C0402C105K8PACTU   | KEMET                             | DigiKey               | 399-C0402C105K8PACTUTR-ND   | https://www.digikey.com/en/products/detail/kemet/C0402C105K8PACTU/3471488?curr=usd                                    |
+| Transistor | Q1, Q2, Q3                  | 3        |  $1.07              | N/A     | BSP316P            | Infineon Technologies             | DigiKey               | BSP316PH6327XTSA1CT-ND      | https://www.digikey.com/en/products/detail/infineon-technologies/BSP316PH6327XTSA1/5409992?curr=usd                   |
+| Resistor   | R1, R5, R11, R20            | 4        |  $0.10              | 100 kΩ  | RC0402FR-07100KL   | YAGEO                             | DigiKey               | 311-100KLRCT-ND             | https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/729473?curr=usd                                     |
+| Resistor   | R2                          | 1        |  $0.10              | 12 kΩ   | RC0402FR-0712KL    | YAGEO                             | DigiKey               | 311-12.0KLRCT-ND            | https://www.digikey.com/en/products/detail/yageo/RC0402FR-0712KL/729479?curr=usd                                      |
+| Resistor   | R3                          | 1        |  $0.13              | 6.9 kΩ  | RN73R1ETTP6901B25  | KOA Speer Electronics, Inc.       | DigiKey               | 2019-RN73R1ETTP6901B25CT-ND | https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RN73R1ETTP6901B25/12553982?curr=usd              |
+| Resistor   | R4                          | 1        |  $0.10              | 15 kΩ   | RT0402BRD0715KL    | YAGEO                             | DigiKey               | YAG2302CT-ND                | https://www.digikey.com/en/products/detail/yageo/RT0402BRD0715KL/5252416?curr=usd                                     |
+| Resistor   | R6, R12, R21                | 3        |  $0.10              | 909 kΩ  | RC0402FR-07909KL   | YAGEO                             | DigiKey               | YAG2377CT-ND                | https://www.digikey.com/en/products/detail/yageo/RC0402FR-07909KL/5282121?curr=usd                                    |
+| Resistor   | R7, R13, R22                | 3        |  $0.10              | 36.5 kΩ | RC0402FR-0736K5L   | YAGEO                             | DigiKey               | YAG3135CT-ND                | https://www.digikey.com/en/products/detail/yageo/RC0402FR-0736K5L/5282000?curr=usd                                    |
+| Resistor   | R8, R14, R23                | 3        |  $0.11              | 30 kΩ   | ERA-2AEB303X       | Panasonic                         | Mouser                | 667-ERA-2AEB303X            | https://www.mouser.com/ProductDetail/Panasonic/ERA-2AEB303X?qs=YFwoyZoVY0hvnLe9839SdQ%3D%3D                           |
+| Resistor   | R9, R15, R24                | 3        |  $0.10              | 10 MΩ   | CRGCQ0402J10M      | TE Connectivity Passive Product   | DigiKey               | A130072CT-ND                | https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CRGCQ0402J10M/8577904?curr=usd             |
+| Resistor   | R10, R16, R25               | 3        |  $0.10              | 1 MΩ    | RC0402FR-071ML     | YAGEO                             | DigiKey               | 311-1.00MLRCT-ND            | https://www.digikey.com/en/products/detail/yageo/RC0402FR-071ML/729462?curr=usd                                       |
+| Resistor   | R17                         | 1        |  $0.10              | 1 kΩ    | RC0402FR-071KL     | YAGEO                             | DigiKey               | 311-1.00KLRCT-ND            | https://www.digikey.com/en/products/detail/yageo/RC0402FR-071KL/729460?curr=usd                                       |
+| Resistor   | R18                         | 1        |  $0.10              | 8.2 kΩ  | RC0402FR-078K2L    | YAGEO                             | DigiKey               | 311-8.20KLRCT-ND            | https://www.digikey.com/en/products/detail/yageo/RC0402FR-078K2L/729609?curr=usd                                      |
+| Resistor   | R19                         | 1        |  $0.10              | 20 kΩ   | RC0402FR-0720KL    | YAGEO                             | DigiKey               | 311-20.0KLRCT-ND            | https://www.digikey.com/en/products/detail/yageo/RC0402FR-0720KL/729504?curr=usd                                      |
+| LDO IC     | U1                          | 1        |  $9.23              | N/A     | MAX6793TPSD2+T     | Analog Devices / Maxim Integrated | Mouser                | 700-MAX6793TPSD2T           | https://www.mouser.com/ProductDetail/Analog-Devices-Maxim-Integrated/MAX6793TPSD2%2bT?qs=1THa7WoU59GtgngGvyHjCQ%3D%3D |
+| LDO IC     | U2, U3                      | 2        |  $2.32              | N/A     | MAX6795TPSD2+      | Analog Devices / Maxim Integrated | Rochester Electronics | N/A                         | https://www.rocelec.com/part/01t4w00000PPbgpAAD-MAX6795TPSD2                                                          |
 
 ## Analysis
 
