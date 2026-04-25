@@ -54,11 +54,11 @@ As mentioned in the Specifications and Constraints section of this document, the
 
 <br>
 
->SR<sub>max</sub> = 2πfV<sub>p</sub> = 2π(2.5 x 10<sup>6</sup>)(0.1) $\approx$ 1.57 V/μs 
+>SR<sub>max</sub> = 2πfV<sub>p</sub> = 2π(2.5 x 10<sup>6</sup>)(0.05) $\approx$ 0.785 V/μs 
 
 <br>
 
-To accommodate the requirement, the signal will pass through the ADA4899-1 OpAmp with a roughly 10x gain before entering the ADCMP605 LVDS comparator. The resulting digital signal will have a relatively high slew rate well above the requirement and be introduced to the Si5345B IC. The IC will clean jitter from the signal and produce a 25 MHz clock for measurements and a 2.5 MHz clock for the system's designed use. The cycle to cycle jitter measurements for the subsystem shall utilize the following methodology [3]:
+To accommodate the requirement, the signal will pass through the ADA4899-1 OpAmp with a roughly 15x gain before entering the ADCMP605 LVDS comparator. The resulting digital signal will have a relatively high slew rate well above the requirement and be introduced to the Si5345B IC. The IC will clean jitter from the signal and produce a 25 MHz clock for measurements and a 2.5 MHz clock for the system's designed use. The cycle to cycle jitter measurements for the subsystem shall utilize the following methodology [3]:
 
 1) Turn on the histogram feature for the oscilloscope, if available.
 
@@ -104,7 +104,7 @@ For the purposes of the following schematics, all power sources from the IC Powe
 
 The below circuit is designed to perform the signal conditioning required to introduce the reference clock signal into the Si5345B. First, the signal is biased to 2.5 V to ensure proper operation of the ADA4899-1 amplifier operating via a single 5 V source. The resistors Rf and Rg are gain control resistors and their values may change as needed during development. Once the signal has been amplified, it is introduced into the ADCMP560 comparator whose threshold is biased to the same 2.5 V. The Rh resistor above the comparator is used to control its hysteresis levels and is subject to adjustment as well. Finally, the comparator emits the LVDS formatted, differential, digital clock signal into the Si5345B input. 
 
-<img width="1045" height="820" alt="Signal Conditioning Circuit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigCon(update2).png" />
+<img width="1045" height="820" alt="Signal Conditioning Circuit Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigCon(update3).png" />
 
 ### Si5345B Jitter Cleaner / Clock Synthesizer
 
@@ -141,7 +141,7 @@ Siemens Healthineers has committed to purchasing/sourcing all components for the
 | Vishay Dale | CRCW040210K0FKEE | DigiKey | 541-2954-1-ND | 6* | $0.32 | https://www.digikey.com/en/products/detail/vishay-dale/CRCW040210K0FKEE/6073597 |
 | Vishay Dale | CRCW04024K70FKED | DigiKey | 541-4.70KLCT-ND | 2* | $0.20 | https://www.digikey.com/en/products/detail/vishay-dale/CRCW04024K70FKED/1183199 |
 | YAGEO | RC0603FR-10100RL | DigiKey | 13-RC0603FR-10100RLCT-ND | 3* | $0.30 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-10100RL/12756390 |
-| YAGEO | RC0402JR-079K1L | DigiKey | YAG3321CT-ND | 1* | $0.10 | https://www.digikey.com/en/products/detail/yageo/RC0402JR-079K1L/5282187 |
+| YAGEO | RC0402FR-0714KL | DigiKey | 311-14.0KLRCT-ND | 1* | $0.10 | https://www.digikey.com/en/products/detail/yageo/RC0402FR-0714KL/726540 |
 | YAGEO | RC0603FR-131KL | DigiKey | 13-RC0603FR-131KLCT-ND | 1* | $0.10 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-131KL/12756423 |
 | YAGEO | RC0402FR-07324KL | DigiKey | YAG3117CT-ND | 1* | $0.10 | https://www.digikey.com/en/products/detail/yageo/RC0402FR-07324KL/5281982 |
 
@@ -151,17 +151,17 @@ Siemens Healthineers has committed to purchasing/sourcing all components for the
 
 The graphs below demonstrates the signal conditioning path to the Si5345B IC. The IC itself does not have a simulation model and will require laboratory testing to verify results, as the typical operating characteristics provided by Skyworks [1] use much higher frequencies than the provided input signal. 
 
-The below graph depicts the input waveform (bottom, green) compared to the biased and amplified waveform output of the ADA4899-1 IC (top, blue). The amplification accomplishes a slew rate in the 20 V/µs range corresponding to the 10x gain. While this is not meeting the 300 V/µs requirement, it does aid in eliminating noise for the comparator circuit to complete the conditioning.
+The below graph depicts the input waveform (bottom, green) compared to the biased and amplified waveform output of the ADA4899-1 IC (top, blue). The amplification accomplishes a slew rate in the 10 V/µs range corresponding to the 15x gain. While this is not meeting the 300 V/µs requirement, it does aid in eliminating noise for the comparator circuit to complete the conditioning.
 
-<img width="1900" height="880" alt="Simulation of signal conditioning from start to amplification" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim.png" />
+<img width="1900" height="880" alt="Simulation of signal conditioning from start to amplification" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(50mV).png" />
 
 The below graph depicts the amplifier output (top, blue) compared to the comparator output (bottom, green), which resembles a fairly clean digital signal. It is worth noting that the simulation utilized the ADCMP580 apposed to the ADCMP605, which does not have a simulation model. The ADCMP580 model comparator achieves lower additive jitter and boasts a much lower propagation delay. While actual results from the ADCMP605 model may vary, the relatively low frequency of the reference clock aids in creating a similar performance. The slew rate for the comparator's output waveform averages in the 500 V/µs range, which is well above the requirement for the Si5345B to reduce jitter.
 
-<img width="1900" height="880" alt="Simulation of signal conditioning from amplification to comparator" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(amptocomp).png" />
+<img width="1900" height="880" alt="Simulation of signal conditioning from amplification to comparator" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(amptocomp50mV).png" />
 
 The below graph depicts the input waveform (green) compared to the final output waveform (red), highlighting the significant amplitude gain and corresponding slew rate hike.
 
-<img width="1900" height="880" alt="Simulation of signal conditioning from start to finish" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(intoout).png" />
+<img width="1900" height="880" alt="Simulation of signal conditioning from start to finish" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(intoout50mV).png" />
 
 
 ## References
