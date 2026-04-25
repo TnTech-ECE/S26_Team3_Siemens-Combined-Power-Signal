@@ -155,13 +155,13 @@ The below circuit is designed to lower the voltage from the 48 V input and step 
 
 The below circuit is designed to lower the voltage from the 48 V input and step it down to 3.3 V. The values selected were explained in the Overview of the Proposed Solution.
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-3.png" width="825" height="638" alt="11 V and 5 V LDO Schematic">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-3.png" width="825" height="638" alt="3.3 V LDO Schematic">
 
 ### LDO: +1.8 V (MAX6795TPSD2+T)
 
 The below circuit is designed to lower the voltage from the 48 V input and step it down to 1.8 V. The values selected were explained in the Overview of the Proposed Solution.
 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-2.png" width="825" height="638" alt="11 V and 5 V LDO Schematic">
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/LDO_Schematic-2.png" width="825" height="638" alt="1.8 V LDO Schematic">
 
 
 ## Printed Circuit Board Layout
@@ -203,7 +203,11 @@ The below bill of materials encompasses the equipment required to produce one su
 
 ## Analysis
 
-Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.
+<!-- Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness. -->
+
+Much of the analysis was discussed in the overview of the proposed solution, as the percentage differences in choosing commercial off the shelf components versus exact resistance values was documented and explained above. However, the calculations performed on the exact values is listed in the excel table below. This uses the equations stated above to calculate the values as well as determining the division of resistor values for the large resistors. 
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/Analysis_Calculations.png" width="1655" height="459" alt="Calculations for resistor values">
 
 ## References
 
