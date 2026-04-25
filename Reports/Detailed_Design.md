@@ -84,6 +84,8 @@ The MAX6791-6796 family includes a power fail comparator that can check if the s
 
 <img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/PFI_Diagram.png" width="256" height="257" alt="Power fail resistor network and hysteresis">
 
+Using the same equation for the voltage divider values as detailed in the Resistor selection for Adjusted Voltage Outputs section where V_SET becomes the failure voltage of 40 V (V_IN in the diagram) and the voltage compared at the node PFI is 1.23 V as detailed in the datasheet [1]. This results in a ratio of R5 to R6 of 3877 : 123. Additionally, the requirements for R5 and R6 are that there should be a current of at least 10 µA flowing through them to ensure that the 100 nA FI input current does not shift the trip point. Therefore, the selected values of R5 and R6 were determined to be 945.6 and 30 kΩ, respectively. This ensures a small margin of difference between the expected ratio of 0.00103 %. Additionally, the current that will be flowing through the two resistors at 40 V is 41 µA, which is larger than the minimum required current. R7 and R8 add hysteresis to the system
+
 ### Watchdog System
 
 The MAX6791-6796 family features a watchdog system where a watchdog timer can be set to reset in case a chip that it is supplying fails or malfunctions. However, after talking to the customer, this functionality was determined to not be needed and has therefore been disabled in the current design.
