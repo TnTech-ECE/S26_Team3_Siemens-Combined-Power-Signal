@@ -1,30 +1,5 @@
 # Detailed Design
 
-<!--This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
-
-- How the specific subsystem integrates within the broader solution
-- The constraints and specifications relevant to the subsystem
-- The rationale behind each crucial design decision
-- The procedure for constructing the solution-->
-
-<!--## General Requirements for the Document
-
-The document should include:
-
-- Explanation of the subsystem’s integration within the overall solution
-- Detailed specifications and constraints specific to the subsystem
-- Synopsis of the suggested solution
-- Interfaces to other subsystems
-- 3D models of customized mechanical elements*
-- A buildable diagram*
-- A Printed Circuit Board (PCB) design layout*
-- An operational flowchart*
-- A comprehensive Bill of Materials (BOM)
-- Analysis of crucial design decisions
-
-*Note: These technical documentation elements are mandatory only when relevant to the particular subsystem.-->
-
-
 ## Function of the Subsystem
 
 The Bias Tee is the center and primary focus of the overall design. The Bias Tee is a combined approach to delivering the power, clock, and back channel communications. The Bias Tee subsystem is split into two sides, both being separate bias tees. One side couples the RF signals of the clock and communications with the DC signal of the power onto one cable to then be decoupled cleanly back into the three original signals by the other bias tee, and they are both capable of performing this coupling or decoupling allowing for two way usage of the communications.
@@ -63,33 +38,29 @@ To combine to the DC power signal, a capacitor will be used to high-pass filter 
 
 The entirety of the filtering will be mirrored from one bias tee to the other allowing for clean two way travel of communication signals. Also, all inductors and capacitors will have their parasitic elements incorporated in any simulations. The use of precise filtering will also help limit EMI.
 
-## Interface with Other Subsystems
-
-Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted. 
+## Interface with Other Subsystems 
 
 The Bias Tee subsystem directly interfaces with the Clock Generation & Jitter Measurement subsystem, the Cable subsystem, and the Communications subsystem and indirectly interfaces with the IC Power subsystem.
 
 ### Clock Generation & Jitter Measurement
 
-The Bias Tee subsystem interacts with the Clock Generation & Jitter Measurement by delivering the decoupled, filtered clock signal to be conditioned for the jitter cleaning clock synthesizer. The clock signal must have a 2.5MHz signal that is as perceivably smooth when delivered to this subsystem.
+The Bias Tee subsystem interfaces with the Clock Generation & Jitter Measurement by delivering the decoupled, filtered RF clock signal to be conditioned for the jitter cleaning clock synthesizer. The clock signal must have a 2.5MHz signal that is as perceivably smooth when delivered to this subsystem.
 
 ### Cable
 
-The Bias Tee subsystem interacts with the Cable subsystem by delivering and receiving the combined signal. The first bias tee combines the three signals then feeds this combined 
+The Bias Tee subsystem interfaces with the Cable subsystem by delivering and receiving the combined signal. The first bias tee combines the three signals then feeds this combined signal to the cable. The cable then delivers the combined signal to the other bias tee to separate back out.
 
 ### Communications
 
-
+The Bias Tee subsystem interfaces with the Communications subsystem by receiving and delivering the the RF 200kHz communications signal. Both bias tees will be able to receive to combine and separate to deliver the communications signal to allow two way signal travel.
 
 ### IC Power
 
-
+The Bias Tee will output the DC power which will go directly to the output of the system. However, the IC Power subsystem will indirectly interface with the Bias Tee subsystem by pulling power from this output power signal and converting it for the chips.
 
 ## Buildable Schematic 
 
-Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
-
-The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.
+Below is the schematic for the Bias Tee subsystem made of the two bias tees connected by a wire for testing purposes. The schematic has a DC voltage source for power, and two AC sine wave sources for the clock and power, all three for testing purposes. All components are capacitors, inductors, or resistors.
 
 <img width="825" height="383" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Bias_Tee/Documentation/Bias_Tee_Images/Bias%20Tee%20First%20Version.png"/>
 
@@ -100,14 +71,40 @@ Individual PCBs for each subsystem cannot be created for this design because the
 
 ## BOM
 
-| Part | Description | Quantity |
-|----|----|----|
-| Capacitor |   |   |
+Once the system design is finished and brought together the parts will be sourced, so the cost of the bill of materials cannot be defined at the moment.
 
+| Type | Designator | Value | 
+|----|----|----|
+| Capacitor | C1, C2, C3, C4 | 2.65nF |
+| Capacitor | C5, C6 | 5.31nF |
+| Capacitor | C7, C8 | 6.33nF |
+| Capacitor | C9, C10 | 1uF |
+| Capacitor | C11, C12 | 700 nF |
+| Inductor | L1, L4, L5, L6 | 38uH |
+| Inductor | L2, L3 | 19uH |
+| Inductor | L7, L8 | 100uH |
+| Inductor | L9, L10 | 1mH |
+| Resistor | R1, R2 | 120ohm |
+| Resistor | R3 | 10ohm |
 
 ## Analysis
 
-Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.
+The Bias Tee subsystem in simulations successfully and efficiently couples and decouples the three signals. The use of high-pass and low-pass filters produce clean signals with minimal leakage. The graphs below show the sinusoidal waveforms of the inputs and outputs for each signal with the exception of the 48V DC input which is a constant flat line.
+
+The input and output of the clock are shown below. The third order Butterworth high-pass filter and the band-stop filter is preventing the 200kHz comms signal from leaking and overtaking the 2.5MHz clock signal. As a reult, after a smill ripple, the clock signal is even throughout.
+<img width="900" height="200" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Bias_Tee/Documentation/Bias_Tee_Images/Bias%20Tee%20Clock%20In.png"/>
+
+
+
+<img width="900" height="200" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Bias_Tee/Documentation/Bias_Tee_Images/Bias%20Tee%20Clock%20Out.png"/>
+
+The output of the power is shown below. The low-pass filter keeps any significant AC leakage from affecting the DC power. The use of the 1uF capacitor between the power and ground reduced the ripple voltage to well below the 30mV requirement, to approximately 10 V. This keeps the output voltage at a steady value making it a reliable power source.
+
+<img width="900" height="200" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Bias_Tee/Documentation/Bias_Tee_Images/Bias%20Tee%20Power%20Out.png"/>
+
+The input and output of the communications signal is shown below have only a slight phase shift and voltage drop. The Butterworth low-pass into a high-pass filters the signal perfectly into a smooth 200kHz signal.
+
+<img width="900" height="200" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Bias_Tee/Documentation/Bias_Tee_Images/Bias%20Tee%20Comms.png"/>
 
 ## References
 
