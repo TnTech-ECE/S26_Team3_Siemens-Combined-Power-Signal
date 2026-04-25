@@ -2,32 +2,14 @@
 
 **NOTE:** Other subsystems call the two parts "transmitter" and receiver, but since both parts transmit and receive, in this document, they will be called "server" and "client" respectively. The "external host" refers to either the coincidence unit or detector.
 
-## General Requirements for the Document
-
-The document should include:
-
-- Explanation of the subsystem’s integration within the overall solution
-- Detailed specifications and constraints specific to the subsystem
-- Synopsis of the suggested solution
-- Interfaces to other subsystems
-- 3D models of customized mechanical elements*
-- A buildable diagram*
-- A Printed Circuit Board (PCB) design layout*
-- An operational flowchart*
-- A comprehensive Bill of Materials (BOM)
-- Analysis of crucial design decisions
-
-*Note: These technical documentation elements are mandatory only when relevant to the particular subsystem.
-
-
 ## Function of the Subsystem
 
-Siemens, the customer, will need to get status updates from the detectors, and ideally, this can be incorporated with the power and clock in the single transmission line. The communications subsystem has two identical parts, the server and client. Both parts work in tandem to transmit and receive a debug signal across the line. This system must be able to take any data input and transform it into a modulated packet to receive that data input on the opposite end. [1] 
+Siemens, the customer, will need to receive status updates from the detectors, and ideally, this can be incorporated with the power and clock in the single transmission line. The communications subsystem has two identical parts, the server and client. Both parts work in tandem to transmit and receive a debug signal across the line. This system must be able to take any data input and transform it into a modulated packet to receive that data input on the opposite end. [1] 
 
 ## Specifications and Constraints
 
 ### Specifications Requested by Siemens
-The most basic requirements of this system are as follows: The system must take in a generic data signal, modulate it, transmit it, then the other part must do the reverse steps to extract the data signal again. Both parts must serve transmitter and receiver roles. Since integration into the coincidence unit and detectors is not within our responsibility, the subsystem must be able to modulate any generic bit stream. [1]
+The most basic requirements of this system are as follows: The system must receive a generic data signal, modulate it, transmit it, then the other part must do the reverse steps to extract the data signal again. Both parts must serve transmitter and receiver roles. Since integration into the coincidence unit and detectors is not within our responsibility, the subsystem must be able to modulate any generic bit stream. [1]
 
 ### FCC Part 15
 
@@ -56,19 +38,40 @@ The server part sends data to the client part or vice versa. The external hosts 
 
 ![Communications Schematic](Images/Comms_Schematic.png)
 
+This schematic demonstrates that this subsystem mainly relies on a single IC, the ST7580. To run this IC, several power sources are required, which are managed by the IC power subsystem. 
+
+D-GND, A-GND, and P-GND are Digital Ground, Analog Ground, and Power Ground respectively. These must be set to their own grounds since they are different systems of the IC.
+
+The XIN and XOUT pins are connected to an 8MHz clock, which is the external clock source for the IC. 
+
+RB0 and RB1 set the baud rate for the IC. Since we aim for the maximum baud rate, these pins are connected to VDD through pull-up resistors. Both RB0 and RB1 being HIGH sets the baud rate at 57600. A higher baud rate will allow for a more reliable modulation scheme. 
+
+ZC_IN (Zero Crossing Input) is set to analog ground in order to disable zero crossing, since the DC component of line voltage prevents the signal from crossing zero.
+
+
 
 ## Printed Circuit Board Layout
 
-Include a manufacturable printed circuit board layout.
+Could not complete within the timeframe
 
 
 ## BOM
 
-Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).
+| Component Label | Manufacturer              | Part Number              | Distributor | Distributor Part Number | Quantity | Unit Price | Total Price | Purchasing Site URL                                                                       |
+|-----------------|---------------------------|--------------------------|-------------|-------------------------|----------|-----------:|------------:|-------------------------------------------------------------------------------------------|
+| U1              | STMicroelectronics        | ST7580                   | Digikey     | 497-14758-ND            | 2        |      12.19 |       24.48 | https://www.digikey.com/en/products/detail/stmicroelectronics/ST7580/3087737              |
+| Y1              | Abracon                   | ABLS-8.000MHZ-16-A-4-H-T | Digikey     | 535-14942-2-ND          | 2        |       0.25 |        0.50 | https://www.digikey.com/en/products/detail/abracon-llc/ABLS-8-000MHZ-16-A-4-H-T/9997850   |
+| R0, R1          | Samsung Electro-Mechanics | RC1005F103CS             | Digikey     | 1276-3431-2-ND          | 4        |       0.10 |        0.40 | https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439 |
 
 ## Analysis
 
-Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.
+This solution provides the most effective solution for sending debugging packet data across the transmission line. Firstly, this subsystem as designed is capable of receiving any data, packaging that data into packets, modulating that data, transmitting it, and completing the reverse steps. Both identical systems in tandem would be capable of completing all requirements set by Siemens. [1]
+
+This subsystem design is also compliant with FCC Part 15 Section 113. The transmitted frequency of the Power Line Communication modem is within the required range of 9kHz-490kHz. In addition to this, the frequency that will be configured on the IC will be 200kHz, which is not cause intereference on any amateur radio band. [2]
+
+The simplicity of this IC's "embedded turnkey firmware" [1] was part of the decision in moving forward with it. Configuration through the Managment Information Base (MIB) is the only so-called programming involved in setting this IC up. Once configured, this IC is plug-and-play, which helps manage the scale of this subsystem.
+
+Ultimately, this design fulfills all of the constraints and specifications required of this subsystem. This qualifies it as a viable solution.
 
 ## References
 
