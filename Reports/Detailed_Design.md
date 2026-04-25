@@ -159,7 +159,7 @@ The below graph depicts the amplifier output (top, blue) compared to the compara
 
 <img width="1900" height="880" alt="Simulation of signal conditioning from amplification to comparator" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(amptocomp50mV).png" />
 
-The below graph depicts the input waveform (green) compared to the final output waveform (red), highlighting the significant amplitude gain and corresponding slew rate hike.
+The below graph depicts the input waveform (blue) compared to the final output waveform (red), highlighting the significant amplitude gain and corresponding slew rate hike.
 
 <img width="1900" height="880" alt="Simulation of signal conditioning from start to finish" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/SigConSim(intoout50mV).png" />
 
