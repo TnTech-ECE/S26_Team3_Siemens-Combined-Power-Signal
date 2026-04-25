@@ -36,21 +36,57 @@ The IC Power subsystem is responsible for taking in the main power from the sour
 The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 
 Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors. -->
-### Provided Adjustable Voltage to System
+### Provided Adjustable Voltage to System and Component Constraints
+
+The IC Power subsystem shall provide 11 V, 5 V, 3.3 V, and 1.8 V. The outputs provided from the MAX6793 and MAX6795 can be configured outside of the preset ranges [1]. The preset values for provided by the chips are 5 V and 3.3 V. The 11 V and 1.8 V outputs must be configured using an external resistor divider network selected by the designer to provide the desired voltage. The calculations and resistor value selection are further detailed in the Overview of Proposed Solution section. As for the constraints, the outputs for the 11 V and 1.8 V are not able to be perfectly generated since the exact resistor value to create this would increase the hardware requirement and cost of the overall system. In the interest of maintaining simpler hardware implementation and reduction of many resistor values to attain a very specific value, an approximation was reached so that the deviation from the expected voltage output should be within 10 mV of the desired output. Calculations resulted in the 11 V output set at 10.9932 V and the 1.8 V output set at 1.79799, which falls within the range of a 10 mV difference. The output of the 11 V rail is not as important to be precise because it is powering the ST7580, which can take an input from 8 V to 18 V [2]. 10.9932 V satisfies this requirement and falls within the functioning range of the supply. For the Si5345, the required voltage of 1.8 V is allowed to have a tolerance of ±5 % which calculates to a range between 1.71 V and 1.899 V [3]. The voltage supplied at 1.79799 falls well within this range and therefore satisfies the requirements.
+
+There are not very many versions of this chip in production, so the component that was selected is in a QFN package and will be laid out in a way that shall reduce the size of the hardware implementation and will optimize a clean power output.
+
+### Standards
+
+IEC 60601 [4]: The considerations for this subsystem relating to medical equipment standards involve ensuring electrical isolation at the Bias-T interface, limiting leakage currents, maintaining safe operation under single fault conditions, and ensuring electromagnetic compatibility so that the noise generated from these chips does not interfere with or degrade the performance of other medical system components. However, Siemens Healthineers has maintained that the ComCaP team does not need to design the system in strict compliance with these standards as the system merely serves as a proof of concept for the company to expand on, and the team has no access to the standards other than brief overviews. These standards will still be considered in the construction of the two PCBs the IC Power subsystem will reside on.
+
+## Overview of Proposed Solution
+
+<!-- Describe the solution and how it will fulfill the specifications and constraints of this subsystem. -->
+
+### Resistor selection for Adjusted Voltage Outputs
 
 The IC Power subsystem shall provide 11 V, 5 V, 3.3 V, and 1.8 V. The MAX6793TPSD+ features two outputs, one of which is configurable at 11 V. This is set using two resistors and is calculated as 
 
 $$V_{OUT} = V_{SET}(1+\frac{R1}{R2})$$
 
 With this configuration: 
-<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="261" height="291" alt="Select V_OUT_1 Voltage">
 
-In the equation, 
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/V_OUT_1_SET.png" width="261" height="291" alt="Select V_OUT_1 Voltage">
 
-## Overview of Proposed Solution
+The value of V_SET is 1.2315 V as obtained from the datasheet [1]. Using the equation and example diagram listed above, the calculated ratio of R1 to R2 for an adjusted output of 11 V is 19537 : 2463. Additionally, the values of R1 and R2 selected must be less than 200 kΩ. This exact ratio would be difficult to obtain using commonly found resistor values, so a balance was decided on where the value of R1 would be 118.9 kΩ and the value of R2 would be 15 kΩ. This would provide a ratio that falls within a percent difference of 0.0697 % and would set the output voltage at 10.9932 as stated in the constraints section. The 15 kΩ resistor is easy to find as it is a commonly used value, but a resistance of 118.9 kΩ is fairly difficult to find, so it was split up into three separate resistors connected in series to produce this same resistance. The values are 100, 12, and 6.9 kΩ. Additionally, the tolerance of the 100 and 12 kΩ resistors is 1 %, and the tolerance of the 6.9 kΩ resistor is 0.1 %. This ensures that the total resistance would fall between the ranges of 117.7731 and 120.0269 kΩ, ensuring a further percent variation of only 0.9478 % within the expected range.
 
-Describe the solution and how it will fulfill the specifications and constraints of this subsystem.
+The same process was followed for selecting an output of 1.8 V. The ratio of R1 to R2 for this voltage divider was 379 : 821. An approximation was determined where the value of R1 would be 9.2 kΩ and R2 would be 20 kΩ. This produces a deviation of 0.354 % from the desired ratio, which still produces an expected output of 1.79799 V, which only deviates from the expected voltage by 0.112 %. This is within the tolerance range of the required supply inputs of the ICs that it shall be powering, as detailed in the constraints section. The values of the resistors selected to create a series resistance of 9.2 kΩ is 1 kΩ and 8.2 kΩ. Both of the resistors have a tolerance of 1 %, meaning that the maximum deviation from the expected resistor value is 1 %.
 
+### Selection of Passives For Basic Functionality
+
+#### Decoupling Capacitors
+
+The decoupling capacitor values for the chips were obtained from the datasheet, where the values for decoupling the input of the system are 1 uF and 10 µF connected in parallel. This follows the recommended values for maintaining a clean input signal at 48 V to the ICs.
+
+#### RESET Signal Resistor
+
+A value of 100 kΩ was selected as the resistor value to pull ~RESET to ground. The value of this resistor was not critical to the design. The recommended value is 100 kΩ as this is sufficient to pull ~RESET to ground without creating a load for it.
+
+### Selection of PFET for Reverse-Battery Protection
+
+The MAX6791-6796 family includes an overvoltage protection circuit that is capable of driving a p-channel MOSFET to protect against reverse battery conditions. This is very unlikely to occur in the ComCaP system because the power supply will be tested and ensured to be configured with the correct polarity before being turned on. However, just to add an extra level of safety to the circuit, a p-channel FET was chosen to fulfill this role. The BSP316P was selected as it features the desired parameters to ensure a properly functioning circuit [5]. The VDS voltage is -100 V, which the 48 V input falls safely within the operating region. Additionally, the Id can handle up to 0.68 A. As the total power requirement of the IC loads in the system falls below 300 mA, this FET is sufficient for the design.
+
+### Power-Fail Detection Resistor Network
+
+The MAX6791-6796 family includes a power fail comparator that can check if the supply voltage falls below the functional limit. The limit for a chosen failure value is 40 V because this constitutes about 8.33 % of the expected voltage supplied. To set up this network, a voltage divider network was determined using the following diagram:
+
+
+
+### Watchdog System
+
+The MAX6791-6796 family features a watchdog system where a watchdog timer can be set to reset in case a chip that it is supplying fails or malfunctions. However, after talking to the customer, this functionality was determined to not be needed and has therefore been disabled in the current design.
 
 ## Interface with Other Subsystems
 
