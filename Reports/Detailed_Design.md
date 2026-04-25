@@ -42,6 +42,9 @@ The IC Power subsystem shall provide 11 V, 5 V, 3.3 V, and 1.8 V. The MAX6793TPS
 
 $$V_{OUT} = V_{SET}(1+\frac{R1}{R2})$$
 
+With this configuration: 
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="261" height="291" alt="Select V_OUT_1 Voltage">
+
 In the equation, 
 
 ## Overview of Proposed Solution
