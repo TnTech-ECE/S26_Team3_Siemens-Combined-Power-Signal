@@ -26,14 +26,6 @@ Siemens, the customer, will need to get status updates from the detectors, and i
 
 ## Specifications and Constraints
 
-This section should provide a list of constraints applicable to the subsystem, along with the rationale behind these limitations. For instance, constraints can stem from physics-based limitations or requirements, subsystem prerequisites, standards, ethical considerations, or socio-economic factors.
-
-The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
-
-Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.
-
-------
-
 ### Specifications Requested by Siemens
 The most basic requirements of this system are as follows: The system must take in a generic data signal, modulate it, transmit it, then the other part must do the reverse steps to extract the data signal again. Both parts must serve transmitter and receiver roles. Since integration into the coincidence unit and detectors is not within our responsibility, the subsystem must be able to modulate any generic bit stream. [1]
 
@@ -48,7 +40,7 @@ From the conceptual design comparative analysis, turnkey embedded firmware was d
 
 ## Overview of Proposed Solution
 
-The proposed solution uses the ST7580 PLC modem to take a UART data input from a host (either the coincidence unit or detector) and modulate it and send it over the transmission line or take a modulated packet input from the line and send a UART data output to the host. Both the detector and coincidence unit parts will be identical in structure and function.
+The proposed solution uses the ST7580 PLC modem to take a UART data input from a host (either the coincidence unit or detector) and modulate it with an 8-PSK paradigm and send it over the transmission line or take a modulated packet input from the line and send a UART data output to the host. Both the detector and coincidence unit parts will be identical in structure and function.
 
 
 ## Interface with Other Subsystems
@@ -62,15 +54,12 @@ The server part sends data to the client part or vice versa. The external hosts 
 
 ## Buildable Schematic 
 
-Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
-
-The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.
+![Communications Schematic](Images/Comms_Schematic.png)
 
 
 ## Printed Circuit Board Layout
 
 Include a manufacturable printed circuit board layout.
-
 
 
 ## BOM
