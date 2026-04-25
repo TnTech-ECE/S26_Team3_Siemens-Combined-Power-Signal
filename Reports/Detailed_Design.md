@@ -215,6 +215,12 @@ As seen in the chart, the first four columns are calculating the resistor value 
 
 ## References
 
-[4] J. Kolb, “Combined power and signal delivery: A 48-v clock and communication link,” Siemens Healthineers, Dec. 01, 2025.
+[1] Analog Devices, "MAX6791–MAX6796 High-Voltage, Micropower, Single/Dual Linear Regulators with Supervisory Functions," MAX6793 Rev 3 Data Sheet, Oct. 2005 Revised [Oct. 2017].
 
-[10] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220.
+[2] STMicroelectronics, "FSK, PSK multi-mode power line networking system-on-chip," ST7580 Rev 2 Data Sheet, Jan. 2012 Revised [May 2016].
+
+[3] Skyworks, "10-Channel, Any-Frequency, Any-Output Jitter Attenuator/Clock Multiplier," Si5345/44/42 Rev D Data Sheet, July 2016 Revised [Sept. 2018].
+
+[4] A. Grob, "Setting Standards: The IEC 60601 Series: Quick-Use Guide," Biomedical Instrumentation & Technology, vol. 54, (3), pp. 220-222, 2020. Available: https://ezproxy.tntech.edu/login?url=https://www.proquest.com/scholarly-journals/i-setting-standards-iec-60601-series-quick-use/docview/2414388374/se-2. DOI: https://doi.org/10.2345/0899-8205-54.3.220.
+
+[5] infineon, "SIPMOS Small-Signal-Transistor," BSP316P Rev 2 Data Sheet, Aug. 2015 Revised [June. 2016].
