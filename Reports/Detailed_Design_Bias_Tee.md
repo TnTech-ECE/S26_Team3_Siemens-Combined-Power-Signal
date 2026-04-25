@@ -29,7 +29,7 @@ The document should include:
 
 This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.
 
-The Bias Tee 
+The Bias Tee is the center and primary focus of the overall design. The Bias Tee is a combined approach to delivering the power, clock, and back channel communications. The Bias Tee subsystem is split into two sides, both being separate bias tees. One side combines the RF signals of the clock and communications with the DC signal of the power onto one cable to then be split cleanly back into the three original signals by the other bias tee, and they are both capable of performing this combining or separating allowing for two way usage of the communications. 
 
 ## Specifications and Constraints
 
