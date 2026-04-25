@@ -7,7 +7,7 @@
 - The rationale behind each crucial design decision
 - The procedure for constructing the solution-->
 
-## General Requirements for the Document
+<!--## General Requirements for the Document
 
 The document should include:
 
@@ -22,22 +22,37 @@ The document should include:
 - A comprehensive Bill of Materials (BOM)
 - Analysis of crucial design decisions
 
-*Note: These technical documentation elements are mandatory only when relevant to the particular subsystem.
+*Note: These technical documentation elements are mandatory only when relevant to the particular subsystem.-->
 
 
 ## Function of the Subsystem
 
-This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.
+The Bias Tee is the center and primary focus of the overall design. The Bias Tee is a combined approach to delivering the power, clock, and back channel communications. The Bias Tee subsystem is split into two sides, both being separate bias tees. One side couples the RF signals of the clock and communications with the DC signal of the power onto one cable to then be decoupled cleanly back into the three original signals by the other bias tee, and they are both capable of performing this coupling or decoupling allowing for two way usage of the communications.
 
-The Bias Tee is the center and primary focus of the overall design. The Bias Tee is a combined approach to delivering the power, clock, and back channel communications. The Bias Tee subsystem is split into two sides, both being separate bias tees. One side combines the RF signals of the clock and communications with the DC signal of the power onto one cable to then be split cleanly back into the three original signals by the other bias tee, and they are both capable of performing this combining or separating allowing for two way usage of the communications. 
+As a result of the Bias Tee combining the power, clock, and communications onto the cable then delivering them, this subsystem directly interacts with and relies on the all four other subsystems of the same names. The signals delivered from the Bias Tee must be usable by each subsystem to for each one to succeed.
 
 ## Specifications and Constraints
 
-This section should provide a list of constraints applicable to the subsystem, along with the rationale behind these limitations. For instance, constraints can stem from physics-based limitations or requirements, subsystem prerequisites, standards, ethical considerations, or socio-economic factors.
+<!--This section should provide a list of constraints applicable to the subsystem, along with the rationale behind these limitations. For instance, constraints can stem from physics-based limitations or requirements, subsystem prerequisites, standards, ethical considerations, or socio-economic factors.
 
 The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
 
-Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.
+Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
+
+### Customer Specifications:
+
+As specified by Siemens Healthineers, the Bias Tee shall receive and operate with a line voltage of 48V DC. With that 48 V DC, the Bias Tee shall be capable of supporting and supplying 100 watts of power requiring parts to sustain a current of 2A. The Bias Tee shall produce the power signal with a ripple voltage of less than 30mV using proper filter to minimize drops and rises after decoupling. The Bias Tee shall receive and produce a clock signal at 2.5 MHz after coupling and decoupling. The Bias Tee shall have a two function to allow for back channel communications to be able to communicate with and trouble shoot the external system.[1]
+
+- Shall operate with a line voltage of 48V DC
+- Shall supply up to 100 watts of power
+- Shall produce a ripple voltage of less than 30mV 
+- Shall produce a clock signal at 2.5 MHz
+- Shall allow for two way back channel communications
+
+### Component Constraints
+
+The Bias Tee shall prevent AC leakage onto the DC power source and between the two RF signals to any perceivable degree by considering how the low-pass and high-pass filters can be adjusted to cutoff different frequencies from undesired paths. The Bias Tee shall account for parasitic inductance in capacitors and parasitic capacitance in inductors in the filtering to keep signals clean before being delivered to other subsystems. The Bias Tee shall use resistors to account for the characteristic impedance preventing reflections in cabling.[2]
+
 
 
 ## Overview of Proposed Solution
@@ -50,31 +65,25 @@ Describe the solution and how it will fulfill the specifications and constraints
 Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.
 
 
-## 3D Model of Custom Mechanical Components
-
-Should there be mechanical elements, display diverse views of the necessary 3D models within the document. Ensure the image's readability and appropriate scaling. Offer explanations as required.
-
-
 ## Buildable Schematic 
 
 Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
 
 The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.
 
+<img width="825" height="383" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Bias_Tee/Documentation/Bias_Tee_Images/Bias%20Tee%20First%20Version.png"/>
+
 
 ## Printed Circuit Board Layout
 
-Include a manufacturable printed circuit board layout.
-
-
-## Flowchart
-
-For sections including a software component, produce a chart that demonstrates the decision-making process of the microcontroller. It should provide an overview of the device's function without exhaustive detail.
-
+Individual PCBs for each subsystem cannot be created for this design because the board used will include every subsystem which will require the team to bring the completed design of every subsystem together. Therefore, the PCB will not be completed until after capstone 1.
 
 ## BOM
 
-Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).
+| Part | Description | Quantity |
+|----|----|----|
+| Capacitor |   |   |
+
 
 ## Analysis
 
@@ -82,4 +91,6 @@ Deliver a full and relevant analysis of the design demonstrating that it should 
 
 ## References
 
-All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.
+[1] J. Kolb, "Combined Power and Signal Delivery: A 48-V Clock and Communication Link," unpublished, Siemens Healthineers, Dec. 2025.
+
+[2] FesZ Electronics, “Bias Tee Basics (1/2),” YouTube, Jun. 07, 2025. https://www.youtube.com/watch?v=2nusy07ljPk&list=PLT84nve2j1g_s3Lu1JEki9eVB9_nb9qNf&index=2 (accessed Mar. 30, 2026).
