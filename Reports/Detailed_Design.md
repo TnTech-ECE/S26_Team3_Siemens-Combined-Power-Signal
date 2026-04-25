@@ -82,7 +82,7 @@ The MAX6791-6796 family includes an overvoltage protection circuit that is capab
 
 The MAX6791-6796 family includes a power fail comparator that can check if the supply voltage falls below the functional limit. The limit for a chosen failure value is 40 V because this constitutes about 8.33 % of the expected voltage supplied. To set up this network, a voltage divider network was determined using the following diagram:
 
-
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/IC_Power/Reports/Images/PFI_Diagram.png" width="256" height="257" alt="Power fail resistor network and hysteresis">
 
 ### Watchdog System
 
