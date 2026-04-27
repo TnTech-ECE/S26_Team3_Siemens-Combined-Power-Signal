@@ -1,5 +1,7 @@
 # Detailed Design
 
+This is a rough draft of the detailed design, the final schematic and BOM using commonly used parts still needs to be determined. Also, calculations for part values need to be added.
+
 ## Function of the Subsystem
 
 The Bias Tee is the center and primary focus of the overall design. The Bias Tee is a combined approach to delivering the power, clock, and back channel communications. The Bias Tee subsystem is split into two sides, both being separate bias tees. One side couples the RF signals of the clock and communications with the DC signal of the power onto one cable to then be decoupled cleanly back into the three original signals by the other bias tee, and they are both capable of performing this coupling or decoupling allowing for two way usage of the communications.
@@ -64,10 +66,17 @@ Below is the schematic for the Bias Tee subsystem made of the two bias tees conn
 
 <img width="825" height="383" alt="image" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Bias_Tee/Documentation/Bias_Tee_Images/Bias%20Tee%20First%20Version.png"/>
 
+## 3-D Model
+
+Does not apply
 
 ## Printed Circuit Board Layout
 
 Individual PCBs for each subsystem cannot be created for this design because the board used will include every subsystem which will require the team to bring the completed design of every subsystem together. Therefore, the PCB will not be completed until after capstone 1.
+
+## Flow Chart
+
+Does not apply
 
 ## BOM
 
