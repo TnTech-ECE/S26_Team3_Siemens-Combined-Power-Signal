@@ -122,7 +122,9 @@ The STM32G030 IC is connected to the Si5345B IC by the five signals mentioned in
 
 The PCB layout for this subsystem is required to be coordinated with multiple other subsystems and is still under development.
 
-<!-- ## Flowchart while a flowchart for the MCU blasting register info to the Si5345B might be available upon construction of the circuit, it is too early to determine all required functionality needed to produce the flowchart -->
+## Flowchart 
+
+While a flowchart for the MCU blasting register info to the Si5345B might be available upon construction of the circuit, it is too early to determine all required functionality needed to produce the flowchart.
 
 ## BOM
 
