@@ -1,5 +1,7 @@
 # Detailed Design
 
+Note: This is a detailed design of the IC Power subsystem, which is not able to be fully built or integrated into the full ComCaP system until all systems are combined. This is still a rough draft and will be combined and sent in for approval to the customer and the faculty advisor.
+
 <!-- This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
 
 - How the specific subsystem integrates within the broader solution
