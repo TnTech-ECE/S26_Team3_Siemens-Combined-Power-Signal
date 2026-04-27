@@ -133,9 +133,11 @@ The IC Power Distribution subsystem interfaces with the Communications subsystem
 #### 11 V:
 - VCC
 
-<!-- ## 3D Model of Custom Mechanical Components
+## 3D Model of Custom Mechanical Components
 
-Should there be mechanical elements, display diverse views of the necessary 3D models within the document. Ensure the image's readability and appropriate scaling. Offer explanations as required.
+There are no custom mechanical elements for this project, so there is no information or file under this section.
+
+<!-- Should there be mechanical elements, display diverse views of the necessary 3D models within the document. Ensure the image's readability and appropriate scaling. Offer explanations as required.
 
 There are no custom mechanical components. All components are COTS; the customer will create their own custom hardware if they decide to adopt our project into a final design. -->
 
@@ -169,9 +171,11 @@ The below circuit is designed to lower the voltage from the 48 V input and step 
 <!-- Include a manufacturable printed circuit board layout. -->
 At this point in the design process, there is no circuit board available for manufacturing. The IC Power, Bias Tee, Communications, and PLL subsystems each contain a schematic that will have to be combined in the end and laid out on two separate PCBs. This will be done during Capstone II.
 
-<!-- ## Flowchart
+## Flowchart
 
-For sections including a software component, produce a chart that demonstrates the decision-making process of the microcontroller. It should provide an overview of the device's function without exhaustive detail. -->
+There is no flowchart for this part of the project because it there is no software or user input for the system.
+
+<!-- For sections including a software component, produce a chart that demonstrates the decision-making process of the microcontroller. It should provide an overview of the device's function without exhaustive detail. -->
 
 <!-- There is no software component, and consequently, no flowchart. -->
 
