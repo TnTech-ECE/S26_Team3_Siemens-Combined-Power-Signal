@@ -2,7 +2,7 @@
 
 ## Function of the Subsystem
 
-The Clock Generation and Jitter Measurement subsystem is responsible for conditioning the reference clock, a 2.5 MHz sinusoidal input to the transceiver Bias-T circuit which is sent along the 48 V power cable subsystem to the receiver Bias-T circuit before being passed to this subsystem. The signal must be conditioned into a digital clock signal that can be utilized in synchronizing gamma ray detection units throughout the PET scanner assembly. Because the units must be synchronized well to produce accurate measurements, this subsystem shall also utilize the Skyworks Si5345B jitter cleaner/clock synthesizer[1] to both clean the clock signal and produce a 25 MHz clock signal to be used in system level validation via jitter measurements. The Si5345B Integrated Circuit (IC) uses an internal Phase-Locked Loop (PLL) control system that compares the phase of any input clocks to the phase of an adjustable feedback clock signal generated via an external crystal oscillator. The IC then uses a loop filter to eliminate high frequency jitter before controlling a Voltage Controlled oscillator (VCO) that produces the desired output clock. A feedback divider is used to adjust the frequency of the clock signal while maintaining phase alignment [2]. While the IC generates the 2.5 MHz clock signal for use within PET scanner units, the scaled 25 MHz clock is produced with the goal of performing two types of jitter measurements: Cycle-to-cycle measurements and relative jitter measurements across the 25 MHz clock signal and the originally inserted 2.5 MHz clock on the transceiver side. Cycle to cycle jitter is defined as the variation in cycle time of a signal between adjacent cycles over a random sample of adjacent cycle pairs, meaning the measurement is relative to any independent signal [3]. Meanwhile the relative jitter between the 2.5 MHz and 25 MHz clocks characterizes how consistently the output clock maintains its expected phase relationship to the input over time (i.e. for every 10 of the 2.5 MHz clock cycles, 1 of the 25 MHz cycles aligns). The Clock Generation and Jitter Measurement subsystem allows determination for the overall success of the ComCaP system to carry the reference clock over the 48 V power cable.
+The Clock Generation and Jitter Measurement subsystem is responsible for conditioning the reference clock, a 2.5 MHz sinusoidal input to the transceiver Bias-T circuit which is sent along the 48 V power cable subsystem to the receiver Bias-T circuit before being passed to this subsystem. The signal must be conditioned into a digital clock signal that can be utilized in synchronizing gamma ray detection units throughout the PET scanner assembly. Because the units must be synchronized well to produce accurate measurements, this subsystem shall also utilize the Skyworks Si5345B jitter cleaner/clock synthesizer[1] to both clean the clock signal and produce a 25 MHz clock signal to be used in system level validation via jitter measurements. The Si5345B Integrated Circuit (IC) uses an internal Phase-Locked Loop (PLL) control system that compares the phase of any input clocks to the phase of an adjustable feedback clock signal generated via an external crystal oscillator. The IC then uses a loop filter to eliminate high frequency jitter before controlling a Voltage Controlled oscillator (VCO) that produces the desired output clock. A feedback divider is used to adjust the frequency of the clock signal while maintaining phase alignment [2]. While the IC generates the 2.5 MHz clock signal for use within PET scanner units, the scaled 25 MHz clock is produced with the goal of performing two types of jitter measurements: Cycle-to-cycle measurements and relative jitter measurements across the 25 MHz clock signal and the originally inserted 2.5 MHz clock on the transceiver side. Cycle to cycle jitter is defined as the variation in cycle time of a signal between adjacent cycles over a random sample of adjacent cycle pairs, meaning the measurement is relative to any independent signal [3]. Meanwhile the relative jitter between the 2.5 MHz and 25 MHz clocks characterizes how consistently the output clock maintains its expected phase relationship to the input over time (i.e. for every 1 of the 2.5 MHz clock cycles, 10 of the 25 MHz cycles aligns). The Clock Generation and Jitter Measurement subsystem allows determination for the overall success of the ComCaP system to carry the reference clock over the 48 V power cable.
 
 
 ## Specifications and Constraints
@@ -58,7 +58,7 @@ As mentioned in the Specifications and Constraints section of this document, the
 
 <br>
 
-To accommodate the requirement, the signal will pass through the ADA4899-1 OpAmp with a roughly 15x gain before entering the ADCMP605 LVDS comparator. The resulting digital signal will have a relatively high slew rate well above the requirement and be introduced to the Si5345B IC. The IC will clean jitter from the signal and produce a 25 MHz clock for measurements and a 2.5 MHz clock for the system's designed use. The cycle to cycle jitter measurements for the subsystem shall utilize the following methodology [3]:
+To accommodate the requirement, the signal will pass through the ADA4899-1 OpAmp with a roughly 15x gain before entering the ADCMP605 LVDS comparator. The resulting digital signal will have a relatively high slew rate well above the requirement and be introduced to the differential input pins of the Si5345B IC. The IC will clean jitter from the signal and produce a 25 MHz clock for measurements and a 2.5 MHz clock for the system's designed use. The cycle to cycle jitter measurements for the subsystem shall utilize the following methodology [3]:
 
 1) Turn on the histogram feature for the oscilloscope, if available.
 
@@ -80,7 +80,7 @@ The Clock Generation and Jitter Measurement subsystem interfaces with two other 
 The IC Power Distribution subsystem interfaces with the Clock Generation and Jitter Measurement subsystem via multiple power signals at 1.8 V, 3.3 V, and 5 V levels. These are intended to both enable the operation of relevant ICs and to bias inputs for both the OpAmp and comparator.
 
 #### 1.8 V:
-- Si5345B: VDD1-3
+- Si5345B: VDD_1-3
 
 #### 3.3 V:
 - ADCMP605: VCCO, LE/HYS (sets hysteresis level)
@@ -90,7 +90,6 @@ The IC Power Distribution subsystem interfaces with the Clock Generation and Jit
 #### 5 V:
 - ADA4899-1: +VS, Input biasing
 - ADCMP605: VCCI/VCCO, Input biasing
-- Si5345B: VDD_1-3
 
 ### Bias-T Interfacing
 
@@ -108,7 +107,7 @@ The below circuit is designed to perform the signal conditioning required to int
 
 ### Si5345B Jitter Cleaner / Clock Synthesizer
 
-The Si5345B IC receives its differential input signals from the previous conditioning circuit, labeled as Ref_Clk_P/N. Y1 designates the external crystal oscillator IC required for proper operation of the Si5345B IC [5]. Three outputs for the Si5345B IC are currently planned for utilization by the MCU and subsequently routed to the STM32 IC, consisting of Interrupt, Reset, and LOL detector. Additionally, the clock signal and data pins necessary for I<sup>2</sup>C interfacing with the MCU are routed into the Si5345B IC and require the biasing seen using 4.7 kΩ resistors. All outputs are terminated as described within the Si5345B data sheet, however the placement of the 100 Ω resistors seen between the differential pairs is subject to change (i.e. being placed before capacitors). The physical connections use to connect the output signals with testing equipment is undetermined, but likely to involve banana jacks.   
+The Si5345B IC receives its differential input signals from the previous conditioning circuit, labeled as Ref_Clk_P/N. Y1 designates the external crystal oscillator IC required for proper operation of the Si5345B IC [5]. Three outputs for the Si5345B IC are currently planned for utilization by the MCU and subsequently routed to the STM32 IC, consisting of Interrupt, Reset, and LOL detector. Additionally, the clock signal and data pins necessary for I<sup>2</sup>C interfacing with the MCU are routed into the Si5345B IC and require the biasing seen using 4.7 kΩ resistors. All outputs are terminated as described within the Si5345B data sheet, however the placement of the 100 Ω resistors seen between the differential pairs is subject to change (i.e. being placed before capacitors). The physical connections used to connect the output signals with testing equipment are tentatively SMA connectors.  
 
 <img width="1045" height="820" alt="Si5345B Schematic" src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Clock_and_Jitter/Documentation/Images/Si5345B_config_2_4-23-26.png" />
 
