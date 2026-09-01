@@ -1,0 +1,339 @@
+
+# Detailed Design
+
+<!--This document delineates the objectives of a comprehensive system design. Upon reviewing this design, the reader should have a clear understanding of:
+&#10;- How the specific subsystem integrates within the broader solution
+- The constraints and specifications relevant to the subsystem
+- The rationale behind each crucial design decision
+- The procedure for constructing the solution
+&#10;
+## General Requirements for the Document
+&#10;The document should include:
+&#10;- Explanation of the subsystem’s integration within the overall solution
+- Detailed specifications and constraints specific to the subsystem
+- Synopsis of the suggested solution
+- Interfaces to other subsystems
+- 3D models of customized mechanical elements*
+- A buildable diagram*
+- A Printed Circuit Board (PCB) design layout*
+- An operational flowchart*
+- A comprehensive Bill of Materials (BOM)
+- Analysis of crucial design decisions
+&#10;*Note: These technical documentation elements are mandatory only when relevant to the particular subsystem.-->
+
+## Function of the Subsystem
+
+<!--This segment should elucidate the role of the subsystem within the entire system, detailing its intended function, aligned with the conceptual design.-->
+
+The cable subsystem is responsible for transmitting the output of the
+Bias Tee on the transmitting side of the ComCaP to the input of the Bias
+Tee on the recieving side of the ComCap. Since the clock is expected to
+be 2.5 MHz, and the maximum cable length is 10 m \[1\], transmission
+line characteristics will have an appreciable impact on the system as a
+whole. Therefore, the subsystem will deliver simulation data to
+accurately model the inputs for the recieving Bias Tee as well as test
+and model the cable in a real world scenario once the prototype is
+built. This will need to be done for multiple lengths of cable up to 10
+m. All of the data will then be sent to Siemens alongside the data for
+the other subsystems. Siemens will then use that data in their actual
+implementation for the PET system.
+
+## Specifications and Constraints
+
+<!--This section should provide a list of constraints applicable to the subsystem, along with the rationale behind these limitations. For instance, constraints can stem from physics-based limitations or requirements, subsystem prerequisites, standards, ethical considerations, or socio-economic factors.
+&#10;The team should set specifications for each subsystem. These specifications may require modifications, which must be authorized by the team. It could be necessary to impose additional constraints as further information becomes available.
+&#10;Every subsystem must incorporate at least one constraint stemming from standards, ethics, or socio-economic factors.-->
+
+### Transmission Line Calculation
+
+The cable subsystem will transmit the clock, power, and back channel
+communications to the best of its ability. In order to do so,
+transmission line calculations will need to be factored in. According to
+Dr. Van Neste, transmission line calculations will have an appreciable
+impact when the length of the cable is at least 10 % of the wavelength.
+This is calculated as
+
+$$\frac{l}{\lambda}*(100) \ge 10\%$$
+
+In the function $l$ is the length of the cable and $\lambda$ is the
+wavelength. The wavelength is calculated as $\lambda = \frac{v}{f}$
+where $v$ is the propogation speed and $f$ is the clock frequency.
+
+### Voltage Loss
+
+According to Siemens Healthineers, voltage losses are acceptable as the
+actual system voltage will be ran at around 12 V, so the voltage loss in
+the cable will not be a determining factor.
+
+### Clock Singal Integrity
+
+Since the Bias Tee needs to be able to discern what the clock is and
+recover it at an acceptable amplitude, the transmission line can only
+have so much clock voltage loss. According to the specifications of the
+Clock Generation and Jitter Measurement Subsystem, a minimum clock
+amplitude of half that of the input clock amplitude must be recovered.
+According to the book *Wave Transmission and Fiber Optics* \[2\], the
+voltage at any point $z$ along the cable can be shown as
+
+$$V(z) = V_0[e^{jk(l-z)} + \Gamma _le^{-jk(l-z)}]$$
+
+Therefore, to find the voltage across the load the team can set $z = l$
+and solve to get
+
+$$V_l = V_0[1 + \Gamma _l]$$
+
+There is a slight deviation between the above equation and what was
+found in the book as in the book the wave number, $k$, is multiplied by
+the index of refraction, $n$. This is not the case for the above
+equation as it uses $k = \frac{2\pi f}{v}$ where $v$, the propogation
+speed of the cable, takes into account the index of refraction. The
+reflection coefficient, $\Gamma_ l$, is determined by the below equation
+which is also in \[2\].
+
+$$\Gamma _l = \frac{Z_l - Z_0}{Z_l + Z_0}$$
+
+$Z_0$ is the characteristic impedance of the cable and $Z_l$ is the load
+impedance at the end of the transmission line.
+
+All of this is to say that the cable and the impedance at the end of it
+must be designed in a way that keeps the voltage magnitude drop to a
+point where the clock can still be recovered from the signal.
+
+Luckily, the Clock Generation and Jitter Measurement Subsystem is
+extremely robust and can handle a wide range of distortions, much more
+than would be experienced by our relatively short cable.
+
+### Impact to Greater system
+
+The loss of the cable is directly related to the impedance at the load
+of the cable. In order to change that load, however, modifications must
+be made to the circuit at the end of the cable. In order to ensure the
+ComCap still works as intended, any modifications to the circuit at the
+recieving end must not impede the functionality of the subsystems on
+that end.
+
+### Vendor Restriction
+
+Siemens uses Belden Cable as their primary vendor for cables, therefore
+the cable subsystem will use a cable sold by that vendor.
+
+### Communications Signal Exemption
+
+Since $f_{communication} << f_{clock}$, the cable will not be long
+enough to reach a wavelength where there are appreciable reflections
+impacting the integrity of that signal. Therefore, the cable subsystem
+will not take the communications signal into account.
+
+## Overview of Proposed Solution
+
+<!--Describe the solution and how it will fulfill the specifications and constraints of this subsystem.-->
+
+Since the only aspect of this subsystem is the cable, the proposed
+solution will be simulations and tests to figure out what cable works
+best and how the cables perform at different lengths. Siemens stated
+that the cable lengths will vary from one to ten meters. Therefore
+repeatable tests and simulations will be necessary to verify that the
+cable will perform properly at a multitude of different lengths.
+Unfortunately, the analysis of the cable is the solution as Siemens
+wants the data as a deliverable rather than a product. Therefore, the
+bulk of the “solution” will lie in the analysis portion of this
+document.
+
+The physical solution is a cable that goes from the tramsitting side of
+the ComCaP to the recieving side. The team will use bananna jacks as a
+connector and the team will use the load impedance at the recieving side
+to simulate the cable. The impedance itself does not need to match
+exactly, but changes to the Bias Tee may be necessary in order to
+impedance match the transmission line
+
+## Interface with Other Subsystems
+
+<!--Provide detailed information about the inputs, outputs, and data transferred to other subsystems. Ensure specificity and thoroughness, clarifying the method of communication and the nature of the data transmitted.-->
+
+The cable transmits the signal between both sides of the ComCaP. Because
+of this, it interfaces with the Bias Tee and the power subsystems
+primarily. It interfaces with the Bias Tee as it is both the last point
+of contact with the input side and the first point of contact for the
+output side of the system. Therefore, the output of the first Bias Tee
+is the input of the cable and the output of the cable is the input of
+the second Bias Tee. The interface with the power subsystem refers to
+the power subsystem’s impact on the load impedance at the end of the
+cable. All these elements will need to be tuned in a way that minimizes
+reflections back through the cable, and is more of a “living
+restriction”. That means that as the other subsystems perform their
+duties, the load impedance will need to be monitored so that the
+reflection coefficient of the cable does not exceed parameters where
+reflections will cause issues.
+
+## Buildable Schematic
+
+<!--Integrate a buildable electrical schematic directly into the document. If the diagram is unreadable or improperly scaled, the supervisor will deny approval. Divide the diagram into sections if the text and components seem too small.
+&#10;The schematic should be relevant to the design and provide ample details necessary for constructing the model. It must be comprehensive so that someone, with no prior knowledge of the design, can easily understand it. Each related component's value and measurement should be clearly mentioned.-->
+
+Siemens wants detailed simulation data delivered to them for the cable,
+rather than a constructed cable. Since there is no construction element
+to the cable design, 60 meters of each cable has been requested for
+testing purposes, as well as 8 male and female bananna jack headers. 4
+of the headers are reserved for the prototypes, and the other 4 will be
+attached to the cables while testing for more accurate results to the
+real world cable. Testing will be performed using a spectrum analyzer
+borrowed from the DSP lab as well as function generators and other lab
+equipment in Dr. Van Neste’s lab. The relevant values to be tested for
+are provided in the analysis section alongside python simulations.
+
+## BOM
+
+<!--Provide a comprehensive list of all necessary components along with their prices and the total cost of the subsystem. This information should be presented in a tabular format, complete with the manufacturer, part number, distributor, distributor part number, quantity, price, and purchasing website URL. If the component is included in your schematic diagram, ensure inclusion of the component name on the BOM (i.e R1, C45, U4).-->
+
+Below is a graph showing what the bill of material (BOM) is for testing
+the cable. Because Siemens purchases their cable and connectors
+wholesale, there is no price information available for the team to use.
+The team would purchase parts off the shelf, however, Siemens is paying
+for the parts, and using their wholesale options is cheaper for them
+than it would be from another source.
+
+| Manufacturer | Part Number | Description | Quantity | UoM |
+|----|----|----|----|----|
+| Belden Cable | 50021L | RS485 FR, 1PR x 20AWG Stranded Tinned Copper Wire | 60 | meters |
+| Belden Cable | 50061L | RS-485, 1PR x 20AWG Stranded Tinned Copper Wire | 60 | meters |
+| N/A | N/A | Bananna Jack Male Headers | 8 | Each |
+| N/A | N/A | Bananna Jack Female Headers | 8 | Each |
+
+## Analysis
+
+<!--Deliver a full and relevant analysis of the design demonstrating that it should meet the constraints and accomplish the intended function. This analysis should be comprehensive and well articulated for persuasiveness.-->
+
+### Cable characteristics
+
+In order to analyze the cable, first the data on the datasheet needs to
+be defined. The cable parameters can be found using the 50021L cable
+datasheet \[3\] as an example.
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/50021L_Electrical_Characteristics.png" width="1000" height="146" alt="Electrical characteristics of the 50021L twisted pair cable">
+
+For the purposes of calculation, the quantities calculated are converted
+to their base SI units (ie: ohms per kilometer is converted to ohms per
+meter). The important quantites to note here are the DCR, conductor to
+conductor capacitance, conductor to shield capacitance, characteristic
+impedance, delay, inductance, and inductance to resistance ratio. First,
+the direct current resistance (DCR) is the resistance of the cable at a
+DC load. Due to the superposition principle, this will be used to
+measure the DC voltage drop of our cable. Next is the conductor to
+conductor capacitance ($C_{cc}$) and the conductor to shield capacitance
+($C_{cs}$). This is best explained using a diagram.
+
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Capacitance_Picture.png" width="450" height="450" alt="Diagram showing the wiring of the capacitances of the cable">
+</p>
+
+The above diagram was made using Microsoft Visio and shows how the cable
+capacitances are physically represented on the twisted strand cable. The
+capacitances are listed separately because how the capacitances line up
+depends on how the cable is wired. For the ComCaP, the cable will be
+wired with the shield grounded. This means that one of the conductors
+and the shield will be on the same node, resulting in no $C_{cs}$ for
+that conductor. The resulting capacitances can then be modeled as below.
+
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/Cable_Equivalent_Capacitance.png" width="675" height="450" alt="Equivalent circuit of the cable capacitance diagram">
+</p>
+
+This diagram shows how the capacitances are “wired” together on the
+cable. Since they can be represented as two parallel capacitors, the
+capacitances add ($C = C_{cs} + C_{cc}$).
+
+The characteristic impedance is used to calculate the transmission line
+characteristics of the cable and represents the magnitude of the load
+impedance that the team is trying to achieve. The delay is the time it
+takes for the signal to propogate a distance in the cable. The
+propogation speed is calculated using the equation
+$v = \frac{1}{delay}$. The inductance has the same meaning as the
+capacitance, without the additional math required to figure it out.
+
+### Reflection Impedance Simulation
+
+Using a Smith chart python library \[4\], the team is able to
+graphically demonstrate the acceptable load impedances for a given
+reflection coefficient. Using the The graphical representation of the
+magnitude of the reflection coefficient is a circle about the center of
+the Smith chart \[5\]. Since our voltage drop constraint sees the
+maximum drop as $V_l = \frac{V_0}{2}$. Rewriting the equation for $V_l$
+as a function of $\Gamma _l$ leads to $\Gamma _l= 0.5$. According to
+\[4\], the voltage standing wave ratio (VSWR) is defined as below and is
+needed to convert the reflection coefficient to a value the team is able
+to plot.
+
+$$|\Gamma _l| = \frac{VSWR - 1}{VSWR + 1} \iff VSWR = \frac{1 + |\Gamma _l|}{1 - |\Gamma _l|}$$
+
+Using those equations $VSWR = 3$. Therefore, the Smith chart is as
+shown.
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/refs/heads/Harry_The_Cable_Guy/Reports/Images/VSWR_Smith_Chart.png" width="450" height="450" alt="Smith chart showing impedances available at VSWR = 3">
+</p>
+
+Any impedance that lies on or within the circle will be able to minimize
+reflections to a point where the clock signal can be recovered. The
+phase difference is not as important as the magnitude because the Clock
+Generation and Jitter Measurement Subsystem will account for this change
+before passing the clock on to the PET scanner. A characteristic
+impedance of $120\ \Omega$ was listed as it was the resistance found in
+the datasheet for the example cable \[3\]. In reality, the
+characteristic impedance of whatever cable the team deems best fits the
+need of the subsystem will be used.
+
+## References
+
+<!--All sources that have contributed to the detailed design and are not considered common knowledge should be duly cited, incorporating multiple references.-->
+
+<div id="refs" class="references csl-bib-body" entry-spacing="0">
+
+<div id="ref-Siemens_Presentation" class="csl-entry">
+
+<span class="csl-left-margin">\[1\]
+</span><span class="csl-right-inline">J. Kolb, “Combined power and
+signal delivery: A 48-v clock and communication link,” Siemens
+Healthineers, Dec. 01, 2025.</span>
+
+</div>
+
+<div id="ref-Diament1990" class="csl-entry">
+
+<span class="csl-left-margin">\[2\]
+</span><span class="csl-right-inline">P. Diament, *Wave transmission and
+fiber optics*. London, England: Macmillan, 1990.</span>
+
+</div>
+
+<div id="ref-50021LDatasheet" class="csl-entry">
+
+<span class="csl-left-margin">\[3\]
+</span><span class="csl-right-inline">Belden, “50021L - RS485 FR, 1P
+20AWG str TC, MGT, XLPE ins, OS+TC brd, LSZH jkt, IEC60331-23, ABS
+approved.” 50021L datasheet, 2026. Available:
+<https://catalog.belden.com/techdata/EN/50021L_techdata.pdf></span>
+
+</div>
+
+<div id="ref-pygrin_prahl_2026" class="csl-entry">
+
+<span class="csl-left-margin">\[4\]
+</span><span class="csl-right-inline">S. Prahl and P. Staerke,
+*Pysmithchart: A python module for smith charts*. (2026). Zenodo. doi:
+[10.5281/zenodo.18409151](https://doi.org/10.5281/zenodo.18409151).</span>
+
+</div>
+
+<div id="ref-Caspers_Smith_Chart" class="csl-entry">
+
+<span class="csl-left-margin">\[5\]
+</span><span class="csl-right-inline">F. Caspers,
+“<span class="nocase">RF engineering basic concepts: the Smith
+chart</span>,” 2011, doi:
+[10.5170/CERN-2011-007.95](https://doi.org/10.5170/CERN-2011-007.95).</span>
+
+</div>
+
+</div>
