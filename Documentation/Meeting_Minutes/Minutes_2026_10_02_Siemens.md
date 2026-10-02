@@ -20,6 +20,7 @@ Ryan Shipwash
 - MCU is good
 - Si chip must output to a CMOS
 - Fix Oscillator Pins 50 Ohm trace with a jumper
+- Team Critiques
 - Due next week:
   - Tyler: Finalizing schematic
   - Harry: Helping Tyler
