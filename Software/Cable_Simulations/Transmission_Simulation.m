@@ -6,27 +6,12 @@ r_out = 0.403; % Outer radius of the conductor
 C = 23e-12; % C value is 23 pF/m
 
 % This is the table of attenuation constant variables at given frequencies
-% as provided by the datasheet (frequency [Hz], attenuation [dB/1000ft])
-a_table = [30e6, 0.7;
-           50e6, 0.9;
-           150e6, 1.5;
-           220e6, 1.8;
-           450e6, 2.7;
-           900e6, 3.8;
-           1500e6, 5.1;
-           1800e6, 5.6;
-           2000e6, 6;
-           2500e6, 6.7;
-           3000e6, 7.5;
-           3500e6, 8.2;
-           4500e6, 9.5;
-           5800e6, 11.1;
-           6000e6, 11.4];
+% as provided by the datasheet (frequency [MHz], attenuation [dB/1000ft])
+a_freq_data = [30, 50, 150, 220, 450, 900, 1500, 1800, 2000, 2500, 3000, 3500, 4500, 5800, 6000];
+a_atten_data = [0.7, 0.9, 1.5, 1.8, 2.7, 3.8, 5.1, 5.6, 6, 6.7, 7.5, 8.2, 9.5, 11.1, 11.4];
 
-% Assuming your matrix or table is stored in variable 'data'
-x = a_table(:, 1);  % Extract all rows of column 1
-y = a_table(:, 2);  % Extract all rows of column 2
+a_fit = fittype('poly3');
 
-plot(x, y);
+plot(a_freq_data, a_atten_data);
 xlabel('Frequency');
 ylabel('Attenuation');
