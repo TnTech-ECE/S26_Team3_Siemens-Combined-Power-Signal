@@ -4,9 +4,12 @@ clear
 f = 2.5e6;
 
 % Define the physical parameters of the coaxial line
-rIn = 0.111; % Inner radius of the conductor
-rOut = 0.403; % Outer radius of the conductor
-C = 23e-12; % C value is 23 pF/m
+rIn = 0.111; % Inner radius of the conductor [in]
+rOut = 0.403; % Outer radius of the conductor [in]
+RDCIn = 1.3; % Inner conductor DC resistance [ohm/1000ft]
+RDCOut = 2.0; % Outer conductor DC resistance [ohm/1000ft]
+C = 75e-12; % C value is 75 pF/m
+Z_0 = 50; % Characteristic impedance is 50 ohms
 
 % This is the table of attenuation constant variables at given frequencies
 % as provided by the datasheet (frequency [MHz], attenuation [dB/100ft])
@@ -41,4 +44,109 @@ attenPI = predint(attenFitResult, f, 0.95, 'observation');
 
 % Use the 95% prediction interval to calculate a range of possible
 % attenuation values
-atten = linspace(attenPI(1), attenPI(2), 100);
+atten = linspace(attenPI(1), attenPI(2), 250);
+
+% Calculate the phase constant
+phaseConst = 2*pi*Z_0*C*f;
+
+
+% Create a linspace variable for length
+len = linspace(0, 10, 250);
+
+% Create a length and propagation constant meshgrid
+[LEN, ATTEN] = meshgrid(len, atten);
+
+% Calculate ABCD parameters
+A = cosh(LEN.*(ATTEN+1j.*phaseConst));
+B = Z_0.*sinh(LEN.*(ATTEN+1j.*phaseConst));
+C = sinh(LEN.*(ATTEN+1j.*phaseConst))./Z_0;
+D = cosh(LEN.*(ATTEN+1j.*phaseConst));
+
+% Separate out the magnitude and angle elements to display
+A_mag = abs(A);
+A_angle = angle(A);
+A_angle_deg = rad2deg(A_angle);
+
+B_mag = abs(B);
+B_angle = angle(B);
+B_angle_deg = rad2deg(B_angle);
+
+C_mag = abs(C);
+C_angle = angle(C);
+C_angle_deg = rad2deg(C_angle);
+
+D_mag = abs(D);
+D_angle = angle(D);
+D_angle_deg = rad2deg(D_angle);
+
+% Display the magnitude of the ABCD parameters
+figure(2);
+subplot(2,2,1);
+contourf(LEN, ATTEN, A_mag, 40, 'LineStyle', 'none')
+title('|A|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cAmag = colorbar;
+cAmag.Label.String = 'Voltage Ratio';
+
+subplot(2,2,2);
+contourf(LEN, ATTEN, B_mag, 40, 'LineStyle', 'none')
+title('|B|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cBmag = colorbar;
+cBmag.Label.String = 'Short Circuit Resistance [\Omega]';
+
+subplot(2,2,3);
+contourf(LEN, ATTEN, C_mag, 40, 'LineStyle', 'none')
+title('|C|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cCmag = colorbar;
+cCmag.Label.String = 'Open Circuit Conductance [S]';
+
+subplot(2,2,4);
+contourf(LEN, ATTEN, D_mag, 40, 'LineStyle', 'none')
+title('|D|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cDmag = colorbar;
+cDmag.Label.String = 'Current Ratio';
+
+sgtitle('ABCD Parameter Magnitudes')
+
+% Display the angle of the ABCD parameters
+figure(3);
+subplot(2,2,1);
+contourf(LEN, ATTEN, A_angle_deg, 40, 'LineStyle', 'none')
+title('\angle A')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cAmag = colorbar;
+cAmag.Label.String = 'Voltage Ratio Angle [\circ]';
+
+subplot(2,2,2);
+contourf(LEN, ATTEN, B_angle_deg, 40, 'LineStyle', 'none')
+title('\angle B')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cBmag = colorbar;
+cBmag.Label.String = 'Short Circuit Resistance Angle [\circ]';
+
+subplot(2,2,3);
+contourf(LEN, ATTEN, C_angle_deg, 40, 'LineStyle', 'none')
+title('\angle C')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cCmag = colorbar;
+cCmag.Label.String = 'Open Circuit Conductance Angle [\circ]';
+
+subplot(2,2,4);
+contourf(LEN, ATTEN, D_angle_deg, 40, 'LineStyle', 'none')
+title('\angle D')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [dB/m]')
+cDmag = colorbar;
+cDmag.Label.String = 'Current Ratio Angle [\circ]';
+
+sgtitle('ABCD Parameter Angles')
