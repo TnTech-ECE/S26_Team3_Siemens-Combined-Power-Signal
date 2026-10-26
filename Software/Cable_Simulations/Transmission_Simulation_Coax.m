@@ -1,5 +1,8 @@
 clear
 
+% Define the frequency value that will be passed
+f = 2.5e6;
+
 % Define the physical parameters of the coaxial line
 rIn = 0.111; % Inner radius of the conductor
 rOut = 0.403; % Outer radius of the conductor
@@ -7,8 +10,13 @@ C = 23e-12; % C value is 23 pF/m
 
 % This is the table of attenuation constant variables at given frequencies
 % as provided by the datasheet (frequency [MHz], attenuation [dB/100ft])
-aFreqData = [30, 50, 150, 220, 450, 900, 1500, 1800, 2000, 2500, 3000, 3500, 4500, 5800, 6000];
-aAttenData = [0.7, 0.9, 1.5, 1.8, 2.7, 3.8, 5.1, 5.6, 6, 6.7, 7.5, 8.2, 9.5, 11.1, 11.4];
+aFreqDataRaw = [30, 50, 150, 220, 450, 900, 1500, 1800, 2000, 2500, 3000, 3500, 4500, 5800, 6000];
+aAttenDataRaw = [0.7, 0.9, 1.5, 1.8, 2.7, 3.8, 5.1, 5.6, 6, 6.7, 7.5, 8.2, 9.5, 11.1, 11.4];
+
+% Convert the raw data into the corret measurements for our calculations
+% (frequency [Hz], attenuation [dB/m])
+aFreqData = aFreqDataRaw.*1e6;
+aAttenData = aAttenDataRaw./30.48;
 
 % The fittype for the line of best fit is k1*sqrt(x) + k2*x from the
 % attenuation function
@@ -23,5 +31,14 @@ attenFittype = fittype({'sqrt(x)', 'x'});
 % Attenuation data with line of best fit
 figure(1);
 plot(attenFitResult, aFreqData, aAttenData);
-xlabel('Frequency [MHz]');
-ylabel('Attenuation [dB/100ft]');
+xlabel('Frequency [Hz]');
+ylabel('Attenuation [dB/m]');
+title('Attenuation Data with Line of Best Fit')
+
+% Predict the attenuation at our given frequency with a prediction interval
+attenPred = feval(attenFitResult, f);
+attenPI = predint(attenFitResult, f, 0.95, 'observation');
+
+% Use the 95% prediction interval to calculate a range of possible
+% attenuation values
+atten = linspace(attenPI(1), attenPI(2), 100);
