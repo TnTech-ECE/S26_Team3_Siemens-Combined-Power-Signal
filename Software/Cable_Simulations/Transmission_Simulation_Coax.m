@@ -253,11 +253,18 @@ cDmag.Label.String = 'Output Reflection Coefficient [\circ]';
 
 sgtitle('s Parameter Angles')
 
-% Calculate the DC voltage drop and plot it as a function of cable length
+% Calculate the DC voltage drop and power loss and plot them as a function of cable length
 VDC_loss = IDC.*RDC.*len;
+PDC_loss = IDC.^2.*RDC.*len;
 
 figure(6);
+yyaxis left
 plot(len, VDC_loss)
-title('DC Voltage Loss [V] vs Cable Length [m]')
-xlabel('Cable Length [m]')
 ylabel('DC Voltage Loss [V]')
+
+yyaxis right
+plot(len, PDC_loss)
+ylabel('DC Power Loss [W]')
+
+title('DC Voltage [V] and Power [W] Loss vs Cable Length [m]')
+xlabel('Cable Length [m]')
