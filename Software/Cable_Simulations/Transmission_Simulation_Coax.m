@@ -2,6 +2,8 @@ clear
 
 % Define the frequency value that will be passed
 f = 2.5e6;
+%f = 250e3;
+%f = 0.00001;
 
 % Define the physical parameters of the coaxial line
 rIn = 0.111; % Inner radius of the conductor [in]
@@ -10,6 +12,7 @@ RDCIn = 1.3; % Inner conductor DC resistance [ohm/1000ft]
 RDCOut = 2.0; % Outer conductor DC resistance [ohm/1000ft]
 C = 75e-12; % C value is 75 pF/m
 Z_0 = 50; % Characteristic impedance is 50 ohms
+Z_l = 69.63*exp(1j*deg2rad(-44.11)); % Load impedance of the clock
 
 % This is the table of attenuation constant variables at given frequencies
 % as provided by the datasheet (frequency [MHz], attenuation [dB/100ft])
@@ -41,14 +44,14 @@ title('Attenuation Data with Line of Best Fit')
 % Predict the attenuation at our given frequency with a prediction interval
 attenPred = feval(attenFitResult, f);
 attenPI = predint(attenFitResult, f, 0.95, 'observation');
+attenPI_Neper = attenPI.*0.11513;
 
 % Use the 95% prediction interval to calculate a range of possible
 % attenuation values
-atten = linspace(attenPI(1), attenPI(2), 250);
+atten = linspace(attenPI_Neper(1), attenPI_Neper(2), 250);
 
 % Calculate the phase constant
 phaseConst = 2*pi*Z_0*C*f;
-
 
 % Create a linspace variable for length
 len = linspace(0, 10, 250);
@@ -85,7 +88,7 @@ subplot(2,2,1);
 contourf(LEN, ATTEN, A_mag, 40, 'LineStyle', 'none')
 title('|A|')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cAmag = colorbar;
 cAmag.Label.String = 'Voltage Ratio';
 
@@ -93,7 +96,7 @@ subplot(2,2,2);
 contourf(LEN, ATTEN, B_mag, 40, 'LineStyle', 'none')
 title('|B|')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cBmag = colorbar;
 cBmag.Label.String = 'Short Circuit Resistance [\Omega]';
 
@@ -101,7 +104,7 @@ subplot(2,2,3);
 contourf(LEN, ATTEN, C_mag, 40, 'LineStyle', 'none')
 title('|C|')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cCmag = colorbar;
 cCmag.Label.String = 'Open Circuit Conductance [S]';
 
@@ -109,7 +112,7 @@ subplot(2,2,4);
 contourf(LEN, ATTEN, D_mag, 40, 'LineStyle', 'none')
 title('|D|')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cDmag = colorbar;
 cDmag.Label.String = 'Current Ratio';
 
@@ -121,7 +124,7 @@ subplot(2,2,1);
 contourf(LEN, ATTEN, A_angle_deg, 40, 'LineStyle', 'none')
 title('\angle A')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cAmag = colorbar;
 cAmag.Label.String = 'Voltage Ratio Angle [\circ]';
 
@@ -129,7 +132,7 @@ subplot(2,2,2);
 contourf(LEN, ATTEN, B_angle_deg, 40, 'LineStyle', 'none')
 title('\angle B')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cBmag = colorbar;
 cBmag.Label.String = 'Short Circuit Resistance Angle [\circ]';
 
@@ -137,7 +140,7 @@ subplot(2,2,3);
 contourf(LEN, ATTEN, C_angle_deg, 40, 'LineStyle', 'none')
 title('\angle C')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cCmag = colorbar;
 cCmag.Label.String = 'Open Circuit Conductance Angle [\circ]';
 
@@ -145,8 +148,103 @@ subplot(2,2,4);
 contourf(LEN, ATTEN, D_angle_deg, 40, 'LineStyle', 'none')
 title('\angle D')
 xlabel('Cable Length [m]')
-ylabel('Attenuation Constant [dB/m]')
+ylabel('Attenuation Constant [Np/m]')
 cDmag = colorbar;
 cDmag.Label.String = 'Current Ratio Angle [\circ]';
 
 sgtitle('ABCD Parameter Angles')
+
+% Calculate S parameters using ABCD parameters and arbitrary load
+s11 = (B-Z_l.*(D-A+Z_l.*C))./(B+Z_l.*(D+A+Z_l.*C));
+s12 = (2.*Z_l.*(A.*D-B.*C))./(B+Z_l.*(D+A+Z_l.*C));
+s21 = 2.*Z_l./(B+Z_l.*(D+A+Z_l.*C));
+s22 = (B-Z_l.*(A-D+Z_l.*C))./(B+Z_l.*(D+A+Z_l.*C));
+
+% Separate out the magnitude and angle elements to display
+s11_mag = abs(s11);
+s11_angle = angle(s11);
+s11_angle_deg = rad2deg(s11_angle);
+
+s12_mag = abs(s12);
+s12_angle = angle(s12);
+s12_angle_deg = rad2deg(s12_angle);
+
+s21_mag = abs(s21);
+s21_angle = angle(s21);
+s21_angle_deg = rad2deg(s21_angle);
+
+s22_mag = abs(s22);
+s22_angle = angle(s22);
+s22_angle_deg = rad2deg(s22_angle);
+
+% Display the magnitude of the s parameters
+figure(4);
+subplot(2,2,1);
+contourf(LEN, ATTEN, s11_mag, 40, 'LineStyle', 'none')
+title('|s_{11}|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cAmag = colorbar;
+cAmag.Label.String = 'Input Reflection Coefficient';
+
+subplot(2,2,2);
+contourf(LEN, ATTEN, s12_mag, 40, 'LineStyle', 'none')
+title('|s_{12}|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cBmag = colorbar;
+cBmag.Label.String = 'Forward Transmission Coefficient';
+
+subplot(2,2,3);
+contourf(LEN, ATTEN, s21_mag, 40, 'LineStyle', 'none')
+title('|s_{21}|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cCmag = colorbar;
+cCmag.Label.String = 'Reverse Transmission Coefficient';
+
+subplot(2,2,4);
+contourf(LEN, ATTEN, s22_mag, 40, 'LineStyle', 'none')
+title('|s_{22}|')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cDmag = colorbar;
+cDmag.Label.String = 'Output Reflection Coefficient';
+
+sgtitle('s Parameter Magnitudes')
+
+% Display the angle of the s parameters
+figure(5);
+subplot(2,2,1);
+contourf(LEN, ATTEN, s11_angle_deg, 40, 'LineStyle', 'none')
+title('\angle s_{11}')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cAmag = colorbar;
+cAmag.Label.String = 'Input Reflection Coefficient [\circ]';
+
+subplot(2,2,2);
+contourf(LEN, ATTEN, s12_angle_deg, 40, 'LineStyle', 'none')
+title('\angle s_{12}')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cBmag = colorbar;
+cBmag.Label.String = 'Forward Transmission Coefficient [\circ]';
+
+subplot(2,2,3);
+contourf(LEN, ATTEN, s21_angle_deg, 40, 'LineStyle', 'none')
+title('\angle s_{21}')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cCmag = colorbar;
+cCmag.Label.String = 'Reverse Transmission Coefficient [\circ]';
+
+subplot(2,2,4);
+contourf(LEN, ATTEN, s22_angle_deg, 40, 'LineStyle', 'none')
+title('\angle s_{22}')
+xlabel('Cable Length [m]')
+ylabel('Attenuation Constant [Np/m]')
+cDmag = colorbar;
+cDmag.Label.String = 'Output Reflection Coefficient [\circ]';
+
+sgtitle('s Parameter Angles')
