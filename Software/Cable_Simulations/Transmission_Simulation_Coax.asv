@@ -65,12 +65,19 @@ D = cosh(LEN.*(ATTEN+1j.*phaseConst));
 % Separate out the magnitude and angle elements to display
 A_mag = abs(A);
 A_angle = angle(A);
+A_angle_deg = rad2deg(A_angle);
+
 B_mag = abs(B);
 B_angle = angle(B);
+B_angle_deg = rad2deg(B_angle);
+
 C_mag = abs(C);
 C_angle = angle(C);
+C_angle_deg = rad2deg(C_angle);
+
 D_mag = abs(D);
 D_angle = angle(D);
+D_angle_deg = rad2deg(D_angle);
 
 % Display the magnitude of the ABCD parameters
 figure(2);
@@ -111,35 +118,41 @@ sgtitle('ABCD Parameter Magnitudes')
 % Display the angle of the ABCD parameters
 figure(3);
 subplot(2,2,1);
-contourf(LEN, ATTEN, A_angle, 40, 'LineStyle', 'none')
-title('|A|')
+contourf(LEN, ATTEN, A_angle_deg, 40, 'LineStyle', 'none')
+title('\angle A')
 xlabel('Cable Length [m]')
 ylabel('Attenuation Constant [dB/m]')
 cAmag = colorbar;
-cAmag.Label.String = 'Voltage Ratio';
+cAmag.Label.String = 'Voltage Ratio Angle [\circ]';
 
 subplot(2,2,2);
-contourf(LEN, ATTEN, B_angle, 40, 'LineStyle', 'none')
-title('|B|')
+contourf(LEN, ATTEN, B_angle_deg, 40, 'LineStyle', 'none')
+title('\angle B')
 xlabel('Cable Length [m]')
 ylabel('Attenuation Constant [dB/m]')
 cBmag = colorbar;
-cBmag.Label.String = 'Short Circuit Resistance [\Omega]';
+cBmag.Label.String = 'Short Circuit Resistance Angle [\circ]';
 
 subplot(2,2,3);
-contourf(LEN, ATTEN, C_angle, 40, 'LineStyle', 'none')
-title('|C|')
+contourf(LEN, ATTEN, C_angle_deg, 40, 'LineStyle', 'none')
+title('\angle C')
 xlabel('Cable Length [m]')
 ylabel('Attenuation Constant [dB/m]')
 cCmag = colorbar;
-cCmag.Label.String = 'Open Circuit Conductance [S]';
+cCmag.Label.String = 'Open Circuit Conductance Angle [\circ]';
 
 subplot(2,2,4);
-contourf(LEN, ATTEN, D_a, 40, 'LineStyle', 'none')
-title('|D|')
+contourf(LEN, ATTEN, D_angle_deg, 40, 'LineStyle', 'none')
+title('\angle D')
 xlabel('Cable Length [m]')
 ylabel('Attenuation Constant [dB/m]')
 cDmag = colorbar;
-cDmag.Label.String = 'Current Ratio';
+cDmag.Label.String = 'Current Ratio Angle [\circ]';
 
-sgtitle('ABCD Parameter Magnitudes')
+sgtitle('ABCD Parameter Angles')
+
+% Use the ABCD parameters to calculate the s parameters for the cable
+ABCD = [A,B;
+        C,D];
+
+a
