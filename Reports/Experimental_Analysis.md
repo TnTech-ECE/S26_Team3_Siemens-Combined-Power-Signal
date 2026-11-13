@@ -284,6 +284,63 @@ Perform this test before testing anything else regarding the cables in case they
 - **Output Measurement Cable** Since the output is being measured at the end of the bias tee, the cables that are being used may introduce noise and impedance mismatching. This will cause the S-parameters to record greater losses than will be actually experienced in the circuit.
 - **Independent Testing** Since the clock and communications frequencies are tested separately, there may be some interferences in normal operation that are not being tested.
 
+---
+
+## Experiment 5 - Cable DC Voltage and Current Verification
+
+### Purpose
+
+The purpose of this experiment is to verify the cables ability to handle $50\ V$ at $2\ A$. The cable itself cannot exceed it's rated safe operating temperature.
+
+### Procedure
+
+**Equipment and project inventory:**
+- Belden 7810A coaxial cables at appropriate lengths
+- Belden 50021L twisted pair cables at appropriate lengths
+- Multimeter
+- Thermometer Gun
+- Stopwatch
+- Tape Measure
+- Breadboard with $25\ \Omega$ resistance
+- Appropriate SMA/BNC cables, adapters, and test leads
+
+**Preparation and testing:**
+1. Use a multimeter to verify the end resistance is $25\ \Omega$
+2. Use a tape measure to mark along the cable at 1 m intervals
+3. Connect one end of the cable to a voltage source and the other to the resistor
+4. Connect a multimeter in series with the cable to measure current
+5. Turn on the voltage source and verify $2\ A$ is running thorough the cable
+6. Use the termperature gun to measure the temperature of the cable at every meter along it
+7. Repeat step 6 at 5 minute intervals for the first hour and 15 minute intervals for the following two hours
+8. Repeat steps 2-7 for all available cables
+
+
+### Data Collection
+
+| Measurement | Units | Measurement method |
+|---|---|---|
+| Temperature | $^\circ C$ | Temperature Gun |
+| Time | s | Stopwatch |
+| DC Current | A | Multimeter |
+| Load Resistance | $\Omega$ | Multimeter |
+| Length along Cable | m | Tape Measure |
+
+Record the data using excel. Load the data into MATLAB for analysis and display.
+
+### Trials
+
+Perform multiple measurement calculations along the cable to minimize variations due to contacts with other materials or uneven air temperature
+
+Be sure to shut off the circuit in the event of any changes becoming necessary. 50 V DC is extremely dangerous and should not be taken lightly
+
+### Potential Biases and Error Sources
+
+- **Ambient Temperature** The temperature of the room will have an impact on the overall temperature of the cable, so it must be taken into account when the measurements are taken.
+- **Body Temperature** While the cable is being handled for measurements, body temperature may change the temperature of the cable
+- **Circuit Downtime** Since the voltage is so high, the circuit may need to be shut down if measurements are not able to be taken. In those instances, the cable will be cooling while the circuit is off
+- **External Resistance** The multimeter and the resistor setup may introduce additional resistance or unwanted behaviors. Espeically from the multiple resistances in parallel.
+- **Temperature Gun Inconsistencies** The temperature gun itself may introduce some variations in the temperature data
+
 ## Statement of Contributions
 
 Each team member must contribute meaningfully to the experimental analysis and document their contributions clearly in this section. Contributions should be recorded individually, and one team member may not document contributions on behalf of another. Each team member must clearly outline their involvement in experiment design, execution, data analysis, and reporting. By submitting this report, the team collectively certifies the accuracy and completeness of each member's stated contributions.
