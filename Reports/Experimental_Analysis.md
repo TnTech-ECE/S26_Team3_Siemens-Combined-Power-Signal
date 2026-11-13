@@ -249,9 +249,7 @@ The purpose of this experiment is to verify the transmission characteristcs of b
 - Belden 50021L twisted pair cables at appropriate lengths
 - Appropriate SMA/BNC cables, adapters, and test leads
 
-
 **Preparation and testing:**
-
 1. Turn on the VNA and leave it for 30 minutes to warm up
 2. Connect the reciever board clock output to port 2 of the VNA
 3. Connect the cable from the input of the reciever board to port 1 of the VNA
@@ -266,18 +264,16 @@ The purpose of this experiment is to verify the transmission characteristcs of b
 
 | Measurement | Units | Measurement method |
 |---|---|---|
-| Clock frequency | MHz | Oscilloscope |
-| Clock period | ns | Oscilloscope |
-| Individual cycle periods | ns | Edge-to-edge timing measurements |
-| Cycle-to-cycle jitter | ps | Difference between consecutive periods |
-| Relative timing difference | ps | Simultaneous channel timing measurement |
-| RMS/standard deviation of timing variation | ps | Statistical analysis |
-| Maximum timing deviation | ps | Statistical analysis |
-| Minimum timing deviation | ps | Statistical analysis |
-| Peak-to-peak timing variation | ps | Maximum minus minimum |
-| Number of measured edges | Count | Acquisition settings |
+| Clock $S_{11}$ | dB | VNA |
+| Clock $S_{12}$ | dB | VNA |
+| Clock $S_{21}$ | dB | VNA |
+| Clock $S_{22}$ | dB | VNA |
+| Communications $S_{11}$ | dB | VNA |
+| Communications $S_{12}$ | dB | VNA |
+| Communications $S_{21}$ | dB | VNA |
+| Communications $S_{22}$ | dB | VNA |
 
-Store the captured waveform data and measurement results in a spreadsheet. Include oscilloscope screenshots, acquisition settings, and instrument identification with each dataset.
+Load the S-parameter data into MATLAB for analysis and display.
 
 ### Trials
 
@@ -285,7 +281,8 @@ Store the captured waveform data and measurement results in a spreadsheet. Inclu
 
 ### Potential Biases and Error Sources
 
-
+- **Output Measurement Cable** Since the output is being measured at the end of the bias tee, the cables that are being used may introduce noise and impedance mismatching. This will cause the S-parameters to record greater losses than will be actually experienced in the circuit.
+- **Independent Testing** Since the clock and communications frequencies are tested separately, there may be some interferences in normal operation that are not being tested.
 
 ## Statement of Contributions
 
