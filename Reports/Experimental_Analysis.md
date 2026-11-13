@@ -277,7 +277,7 @@ Load the S-parameter data into MATLAB for analysis and display.
 
 ### Trials
 
-
+Perform this test before testing anything else regarding the cables in case they are damaged in subsequent DC voltage and current testing.
 
 ### Potential Biases and Error Sources
 
