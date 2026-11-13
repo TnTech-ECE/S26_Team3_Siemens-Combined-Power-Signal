@@ -232,6 +232,59 @@ A higher performance oscilloscope with approximately 1–2 GHz analog bandwidth,
 
 The Tektronix MSO2024 can support preliminary verification of clock operation and waveform characteristics. However, its 200 MHz bandwidth and 1 GS/s maximum sampling rate do not establish that it can reliably verify the project's picosecond level jitter requirements. A higher performance measurement instrument should therefore be used for final jitter acceptance testing.
 
+---
+
+## Experiment 4 - Clock and Communication Transmission Characteristics
+
+### Purpose
+
+The purpose of this experiment is to verify the transmission characteristcs of both of the cables at all the required lengths for both the $2.5\ MHz$ clock and the $200\ kHz$ communications signals. The communications signal needs to be able to be read by the recieving board, and the clock signal needs to transmit at least half of its peak voltage.
+
+### Procedure
+
+**Equipment and project inventory:**
+- Reciever PCB
+- Keysight E5063A ENA Vector Network Analyzer (VNA)
+- Belden 7810A coaxial cables at appropriate lengths
+- Belden 50021L twisted pair cables at appropriate lengths
+- Appropriate SMA/BNC cables, adapters, and test leads
+
+
+**Preparation and testing:**
+
+1. Turn on the VNA and leave it for 30 minutes to warm up
+2. Connect the reciever board clock output to port 2 of the VNA
+3. Connect the cable from the input of the reciever board to port 1 of the VNA
+4. Sweep $2.5\ MHz\ \pm 5\%$  and record the S-parameters
+5. Repeat steps 2-4 with all available cables for the clock
+6. Change the connection from the clock to the communications output
+7. Sweep $200\ kHz\ \pm 5\%$ and record the S-parameters
+8. Repeat step 7 for all available cables
+
+
+### Data Collection
+
+| Measurement | Units | Measurement method |
+|---|---|---|
+| Clock frequency | MHz | Oscilloscope |
+| Clock period | ns | Oscilloscope |
+| Individual cycle periods | ns | Edge-to-edge timing measurements |
+| Cycle-to-cycle jitter | ps | Difference between consecutive periods |
+| Relative timing difference | ps | Simultaneous channel timing measurement |
+| RMS/standard deviation of timing variation | ps | Statistical analysis |
+| Maximum timing deviation | ps | Statistical analysis |
+| Minimum timing deviation | ps | Statistical analysis |
+| Peak-to-peak timing variation | ps | Maximum minus minimum |
+| Number of measured edges | Count | Acquisition settings |
+
+Store the captured waveform data and measurement results in a spreadsheet. Include oscilloscope screenshots, acquisition settings, and instrument identification with each dataset.
+
+### Trials
+
+
+
+### Potential Biases and Error Sources
+
 
 
 ## Statement of Contributions
