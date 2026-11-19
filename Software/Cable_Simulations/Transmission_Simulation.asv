@@ -1,0 +1,12 @@
+clear
+
+% Define the physical parameters of the coaxial line
+r_in = 0.111; % Inner radius of the conductor
+r_out = 0.403; % Outer radius of the conductor
+C = 23e-12; % C value is 23 pF/m
+
+% This is the table of attenuation constant variables at given frequencies
+% as provided by the datasheet (frequency [Hz, attenuation [dB/1000ft])
+a_table = [30e6, 0.7;
+           50e6, 0.9;
+           150e6, 1.5];
