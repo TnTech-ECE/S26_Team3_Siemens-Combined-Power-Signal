@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{2007Arthur}
+J.~V. Arthur and K.~A. Boahen.
+\newblock Synchrony in silicon: The gamma rhythm.
+\newblock {\em IEEE Transactions on Neural Networks}, 18(6):1815--1825, 2007.
+
+\bibitem{2008Freund}
+T.~Freund and S.~Kali.
+\newblock Interneurons.
+\newblock {\em Scholarpedia}, 3(9):4720, 2008.
+
+\bibitem{kirkpatrick2017overcoming}
+J.~Kirkpatrick, R.~Pascanu, N.~Rabinowitz, J.~Veness, G.~Desjardins, A.~A. Rusu, K.~Milan, J.~Quan, T.~Ramalho, A.~Grabska-Barwinska, et~al.
+\newblock Overcoming catastrophic forgetting in neural networks.
+\newblock {\em Proceedings of the national academy of sciences}, page 201611835, 2017.
+
+\bibitem{2004Purves}
+D.~Purves, G.~Augustine, D.~Fitzpatrick, W.~Hall, A.~M. Lamantia, and W.~JO.
+\newblock Sm (2004) neuroscience, 2004.
+
+\bibitem{schuster2014towards}
+A.~Schuster and D.~Berrar.
+\newblock Towards nature-inspired modularization of artificial neural networks via static and dynamic weights.
+\newblock In {\em Biomedical Informatics and Technology}, pages 219--234. Springer, 2014.
+
+\bibitem{wan2013regularization}
+L.~Wan, M.~Zeiler, S.~Zhang, Y.~Le~Cun, and R.~Fergus.
+\newblock Regularization of neural networks using dropconnect.
+\newblock In {\em International Conference on Machine Learning}, pages 1058--1066, 2013.
+
+\end{thebibliography}
