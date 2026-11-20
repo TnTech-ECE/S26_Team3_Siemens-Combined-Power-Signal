@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  20 NOV 2026 14:30
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  20 NOV 2026 14:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1133,10 +1133,10 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 Here is how much of TeX's memory you used:
  39179 strings out of 468174
  952994 string characters out of 5436827
- 1608582 words of memory out of 5000000
+ 1609582 words of memory out of 5000000
  67104 multiletter control sequences out of 15000+600000
  679346 words of font info for 147 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,20n,123p,817b,1460s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on poster.xdv (1 page, 89864 bytes).
+Output written on poster.xdv (1 page, 90120 bytes).
