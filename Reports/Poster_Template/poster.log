@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  20 NOV 2026 15:44
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  20 NOV 2026 16:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -866,31 +866,53 @@ Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
 File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (c:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (c:/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
+))) (c:/texlive/2025/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+ (c:/texlive/2025/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2025/12/01 v3.49 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+) (c:/texlive/2025/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+) (c:/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\c@svg@param@lastpage=\count406
+\svg@box=\box85
+\c@svg@param@currpage=\count407
+) (c:/texlive/2025/texmf-dist/tex/latex/transparent/transparent.sty
+Package: transparent 2025-06-23 v1.6 Transparency with color stacks
+ (c:/texlive/2025/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
+Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color stack (HO)
+
+
+Package transparent Warning: Loading aborted, because pdfTeX is not running in PDF mode.
+
+)) (c:/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
-\c@tracingmulticols=\count406
-\mult@box=\box85
+\c@tracingmulticols=\count408
+\mult@box=\box86
 \multicol@leftmargin=\dimen346
-\c@unbalance=\count407
-\c@collectmore=\count408
-\doublecol@number=\count409
-\multicoltolerance=\count410
-\multicolpretolerance=\count411
+\c@unbalance=\count409
+\c@collectmore=\count410
+\doublecol@number=\count411
+\multicoltolerance=\count412
+\multicolpretolerance=\count413
 \full@width=\dimen347
 \page@free=\dimen348
 \premulticols=\dimen349
 \postmulticols=\dimen350
 \multicolsep=\skip81
 \multicolbaselineskip=\skip82
-\partial@page=\box86
-\last@line=\box87
-\mc@boxedresult=\box88
+\partial@page=\box87
+\last@line=\box88
+\mc@boxedresult=\box89
 \maxbalancingoverflow=\dimen351
-\mult@rightbox=\box89
-\mult@grightbox=\box90
-\mult@firstbox=\box91
-\mult@gfirstbox=\box92
-\@tempa=\box93
+\mult@rightbox=\box90
+\mult@grightbox=\box91
+\mult@firstbox=\box92
+\mult@gfirstbox=\box93
 \@tempa=\box94
 \@tempa=\box95
 \@tempa=\box96
@@ -926,34 +948,35 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \@tempa=\box126
 \@tempa=\box127
 \@tempa=\box128
-\c@minrows=\count412
-\c@columnbadness=\count413
-\c@finalcolumnbadness=\count414
+\@tempa=\box129
+\c@minrows=\count414
+\c@columnbadness=\count415
+\c@finalcolumnbadness=\count416
 \last@try=\dimen352
 \multicolovershoot=\dimen353
 \multicolundershoot=\dimen354
-\mult@nat@firstbox=\box129
-\colbreak@box=\box130
-\mc@col@check@num=\count415
-\g__mc_curr_col_int=\count416
+\mult@nat@firstbox=\box130
+\colbreak@box=\box131
+\mc@col@check@num=\count417
+\g__mc_curr_col_int=\count418
 ) (c:/texlive/2025/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
  (c:/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count417
-\calc@Bcount=\count418
+\calc@Acount=\count419
+\calc@Bcount=\count420
 \calc@Adimen=\dimen355
 \calc@Bdimen=\dimen356
 \calc@Askip=\skip83
 \calc@Bskip=\skip84
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count419
+\calc@Ccount=\count421
 \calc@Cskip=\skip85
 ) (c:/texlive/2025/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count420
+\g_MT_multlinerow_int=\count422
 \l_MT_multwidth_dim=\dimen357
 \origjot=\skip86
 \l_MT_shortvdotswithinadjustabove_dim=\dimen358
@@ -962,7 +985,7 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_intertext_sep=\dimen361
 \l_MT_above_shortintertext_sep=\dimen362
 \l_MT_below_shortintertext_sep=\dimen363
-\xmathstrut@box=\box131
+\xmathstrut@box=\box132
 \xmathstrut@dim=\dimen364
 )
 \sepwidth=\skip87
@@ -970,26 +993,26 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
  (./poster.aux)
 \openout1 = `poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1025,7 +1048,7 @@ LaTeX Font Info:    ... okay on input line 53.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 53.
+Package hyperref Info: Link coloring OFF on input line 64.
 (./poster.out) (./poster.out)
 \@outlinefile=\write5
 \openout5 = `poster.out'.
@@ -1046,65 +1069,71 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.16).
 
 (./poster.nav)
-File: tntechgold.png Graphic file (type bmp)
-<tntechgold.png>
-LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 53.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 53.
+LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 64.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 64.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 53.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 64.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 53.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 64.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7.13995> on input line 53.
+(Font)              <7.13995> on input line 64.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <5.09999> on input line 53.
-LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 53.
+(Font)              <5.09999> on input line 64.
+LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 64.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <30.46> not available
-(Font)              size <24.88> substituted on input line 53.
+(Font)              size <24.88> substituted on input line 64.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.3219> not available
-(Font)              size <20.74> substituted on input line 53.
+(Font)              size <20.74> substituted on input line 64.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.23> not available
-(Font)              size <14.4> substituted on input line 53.
+(Font)              size <14.4> substituted on input line 64.
 
-LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 53.
+LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 64.
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.15> not available
-(Font)              size <20.74> substituted on input line 53.
+(Font)              size <20.74> substituted on input line 64.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <14.80492> not available
-(Font)              size <14.4> substituted on input line 53.
+(Font)              size <14.4> substituted on input line 64.
 
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
+File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
+<960px-Siemens_Healthineers_logo.svg.png>
+File: tntechgold.png Graphic file (type bmp)
+<tntechgold.png>
+File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
+<960px-Siemens_Healthineers_logo.svg.png>
 File: Neuron.png Graphic file (type bmp)
 <Neuron.png>
 File: INN_Topology.png Graphic file (type bmp)
 <INN_Topology.png>
 
-Overfull \hbox (37.92555pt too wide) in paragraph at lines 318--318
+Overfull \hbox (37.92555pt too wide) in paragraph at lines 329--329
  [] 
  []
 
 (./poster.bbl)
-Overfull \vbox (13.31314pt too high) detected at line 318
+Overfull \vbox (12.41519pt too high) detected at line 329
  []
 
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
+File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
+<960px-Siemens_Healthineers_logo.svg.png>
 [1
 
 ]
@@ -1131,12 +1160,12 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39179 strings out of 468174
- 952994 string characters out of 5436827
- 1609582 words of memory out of 5000000
- 67104 multiletter control sequences out of 15000+600000
+ 39973 strings out of 468174
+ 970744 string characters out of 5436827
+ 1654744 words of memory out of 5000000
+ 67876 multiletter control sequences out of 15000+600000
  679346 words of font info for 147 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,20n,123p,817b,1460s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on poster.xdv (1 page, 90452 bytes).
+Output written on poster.xdv (1 page, 91676 bytes).
