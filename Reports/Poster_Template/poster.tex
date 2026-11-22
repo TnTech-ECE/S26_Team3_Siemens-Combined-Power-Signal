@@ -69,58 +69,17 @@
 
 \begin{column}{\colwidth}
 
-  \begin{block}{Biological Neurons}
+  \begin{block}{Abstract}
 
-    \begin{figure}
-      \centering
-      \includegraphics[width=20.0cm]{Neuron.png}
-      \caption{Neuron Diagram}
-    \end{figure}
-
-    \begin{itemize}
-      \item \textbf{Dendrites} provide the input field to the neuron
-      \item The voltage difference from \textbf{cell body} to the exterior of the cell controls action potential
-      \item The \textbf{axon} carries the action potential to other locations in the network
-      \item \textbf{Synaptic terminals} transmit the action potential from the axon to other neural dendrites
-
-    \end{itemize}
-
-    With the arrival of each \textbf{action potential} at a \textbf{synaptic terminal}, \textbf{neurotransmitters} are released and carried \textbf{into the neuron} by way of \textbf{ion channels and pumps}. The ions \textbf{change the voltage} present across the \textbf{membrane of the cell body}. If the membrane voltage increases \textbf{past the action potential threshold}, an \textbf{action potential} will occur and \textbf{propagate along the axon} to the \textbf{synaptic terminals}. A membrane voltage that has been elevated is referred to as \textbf{depolarized}. In homeostasis a neuron attempts to enforce \textbf{polarization}, remaining ready to receive input leading to an action potential. 
-
-    \begin{equation}
-      \label{Formula:Neuron1}
-      r_{action} = \minus r_{pol} + \sum  \alpha * r_{depol}, \quad \alpha \geq 0
-    \end{equation}
-
-    \begin{itemize}
-      \item \textbf{firing rate} of the target neuron is \textbf{dependent} upon the \textbf{rate of depolarization}
-      \item $\boldsymbol r_{pol}$ is the internal \textbf{rate of polarization}
-      \item $\boldsymbol r_{depol}$ is the \textbf{rate} at which a specific \textbf{synapse is firing}
-      \item $\boldsymbol \alpha$ is the amount of \textbf{neurotransmitter released} with each pulse at the synaptic terminal
-      \item $\boldsymbol r_{action}$ is the \textbf{rate of action potential} propagated along the axon
-      \item Summation accounts for multiple synapses
-    \end{itemize}
+    This project aims to design a bais tee in such a way that a $2.5\ MHz$ clock, $200\ kHz$ communication signal, and $100\ W$ at $48\ V$ DC can be transmitted up to $10 m$ using a single coaxial cable.
 
   \end{block}
 
-  \begin{block}{Biological Interneurons}
+  \begin{block}{Design}
 
-    Interneurons provide external polarization to the biological neural network. Eq \ref{Formula:Neuron1} is modified to reflect external polarization in \ref{Formula:Neuron1Interneuron}.
+  \end{block}
 
-    \begin{equation}
-      \label{Formula:Neuron1Interneuron}
-      r_{action} = \minus r_{pol} + \sum  \alpha *\beta_{Inter}* r_{depol}, \quad 0 \leq \beta \leq 1 \quad \alpha \geq 0
-    \end{equation}
-
-    \begin{itemize}
-      \item \textbf{Interneurons} allow for \textbf{selective gating} of inputs to different regions of the dendrite
-      \item \textbf{Interneurons} facilitate \textbf{dynamic changes} in the \textbf{relative contribution} of inputs
-      \item $\boldsymbol \beta_{Inter}$ accounts for the gating associated with a particular synaptic connection
-    \end{itemize}
-    
-    \vskip3ex
-    
-    \footnotesize{*Neither Eq \ref{Formula:Neuron1} or \ref{Formula:Neuron1Interneuron} is intended to be complete characterizations of a neuron. Rather both should be understood to capture the relevant pieces of neural activity necessary to develop Gen 1 and 2 neural networks.}
+  \begin{block}{Block Diagram}
 
   \end{block}
 
@@ -130,7 +89,7 @@
 
 \begin{column}{\colwidth}
 
-  \begin{block}{Artificial Neurons}
+  \begin{block}{BOM}
 
     \textbf{Gen 1 ANNs} are considered those limited to classification. They are incapable of performing regression because the output assumes only the \textbf{values one or zero}. The perceptron is such a model. This model characterizes \textbf{neurons as switches} as shown in Eq \ref{Formula:Gen1ANN}.
 
@@ -216,7 +175,7 @@
   \end{block}
 
 \vskip-1em
-  \begin{alertblock}{Artificial Interneurons \hskip0.5ex (INNs)}
+  \begin{alertblock}{Experimentation}
 
     \textbf{Contribution}
 
@@ -273,7 +232,7 @@
 \begin{column}{\colwidth}
 
 
-  \begin{block}{Results: Applying an INN to MNIST}
+  \begin{block}{Results}
 
     \sectionHeading{Experimental Setup}
 
@@ -301,7 +260,7 @@
 
   \end{block}
 
-  \begin{block}{Future Work}
+  \begin{block}{Future Improvements}
 
     \sectionHeading{Neuroscience}
 
@@ -313,7 +272,7 @@
 
   \end{block}
 
-  \begin{block}{References}
+  \begin{block}{Acknowledgements}
 
     \begin{multicols}{2}
       \nocite{*}
