@@ -341,6 +341,58 @@ Be sure to shut off the circuit in the event of any changes becoming necessary. 
 - **External Resistance** The multimeter and the resistor setup may introduce additional resistance or unwanted behaviors. Espeically from the multiple resistances in parallel.
 - **Temperature Gun Inconsistencies** The temperature gun itself may introduce some variations in the temperature data
 
+## Experiment 6 - IC Power: Buck Converter and LDO Testing
+
+### Purpose
+
+The purpose of this experiment is to verify the transmission characteristcs of both of the cables at all the required lengths for both the $2.5\ MHz$ clock and the $200\ kHz$ communications signals. The communications signal needs to be able to be read by the recieving board, and the clock signal needs to transmit at least half of its peak voltage.
+
+The purpose of this experiment is to verify the proper output voltages of the power converters to ensure that each IC that uses a lower voltage than 48 V is satisfied. The voltages being produced are 12 V from the buck converter, [ADD MORE HERE]
+
+### Procedure
+
+**Equipment and project inventory:**
+- Reciever PCB
+- Keysight E5063A ENA Vector Network Analyzer (VNA)
+- Belden 7810A coaxial cables at appropriate lengths
+- Belden 50021L twisted pair cables at appropriate lengths
+- Appropriate SMA/BNC cables, adapters, and test leads
+
+**Preparation and testing:**
+1. Turn on the VNA and leave it for 30 minutes to warm up
+2. Connect the reciever board clock output to port 2 of the VNA
+3. Connect the cable from the input of the reciever board to port 1 of the VNA
+4. Sweep $2.5\ MHz\ \pm 5\%$  and record the S-parameters
+5. Repeat steps 2-4 with all available cables for the clock
+6. Change the connection from the clock to the communications output
+7. Sweep $200\ kHz\ \pm 5\%$ and record the S-parameters
+8. Repeat step 7 for all available cables
+
+
+### Data Collection
+
+| Measurement | Units | Measurement method |
+|---|---|---|
+| Clock $S_{11}$ | dB | VNA |
+| Clock $S_{12}$ | dB | VNA |
+| Clock $S_{21}$ | dB | VNA |
+| Clock $S_{22}$ | dB | VNA |
+| Communications $S_{11}$ | dB | VNA |
+| Communications $S_{12}$ | dB | VNA |
+| Communications $S_{21}$ | dB | VNA |
+| Communications $S_{22}$ | dB | VNA |
+
+Load the S-parameter data into MATLAB for analysis and display.
+
+### Trials
+
+Perform this test before testing anything else regarding the cables in case they are damaged in subsequent DC voltage and current testing.
+
+### Potential Biases and Error Sources
+
+- **Output Measurement Cable** Since the output is being measured at the end of the bias tee, the cables that are being used may introduce noise and impedance mismatching. This will cause the S-parameters to record greater losses than will be actually experienced in the circuit.
+- **Independent Testing** Since the clock and communications frequencies are tested separately, there may be some interferences in normal operation that are not being tested.
+
 ## Statement of Contributions
 
 Each team member must contribute meaningfully to the experimental analysis and document their contributions clearly in this section. Contributions should be recorded individually, and one team member may not document contributions on behalf of another. Each team member must clearly outline their involvement in experiment design, execution, data analysis, and reporting. By submitting this report, the team collectively certifies the accuracy and completeness of each member's stated contributions.
