@@ -1,0 +1,50 @@
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  22 NOV 2026 15:53
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**yourfile.tex
+(d:/Latex/texlive/2025/texmf-dist/tex/generic/poster-mac/poster.tex
+! Interruption.
+<to be read again> 
+                   \immediate 
+l.1 
+    %% BEGIN poster.tex/poster.sty
+? 
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+  v1.1  10/05/15  <tvz>
+\@posterbox=\box53
+\poster@savedbox=\box54
+\poster@cropbox=\box55
+)
+*
+(Please type a command or say `\end')
+*\end
+
+*end
+
+! LaTeX Error: \begin{document} ended by \end{e}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+<*> e
+     nd
+? \end
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? X
+ 
+Here is how much of TeX's memory you used:
+ 80 strings out of 468174
+ 1416 string characters out of 5434073
+ 426411 words of memory out of 5000000
+ 28900 multiletter control sequences out of 15000+600000
+ 627721 words of font info for 40 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 11i,0n,13p,92b,14s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.
