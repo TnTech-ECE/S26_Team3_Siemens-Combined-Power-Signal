@@ -20,6 +20,8 @@
 \usepackage{svg}
 \usepackage{multicol}
 \usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{siunitx}
 
 % ====================
 % Lengths
@@ -71,7 +73,7 @@
 
   \begin{block}{Abstract}
 
-    This project aims to design a bias tee in such a way that a $2.5\ MHz$ clock, $200\ kHz$ communication signal, and $100\ W$ at $48\ V$ DC can be transmitted up to $10 m$ using a single coaxial cable.
+    This project aims to design a bias tee in such a way that a $2.5\ MHz$ clock signal, $200\ kHz$ communication signal, and $100\ W$ at $48\ V$ DC can be transmitted up to $10 m$ using a single coaxial cable.
 
   \end{block}
 
@@ -90,6 +92,65 @@
 \begin{column}{\colwidth}
 
   \begin{block}{BOM}
+
+    % Template table
+%     \begin{table}[h]
+%     \centering
+%     \caption{Bill of Materials --- Control Box Assembly}
+%     \label{tab:bom}
+%     \small
+%     \begin{tabularx}{\textwidth}{
+%         c                          % Item
+%         l                          % Part No.
+%         X                          % Description (wraps)
+%         l                          % Supplier
+%         S[table-format=3.0]        % Qty
+%         S[table-format=3.2]        % Unit cost
+%         S[table-format=4.2]        % Total
+%     }
+%         \toprule
+%         \textbf{Item} & \textbf{Part No.} & \textbf{Description} & \textbf{Supplier} &
+%         {\textbf{Qty}} & {\textbf{Unit (\$)}} & {\textbf{Total (\$)}} \\
+%         \midrule
+%         1 & ENC-1590BB  & Aluminum enclosure, 119 $\times$ 94 $\times$ 34 mm & Hammond   & 1   & 14.50  & 14.50  \\
+%         2 & PCB-CTRL-01 & Main control PCB, 2-layer, ENIG finish              & JLCPCB    & 1   & 22.00  & 22.00  \\
+%         3 & ATMEGA328P  & Microcontroller, TQFP-32                            & Microchip & 1   & 2.85   & 2.85   \\
+%         4 & RC0603-10K  & Resistor, 10\,k$\Omega$, 1\%, 0603                  & Yageo     & 12  & 0.02   & 0.24   \\
+%         5 & M3x8-SHCS   & Socket head cap screw, M3 $\times$ 8 mm, stainless  & McMaster  & 4   & 0.15   & 0.60   \\
+%         6 & PJ-002A     & DC barrel jack, 2.1 mm, panel mount                 & CUI       & 1   & 1.10   & 1.10   \\
+%         \midrule
+%         \multicolumn{6}{r}{\textbf{Grand Total}} & \bfseries 41.29 \\
+%         \bottomrule
+%     \end{tabularx}
+% \end{table}
+
+    \begin{block}{Bill of Materials}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\linewidth}{
+        c                          % Item
+        l                          % Part No.
+        X                          % Description (wraps)
+        l                          % Supplier
+        S[table-format=4.2]        % Total cost
+        }
+        \toprule
+        \textbf{Item} & \textbf{Part No.} & \textbf{Description} & \textbf{Supplier} & {\textbf{Total (\$)}} \\
+        \midrule
+        1 & PCB Components  & Passives, Connectors, and ICs for PCB               & Digikey, Mouser       & 239.75  \\
+        2 & Cables          & [ADD CABLE INFO HERE]                               & Belden [I think?]     & 0.00    \\
+        3 & Tx PCB          & PCB for Transmission side of system                 & JLC PCB               & 26.00   \\
+        4 & Rx PCB          & PCB for Receiving side of system                    & JLC PCB               & 37.00   \\
+        5 & ST7580          & PLM Boards for communications subsystem             & [unsure]              & 0.00    \\
+        % 6 & PJ-002A         & DC barrel jack, 2.1 mm, panel mount                 & CUI                   & 1.10    \\  % Duplicate this row to add more items if needed
+        \midrule
+        \multicolumn{4}{r}{\textbf{Grand Total}} & \bfseries 417.88 \\
+        \bottomrule
+    \end{tabularx}
+
+    The Bill of Materials are broken into four main sections, particularly the cost of components to assemble the PCB, the cables, the cost of ordering five of each board in the system, and the cost of the dev boards used in the communications subsystem.
+    
+  \end{block}
 
     \textbf{Gen 1 ANNs} are considered those limited to classification. They are incapable of performing regression because the output assumes only the \textbf{values one or zero}. The perceptron is such a model. This model characterizes \textbf{neurons as switches} as shown in Eq \ref{Formula:Gen1ANN}.
 

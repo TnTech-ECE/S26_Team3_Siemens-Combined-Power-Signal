@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  22 NOV 2026 15:59
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  23 NOV 2026 13:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -987,32 +987,84 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen363
 \xmathstrut@box=\box132
 \xmathstrut@dim=\dimen364
+) (d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen365
+\ar@mcellbox=\box133
+\extrarowheight=\dimen366
+\NC@list=\toks55
+\extratabsurround=\skip87
+\backup@length=\skip88
+\ar@cellbox=\box134
 )
-\sepwidth=\skip87
-\colwidth=\skip88
+\TX@col@width=\dimen367
+\TX@old@table=\dimen368
+\TX@old@col=\dimen369
+\TX@target=\dimen370
+\TX@delta=\dimen371
+\TX@cols=\count423
+\TX@ftn=\toks56
+) (d:/Latex/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count424
+\l__siunitx_number_exponent_fixed_int=\count425
+\l__siunitx_number_min_decimal_int=\count426
+\l__siunitx_number_min_integer_int=\count427
+\l__siunitx_number_round_precision_int=\count428
+\l__siunitx_number_lower_threshold_int=\count429
+\l__siunitx_number_upper_threshold_int=\count430
+\l__siunitx_number_group_first_int=\count431
+\l__siunitx_number_group_size_int=\count432
+\l__siunitx_number_group_minimum_int=\count433
+\l__siunitx_angle_tmp_dim=\dimen372
+\l__siunitx_angle_marker_box=\box135
+\l__siunitx_angle_unit_box=\box136
+\l__siunitx_compound_count_int=\count434
+ (d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+)
+\l__siunitx_table_tmp_box=\box137
+\l__siunitx_table_tmp_dim=\dimen373
+\l__siunitx_table_column_width_dim=\dimen374
+\l__siunitx_table_integer_box=\box138
+\l__siunitx_table_decimal_box=\box139
+\l__siunitx_table_uncert_box=\box140
+\l__siunitx_table_before_box=\box141
+\l__siunitx_table_after_box=\box142
+\l__siunitx_table_before_dim=\dimen375
+\l__siunitx_table_carry_dim=\dimen376
+\l__siunitx_unit_tmp_int=\count435
+\l__siunitx_unit_position_int=\count436
+\l__siunitx_unit_total_int=\count437
+)
+\sepwidth=\skip89
+\colwidth=\skip90
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 66.
  (./poster.aux)
 \openout1 = `poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1048,7 +1100,7 @@ LaTeX Font Info:    ... okay on input line 64.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 64.
+Package hyperref Info: Link coloring OFF on input line 66.
 (./poster.out) (./poster.out)
 \@outlinefile=\write5
 \openout5 = `poster.out'.
@@ -1068,46 +1120,50 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.16).
 
-(./poster.nav)
-LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 64.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 64.
+(d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 66.
+ (./poster.nav)
+LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 66.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 66.
  (d:/Latex/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 64.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 66.
  (d:/Latex/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 64.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 66.
  (d:/Latex/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7.13995> on input line 64.
+(Font)              <7.13995> on input line 66.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <5.09999> on input line 64.
-LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 64.
+(Font)              <5.09999> on input line 66.
+LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 66.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <30.46> not available
-(Font)              size <24.88> substituted on input line 64.
+(Font)              size <24.88> substituted on input line 66.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.3219> not available
-(Font)              size <20.74> substituted on input line 64.
+(Font)              size <20.74> substituted on input line 66.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.23> not available
-(Font)              size <14.4> substituted on input line 64.
+(Font)              size <14.4> substituted on input line 66.
 
-LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 64.
+LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 66.
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.15> not available
-(Font)              size <20.74> substituted on input line 64.
+(Font)              size <20.74> substituted on input line 66.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <14.80492> not available
-(Font)              size <14.4> substituted on input line 64.
+(Font)              size <14.4> substituted on input line 66.
 
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
@@ -1118,20 +1174,20 @@ File: tntechgold.png Graphic file (type bmp)
 File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
 <960px-Siemens_Healthineers_logo.svg.png>
 
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 288.
+LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 349.
 
 
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 288.
+LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 349.
 
 File: INN_Topology.png Graphic file (type bmp)
 <INN_Topology.png>
 
-Overfull \hbox (37.92555pt too wide) in paragraph at lines 288--288
+Overfull \hbox (37.92555pt too wide) in paragraph at lines 349--349
  [] 
  []
 
 (./poster.bbl)
-Overfull \vbox (12.41519pt too high) detected at line 288
+Overfull \vbox (414.2859pt too high) detected at line 349
  []
 
 File: tntechgold.png Graphic file (type bmp)
@@ -1167,12 +1223,12 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39964 strings out of 468174
- 973893 string characters out of 5434073
- 1616429 words of memory out of 5000000
- 67868 multiletter control sequences out of 15000+600000
+ 43923 strings out of 468174
+ 1096501 string characters out of 5434073
+ 1722489 words of memory out of 5000000
+ 71810 multiletter control sequences out of 15000+600000
  679346 words of font info for 147 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,20n,123p,801b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on poster.xdv (1 page, 72828 bytes).
+Output written on poster.xdv (1 page, 80124 bytes).

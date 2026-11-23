@@ -1,23 +1,23 @@
 # Fdb version 4
-["bibtex poster"] 1795384726.37211 "poster.aux" "poster.bbl" "poster" 1795384754.55921 0
+["bibtex poster"] 1795461482.7254 "poster.aux" "poster.bbl" "poster" 1795461660.6281 0
   "./poster.bib" 1770927711 2017 e17b6f7aa6914b994a5ce3407f5b451c ""
   "d:/Latex/texlive/2025/texmf-dist/bibtex/bst/base/abbrv.bst" 1771706877 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "poster.aux" 1795384751 1601 d5bb3aafdb421b577c3307d15703f540 "xelatex"
+  "poster.aux" 1795461657 1601 d5bb3aafdb421b577c3307d15703f540 "xelatex"
   (generated)
   "poster.bbl"
   "poster.blg"
   (rewritten before read)
-["xdvipdfmx"] 1795384752.48234 "poster.xdv" "poster.pdf" "poster" 1795384754.57726 0
-  "poster.xdv" 1795384751 72828 fb627fb0224d14aa0fde719d17d5038c "xelatex"
+["xdvipdfmx"] 1795461658.68411 "poster.xdv" "poster.pdf" "poster" 1795461660.64833 0
+  "poster.xdv" 1795461657 80124 2217c3dd05c57c6fd427b626bf6ff41f "xelatex"
   (generated)
   "poster.pdf"
   (rewritten before read)
-["xelatex"] 1795384749.55487 "d:/GitHub/Capstone/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" "poster.xdv" "poster" 1795384754.55961 0
+["xelatex"] 1795461655.71458 "d:/GitHub/Capstone/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" "poster.xdv" "poster" 1795461660.62859 0
   "960px-Siemens_Healthineers_logo.svg.png" 1795384146 26871 e3263b292ad991a3dc745dea17784d60 ""
   "INN_Topology.png" 1770927711 720547 c854764d660a94ce0d3bf8d7ae0f0906 ""
   "beamercolorthemetntech.sty" 1770927711 1861 8c3db8c680ffa49da6931e87a5f894b5 ""
   "beamerthemecustom.sty" 1770927711 4555 26e11cdbe023c3126b194910565432e5 ""
-  "d:/GitHub/Capstone/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" 1795384748 10414 ef6790e6c2038c2457b82ae006e1aae5 ""
+  "d:/GitHub/Capstone/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" 1795461654 13812 d9932c87398e1b20cdbe523bd0b750e5 ""
   "d:/Latex/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1771735533 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/Latex/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1771787728 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "d:/Latex/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1771704077 1004 54797486969f23fa377b128694d548df ""
@@ -232,6 +232,7 @@
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1771736221 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1771736221 1224 978390e9c2234eab29404bc21b268d1e ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics-def/xetex.def" 1771736222 14788 68cddb076430acc268ef4203b6523355 ""
+  "d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics/color.sty" 1771736213 7245 a7e8457a46cda4920df85d975267efb4 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty" 1771736213 18363 69bb4f5538964bfea50d1e6d89cbe69f ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty" 1771736213 8118 43b99e52946c33a23f5f43b52d5cc5ec ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty" 1771736213 2671 d9941f4bf4750e9b0603c9a2ec54693b ""
@@ -275,11 +276,16 @@
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty" 1771770561 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1771770624 9684 a33a14b82ce60d6e77cb9be689d79ee6 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty" 1771770891 4282 5d27280ace1239baaa4a225df16125ff ""
+  "d:/Latex/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty" 1771771378 344221 f0c98c737eca26294f5039e8afde731f ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/svg/svg.sty" 1771784903 43468 671ae75b3a15019004495eff4c0911e8 ""
+  "d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/array.sty" 1771786100 15651 9d7c62df82cb29a555c00550babfe364 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/calc.sty" 1771786100 10374 2ffd4f27c7f90b8a300608069537743c ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/enumerate.sty" 1771786100 3468 f21ceb3448a22fec45299f924e7fc48b ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty" 1771786100 33142 efe8f4750fc02524935e7423b4bdef69 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty" 1771786100 4121 d611256e8b768e99aa5a680aad44990d ""
+  "d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty" 1771786100 7243 a2c17f18e2c9b702b84fad03d5f9c78b ""
+  "d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl" 1771786196 5588 0c1628daf15f4411ff1f463114c634a3 ""
+  "d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations.sty" 1771786196 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict" 1771786198 3535 7dc96051305a7e943219126c49c44cd6 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict" 1771786198 903 c6d17f0656e9e1abb172b4faebabd617 ""
   "d:/Latex/texlive/2025/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict" 1771786198 433 bfb8d1c2c020defd2de8e5c276710094 ""
@@ -297,11 +303,11 @@
   "d:/Latex/texlive/2025/texmf-dist/web2c/texmf.cnf" 1771703715 42213 4e2ca030e8e2640502016e9e45868dcb ""
   "d:/Latex/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1771787960 5948253 846c966020d0ba2e2c726da550d61387 ""
   "d:/Latex/texlive/2025/texmf.cnf" 1771787808 713 e69b156964470283e0530f5060668171 ""
-  "poster.aux" 1795384751 1601 d5bb3aafdb421b577c3307d15703f540 "xelatex"
-  "poster.bbl" 1795384726 1315 a12465b5f51e2dbc31539d439db667d1 "bibtex poster"
-  "poster.nav" 1795384751 307 9e520c26371a1250ff9fc1fe87f9c655 "xelatex"
-  "poster.out" 1795384751 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "poster.tex" 1795384748 10414 ef6790e6c2038c2457b82ae006e1aae5 ""
+  "poster.aux" 1795461657 1601 d5bb3aafdb421b577c3307d15703f540 "xelatex"
+  "poster.bbl" 1795461483 1315 a12465b5f51e2dbc31539d439db667d1 "bibtex poster"
+  "poster.nav" 1795461657 307 9e520c26371a1250ff9fc1fe87f9c655 "xelatex"
+  "poster.out" 1795461657 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "poster.tex" 1795461654 13812 d9932c87398e1b20cdbe523bd0b750e5 ""
   "tntechgold.png" 1770927711 87731 d93d12a2521501b973e5155110b7fba6 ""
   (generated)
   "poster.aux"

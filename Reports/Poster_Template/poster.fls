@@ -438,6 +438,15 @@ INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
 INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
 INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./poster.aux
 INPUT ./poster.aux
 INPUT poster.aux
@@ -467,6 +476,9 @@ INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translator/translator-numbers-d
 INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+INPUT d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 INPUT ./poster.nav
 INPUT ./poster.nav
 INPUT poster.nav
