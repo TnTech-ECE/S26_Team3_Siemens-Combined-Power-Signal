@@ -553,9 +553,6 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT ./INN_Topology.png
 INPUT ./INN_Topology.png
 INPUT ./INN_Topology.png
-INPUT ./poster.bbl
-INPUT ./poster.bbl
-INPUT poster.bbl
 INPUT ./tntechgold.png
 INPUT ./tntechgold.png
 INPUT ./tntechgold.png

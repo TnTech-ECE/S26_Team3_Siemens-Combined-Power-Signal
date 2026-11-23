@@ -1,23 +1,15 @@
 # Fdb version 4
-["bibtex poster"] 1795382132.50804 "poster.aux" "poster.bbl" "poster" 1795382467.37877 0
-  "./poster.bib" 1772740007 2017 e17b6f7aa6914b994a5ce3407f5b451c ""
-  "c:/texlive/2025/texmf-dist/bibtex/bst/base/abbrv.bst" 1769383070 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "poster.aux" 1795382464 1601 d5bb3aafdb421b577c3307d15703f540 "xelatex"
-  (generated)
-  "poster.bbl"
-  "poster.blg"
-  (rewritten before read)
-["xdvipdfmx"] 1795382465.53668 "poster.xdv" "poster.pdf" "poster" 1795382467.38956 0
-  "poster.xdv" 1795382464 72684 bd71587cd6efc34d282fc3d727dd5dff "xelatex"
+["xdvipdfmx"] 1795475337.63705 "poster.xdv" "poster.pdf" "poster" 1795475339.36319 0
+  "poster.xdv" 1795475337 71324 84ee3f217858f8caadc26e6a00d3005a "xelatex"
   (generated)
   "poster.pdf"
   (rewritten before read)
-["xelatex"] 1795382462.51824 "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" "poster.xdv" "poster" 1795382467.37912 0
+["xelatex"] 1795475335.85655 "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" "poster.xdv" "poster" 1795475339.35257 0
   "960px-Siemens_Healthineers_logo.svg.png" 1795208257 26871 e3263b292ad991a3dc745dea17784d60 ""
   "INN_Topology.png" 1772740007 720547 c854764d660a94ce0d3bf8d7ae0f0906 ""
   "beamercolorthemetntech.sty" 1772740007 1861 8c3db8c680ffa49da6931e87a5f894b5 ""
   "beamerthemecustom.sty" 1772740007 4555 26e11cdbe023c3126b194910565432e5 ""
-  "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" 1795382461 10414 677b54f02baf8133a8ed9cdfc6635a8c ""
+  "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" 1795475335 11194 5e4782eefcef813cb0acaf04f0a49811 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769385182 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769400195 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1769382550 1004 54797486969f23fa377b128694d548df ""
@@ -297,11 +289,10 @@
   "c:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1769382399 42213 4e2ca030e8e2640502016e9e45868dcb ""
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769400468 5948040 2cec3b0d24a5c5bfe39f9eb2c570f04e ""
   "c:/texlive/2025/texmf.cnf" 1769400230 713 e69b156964470283e0530f5060668171 ""
-  "poster.aux" 1795382464 1601 d5bb3aafdb421b577c3307d15703f540 "xelatex"
-  "poster.bbl" 1795382133 1315 a12465b5f51e2dbc31539d439db667d1 "bibtex poster"
-  "poster.nav" 1795382464 307 9e520c26371a1250ff9fc1fe87f9c655 "xelatex"
-  "poster.out" 1795382464 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "poster.tex" 1795382461 10414 677b54f02baf8133a8ed9cdfc6635a8c ""
+  "poster.aux" 1795475337 1137 d998183eef18ab08dd4fa2de9ec46201 "xelatex"
+  "poster.nav" 1795475337 307 9e520c26371a1250ff9fc1fe87f9c655 "xelatex"
+  "poster.out" 1795475337 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "poster.tex" 1795475335 11194 5e4782eefcef813cb0acaf04f0a49811 ""
   "tntechgold.png" 1772740008 87731 d93d12a2521501b973e5155110b7fba6 ""
   (generated)
   "poster.aux"
