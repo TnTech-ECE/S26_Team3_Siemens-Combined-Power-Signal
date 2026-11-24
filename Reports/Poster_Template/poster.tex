@@ -85,24 +85,16 @@
   \begin{block}{Design}
     The design is split up into five subsystems: the Bias Tee, IC Power, Clock and Jitter Measurements, Cable, and Communications. The subsystems combined on a custom PCB. There are three main components to this project: 1.) Bias Tee circuit for coupling/decoupling AC signal with DC power including simulations and component selection; 2.) Use of jitter cleaning PLL to measure high-fidelity jitter measurements; 3.) Back-Channel communications path for debugging/troubleshooting system synchronization messages.
 
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Transmitter (Tx)}\par
-    Details about the Tx side... 
 
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Receiver (Rx)}\par
-    Details about the Rx side...
+    \sectionHeading{Bias Tee}
 
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Clock and Jitter}\par
-
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Cable}\par
-  
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Communications}\par
-      git
   \end{block}
+
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
 
   \begin{block}{Block Diagram}
 
@@ -112,12 +104,6 @@
     % \captionof{figure}{Block diagram of the Tx/Rx system}
 
   \end{block}
-
-\end{column}
-
-\separatorcolumn
-
-\begin{column}{\colwidth}
 
   \begin{block}{Bill of Materials}
     \centering
@@ -133,7 +119,7 @@
         \textbf{Item} & \textbf{Part No.} & \textbf{Description} & \textbf{Supplier} & {\textbf{Total (\$)}} \\
         \midrule
         1 & PCB Components    & Passives, Connectors, and ICs for PCB               & Digikey, Mouser       & 283.82  \\
-        2 & Cables            & 2, 4, 6, 8, and 10 meter, 50 $\Omega$ coaxial cable                              & Belden                & 0.00    \\
+        2 & Cables            & 2, 4, 6, 8, and 10 meter, RG8 coaxial cable                              & Belden                & 0.00    \\
         3 & Tx PCB            & PCB for Transmission side of system                 & JLC PCB               & 26.00   \\
         4 & Rx PCB            & PCB for Receiving side of system                    & JLC PCB               & 37.00   \\
         5 & ST7580            & PLM Boards for communications subsystem             & DigiKey               & 44.07   \\
@@ -145,137 +131,10 @@
 
     The Bill of Materials are broken into four main sections, particularly the cost of components to assemble the PCB, the cables, the cost of ordering five of each board in the system, and the cost of the dev boards used in the communications subsystem.
 
-    \textbf{Gen 1 ANNs} are considered those limited to classification. They are incapable of performing regression because the output assumes only the \textbf{values one or zero}. The perceptron is such a model. This model characterizes \textbf{neurons as switches} as shown in Eq \ref{Formula:Gen1ANN}.
-
-
-    \begin{equation}
-      \label{Formula:Gen1ANN}
-      net = \begin{cases} 
-        0 & b + \sum w_{j}*I_{j} \geq 0 \\
-        1 & b + \sum w_{j}*I_{j} < 0
-        \end{cases}
-    \end{equation}
-
-    \begin{itemize}
-      \item $\boldsymbol w_{j}$ represents the relative amount of neurotransmitters released or, $\alpha$ in Eq \ref{Formula:Neuron1}
-      \item $\boldsymbol I_{j}$ is the firing rate present at the $j^{th}$ synapse 
-      \item $\boldsymbol b$ is the bias associated with this neuron or, $r_{pol}$ in Eq \ref{Formula:Neuron1}
-    \end{itemize}
-
-    \textbf{Gen 2 ANNs} are where the bulk of research in computer science has been focused. The ability to output a \textbf{continuous value from zero to one} provided the ability to \textbf{learn non-linear regressive approximations} thanks to \textbf{continuously differentiable activation functions}. The typical equation for a Gen 2 ANN is presented in Eq \ref{Formula:Gen2ANN}. The step function has been replaced by the \textbf{sigmoid function} represented by $\boldsymbol \sigma$. 
-
-    \begin{equation}
-      \label{Formula:Gen2ANN}
-      net = \sigma \left( b + \sum w_{j}*I_{j} \right)
-    \end{equation}
-
-    % \begin{columns}[t]
-    %   \begin{column}{0.4\colwidth}
-
-    %     \begin{table}[ht]
-    %       % increase table row spacing, adjust to taste
-    %       \caption{Gen 1 ANN Model Assumptions}
-    %       \label{Table:Gen1ANNAssumptions}
-    %       \centering
-    %       % Some packages, such as MDW tools, offer better commands for making tables
-    %       % than the plain LaTeX2e tabular which is used here.
-    %       \resizebox{\columnwidth}{!}{%
-    %       \begin{tabular}{ c l }
-    %         \toprule
-    %         \textbf{Number} & \textbf{Assumption}\\
-    %         \midrule
-    %         1 & Firing Frequency Encoding\\
-
-    %         2 & Steady State\\
-
-    %         3 & Unity Static Firing Rate\\
-
-    %         4 & Learned Inhibition\\
-
-    %         5 & Unconditional Weighting\\
-    %        \bottomrule
-    %       \end{tabular}}
-    %     \end{table}
-    %   \end{column}
-
-    %   \begin{column}{0.4\colwidth}
-    %     \begin{table}[ht]
-    %       % increase table row spacing, adjust to taste
-    %       \caption{Gen 2 ANN Model Assumptions}
-    %       \label{Table:Gen2ANNAssumptions}
-    %       \centering
-    %       % Some packages, such as MDW tools, offer better commands for making tables
-    %       % than the plain LaTeX2e tabular which is used here.
-    %       \resizebox{\columnwidth}{!}{%
-    %       \begin{tabular}{ c l }
-    %         \toprule
-    %         \textbf{Number} & \textbf{Assumption}\\
-    %         \midrule
-    %         1 & Firing Frequency Encoding\\
-
-    %         2 & Steady State\\
-
-    %         3 & Learned Inhibition\\
-
-    %         4 & Unconditional Weighting\\
-    %         & \\
-    %         \bottomrule
-    %       \end{tabular}}
-    %     \end{table}
-    %   \end{column}
-
-    % \end{columns}
-
   \end{block}
 
 \vskip-1em
   \begin{alertblock}{Experimentation}
-
-    \textbf{Contribution}
-
-    \begin{itemize}
-      \item \textbf{Extended} the Gen 2 ANN model to include interneurons
-      \item \textbf{Facilitated} selectively gating the input along any edge to edge connection between neurons 
-      \item \textbf{Derived} the backpropagation equations necessary for an arbitrary INN
-      \item \textbf{Outperformed} the base ANN when applied to the MNIST dataset 
-    \end{itemize}
-
-    \sectionHeading{INN Model Requirements}
-
-    Given a set $\boldsymbol I$ of inputs to neuron $\boldsymbol n$ it is required that any $\boldsymbol I^{\prime} \in I$ be modifiable such that the set $\boldsymbol I^{\prime} \boldsymbol \Delta \boldsymbol I$ is left unchanged. This lends itself to the addition of some weight $\boldsymbol \beta$ to the ANN equation. $\boldsymbol \beta$ must be variable depending on the inputs presented to the ANN.
-
-    \sectionHeading{INN Model}
-
-    \begin{columns}[t] 
-
-    \centering
-    \begin{column}{0.45\columnwidth}
-    \begin{figure}
-      \centering
-      \includegraphics[height=11.0cm]{INN_Topology.png}
-      \caption{Neuron Diagram}
-    \end{figure}
-    \end{column}
-
-    \begin{column}{0.45\columnwidth}
-
-    \vskip3.5ex
-    \begin{equation}
-      \label{Formula:ANNwInter}
-      net = \sigma \left( b + \sum w_{j}*\beta_{j}*I_{j} \right)
-    \end{equation}
-
-    \begin{equation}
-      \label{Formula:INN}
-      \beta_{j} = \sigma \left( b^{\prime} + \sum w^{\prime}_{j}*I^{\prime}_{j} \right)
-    \end{equation}
-    \end{column}
-
-    \end{columns}
-
-
-    \vskip0.5ex
-    \footnotesize{*It should be understood that the point of this paper is not to build a better performing ANN. It is the beginning of investigation towards a new more biologically plausible model.}
 
   \end{alertblock}
 
@@ -288,41 +147,9 @@
 
   \begin{block}{Results}
 
-    \sectionHeading{Experimental Setup}
-
-    \begin{itemize} 
-      \item \textbf{MNIST} is a well known problem in machine learning
-      \item MNIST Consists of 60000 training images of handwritten digits and 10000 test images
-      \item The experiment proves the model \textbf{learns and converges} to a solution in a multi-output, large input environment
-      \item The INN model was implemented in \textbf{Tensorflow}
-      \item Interneurons were only applied to the hidden layer
-      \item All other values for the interneuron ANN were the same as the principal cell ANN
-      \item The principal cell ANN and interneuron ANN were optimized simultaneously using backpropogation
-    \end{itemize}
-
-    \sectionHeading{Experimental Results}
-
-    \begin{itemize} 
-      \item The INN \textbf{outperformed} the ANN
-      \item The performance of the ANN as applied to the test set was $96.9$
-      \item The performance of the \textbf{INN} was $97.2$
-      \item The model has been shown to \textbf{converge and perform} better than the naive case
-      \item The INN did not outperform the ANN \textbf{more} most likely due to the problem domain
-      \item The power fo the INN is believed to be the abilit to \textbf{dynamically contextualize}
-    \end{itemize}
-
-
   \end{block}
 
   \begin{block}{Future Improvements}
-
-    \sectionHeading{Neuroscience}
-
-    Neuroscience has not been able to make a definitive assertion about \textbf{interneuron input feature selection}, we intend to provide an \textbf{answer using this model}. We have chosen a Gen 2 framework because more is computationally known in this domain. The hope is that through the isolation of variables an answer will be approximated.
-
-    \sectionHeading{Multi-Task and Transfer Learning}
-
-    The literature review was rich with similar work in \textbf{multi-task learning}. It is hoped that by training the principal ANN weights with unity interneuron ANN weights, the special case of INN backpropagation, the principal cell ANN will converge to task 1 and allow the interneuron ANN to \textbf{learn task differentiation}. A similar idea can be applied to experiment with \textbf{transfer learning}.
 
   \end{block}
 
