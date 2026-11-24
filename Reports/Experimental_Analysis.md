@@ -319,7 +319,7 @@ The purpose of this experiment is to verify the cables ability to handle $50\ V$
 
 | Measurement | Units | Measurement method |
 |---|---|---|
-| Temperature | $^\circ C$ | Temperature Guns |
+| Temperature | $^\circ C$ | Temperature Gun |
 | Time | s | Stopwatch |
 | DC Current | A | Multimeter |
 | Load Resistance | $\Omega$ | Multimeter |
