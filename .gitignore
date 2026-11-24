@@ -1,0 +1,6 @@
+*.log
+*.ftb_latexmk
+*.fls
+poster.pdf
+*.synctex.gz
+*.xdv
