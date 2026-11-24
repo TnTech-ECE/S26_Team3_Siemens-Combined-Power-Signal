@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  23 NOV 2026 13:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  23 NOV 2026 18:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1176,20 +1176,20 @@ File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
 File: images/Figures/Hardware Block Diagram.png Graphic file (type bmp)
 <images/Figures/Hardware Block Diagram.png>
 
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 354.
+LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 322.
 
 
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 354.
+LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 322.
 
 File: INN_Topology.png Graphic file (type bmp)
 <INN_Topology.png>
 
-Overfull \hbox (37.92555pt too wide) in paragraph at lines 354--354
+Overfull \hbox (37.92555pt too wide) in paragraph at lines 322--322
  [] 
  []
 
 (./poster.bbl)
-Overfull \vbox (414.2859pt too high) detected at line 354
+Overfull \vbox (414.2859pt too high) detected at line 322
  []
 
 File: tntechgold.png Graphic file (type bmp)
@@ -1227,7 +1227,7 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 Here is how much of TeX's memory you used:
  43933 strings out of 468174
  1096918 string characters out of 5434073
- 1724064 words of memory out of 5000000
+ 1724050 words of memory out of 5000000
  71818 multiletter control sequences out of 15000+600000
  679346 words of font info for 147 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
