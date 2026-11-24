@@ -1041,30 +1041,30 @@ Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages 
 )
 \sepwidth=\skip89
 \colwidth=\skip90
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 66.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 71.
  (./poster.aux)
 \openout1 = `poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1100,7 +1100,7 @@ LaTeX Font Info:    ... okay on input line 66.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 66.
+Package hyperref Info: Link coloring OFF on input line 71.
 (./poster.out) (./poster.out)
 \@outlinefile=\write5
 \openout5 = `poster.out'.
@@ -1123,79 +1123,85 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 (d:/Latex/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 66.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 71.
  (./poster.nav)
-LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 66.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 66.
+LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 71.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 71.
  (d:/Latex/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 66.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 71.
  (d:/Latex/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 66.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 71.
  (d:/Latex/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7.13995> on input line 66.
+(Font)              <7.13995> on input line 71.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <5.09999> on input line 66.
-LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 66.
+(Font)              <5.09999> on input line 71.
+LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 71.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <30.46> not available
-(Font)              size <24.88> substituted on input line 66.
+(Font)              size <24.88> substituted on input line 71.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.3219> not available
-(Font)              size <20.74> substituted on input line 66.
+(Font)              size <20.74> substituted on input line 71.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.23> not available
-(Font)              size <14.4> substituted on input line 66.
+(Font)              size <14.4> substituted on input line 71.
 
-LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 66.
+LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 71.
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.15> not available
-(Font)              size <20.74> substituted on input line 66.
+(Font)              size <20.74> substituted on input line 71.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <14.80492> not available
-(Font)              size <14.4> substituted on input line 66.
+(Font)              size <14.4> substituted on input line 71.
 
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
 File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
 <960px-Siemens_Healthineers_logo.svg.png>
+File: Images/Capstone_Github_QR.png Graphic file (type bmp)
+<Images/Capstone_Github_QR.png>
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
 File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
 <960px-Siemens_Healthineers_logo.svg.png>
+File: Images/Capstone_Github_QR.png Graphic file (type bmp)
+<Images/Capstone_Github_QR.png>
 File: images/Figures/Hardware Block Diagram.png Graphic file (type bmp)
 <images/Figures/Hardware Block Diagram.png>
 
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 328.
+LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 333.
 
 
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 328.
+LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 333.
 
 File: INN_Topology.png Graphic file (type bmp)
 <INN_Topology.png>
 
-Overfull \hbox (37.92555pt too wide) in paragraph at lines 328--328
+Overfull \hbox (37.92555pt too wide) in paragraph at lines 333--333
  [] 
  []
 
 
-Overfull \vbox (414.2859pt too high) detected at line 328
+Overfull \vbox (414.2859pt too high) detected at line 333
  []
 
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
 File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
 <960px-Siemens_Healthineers_logo.svg.png>
+File: Images/Capstone_Github_QR.png Graphic file (type bmp)
+<Images/Capstone_Github_QR.png>
 [1
 
 ]
@@ -1225,12 +1231,12 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 43870 strings out of 468174
- 1094833 string characters out of 5434073
- 1741311 words of memory out of 5000000
- 71760 multiletter control sequences out of 15000+600000
+ 43886 strings out of 468174
+ 1095291 string characters out of 5434073
+ 1742210 words of memory out of 5000000
+ 71774 multiletter control sequences out of 15000+600000
  679330 words of font info for 145 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,20n,123p,1019b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on poster.xdv (1 page, 87840 bytes).
+Output written on poster.xdv (1 page, 88496 bytes).

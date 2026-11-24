@@ -547,12 +547,18 @@ INPUT ./tntechgold.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
+INPUT ./Images/Capstone_Github_QR.png
+INPUT ./Images/Capstone_Github_QR.png
+INPUT ./Images/Capstone_Github_QR.png
 INPUT ./tntechgold.png
 INPUT ./tntechgold.png
 INPUT ./tntechgold.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
+INPUT ./Images/Capstone_Github_QR.png
+INPUT ./Images/Capstone_Github_QR.png
+INPUT ./Images/Capstone_Github_QR.png
 INPUT ./Images/Figures/Hardware Block Diagram.png
 INPUT ./Images/Figures/Hardware Block Diagram.png
 INPUT ./Images/Figures/Hardware Block Diagram.png
@@ -574,6 +580,9 @@ INPUT ./tntechgold.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
 INPUT ./960px-Siemens_Healthineers_logo.svg.png
+INPUT ./Images/Capstone_Github_QR.png
+INPUT ./Images/Capstone_Github_QR.png
+INPUT ./Images/Capstone_Github_QR.png
 OUTPUT poster.xdv
 OUTPUT poster.nav
 OUTPUT poster.toc
