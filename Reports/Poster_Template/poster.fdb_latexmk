@@ -1,16 +1,17 @@
 # Fdb version 4
-["xdvipdfmx"] 1795491083.59321 "poster.xdv" "poster.pdf" "poster" 1795491086.40689 0
-  "poster.xdv" 1795491083 86900 25e7fe4bbc75c294aed3b4a39347caa5 "xelatex"
+["xdvipdfmx"] 1795492271.94658 "poster.xdv" "poster.pdf" "poster" 1795492274.73022 0
+  "poster.xdv" 1795492271 87556 da203118a9154f5813535f1cac800319 "xelatex"
   (generated)
   "poster.pdf"
   (rewritten before read)
-["xelatex"] 1795491081.65435 "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" "poster.xdv" "poster" 1795491086.39412 0
+["xelatex"] 1795492269.7397 "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" "poster.xdv" "poster" 1795492274.71942 0
   "960px-Siemens_Healthineers_logo.svg.png" 1795208257 26871 e3263b292ad991a3dc745dea17784d60 ""
   "INN_Topology.png" 1772740007 720547 c854764d660a94ce0d3bf8d7ae0f0906 ""
+  "Images/Capstone_Github_QR.png" 1795492055 1120 789c20ed6d33bcb0d8a89e2312a3847d ""
   "Images/Figures/Hardware Block Diagram.png" 1795490845 212138 57cbd89dfac8247b2376a95722ccfa28 ""
   "beamercolorthemetntech.sty" 1772740007 1861 8c3db8c680ffa49da6931e87a5f894b5 ""
   "beamerthemecustom.sty" 1772740007 4555 26e11cdbe023c3126b194910565432e5 ""
-  "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" 1795491078 14118 162f1737eaaca9a74694c097ce10883c ""
+  "c:/Users/harry/Documents/GitHub/S26_Team3_Siemens-Combined-Power-Signal/Reports/Poster_Template/poster.tex" 1795492269 14383 97dec8112951c2bd1fab2e08b237db3d ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769385182 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769400195 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1769382550 1004 54797486969f23fa377b128694d548df ""
@@ -297,10 +298,10 @@
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769400468 5948040 2cec3b0d24a5c5bfe39f9eb2c570f04e ""
   "c:/texlive/2025/texmf.cnf" 1769400230 713 e69b156964470283e0530f5060668171 ""
   "images/Figures/Hardware Block Diagram.png" 1795490845 212138 57cbd89dfac8247b2376a95722ccfa28 ""
-  "poster.aux" 1795491083 1137 d998183eef18ab08dd4fa2de9ec46201 "xelatex"
-  "poster.nav" 1795491083 307 9e520c26371a1250ff9fc1fe87f9c655 "xelatex"
-  "poster.out" 1795491083 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "poster.tex" 1795491078 14118 162f1737eaaca9a74694c097ce10883c ""
+  "poster.aux" 1795492271 1176 8895272ec61cddb56e8adfcf8b7afb0c "xelatex"
+  "poster.nav" 1795492271 307 9e520c26371a1250ff9fc1fe87f9c655 "xelatex"
+  "poster.out" 1795492271 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "poster.tex" 1795492269 14383 97dec8112951c2bd1fab2e08b237db3d ""
   "tntechgold.png" 1772740008 87731 d93d12a2521501b973e5155110b7fba6 ""
   (generated)
   "poster.aux"
