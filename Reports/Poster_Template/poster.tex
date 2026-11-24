@@ -20,6 +20,8 @@
 \usepackage{svg}
 \usepackage{multicol}
 \usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{siunitx}
 
 % ====================
 % Lengths
@@ -71,15 +73,29 @@
 
   \begin{block}{Abstract}
 
-    This project aims to design a bais tee in such a way that a $2.5\ MHz$ clock, $200\ kHz$ communication signal, and $100\ W$ at $48\ V$ DC can be transmitted up to $10 m$ using a single coaxial cable.
+    This project aims to design a bias tee in such a way that a $2.5\ MHz$ clock signal, $200\ kHz$ communication signal, and $100\ W$ at $48\ V$ DC can be transmitted up to $10 m$ using a single coaxial cable from a transmitting board (Tx) to a receiving board (Rx). A function generator is used to generate a $2.5\ MHz$ sine wave that acts as the clock. The system utilizes the bias tee and other various filtering techniques to allow transmission of the desired signals. Additionally, after the signals are received on the Rx board, they are amplified using an op-amp, fed into a comparator that converts the sine wave signal to a square wave that a Phase Locked Loop (PLL) IC, the Si5345, can use as a reference to generate a 25 MHz clock signal as well as a 2.5 MHz clock signal to compare the signal generation to the output clock. 
 
   \end{block}
 
   \begin{block}{Design}
+    The design is split up into five subsystems: the Bias Tee, IC Power, Clock and Jitter Measurements, Cable, and Communications. The subsystems combined on a custom PCB. There are three main components to this project: 1.) Bias Tee circuit for coupling/decoupling AC signal with DC power including simulations and component selection; 2.) Use of jitter cleaning PLL to measure high-fidelity jitter measurements; 3.) Back-Channel communications path for debugging/troubleshooting system synchronization messages.
 
+    \vspace{0.3em}
+    {\large\bfseries\color{structure} Transmitter (Tx)}\par
+    Details about the Tx side... 
+
+    \vspace{0.3em}
+    {\large\bfseries\color{structure} Receiver (Rx)}\par
+    Details about the Rx side...
+  
   \end{block}
 
   \begin{block}{Block Diagram}
+
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/Figures/Hardware Block Diagram.png}
+    % optional caption:
+    % \captionof{figure}{Block diagram of the Tx/Rx system}
 
   \end{block}
 
@@ -90,6 +106,33 @@
 \begin{column}{\colwidth}
 
   \begin{block}{BOM}
+    \begin{block}{Bill of Materials}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\linewidth}{
+        c                          % Item
+        l                          % Part No.
+        X                          % Description (wraps)
+        l                          % Supplier
+        S[table-format=4.2]        % Total cost
+        }
+        \toprule
+        \textbf{Item} & \textbf{Part No.} & \textbf{Description} & \textbf{Supplier} & {\textbf{Total (\$)}} \\
+        \midrule
+        1 & PCB Components  & Passives, Connectors, and ICs for PCB               & Digikey, Mouser       & 283.82  \\
+        2 & Cables          & [ADD CABLE INFO HERE]                               & Belden [I think?]     & 0.00    \\
+        3 & Tx PCB          & PCB for Transmission side of system                 & JLC PCB               & 26.00   \\
+        4 & Rx PCB          & PCB for Receiving side of system                    & JLC PCB               & 37.00   \\
+        5 & ST7580          & PLM Boards for communications subsystem             & [unsure]              & 0.00    \\
+        % 6 & PJ-002A         & DC barrel jack, 2.1 mm, panel mount                 & CUI                   & 1.10    \\  % Duplicate this row to add more items if needed
+        \midrule
+        \multicolumn{4}{r}{\textbf{Grand Total}} & \bfseries 461.95 \\
+        \bottomrule
+    \end{tabularx}
+
+    The Bill of Materials are broken into four main sections, particularly the cost of components to assemble the PCB, the cables, the cost of ordering five of each board in the system, and the cost of the dev boards used in the communications subsystem.
+    
+  \end{block}
 
     \textbf{Gen 1 ANNs} are considered those limited to classification. They are incapable of performing regression because the output assumes only the \textbf{values one or zero}. The perceptron is such a model. This model characterizes \textbf{neurons as switches} as shown in Eq \ref{Formula:Gen1ANN}.
 
@@ -272,11 +315,14 @@
 
   \end{block}
 
-  \begin{alertblock}{Acknowledgements}
+  \begin{block}{Acknowledgements}
 
-    Our team would like to thank our capstone professor, Dr. Christopher Storm Johnson, for facilitating this project. The team would also like to thank our advisor, Dr. Charles Van Neste, and our consultant Dr. Jeffery Austen for counciling the team through this project and helping make it possible. Finally, the team would like to thank Josh Kolb from Siemens Healthineers for providing us this project as well as working with the team to ensure that the final product met specifications.
+    \begin{multicols}{2}
+      \nocite{*}
+      \scriptsize{\bibliographystyle{abbrv}\bibliography{poster}}
+    \end{multicols}
 
-  \end{alertblock}
+  \end{block}
 
 \end{column}
 
