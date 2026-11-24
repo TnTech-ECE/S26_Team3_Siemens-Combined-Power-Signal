@@ -446,6 +446,15 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/caption-beamer.sto
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/caption-beamer.sto
+INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/caption-beamer.sto
 INPUT c:/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./poster.aux
 INPUT ./poster.aux
@@ -559,12 +568,33 @@ INPUT ./960px-Siemens_Healthineers_logo.svg.png
 INPUT ./Images/Capstone_Github_QR.png
 INPUT ./Images/Capstone_Github_QR.png
 INPUT ./Images/Capstone_Github_QR.png
+INPUT ./Images/Figures/Tx_Board_Figure.png
+INPUT ./Images/Figures/Tx_Board_Figure.png
+INPUT ./Images/Figures/Tx_Board_Figure.png
+INPUT ./Images/Figures/Rx_Board_Figure.png
+INPUT ./Images/Figures/Rx_Board_Figure.png
+INPUT ./Images/Figures/Rx_Board_Figure.png
 INPUT ./Images/Figures/Group_Photo.jpg
 INPUT ./Images/Figures/Group_Photo.jpg
 INPUT ./Images/Figures/Group_Photo.jpg
-INPUT ./Images/Figures/Hardware Block Diagram.png
-INPUT ./Images/Figures/Hardware Block Diagram.png
-INPUT ./Images/Figures/Hardware Block Diagram.png
+INPUT ./Images/Figures/Block Diagram.png
+INPUT ./Images/Figures/Block Diagram.png
+INPUT ./Images/Figures/Block Diagram.png
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi7.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy7.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT ./tntechgold.png
 INPUT ./tntechgold.png
 INPUT ./tntechgold.png

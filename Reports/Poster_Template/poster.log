@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  23 NOV 2026 23:23
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  24 NOV 2026 00:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1038,33 +1038,64 @@ Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages 
 \l__siunitx_unit_tmp_int=\count435
 \l__siunitx_unit_position_int=\count436
 \l__siunitx_unit_total_int=\count437
+) (c:/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (c:/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (c:/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen377
+\captionmargin=\dimen378
+\caption@leftmargin=\dimen379
+\caption@rightmargin=\dimen380
+\caption@width=\dimen381
+\caption@indent=\dimen382
+\caption@parindent=\dimen383
+\caption@hangindent=\dimen384
+Package caption Info: beamer document class detected.
+ (c:/texlive/2025/texmf-dist/tex/latex/caption/caption-beamer.sto
+File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to the beamer document classes (AR)
+))
+\c@caption@flags=\count438
+\c@continuedfloat=\count439
+Package caption Info: changepage package is loaded.
+\caption@adjustwidth@hsize=\dimen385
+\caption@adjustwidth@linewidth=\dimen386
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count440
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count441
 )
 \sepwidth=\skip89
 \colwidth=\skip90
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 71.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 73.
  (./poster.aux)
 \openout1 = `poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1100,7 +1131,7 @@ LaTeX Font Info:    ... okay on input line 71.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 71.
+Package hyperref Info: Link coloring OFF on input line 73.
 (./poster.out) (./poster.out)
 \@outlinefile=\write5
 \openout5 = `poster.out'.
@@ -1123,47 +1154,49 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 (c:/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 71.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 73.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
  (./poster.nav)
-LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 71.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 71.
+LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 73.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 73.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 71.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 73.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 71.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 73.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7.13995> on input line 71.
+(Font)              <7.13995> on input line 73.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <5.09999> on input line 71.
-LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 71.
+(Font)              <5.09999> on input line 73.
+LaTeX Font Info:    Calculating math sizes for size <30.46> on input line 73.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <30.46> not available
-(Font)              size <24.88> substituted on input line 71.
+(Font)              size <24.88> substituted on input line 73.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.3219> not available
-(Font)              size <20.74> substituted on input line 71.
+(Font)              size <20.74> substituted on input line 73.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.23> not available
-(Font)              size <14.4> substituted on input line 71.
+(Font)              size <14.4> substituted on input line 73.
 
-LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 71.
+LaTeX Font Info:    Calculating math sizes for size <21.15> on input line 73.
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <21.15> not available
-(Font)              size <20.74> substituted on input line 71.
+(Font)              size <20.74> substituted on input line 73.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <14.80492> not available
-(Font)              size <14.4> substituted on input line 71.
+(Font)              size <14.4> substituted on input line 73.
 
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
@@ -1177,10 +1210,37 @@ File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
 <960px-Siemens_Healthineers_logo.svg.png>
 File: Images/Capstone_Github_QR.png Graphic file (type bmp)
 <Images/Capstone_Github_QR.png>
+File: Images/Figures/Tx_Board_Figure.png Graphic file (type bmp)
+<Images/Figures/Tx_Board_Figure.png>
+
+Package caption Warning: Cannot determine current font size.
+(caption)                Try setting it with `size=' explicitly on input line 184.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Cannot determine current font size.
+(caption)                Try setting it with `size=' explicitly on input line 184.
+See the caption package documentation for explanation.
+
+File: Images/Figures/Rx_Board_Figure.png Graphic file (type bmp)
+<Images/Figures/Rx_Board_Figure.png>
+
+Package caption Warning: Cannot determine current font size.
+(caption)                Try setting it with `size=' explicitly on input line 184.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Cannot determine current font size.
+(caption)                Try setting it with `size=' explicitly on input line 184.
+See the caption package documentation for explanation.
+
 File: images/Figures/Group_Photo.jpg Graphic file (type bmp)
 <images/Figures/Group_Photo.jpg>
-File: images/Figures/Hardware Block Diagram.png Graphic file (type bmp)
-<images/Figures/Hardware Block Diagram.png>
+File: images/Figures/Block Diagram.png Graphic file (type bmp)
+<images/Figures/Block Diagram.png>
+LaTeX Font Info:    Calculating math sizes for size <14.69> on input line 184.
+LaTeX Font Info:    External font `cmex7' loaded for size
+(Font)              <7.345> on input line 184.
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
 File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
@@ -1213,12 +1273,12 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 43799 strings out of 468174
- 1089825 string characters out of 5436827
- 1693629 words of memory out of 5000000
- 71692 multiletter control sequences out of 15000+600000
- 668499 words of font info for 134 fonts, out of 8000000 for 9000
+ 45328 strings out of 468174
+ 1119981 string characters out of 5436827
+ 1699234 words of memory out of 5000000
+ 73203 multiletter control sequences out of 15000+600000
+ 680564 words of font info for 151 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,20n,123p,1047b,963s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,20n,131p,2222b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on poster.xdv (1 page, 66844 bytes).
+Output written on poster.xdv (1 page, 61952 bytes).

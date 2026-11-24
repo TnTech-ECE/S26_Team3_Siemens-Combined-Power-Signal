@@ -22,6 +22,8 @@
 \usepackage{mathtools}
 \usepackage{tabularx}
 \usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{caption}
 
 % ====================
 % Lengths
@@ -83,33 +85,31 @@
   \end{block}
 
   \begin{block}{Design}
-    The design is split up into five subsystems: the Bias Tee, IC Power, Clock and Jitter Measurements, Cable, and Communications. The subsystems combined on a custom PCB. There are three main components to this project: 1.) Bias Tee circuit for coupling/decoupling AC signal with DC power including simulations and component selection; 2.) Use of jitter cleaning PLL to measure high-fidelity jitter measurements; 3.) Back-Channel communications path for debugging/troubleshooting system synchronization messages.
+    There are three main components to this project: 1.) Bias Tee circuit for coupling/decoupling AC signal with DC power including simulations and component selection; 2.) Use of jitter cleaning PLL to measure high-fidelity jitter measurements; 3.) Back-Channel communications path for debugging/troubleshooting system synchronization messages. The design is further split up into five subsystems: the Bias Tee, IC Power, Clock and Jitter Measurements, Cable, and Communications. \textbf{The Bias Tee} subsystem is responsible for the combination and separation of the power, clock, and communications signals. Its design is made up of three steps of filtering mirrored on the receiving and transmitting sides. The \textbf{IC Power} Subsystem consists of one buck converter (LT80602) that steps down the $48\ V$ input voltage to $12\ V$, and two LDOs (MAX6793 and MAX6795) to step down the voltage from $12\ V$ to $5\ V$, $3.3\ V$, and $1.8\ V$. This provides the required voltage for the other ICs in the system. The \textbf{Clock Generation and Jitter Measurement} subsystem conditions the 2.5 MHz clock signal provided by the bias tee subsystem using an ADA4899-1 opamp and an ADCMP605 comparator into a differential clock suitable for the Skyworks Si5345B jitter attenuator. This IC, configured at startup by an STM32GO30K8T6 MCU, both cleans the reference signal for use outside of the system and generates a 25 MHz signal to enable jitter characterization. The \textbf{Cable} subsystem selected an RG8, $50\ \Omega$ coaxial cable because it ensures that the cable could reliably transmit a $2.5\ MHz$ clock signal and $100\ W$ DC power. It does this while minimizing losses in the clock due to reflections and safely handling the required current to transmit the DC power. The \textbf{Communications} subsystem is designed to provide effective debug communications through the high-power transmission line. This subsystem implemented the ST7580 Power Line Communications Modem to transmit 8-PSK modulated packets. This provides an effective and reliable platform for debug communication with the detectors.
 
-
-    \sectionHeading{Bias Tee}
-
-    The bias tee subsystem is responsible for the combination and separation of the power, clock, and communications signals. The design is made up of three steps of filtering reflected on the receiving and transmitting sides.
-
-    \sectionHeading{IC Power}
-
-    The IC Power Subsystem consists of one buck converter (LT80602) that steps down the 48 V input voltage to $12 V$, and two LDOs (MAX6793 and MAX6795) to step down the voltage from $12 V$ to $5 V$, $3.3 V$, and $1.8 V$. This provides the required voltage for the other ICs in the system.
-
-    \sectionHeading{Clock and Jitter}
-
-    The Clock Generation and Jitter Measurement Subsystem utilizes the Skyworks Si5345B jitter attenuator and clock synthesizer to generate a stable, low jitter 25 MHz clock signal for the ComCaP system. An incoming 2.5 MHz reference clock, transmitted over the 48 V power line through the bias-t coupling network, is first conditioned using an ADA4899-1 operational amplifier and an ADCMP605 comparator to produce a clean differential clock signal suitable for the Si5345B's reference input. The Si5345B then synthesizes and cleans the reference signal to provide a 25 MHz LVCMOS output, with a target cycle-to-cycle jitter below 1 ps along with the intended 2.5 MHz clock utilized by the customer's system. An STM32G030K8T6 microcontroller handles communication with the Si5345B, loading the required register configuration during system startup. The subsystem is designed to improve clock stability and enable jitter characterization. 
-    
-    \sectionHeading{Cable}
-
-    The cable subsystem selected an RG8, $50\ \Omega$ coaxial cable because it ensures that it could reliably transmit a $2.5\ MHz$ clock signal and $100\ W$ DC power. It does this while minimizing losses in the clock due to reflections and safely handling the required current to transmit the DC power.
-
-    \sectionHeading{Communications}
+    \begin{figure}[htbp]
+        \centering
+        % Left Subfigure
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/Figures/Tx_Board_Figure.png}
+            \caption*{Tx Board}
+            \label{fig:sub-first}
+        \end{subfigure}
+        \hfill % Adds horizontal stretching space between the figures
+        % Right Subfigure
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/Figures/Rx_Board_Figure.png}
+            \caption*{Rx Board}
+            \label{fig:sub-second}
+        \end{subfigure}
+        
+        \caption*{Altium renderings of the Tx and Rx boards}
+        \label{fig:main-figure}
+    \end{figure}
 
   \end{block}
-
-  \vskip-1em
-  \begin{alertblock}{Experimentation}
-
-  \end{alertblock}
 
 \end{column}
 
@@ -118,25 +118,20 @@
 \begin{column}{\colwidth}
 
   \begin{block}{}
-    \includegraphics[width=1.0\linewidth]{images/Figures/Group_Photo.jpg}
+    \centering
+    \includegraphics[width=0.95\linewidth]{images/Figures/Group_Photo.jpg}
   \end{block}
 
   \begin{block}{Block Diagram}
 
     \centering
-    \includegraphics[width=1.0\linewidth]{images/Figures/Hardware Block Diagram.png}
+    \includegraphics[width=0.95\linewidth]{images/Figures/Block Diagram.png}
     % optional caption:
     % \captionof{figure}{Block diagram of the Tx/Rx system}
 
   \end{block}
 
-\end{column}
-
-\separatorcolumn
-
-\begin{column}{\colwidth}
-
-    \begin{block}{Bill of Materials}
+  \begin{block}{Bill of Materials}
     \centering
     \renewcommand{\arraystretch}{1.2}
     \begin{tabularx}{\linewidth}{
@@ -144,26 +139,30 @@
         l                          % Part No.
         X                          % Description (wraps)
         l                          % Supplier
-        S[table-format=4.2]        % Total cost
+        r%[table-format=4.2]        % Total cost
         }
         \toprule
         \textbf{Item} & \textbf{Part No.} & \textbf{Description} & \textbf{Supplier} & {\textbf{Total (\$)}} \\
         \midrule
         1 & PCB Components    & Passives, Connectors, and ICs for PCB               & Digikey, Mouser       & 283.82  \\
-        2 & Cables            & 2, 4, 6, 8, and 10 meter, RG8 coaxial cable                              & Belden                & 0.00    \\
+        2 & Cables            & 2, 4, 6, 8, and 10 meter, RG8 coaxial cable                              & Belden                & Quoted    \\
         3 & Tx PCB            & PCB for Transmission side of system                 & JLC PCB               & 26.00   \\
         4 & Rx PCB            & PCB for Receiving side of system                    & JLC PCB               & 37.00   \\
         5 & ST7580            & PLM Boards for communications subsystem             & DigiKey               & 44.07   \\
         6 & X-Nucleo-PLM01A1  & ST7580 For Nucleo Expansion Board                   & DigiKey               & 32.40   \\
         \midrule
-        \multicolumn{4}{r}{\textbf{Grand Total}} & \bfseries 532.49 \\
+        \multicolumn{4}{r}{\textbf{Grand Total}} & \bfseries 532.49* \\
         \bottomrule
     \end{tabularx}
-
-    The Bill of Materials are broken into four main sections, particularly the cost of components to assemble the PCB, the cables, the cost of ordering five of each board in the system, and the cost of the dev boards used in the communications subsystem.
-
+    \vspace{0.3em}
+    {\footnotesize\raggedright $^{}$*Cables quoted for purchase by Siemens; final cost may vary.\par}
   \end{block}
 
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
   \begin{block}{Results}
 
   \end{block}
