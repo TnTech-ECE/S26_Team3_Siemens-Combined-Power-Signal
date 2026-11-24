@@ -78,7 +78,7 @@
 
   \begin{block}{Abstract}
 
-    This project aims to design a bias tee in such a way that a $2.5\ MHz$ clock signal, $200\ kHz$ communication signal, and $100\ W$ at $48\ V$ DC can be transmitted up to $10 m$ using a single coaxial cable from a transmitting board (Tx) to a receiving board (Rx). A function generator is used to generate a $2.5\ MHz$ sine wave that acts as the clock. The system utilizes the bias tee and other various filtering techniques to allow transmission of the desired signals. Additionally, after the signals are received on the Rx board, they are amplified using an op-amp, fed into a comparator that converts the sine wave signal to a square wave that a Phase Locked Loop (PLL) IC, the Si5345, can use as a reference to generate a 25 MHz clock signal as well as a 2.5 MHz clock signal to compare the signal generation to the output clock. Unfortunately, due to difficulty with assembly, we were unable to utilize the PLL IC.
+    This project aims to design a bias tee in such a way that a $2.5\ MHz$ clock signal, $200\ kHz$ communication signal, and $100\ W$ at $48\ V$ DC can be transmitted up to $10 m$ using a single coaxial cable from a transmitting board (Tx) to a receiving board (Rx). A function generator is used to generate a $2.5\ MHz$ sine wave that acts as the clock. The system utilizes the bias tee and other various filtering techniques to allow transmission of the desired signals. Additionally, after the signals are received on the Rx board, they are amplified using an op-amp, fed into a comparator that converts the sine wave signal to a square wave that a Phase Locked Loop (PLL) IC, the Si5345, can use as a reference to generate a 25 MHz clock signal as well as a 2.5 MHz clock signal to compare the signal generation to the output clock. Unfortunately, due to issues with assembly, we were unable to utilize the PLL IC.
 
   \end{block}
 
@@ -88,13 +88,38 @@
 
     \sectionHeading{Bias Tee}
 
+    The bias tee subsystem is responsible for the combination and separation of the power, clock, and communications signals. The design is made up of three steps of filtering reflected on the receiving and transmitting sides.
+
+    \sectionHeading{IC Power}
+
+    The IC Power Subsystem consists of one buck converter (LT80602) that steps down the 48 V input voltage to $12 V$, and two LDOs (MAX6793 and MAX6795) to step down the voltage from $12 V$ to $5 V$, $3.3 V$, and $1.8 V$. This provides the required voltage for the other ICs in the system.
+
+    \sectionHeading{Clock and Jitter}
+
+    The Clock Generation and Jitter Measurement Subsystem utilizes the Skyworks Si5345B jitter attenuator and clock synthesizer to generate a stable, low jitter 25 MHz clock signal for the ComCaP system. An incoming 2.5 MHz reference clock, transmitted over the 48 V power line through the bias-t coupling network, is first conditioned using an ADA4899-1 operational amplifier and an ADCMP605 comparator to produce a clean differential clock signal suitable for the Si5345B's reference input. The Si5345B then synthesizes and cleans the reference signal to provide a 25 MHz LVCMOS output, with a target cycle-to-cycle jitter below 1 ps along with the intended 2.5 MHz clock utilized by the customer's system. An STM32G030K8T6 microcontroller handles communication with the Si5345B, loading the required register configuration during system startup. The subsystem is designed to improve clock stability and enable jitter characterization. 
+    
+    \sectionHeading{Cable}
+
+    The cable subsystem selected an RG8, $50\ \Omega$ coaxial cable because it ensures that it could reliably transmit a $2.5\ MHz$ clock signal and $100\ W$ DC power. It does this while minimizing losses in the clock due to reflections and safely handling the required current to transmit the DC power.
+
+    \sectionHeading{Communications}
+
   \end{block}
+
+  \vskip-1em
+  \begin{alertblock}{Experimentation}
+
+  \end{alertblock}
 
 \end{column}
 
 \separatorcolumn
 
 \begin{column}{\colwidth}
+
+  \begin{block}{}
+    \includegraphics[width=1.0\linewidth]{images/Figures/Group_Photo.jpg}
+  \end{block}
 
   \begin{block}{Block Diagram}
 
@@ -105,7 +130,13 @@
 
   \end{block}
 
-  \begin{block}{Bill of Materials}
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+    \begin{block}{Bill of Materials}
     \centering
     \renewcommand{\arraystretch}{1.2}
     \begin{tabularx}{\linewidth}{
@@ -132,18 +163,6 @@
     The Bill of Materials are broken into four main sections, particularly the cost of components to assemble the PCB, the cables, the cost of ordering five of each board in the system, and the cost of the dev boards used in the communications subsystem.
 
   \end{block}
-
-\vskip-1em
-  \begin{alertblock}{Experimentation}
-
-  \end{alertblock}
-
-\end{column}
-
-\separatorcolumn
-
-\begin{column}{\colwidth}
-
 
   \begin{block}{Results}
 
