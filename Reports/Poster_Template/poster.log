@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  23 NOV 2026 22:29
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  23 NOV 2026 22:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1179,23 +1179,6 @@ File: Images/Capstone_Github_QR.png Graphic file (type bmp)
 <Images/Capstone_Github_QR.png>
 File: images/Figures/Hardware Block Diagram.png Graphic file (type bmp)
 <images/Figures/Hardware Block Diagram.png>
-
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 333.
-
-
-LaTeX Warning: Reference `Formula:Neuron1' on page 1 undefined on input line 333.
-
-File: INN_Topology.png Graphic file (type bmp)
-<INN_Topology.png>
-
-Overfull \hbox (37.92555pt too wide) in paragraph at lines 333--333
- [] 
- []
-
-
-Overfull \vbox (444.88579pt too high) detected at line 333
- []
-
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
 File: 960px-Siemens_Healthineers_logo.svg.png Graphic file (type bmp)
@@ -1224,19 +1207,16 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 5.58pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 43886 strings out of 468174
- 1095291 string characters out of 5434073
- 1744718 words of memory out of 5000000
- 71774 multiletter control sequences out of 15000+600000
- 679330 words of font info for 145 fonts, out of 8000000 for 9000
+ 43822 strings out of 468174
+ 1093832 string characters out of 5434073
+ 1708089 words of memory out of 5000000
+ 71717 multiletter control sequences out of 15000+600000
+ 668499 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,20n,123p,1019b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,20n,123p,1019b,963s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on poster.xdv (1 page, 89112 bytes).
+Output written on poster.xdv (1 page, 74080 bytes).
