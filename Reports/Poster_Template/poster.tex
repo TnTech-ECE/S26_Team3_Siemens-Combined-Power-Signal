@@ -165,9 +165,46 @@
 \begin{column}{\colwidth}
   \begin{block}{Results}
 
+    \sectionHeading{Ripple Voltage}
+
+    \begin{figure}[htbp]
+        \centering
+        % Left Subfigure
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/Figures/Load_at_100W_Rx_zoom_in_no_Freq.png}
+            \caption*{Total DC Ripple Voltage}
+            \label{fig:sub-first}
+        \end{subfigure}
+        \hfill % Adds horizontal stretching space between the figures
+        % Right Subfigure
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/Figures/Zoom_In_Ripple_38mV.png}
+            \caption*{$38\ mV$ Ripple Voltage}
+            \label{fig:sub-second}
+        \end{subfigure}
+        
+        \caption*{Ripple Voltage}
+        \label{fig:main-figure}
+    \end{figure}
+
+    The team was tasked with having a $30\ mV$ ripple voltage across the DC output. The actual results found that the ripple was $500\ mV$ at a $1.3 kHz$ frequency and $38\ mV$ at a $400\ kHz$ frequency. The $38\ mV$ ripple is due to the switching frequency of the buck converter and the DC power supply. The source of the $500\ mV$ ripple could not be determined.
+
+    \sectionHeading{Bitrate}
+    
   \end{block}
 
   \begin{block}{Future Improvements}
+    
+    \sectionHeading{Component Selection and Layout}
+    Instead of using an LDO to step down $12\ V$ to $5\ V$, utilize a buck converter to step it down to that voltage first and clean the signal to provide correct voltage. Then use an LDO to step down from $5\ V$ to $3.3\ V$ and $1.8\ V$. The specifications of this project did not require standards for EMI, so it was not designed with EMI emissions in mind. Improvements would include changing the layout of the board to accommodate standards.
+
+    \sectionHeading{Bias Tee}
+    During testing, we found that there was a large transient voltage across the input of the communications. While it did not directly affect our ability to send and recieve communications, a short $48\ V$ across the communication board can have an adverse impact. In order to fix this, a flyback diode could be added to disperse the DC voltage before it reaches the communications system.
+
+    \sectionHeading{Assembly}
+    There were issues with assembly, particularly with the op-amp. This has caused improper connections and overall failure of functionality of the Clock and Jitter Measurement subsystem past the op-amp. Due to this failure, it is not possible to measure the jitter from the PLL. If this board was to be assembled using a proper pick and place machine and a reflow oven, it is likely the connections would improve and the next section of the system would produce correct signals. The simulations previously run indicate that the system should function if all components were assembled properly.
 
   \end{block}
 
