@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  24 NOV 2026 01:02
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.25)  24 NOV 2026 01:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1230,61 +1230,57 @@ File: Images/Figures/Tx_Board_Figure.png Graphic file (type bmp)
 <Images/Figures/Tx_Board_Figure.png>
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
 
 File: Images/Figures/Rx_Board_Figure.png Graphic file (type bmp)
 <Images/Figures/Rx_Board_Figure.png>
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
 
 File: images/Figures/Group_Photo.jpg Graphic file (type bmp)
 <images/Figures/Group_Photo.jpg>
 File: images/Figures/Block Diagram.png Graphic file (type bmp)
 <images/Figures/Block Diagram.png>
-LaTeX Font Info:    Calculating math sizes for size <14.69> on input line 221.
+LaTeX Font Info:    Calculating math sizes for size <14.69> on input line 223.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7.345> on input line 221.
+(Font)              <7.345> on input line 223.
 File: Images/Figures/Load_at_100W_Rx_zoom_in_no_Freq.png Graphic file (type bmp)
 <Images/Figures/Load_at_100W_Rx_zoom_in_no_Freq.png>
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
 
 File: Images/Figures/Zoom_In_Ripple_38mV.png Graphic file (type bmp)
 <Images/Figures/Zoom_In_Ripple_38mV.png>
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
 
-LaTeX Font Info:    Calculating math sizes for size <17.63> on input line 221.
+LaTeX Font Info:    Calculating math sizes for size <17.63> on input line 223.
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 221.
+(caption)                Try setting it with `size=' explicitly on input line 223.
 See the caption package documentation for explanation.
-
-
-Overfull \vbox (42.97975pt too high) detected at line 221
- []
 
 File: tntechgold.png Graphic file (type bmp)
 <tntechgold.png>
@@ -1323,10 +1319,10 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 Here is how much of TeX's memory you used:
  45372 strings out of 468174
  1121236 string characters out of 5436827
- 1735253 words of memory out of 5000000
+ 1732395 words of memory out of 5000000
  73241 multiletter control sequences out of 15000+600000
  693311 words of font info for 169 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,20n,131p,2222b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on poster.xdv (1 page, 80604 bytes).
+Output written on poster.xdv (1 page, 78160 bytes).
