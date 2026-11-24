@@ -86,21 +86,21 @@
     The design is split up into five subsystems: the Bias Tee, IC Power, Clock and Jitter Measurements, Cable, and Communications. The subsystems combined on a custom PCB. There are three main components to this project: 1.) Bias Tee circuit for coupling/decoupling AC signal with DC power including simulations and component selection; 2.) Use of jitter cleaning PLL to measure high-fidelity jitter measurements; 3.) Back-Channel communications path for debugging/troubleshooting system synchronization messages.
 
     \vspace{0.3em}
-    {\large\bfseries\color{structure} Bias Tee}\par
-    The bias tee subsystem is responsible for the combination and separation of the power, clock, and communications signals. The design is made up of three steps of filtering reflected on the receiving and transmitting sides. On the transmitting side, a Butterworth filter is used to combine the clock and comms signals, a Bandstop filter set to the comms signal frequency is used to prevent the comms signal from bleeding onto the clock signal is used to, and the bias tee filter combines the clock and comms signal with the power signal. Then, the filtering occurs in the opposite order on the receiving side to isolate each signal again.
+    {\large\bfseries\color{structure} Transmitter (Tx)}\par
+    Details about the Tx side... 
 
     \vspace{0.3em}
-    {\large\bfseries\color{structure} IC Power}\par
+    {\large\bfseries\color{structure} Receiver (Rx)}\par
     Details about the Rx side...
-
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Clock and Jitter}\par
-
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Cable}\par
   
-    \vspace{0.3em}
-    {\large\bfseries\color{structure} Communications}\par
+  \end{block}
+
+  \begin{block}{Block Diagram}
+
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/Figures/Hardware Block Diagram.png}
+    % optional caption:
+    % \captionof{figure}{Block diagram of the Tx/Rx system}
 
   \end{block}
 
@@ -110,16 +110,8 @@
 
 \begin{column}{\colwidth}
 
-    \begin{block}{Block Diagram}
-
-    \centering
-    \includegraphics[width=1.0\linewidth]{images/Figures/Hardware Block Diagram.png}
-    % optional caption:
-    % \captionof{figure}{Block diagram of the Tx/Rx system}
-
-  \end{block}
-
-  \begin{block}{Bill of Materials}
+  \begin{block}{BOM}
+    \begin{block}{Bill of Materials}
     \centering
     \renewcommand{\arraystretch}{1.2}
     \begin{tabularx}{\linewidth}{
@@ -136,19 +128,148 @@
         2 & Cables            & [ADD CABLE INFO HERE]                               & Belden [I think?]     & 0.00    \\
         3 & Tx PCB            & PCB for Transmission side of system                 & JLC PCB               & 26.00   \\
         4 & Rx PCB            & PCB for Receiving side of system                    & JLC PCB               & 37.00   \\
-        5 & ST7580            & PLM Boards for communications subsystem             & DigikKey              & 0.00    \\
-        6 & X-Nucleo-PLM01A1  & ST7580 For Nucleo Expansion Board                   & CUI                   & 1.10    \\
+        5 & ST7580            & PLM Boards for communications subsystem             & DigiKey               & 44.07   \\
+        6 & X-Nucleo-PLM01A1  & ST7580 For Nucleo Expansion Board                   & DigiKey               & 32.40   \\
         \midrule
-        \multicolumn{4}{r}{\textbf{Grand Total}} & \bfseries 461.95 \\
+        \multicolumn{4}{r}{\textbf{Grand Total}} & \bfseries 532.49 \\
         \bottomrule
     \end{tabularx}
 
     The Bill of Materials are broken into four main sections, particularly the cost of components to assemble the PCB, the cables, the cost of ordering five of each board in the system, and the cost of the dev boards used in the communications subsystem.
+    
+  \end{block}
+
+    \textbf{Gen 1 ANNs} are considered those limited to classification. They are incapable of performing regression because the output assumes only the \textbf{values one or zero}. The perceptron is such a model. This model characterizes \textbf{neurons as switches} as shown in Eq \ref{Formula:Gen1ANN}.
+
+
+    \begin{equation}
+      \label{Formula:Gen1ANN}
+      net = \begin{cases} 
+        0 & b + \sum w_{j}*I_{j} \geq 0 \\
+        1 & b + \sum w_{j}*I_{j} < 0
+        \end{cases}
+    \end{equation}
+
+    \begin{itemize}
+      \item $\boldsymbol w_{j}$ represents the relative amount of neurotransmitters released or, $\alpha$ in Eq \ref{Formula:Neuron1}
+      \item $\boldsymbol I_{j}$ is the firing rate present at the $j^{th}$ synapse 
+      \item $\boldsymbol b$ is the bias associated with this neuron or, $r_{pol}$ in Eq \ref{Formula:Neuron1}
+    \end{itemize}
+
+    \textbf{Gen 2 ANNs} are where the bulk of research in computer science has been focused. The ability to output a \textbf{continuous value from zero to one} provided the ability to \textbf{learn non-linear regressive approximations} thanks to \textbf{continuously differentiable activation functions}. The typical equation for a Gen 2 ANN is presented in Eq \ref{Formula:Gen2ANN}. The step function has been replaced by the \textbf{sigmoid function} represented by $\boldsymbol \sigma$. 
+
+    \begin{equation}
+      \label{Formula:Gen2ANN}
+      net = \sigma \left( b + \sum w_{j}*I_{j} \right)
+    \end{equation}
+
+    % \begin{columns}[t]
+    %   \begin{column}{0.4\colwidth}
+
+    %     \begin{table}[ht]
+    %       % increase table row spacing, adjust to taste
+    %       \caption{Gen 1 ANN Model Assumptions}
+    %       \label{Table:Gen1ANNAssumptions}
+    %       \centering
+    %       % Some packages, such as MDW tools, offer better commands for making tables
+    %       % than the plain LaTeX2e tabular which is used here.
+    %       \resizebox{\columnwidth}{!}{%
+    %       \begin{tabular}{ c l }
+    %         \toprule
+    %         \textbf{Number} & \textbf{Assumption}\\
+    %         \midrule
+    %         1 & Firing Frequency Encoding\\
+
+    %         2 & Steady State\\
+
+    %         3 & Unity Static Firing Rate\\
+
+    %         4 & Learned Inhibition\\
+
+    %         5 & Unconditional Weighting\\
+    %        \bottomrule
+    %       \end{tabular}}
+    %     \end{table}
+    %   \end{column}
+
+    %   \begin{column}{0.4\colwidth}
+    %     \begin{table}[ht]
+    %       % increase table row spacing, adjust to taste
+    %       \caption{Gen 2 ANN Model Assumptions}
+    %       \label{Table:Gen2ANNAssumptions}
+    %       \centering
+    %       % Some packages, such as MDW tools, offer better commands for making tables
+    %       % than the plain LaTeX2e tabular which is used here.
+    %       \resizebox{\columnwidth}{!}{%
+    %       \begin{tabular}{ c l }
+    %         \toprule
+    %         \textbf{Number} & \textbf{Assumption}\\
+    %         \midrule
+    %         1 & Firing Frequency Encoding\\
+
+    %         2 & Steady State\\
+
+    %         3 & Learned Inhibition\\
+
+    %         4 & Unconditional Weighting\\
+    %         & \\
+    %         \bottomrule
+    %       \end{tabular}}
+    %     \end{table}
+    %   \end{column}
+
+    % \end{columns}
 
   \end{block}
 
 \vskip-1em
   \begin{alertblock}{Experimentation}
+
+    \textbf{Contribution}
+
+    \begin{itemize}
+      \item \textbf{Extended} the Gen 2 ANN model to include interneurons
+      \item \textbf{Facilitated} selectively gating the input along any edge to edge connection between neurons 
+      \item \textbf{Derived} the backpropagation equations necessary for an arbitrary INN
+      \item \textbf{Outperformed} the base ANN when applied to the MNIST dataset 
+    \end{itemize}
+
+    \sectionHeading{INN Model Requirements}
+
+    Given a set $\boldsymbol I$ of inputs to neuron $\boldsymbol n$ it is required that any $\boldsymbol I^{\prime} \in I$ be modifiable such that the set $\boldsymbol I^{\prime} \boldsymbol \Delta \boldsymbol I$ is left unchanged. This lends itself to the addition of some weight $\boldsymbol \beta$ to the ANN equation. $\boldsymbol \beta$ must be variable depending on the inputs presented to the ANN.
+
+    \sectionHeading{INN Model}
+
+    \begin{columns}[t] 
+
+    \centering
+    \begin{column}{0.45\columnwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[height=11.0cm]{INN_Topology.png}
+      \caption{Neuron Diagram}
+    \end{figure}
+    \end{column}
+
+    \begin{column}{0.45\columnwidth}
+
+    \vskip3.5ex
+    \begin{equation}
+      \label{Formula:ANNwInter}
+      net = \sigma \left( b + \sum w_{j}*\beta_{j}*I_{j} \right)
+    \end{equation}
+
+    \begin{equation}
+      \label{Formula:INN}
+      \beta_{j} = \sigma \left( b^{\prime} + \sum w^{\prime}_{j}*I^{\prime}_{j} \right)
+    \end{equation}
+    \end{column}
+
+    \end{columns}
+
+
+    \vskip0.5ex
+    \footnotesize{*It should be understood that the point of this paper is not to build a better performing ANN. It is the beginning of investigation towards a new more biologically plausible model.}
 
   \end{alertblock}
 
