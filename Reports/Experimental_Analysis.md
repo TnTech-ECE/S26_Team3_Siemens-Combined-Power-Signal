@@ -40,9 +40,17 @@ These criteria are important because the Si5345B requires a sufficiently clean i
 
 **Environmental conditions:** Conduct testing under stable laboratory conditions. Maintain consistent wiring, cable lengths, supply voltage, and instrument settings between trials.
 
-### Expected Results
+Perform at least three independent trials, including a complete power cycle between trials. If multiple transmitter or receiver prototypes are available, repeat the experiment using different PCB combinations. Three trials provide an initial assessment of repeatability. Additional testing should be performed if significant variation occurs between trials.
 
-Record the following information for each measurement:
+#### Potential Biases and Error Sources
+
+- **Generator amplitude inaccuracies:** The waveform generator's configured load impedance may cause the actual output amplitude to differ from the displayed value. Verify the signal with the oscilloscope.
+- **Cable losses and impedance mismatches:** Use consistent cable lengths and appropriate terminations.
+- **Oscilloscope measurement limitations:** The MSO2024 has limited bandwidth and sampling performance for very fast edges. Use it primarily to verify signal presence, frequency, and approximate amplitude.
+- **Power supply variation:** Monitor the 48 V supply and current throughout testing.
+- **Probe loading:** Use appropriate probe or coaxial connections to minimize loading effects on the circuit.
+
+### Expected Results
 
 | Measurement | Units | Measurement method |
 |---|---|---|
@@ -70,19 +78,8 @@ Although multiple Tx and Rx PCBs were planned to be constructed for experimentat
  
  <img width="2880" height="2160" alt="Waveform Generator Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Waveform_Gen_Settings.jpg" />
 
-### Trials
+### Interpretation and Conclusions
 
-Perform at least three independent trials, including a complete power cycle between trials. If multiple transmitter or receiver prototypes are available, repeat the experiment using different PCB combinations.
-
-Three trials provide an initial assessment of repeatability. Additional testing should be performed if significant variation occurs between trials.
-
-### Potential Biases and Error Sources
-
-- **Generator amplitude inaccuracies:** The waveform generator's configured load impedance may cause the actual output amplitude to differ from the displayed value. Verify the signal with the oscilloscope.
-- **Cable losses and impedance mismatches:** Use consistent cable lengths and appropriate terminations.
-- **Oscilloscope measurement limitations:** The MSO2024 has limited bandwidth and sampling performance for very fast edges. Use it primarily to verify signal presence, frequency, and approximate amplitude.
-- **Power supply variation:** Monitor the 48 V supply and current throughout testing.
-- **Probe loading:** Use appropriate probe or coaxial connections to minimize loading effects on the circuit.
 
 ---
 
