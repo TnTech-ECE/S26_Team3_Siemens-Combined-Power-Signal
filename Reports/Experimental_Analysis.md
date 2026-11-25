@@ -761,12 +761,12 @@ The primary criteria are:
 The total peak-to-peak ripple was approximately 500 mV, largely due to a low-frequency (1.3 kHz) sinusoidal signal whose amplitude varied moderately as the power drawn by the load changed. Zooming in on the low-frequency signal revealed a smaller ripple of 38 mV (Figures 1 and 2).
 
 <p align="center">
-  <img src="images/exp8_total_ripple.png" alt="Total DC ripple voltage" width="600"><br>
+  <img src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/exp8_total_ripple.png" alt="Total DC ripple voltage" width="600"><br>
   <em>Figure 1: Total DC ripple voltage, showing the 1.3 kHz component.</em>
 </p>
 
 <p align="center">
-  <img src="images/exp8_38mV_ripple.png" alt="38 mV ripple voltage" width="600"><br>
+  <img src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/exp8_38mV_ripple.png" alt="38 mV ripple voltage" width="600"><br>
   <em>Figure 2: Zoomed-in view of the 38 mV ripple.</em>
 </p>
 
