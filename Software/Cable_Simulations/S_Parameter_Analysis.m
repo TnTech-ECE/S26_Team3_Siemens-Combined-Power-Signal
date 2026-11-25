@@ -1,15 +1,32 @@
 clear
 
-folderpath = 'Cable Data\';
+% Gather the data for all the S parameters from the files
+S2m_narrow = sparameters('Cable Data\2-M-ATT1.s2p');
+S4m_narrow = sparameters('Cable Data\4-M-ATT1.s2p');
+S6m_narrow = sparameters('Cable Data\6-M-ATT1.s2p');
+S8m_narrow = sparameters('Cable Data\8-M-ATT1.s2p');
+S10m_narrow = sparameters('Cable Data\10-M-ATT1.s2p');
 
-% Get all of the s parameter data files in the folder
-SDataFiles = dir(append(folderpath,'*.s2p'));
+S2m_wide = sparameters('Cable Data\2-M-WIDE.s2p');
+S4m_wide = sparameters('Cable Data\4-M-WIDE.s2p');
+S6m_wide = sparameters('Cable Data\6-M-WIDE.s2p');
+S8m_wide = sparameters('Cable Data\8-M-WIDE.s2p');
+S10m_wide = sparameters('Cable Data\10-M-WIDE.s2p');
 
-% Loop through all of the files in the folder and load its data
-numFiles = length(SDataFiles);
-for k = 1:numFiles
-    figure(k)
-    S = sparameters(append(folderpath, SDataFiles(k).name));
-    rfplot(S);
-    title(SDataFiles(k).name)
-end
+figure(1)
+rfplot(S2m_narrow, 2, 1)
+hold on
+rfplot(S4m_narrow, 2, 1)
+rfplot(S6m_narrow, 2, 1)
+rfplot(S8m_narrow, 2, 1)
+rfplot(S10m_narrow, 2, 1)
+hold off
+
+figure(2)
+rfplot(S2m_narrow, 2, 1, "angle")
+hold on
+rfplot(S4m_narrow, 2, 1, "angle")
+rfplot(S6m_narrow, 2, 1, "angle")
+rfplot(S8m_narrow, 2, 1, "angle")
+rfplot(S10m_narrow, 2, 1, "angle")
+hold off
