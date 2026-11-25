@@ -29,9 +29,13 @@ These criteria are important because the Si5345B requires a sufficiently clean i
 
 1. Inspect the transmitter and receiver PCBs for assembly issues, incorrect component placement, and potential shorts.
 2. Configure the Rigol DP832 to provide the required 48 V supply, as seen below. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated. Set a conservative current limit before powering the circuit.
+
    <img width="2880" height="2160" alt="Power Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Settings.jpg" />
+
 3. Configure the Siglent SDG2042X to generate a 2.5 MHz sine wave with an initial amplitude of 100 mVpp and 0 V offset, as seen below. Verify the generator's load setting to ensure the actual signal amplitude is correct.
+
     <img width="2880" height="2160" alt="Waveform Generator Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Waveform_Gen_Settings.jpg" />
+
 4. Connect the waveform generator to the transmitter PCB's reference clock input.
 5. Connect the transmitter and receiver PCBs through the intended 48 V power line connection.
 6. Power the system and measure the reference signal at the receiver side Bias-T output using the Rigol DS1104.
@@ -71,10 +75,15 @@ Perform at least three independent trials, including a complete power cycle betw
 Although multiple Tx and Rx PCBs were planned to be constructed for experimentation, only one set of the boards was ultimately constructed due to time constraints upon receiving all required parts. While the initial Tx board passed physical inspection with no notable assembly issues or shorts detected, the initial Rx board required the use of a dead-bugged component (ADA4899-1) due to the incorrect, non-smd part version being ordered. Inspection of the Rx board revealed that this component had a short between one of its pins and the bridge to its ground pad which was not correctable without more precise soldering equipment. An attempt was made to replace this component with the correct smd part upon its arrival, however limitations in proper equipment to solder this part prevented proper seating of the IC and its pins. Consequently, an attempt to assemble a second Rx board was made in order to take advantage of fresh solder paste placed using a stencil for the board and this experiment was conducted multiple times using the two separate Rx boards fabricated for the ComCaP system. The second Rx board constructed revealed multiple defects upon inspection. Solder bridges were found shorting both the 12V and 3.3V supply rails to ground via capacitors C35 and C5 respectively. Additionally, the newly placed ADA4899-1 had a short between its positive and negative input terminals, inhibiting the intended feedback network. While the power supply shorts were solved by removing and reattaching components as needed, the available equipment ultimately proved insufficient to attach the ADA4899-1 IC correctly.
 
 The Rigol DP832 was connected to the Tx PCB as seen below, utilizing two channels two provide a total of 48 V to the intended screw terminals. 
+
  <img width="2880" height="2160" alt="Power Supply Configuration" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Supply_Config.jpg" />
+
 The reference signal provided by the Siglent SDG2042X waveform generator was confirmed by the Rigol DS1104 oscilloscope reading seen below.
+
  <img width="800" height="480" alt="Reference Clock Signal" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Reference_Clock_Signal.png" />
+
 The waveform for the received clock signal provided by the bias tee subsystem was confirmed via the oscilloscope as seen below.  
+
  <img width="800" height="480" alt="Bias tee output" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Bias-tee out.png" />
 
 | Measurement | Units | Measurement method | Result |
@@ -153,6 +162,7 @@ Perform at least three independent startup trials. Each trial should include pow
 ### Actual Results
 
 As described in Experiment 1, the signal conditioning path that provided the reference clock signal for the Si5345B was not operational and as a result this experiment could not be conducted properly. Ultimately the only measure of success for this subsystem that was achievable was the successful programming of MCU to transfer register information to the Si5345B, as seen below.
+
  <img width="1247" height="930" alt="MCU successful programming" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/SUCCESS!.png" />
 
 
