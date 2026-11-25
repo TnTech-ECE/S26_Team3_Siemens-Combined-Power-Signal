@@ -451,7 +451,7 @@ Although multiple Tx and Rx PCBs were planned to be constructed for experimentat
 
 The results from the first board assembled provided results well within specifications required for all ICs that required voltages from these converters. However, on the second board, the voltages produced varied more significantly. The 12 V and 5 V rails provided about the same results as shown in the table above, but the 1.8 V and 3.3 V rails were out of spec for the devices they powered. However, despite this variation, the components still functioned normally as was observed in the MCU being able to be programmed. The functionality of the PLL, comparator, and op-amp ICs could not be confirmed due to faulty solder connections.
 
-## Experiment A - Communications: Modulation Scheme Determination
+## Experiment 7 - Communications: Modulation Scheme Determination
 
 ### Purpose
 
@@ -546,7 +546,7 @@ With a critical t value of 1.646, $8.92 > 1.646$, so we reject the null hypothes
 
 ---
 
-## Experiment B - Communications: Effect of Bias Tee on Packet Transmission Success
+## Experiment 8 - Communications: Effect of Bias Tee on Packet Transmission Success
 
 ### Purpose
 
@@ -640,6 +640,142 @@ The system functions virtually identically with and without the bias tee. The fi
 
 **Components used / damaged / replaced:** The STM32 NUCLEO-F401RE, X-NUCLEO-PLM01A1, and two Mini USB-B cables were used in this experiment. The STM32 NUCLEO-L476RG was replaced.
 
+## Experiment 9A - Bias Tee: Filtering
+
+### Purpose
+
+The purpose of this experiment is to verify that the power, clock, and communications signals input into the bias tee are output separately with acceptable loss and acceptable signal distortion.
+
+The primary criteria are:
+- Acceptance and delivery of the 48 V power signal
+- Acceptance and delivery of the 2.5 MHz clock signal, output at a Vpp of at least 10 mV
+- Two-way acceptance and delivery of the 200 kHz communications signal, output at a Vpp of at least 3.25 V
+- Simultaneous acceptance and delivery of all three signals, meeting the same specifications
+
+### Procedure
+
+**Equipment and project inventory:**
+- Transmitter PCB
+- Receiver PCB
+- Siglent SDG2042X waveform generator
+- Rigol DP832 DC power supply
+- Rigol DS1104 oscilloscope
+- Digital multimeter (DMM)
+- Appropriate SMA/BNC cables, adapters, and test leads
+
+**Preparation and testing:**
+1. Verify all adapters, capacitors, inductors, and resistors are installed correctly.
+2. Configure the Rigol DP832 to provide the required 48 V supply. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated. Set a conservative current limit before powering the circuit.
+3. Configure channel 1 of the Siglent SDG2042X to generate a 2.5 MHz sine wave with an initial amplitude of 100 mVpp and 0 V offset. Verify the generator's load setting to ensure the actual signal amplitude is correct.
+4. Configure channel 2 of the Siglent SDG2042X to generate a 200 kHz sine wave with an initial amplitude of 5 V and 0 V offset. Verify the generator's load setting to ensure the actual signal amplitude is correct.
+5. Connect waveform generator channel 1 to the Tx PCB's SMA reference clock input.
+6. Connect waveform generator channel 2 to the Tx PCB's screw terminal communications input.
+7. Connect the Tx and Rx PCBs with the SMA-terminated coaxial cable.
+8. Power the system by turning on the power supply channels.
+9. Use channel 1 of the Rigol DS1104 to measure the clock signal after the termination resistor R18.
+10. Use channel 2 of the Rigol DS1104 to measure the communications signal at the Rx PCB's screw terminal communications input.
+11. Use a DMM to measure the DC power output at the Rx PCB's power output screw terminal.
+12. Monitor all signals to verify smoothness and accuracy.
+13. Record each signal and its voltage.
+
+**Environmental conditions:** Conduct testing under stable laboratory conditions. Maintain consistent wiring, cable lengths, supply voltage, and instrument settings between trials.
+
+#### Potential Biases and Error Sources
+
+- **Generator Load Setting** If the waveform generator's load setting does not match the actual load, the output amplitude will differ from the configured value. This is mitigated by verifying the load setting before each measurement.
+- **Hand Assembly** The passive components were assembled by hand, which could cause inconsistent connections and affect filter performance.
+
+### Expected Results
+
+| Measurement | Expected | Units | Measurement method |
+|---|---|---|---|
+| Clock signal at R18 (Rx) | ≥ 10 mVpp at 2.5 MHz | mV | Oscilloscope |
+| Communications signal at screw terminal (Rx) | ≥ 3.25 Vpp at 200 kHz | V | Oscilloscope |
+| DC power output (Rx) | 48 | V | DMM |
+
+All three signals are expected to be separated at the receiver within specification while being transmitted simultaneously.
+
+### Actual Results
+
+| Measurement | Expected | Actual |
+|---|---|---|
+| Clock signal at R18 (Rx) | ≥ 10 mVpp | 85.6 mVpp at 2.5 MHz, with some noise |
+| Communications signal at screw terminal (Rx) | ≥ 3.25 Vpp | 3.40 Vpp at 200 kHz, smooth |
+| DC power output (Rx) | 48 V | 47.3 V |
+
+### Interpretation and Conclusions
+
+The bias tee subsystem successfully combined and separated the three signals. The clock signal's amplitude was well within the criteria. While the noise on the clock signal is within the predicted range, the PLL is required to verify whether the noise is acceptable. The communications signal was within the criteria and comfortably smooth, but its amplitude is only marginally above the minimum, which may require part changes. The power signal was delivered with minimal loss. This experiment showed that the bias tee can accurately combine and separate the three signals.
+
+---
+
+## Experiment 9B - Bias Tee: Power Draw and Ripple Voltage
+
+### Purpose
+
+The purpose of this experiment is to test the ripple voltage specification provided by Siemens, verify that the system can handle 100 W of power, and observe how increasing the power affects the power signal.
+
+The primary criteria are:
+- Acceptance and delivery of the 100 W power signal at 48 V
+- Output ripple voltage of less than 30 mV
+
+### Procedure
+
+**Equipment and project inventory:**
+- Transmitter PCB
+- Receiver PCB
+- R&S RTO63 oscilloscope
+- Rigol DP832 DC power supply
+- Keysight 8601 load box
+- Appropriate SMA/BNC cables, adapters, and test leads
+
+**Preparation and testing:**
+1. Verify all adapters, capacitors, inductors, and resistors are installed correctly.
+2. Configure the Rigol DP832 to provide the required 48 V supply with a 3 A current limit, which allows the load to draw the current required for 100 W. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated.
+3. Configure the Keysight 8601 load box for 100 W.
+4. Power the system by turning on the power supply channels, then the load box. **Caution: high power.** Double-check all connections before turning on the load.
+5. Use the R&S RTO63 oscilloscope to measure the voltage at the power output screw terminals.
+6. Monitor and record the ripple voltage.
+
+**Environmental conditions:** Conduct testing under stable laboratory conditions. Maintain consistent wiring, cable lengths, supply voltage, and instrument settings between trials.
+
+#### Potential Biases and Error Sources
+
+- **Variable Load Draw** Changes in the power drawn by the load box visibly affected the low-frequency component of the ripple, so the load setting must be held constant while recording.
+- **Long Return Current Loop** If the probe ground is connected far from the measured output, the measured ripple will be skewed by the extra loop inductance.
+
+### Expected Results
+
+| Measurement | Expected | Units | Measurement method |
+|---|---|---|---|
+| Power delivered to load | 100 W at 48 V | W | Load box |
+| Output ripple voltage (Rx) | < 30 | mV | Oscilloscope |
+
+### Actual Results
+
+| Measurement | Expected | Actual |
+|---|---|---|
+| Total peak-to-peak ripple voltage | < 30 mV | ≈ 500 mV (dominated by a 1.3 kHz sinusoid) |
+| Ripple excluding the 1.3 kHz component | < 30 mV | 38 mV |
+
+The total peak-to-peak ripple was approximately 500 mV, largely due to a low-frequency (1.3 kHz) sinusoidal signal whose amplitude varied moderately as the power drawn by the load changed. Zooming in on the low-frequency signal revealed a smaller ripple of 38 mV (Figures 1 and 2).
+
+<p align="center">
+  <img src="images/exp8_total_ripple.png" alt="Total DC ripple voltage" width="600"><br>
+  <em>Figure 1: Total DC ripple voltage, showing the 1.3 kHz component.</em>
+</p>
+
+<p align="center">
+  <img src="images/exp8_38mV_ripple.png" alt="38 mV ripple voltage" width="600"><br>
+  <em>Figure 2: Zoomed-in view of the 38 mV ripple.</em>
+</p>
+
+### Interpretation and Conclusions
+
+The bias tee does not meet the 30 mV ripple voltage specification for the power signal. The total ripple voltage was more than an order of magnitude above the specification because of the low-frequency signal. No specific cause for this signal could be found, but it appears only when the Rx and Tx boards are connected and power is transmitted through them. Possible sources are a resonance in the bias tee's filter or the Rx board's buck converter compensating for the variable power draw.
+
+Excluding the low-frequency signal, the 38 mV ripple is just outside the specification. Removing the low-frequency signal would therefore produce a much more satisfactory system, which could be improved further with additional decoupling capacitors. The bias tee does not currently meet the specification, but there is a clear direction for improvement.
+
 ## Summary and Findings
 
 
@@ -723,4 +859,7 @@ The system functions virtually identically with and without the bias tee. The fi
 ## Statement of Contributions
 
 Levi Cantrell -  Experiments 1, 2, and 3.
-
+Tyler Chan - Experiment 6, formatting of the document, and inventory of parts
+Jonas Cross - Communications Experiments (7 and 8)
+Harry Rudd - Experiments 4 and 5, final compilation
+Ryan Shipwash - Bias Tee Experiments (9A and 9B), BOM items
