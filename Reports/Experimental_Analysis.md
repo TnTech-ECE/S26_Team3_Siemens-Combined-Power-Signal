@@ -315,9 +315,11 @@ Perform this test before testing anything else regarding the cables in case they
 
 ### Actual Results
 
- <img width="1247" height="930" alt="MCU successful programming" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/S21%20short%20dB.png" />
+ <img width="1247" height="930" alt="S21 Parameter Decibel Magnitude" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/S21%20short%20dB.png" />
 
-  <img width="1247" height="930" alt="MCU successful programming" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/S21%20short%20angle.png" />
+  <img width="1247" height="930" alt="S21 Parameter Angle in Degrees" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/S21%20short%20angle.png" />
+
+  The purpose of this experiment was to see if the cable would be capable of transmitting the clock signal from the Tx to the Rx board. The results of this experiment are in line with what the team experienced while measuring the output of the bias tee, and a signal loss of -3.85 dB is well within the margin of error for this project.
 
 ---
 
@@ -330,24 +332,22 @@ The purpose of this experiment is to verify the cables ability to handle $50\ V$
 ### Procedure
 
 **Equipment and project inventory:**
-- Belden 7810A coaxial cables at appropriate lengths
-- Belden 50021L twisted pair cables at appropriate lengths
-- Multimeter
+- 10 meter Belden 7810A coaxial cable
+- Transmitting and Recieving boards
 - Thermometer Gun
-- Stopwatch
-- Tape Measure
-- Breadboard with $25\ \Omega$ resistance
-- Appropriate SMA/BNC cables, adapters, and test leads
+- Laptop
+- Load Box
+- DC Power Supply
+- Appropriate test leads
 
 **Preparation and testing:**
-1. Use a multimeter to verify the end resistance is $25\ \Omega$
-2. Use a tape measure to mark along the cable at 1 m intervals
-3. Connect one end of the cable to a voltage source and the other to the resistor
-4. Connect a multimeter in series with the cable to measure current
-5. Turn on the voltage source and verify $2\ A$ is running thorough the cable
-6. Use the termperature gun to measure the temperature of the cable at every meter along it
-7. Repeat step 6 at 5 minute intervals for the first hour and 15 minute intervals for the following two hours
-8. Repeat steps 2-7 for all available cables
+1. Connect the voltage source to the Tx board and the load box to the Tx board at the DC input and output
+2. Connect the coaxial cable between the Tx and the Rx board, ensuring to loop it as many times as possible
+3. Set the voltage source to 48 V and the load box to 100 W and turn them on
+4. Mark the time that the source and load box was turned on
+5. Use the termperature gun to measure the temperature of the cable at the Rx connection, Tx connection, and in the middle of the coil
+6. Record the data in an excel sheet while timestamping the measurements
+7. Repeat until the temperature of the cable stabilizes
 
 
 ### Data Collection
@@ -355,10 +355,7 @@ The purpose of this experiment is to verify the cables ability to handle $50\ V$
 | Measurement | Units | Measurement method |
 |---|---|---|
 | Temperature | $^\circ C$ | Temperature Gun |
-| Time | s | Stopwatch |
-| DC Current | A | Multimeter |
-| Load Resistance | $\Omega$ | Multimeter |
-| Length along Cable | m | Tape Measure |
+| Time | s | Laptop |
 
 Record the data using excel. Load the data into MATLAB for analysis and display.
 
@@ -372,9 +369,20 @@ Be sure to shut off the circuit in the event of any changes becoming necessary. 
 
 - **Ambient Temperature** The temperature of the room will have an impact on the overall temperature of the cable, so it must be taken into account when the measurements are taken.
 - **Body Temperature** While the cable is being handled for measurements, body temperature may change the temperature of the cable
-- **Circuit Downtime** Since the voltage is so high, the circuit may need to be shut down if measurements are not able to be taken. In those instances, the cable will be cooling while the circuit is off
-- **External Resistance** The multimeter and the resistor setup may introduce additional resistance or unwanted behaviors. Espeically from the multiple resistances in parallel.
-- **Temperature Gun Inconsistencies** The temperature gun itself may introduce some variations in the temperature data
+- **Heat Bleed into the Cable** As the circuit is running, heat from the components can get into the cable, impacting measurements
+- **Temperature Gun Inconsistencies** The temperature gun itself is inaccurate and cannot provide more than a close estimate of what the temperature actually is
+- **Timing Inconsistencies** Since the time is recorded when the data is added, there is a delay between when the measurement was taken and when the time was recorded
+
+### Expected Results
+| Measurement | Units | Measurement method | Expected Result |
+|---|---|---|---|
+| Temperature | $^\circ C$ | Temperature Gun | $<80 ^\circ\ C$
+
+### Actual Results
+
+  <img width="1247" height="930" alt="Temperature Data" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Temp_data.png" />
+
+The goal of this test was to show that the cable could handle the load without exceeding parameters. In the case of the Rx side, the board itself was hotter around the cable, so the cable was recieveing heat from both the current and the board. Even so, in all three cases, the cable temperature did not exceed $23\ \circ C$ in 45 minutes of testing. Even though the trendline is still going upward, the cable itself will stop heating after some time due to saturation. Therefore, the cable is more than capable of handling the required current.
 
 ## Experiment 6 - IC Power: Buck Converter and LDO Testing
 
