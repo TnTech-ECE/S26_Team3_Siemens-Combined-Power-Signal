@@ -17,20 +17,20 @@ These criteria are important because the Si5345B requires a sufficiently clean i
 ### Procedure
 
 **Equipment and project inventory:**
-- Agilent 33220A waveform generator.
-- GW Instek GPS-4303 DC power supply.
-- Tektronix MSO2024 oscilloscope.
+- Siglent SDG2042X waveform generator.
+- Rigol DP832 DC power supply.
+- Rigol DS1104 oscilloscope.
 - Transmitter and receiver PCBs.
 - Appropriate SMA/BNC cables, adapters, and test leads.
 
 **Preparation and testing:**
 
 1. Inspect the transmitter and receiver PCBs for assembly issues, incorrect component placement, and potential shorts.
-2. Configure the GW Instek GPS-4303 to provide the required 48 V supply. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated. Set a conservative current limit before powering the circuit.
-3. Configure the Agilent 33220A to generate a 2.5 MHz sine wave with an initial amplitude of 50 mV peak and 0 V offset. Verify the generator's load setting to ensure the actual signal amplitude is correct.
+2. Configure the Rigol DP832 to provide the required 48 V supply. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated. Set a conservative current limit before powering the circuit.
+3. Configure the Siglent SDG2042X to generate a 2.5 MHz sine wave with an initial amplitude of 50 mV peak and 0 V offset. Verify the generator's load setting to ensure the actual signal amplitude is correct.
 4. Connect the waveform generator to the transmitter PCB's reference clock input.
 5. Connect the transmitter and receiver PCBs through the intended 48 V power line connection.
-6. Power the system and measure the reference signal at the receiver side Bias-T output using the Tektronix MSO2024.
+6. Power the system and measure the reference signal at the receiver side Bias-T output using the Rigol DS1104.
 7. Record the received signal's amplitude, frequency, and waveform.
 8. Measure the output of the ADA4899-1 amplifier. Verify that the signal is sufficiently amplified and remains within the comparator's permitted input range.
 9. Measure the ADCMP605 output to verify that the analog reference has been converted into a consistent digital clock signal.
@@ -91,9 +91,9 @@ The outputs are configured for 3.3 V LVCMOS operation to simplify testing and in
 ### Procedure
 
 **Equipment and project inventory:**
-- Agilent 33220A waveform generator.
-- GW Instek GPS-4303 DC power supply.
-- Tektronix MSO2024 oscilloscope.
+- Siglent SDG2042X waveform generator.
+- Rigol DP832 DC power supply.
+- Rigol DS1104 oscilloscope.
 - Transmitter and receiver PCBs.
 - STM32 microcontroller configuration firmware.
 - Appropriate SMA/BNC cables, adapters, and test leads.
@@ -104,7 +104,7 @@ The outputs are configured for 3.3 V LVCMOS operation to simplify testing and in
 2. Verify that the STM32 microcontroller is programmed to load the Si5345B register configuration during startup.
 3. Confirm that the Si5345B configuration specifies the intended 2.5 MHz and 25 MHz output frequencies and 3.3 V LVCMOS output signaling.
 4. Generate and transmit the 2.5 MHz reference signal using the procedure described in Experiment 1.
-5. Connect the 25 MHz output to the Tektronix MSO2024 using an SMA to BNC cable assembly. Configure the oscilloscope for the appropriate input, DC coupling, and an appropriate vertical scale.
+5. Connect the 25 MHz output to the Rigol DS1104using an SMA to BNC cable assembly. Configure the oscilloscope for the appropriate input, DC coupling, and an appropriate vertical scale.
 6. Measure the output frequency, voltage swing, duty cycle, and waveform stability.
 7. Repeat the measurement for the 2.5 MHz output.
 8. Power cycle the subsystem and verify that both outputs return successfully without requiring manual reconfiguration.
@@ -160,8 +160,9 @@ The customer's primary concern is reliable synchronization between ComCaP system
 ### Procedure
 
 **Equipment and project inventory:**
-- Tektronix MSO2024 oscilloscope for preliminary jitter measurements.
-- Agilent 33220A waveform generator.
+- Rigol DS1104 oscilloscope for preliminary jitter measurements.
+- Rohde & Schwarz RT064 Oscilloscope for more accurate jitter characterization.
+- Siglent SDG2042X waveform generator.
 - Transmitter and receiver PCBs.
 - STM32 microcontroller configuration firmware.
 - Appropriate SMA/BNC cables, adapters, and test leads.
@@ -230,7 +231,7 @@ A higher performance oscilloscope with approximately 1–2 GHz analog bandwidth,
 
 ---
 
-The Tektronix MSO2024 can support preliminary verification of clock operation and waveform characteristics. However, its 200 MHz bandwidth and 1 GS/s maximum sampling rate do not establish that it can reliably verify the project's picosecond level jitter requirements. A higher performance measurement instrument should therefore be used for final jitter acceptance testing.
+The Rigol DS1104can support preliminary verification of clock operation and waveform characteristics. However, its 200 MHz bandwidth and 1 GS/s maximum sampling rate do not establish that it can reliably verify the project's picosecond level jitter requirements. A higher performance measurement instrument should therefore be used for final jitter acceptance testing.
 
 ---
 
@@ -395,4 +396,4 @@ Perform this test before testing anything else regarding the cables in case they
 
 ## Statement of Contributions
 
-Each team member must contribute meaningfully to the experimental analysis and document their contributions clearly in this section. Contributions should be recorded individually, and one team member may not document contributions on behalf of another. Each team member must clearly outline their involvement in experiment design, execution, data analysis, and reporting. By submitting this report, the team collectively certifies the accuracy and completeness of each member's stated contributions.
+Levi Cantrell - Design of Experiments 1, 2, and 3
