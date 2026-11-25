@@ -348,59 +348,56 @@ Be sure to shut off the circuit in the event of any changes becoming necessary. 
 
 ### Purpose
 
-The purpose of this experiment is to verify the transmission characteristcs of both of the cables at all the required lengths for both the $2.5\ MHz$ clock and the $200\ kHz$ communications signals. The communications signal needs to be able to be read by the recieving board, and the clock signal needs to transmit at least half of its peak voltage.
-
-The purpose of this experiment is to verify the proper output voltages of the power converters to ensure that each IC that uses a lower voltage than 48 V is satisfied. The voltages being produced are 12 V from the buck converter, [ADD MORE HERE]
+The purpose of this experiment is to verify the proper output voltages of the power converters to ensure that each IC that uses a lower voltage than 48 V is satisfied. The voltages being produced are 12 V from the buck converter, 5 V, 3.3 V, and 1.8 V that are stepped down from the buck converter by an LDO. The voltages must supply a voltage that is within the input range of all ICs requiring voltage lower than 48 V.
 
 ### Procedure
 
 **Equipment and project inventory:**
 - Reciever PCB
-- Keysight E5063A ENA Vector Network Analyzer (VNA)
-- Belden 7810A coaxial cables at appropriate lengths
-- Belden 50021L twisted pair cables at appropriate lengths
-- Appropriate SMA/BNC cables, adapters, and test leads
+- Transmitter PCB
+- LT80602
+- MAX6793
+- MAX6795
+- Fluke 15B+ Digital Multimeter (DMM)
+- Rigol DP832 DC power supply
+
 
 **Preparation and testing:**
-1. Turn on the VNA and leave it for 30 minutes to warm up
-2. Connect the reciever board clock output to port 2 of the VNA
-3. Connect the cable from the input of the reciever board to port 1 of the VNA
-4. Sweep $2.5\ MHz\ \pm 5\%$  and record the S-parameters
-5. Repeat steps 2-4 with all available cables for the clock
-6. Change the connection from the clock to the communications output
-7. Sweep $200\ kHz\ \pm 5\%$ and record the S-parameters
-8. Repeat step 7 for all available cables
-
+1. Connect Tx board to benchtop supply.
+2. Configure the Rigol DP832 to provide the required 48 V supply. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated. The series setting is typically 24 V for both outputs 1 and 2. Set a conservative current limit before powering the circuit about 300 mA.
+3. Connect the 10 m cable from output of the Tx board to the input of the Rx board.
+4. Turn on the power supply.
+5. Probe the output of the power plane of the buck converter (LT80602) on the Tx board. Connect the ground probe to the nearest ground via.
+6. Probe the output of the power plane of the buck converter (LT80602) on the Rx board. Connect the ground probe to the nearest ground via.
+7. Probe the output of the first power plane of the first LDO (MAX6793) on the Rx board. Connect the ground probe to the nearest ground via.
+8. Probe the output of the second power plane of the first LDO (MAX6793) on the Rx board. Connect the ground probe to the nearest ground via.
+9. Probe the output of power plane of the second LDO (MAX6795) on the Rx board. Connect the ground probe to the nearest ground via.
 
 ### Data Collection
 
-| Measurement | Units | Measurement method |
+| Measurement | Value (V) | Measurement method |
 |---|---|---|
-| Clock $S_{11}$ | dB | VNA |
-| Clock $S_{12}$ | dB | VNA |
-| Clock $S_{21}$ | dB | VNA |
-| Clock $S_{22}$ | dB | VNA |
-| Communications $S_{11}$ | dB | VNA |
-| Communications $S_{12}$ | dB | VNA |
-| Communications $S_{21}$ | dB | VNA |
-| Communications $S_{22}$ | dB | VNA |
-
-Load the S-parameter data into MATLAB for analysis and display.
+| 12 V Rail of LT80602 (Tx) | 11.99 | DMM |
+| 12 V Rail of LT80602 (Rx) | 11.98 | DMM |
+| 5 V Rail of MAX6793 (Rx) | 4.99 | DMM |
+| 1.8 V Rail of MAX6793 (Rx) | 1.81 | DMM |
+| 3.3 V Rail of MAX6795(Rx) | 3.33 | DMM |
 
 ### Trials
 
-Perform this test before testing anything else regarding the cables in case they are damaged in subsequent DC voltage and current testing.
+Perform this test when powering up the boards for the first time after assembly to ensure that all voltage rails are within specifications for input voltage of all relevant ICs.
 
 ### Potential Biases and Error Sources
 
-- **Output Measurement Cable** Since the output is being measured at the end of the bias tee, the cables that are being used may introduce noise and impedance mismatching. This will cause the S-parameters to record greater losses than will be actually experienced in the circuit.
-- **Independent Testing** Since the clock and communications frequencies are tested separately, there may be some interferences in normal operation that are not being tested.
+- **Hand Assembly** The passive components were assembled by hand on the boards used to test. This could have potentially caused some inconsistent connections on various components causing the voltage to deviate slightly from the expected result. This could cause issues for setting the proper voltages.
 
 # Conducted Experiments
 
 ## Experiment 1 – Signal Conditioning
 
-1. Although multiple Tx and Rx PCBs were planned to be constructed for experimentation, only one set of the boards was ultimately constructed due to time constraints upon receiving all required parts. While the initial Tx board passed physical inspection with no notable assembly issues or shorts detected, the initial Rx board required the use of a dead-bugged component (ADA4899-1) due to the incorrect, non-smd part version being ordered. Inspection of the Rx board revealed that this component had a short between one of its pins and the bridge to its ground pad. An attempt was made to replace this component with the correct smd part upon its arrival, however limitations in proper equipment to solder this part prevented proper seating of the IC and its pins. Consequently, an attempt to assemble a second Rx board was made in order to take advantage of fresh solder paste placed using a stencil for the board and this experiment was conducted multiple times using the two separate Rx boards fabricated for the ComCaP system. The second Rx board constructed revealed multiple defects upon inspection including solder bridges shorting both the 12V and 3.3V supply rails to ground and the newly placed ADA4899-1 having a short between its positive and negative input terminals, inhibiting the intended feedback network. While the power supply shorts were solved by removing and reattaching components as needed, the available equipment ultimately proved insufficient to attach the ADA4899-1 IC correctly.
+1. Although multiple Tx and Rx PCBs were planned to be constructed for experimentation, only one set of the boards was ultimately constructed due to time constraints upon receiving all required parts. While the initial Tx board passed physical inspection with no notable assembly issues or shorts detected, the initial Rx board required the use of a dead-bugged component (ADA4899-1) due to the incorrect, non-smd part version being ordered. Inspection of the Rx board revealed that this component had a short between one of its pins and the bridge to its ground pad which was not correctable without more precise soldering equipment. An attempt was made to replace this component with the correct smd part upon its arrival, however limitations in proper equipment to solder this part prevented proper seating of the IC and its pins. Consequently, an attempt to assemble a second Rx board was made in order to take advantage of fresh solder paste placed using a stencil for the board and this experiment was conducted multiple times using the two separate Rx boards fabricated for the ComCaP system. The second Rx board constructed revealed multiple defects upon inspection. Solder bridges were found shorting both the 12V and 3.3V supply rails to ground via capacitors C35 and C5 respectively. Additionally, the newly placed ADA4899-1 had a short between its positive and negative input terminals, inhibiting the intended feedback network. While the power supply shorts were solved by removing and reattaching components as needed, the available equipment ultimately proved insufficient to attach the ADA4899-1 IC correctly.
+
+2. 
 
 ## Experiment 2 – Si5345B Clock Generation and Output Verification
 
@@ -412,4 +409,5 @@ Perform this test before testing anything else regarding the cables in case they
 
 ## Statement of Contributions
 
-Levi Cantrell - Design of Experiments 1, 2, and 3
+Levi Cantrell - Design of Experiments 1, 2, and 3. Conducted Experiments 1, 2, and 3. Results Analysis and Conclusions for experiments 1, 2, and 3.
+
