@@ -269,35 +269,32 @@ The purpose of this experiment is to verify the transmission characteristcs of b
 ### Procedure
 
 **Equipment and project inventory:**
-- Reciever PCB
+- Transmitter PCB
 - Keysight E5063A ENA Vector Network Analyzer (VNA)
-- Belden 7810A coaxial cables at appropriate lengths
-- Belden 50021L twisted pair cables at appropriate lengths
-- Appropriate SMA/BNC cables, adapters, and test leads
+- Belden 7810A coaxial cables at 2, 4, 6, 8, and 10 meters
+- Appropriate SMA to BNC adapters
 
 **Preparation and testing:**
-1. Turn on the VNA and leave it for 30 minutes to warm up
-2. Connect the reciever board clock output to port 2 of the VNA
-3. Connect the cable from the input of the reciever board to port 1 of the VNA
-4. Sweep $2.5\ MHz\ \pm 5\%$  and record the S-parameters
-5. Repeat steps 2-4 with all available cables for the clock
-6. Change the connection from the clock to the communications output
-7. Sweep $200\ kHz\ \pm 5\%$ and record the S-parameters
-8. Repeat step 7 for all available cables
+1. Connect the transmitter board clock input to port 1 of the VNA
+2. Connect the cable from the output of the transmitter board to port 2 of the VNA
+3. Sweep from $2\ MHz$ to $3\ MHz$ and record the S-parameters
+4. Repeat step 3 with all available cables
+5. Sweep $100\ kHz$ to $50\ MHz$ and record the S-parameters
+6. Repeat step 5 for all available cables
 
 
 ### Data Collection
 
-| Measurement | Units | Measurement method |
-|---|---|---|
-| Clock $S_{11}$ | dB | VNA |
-| Clock $S_{12}$ | dB | VNA |
-| Clock $S_{21}$ | dB | VNA |
-| Clock $S_{22}$ | dB | VNA |
-| Communications $S_{11}$ | dB | VNA |
-| Communications $S_{12}$ | dB | VNA |
-| Communications $S_{21}$ | dB | VNA |
-| Communications $S_{22}$ | dB | VNA |
+| Measurement | Units | Measurement method | Expected Result |
+|---|---|---|---|
+| Narrow $S_{11}$ | dB | VNA |
+| Narrow $S_{12}$ | dB | VNA |
+| Narrow $S_{21}$ | dB | VNA |
+| Narrow $S_{22}$ | dB | VNA |
+| Wide $S_{11}$ | dB | VNA |
+| Wide $S_{12}$ | dB | VNA |
+| Wide $S_{21}$ | dB | VNA |
+| Wide $S_{22}$ | dB | VNA |
 
 Load the S-parameter data into MATLAB for analysis and display.
 
@@ -307,8 +304,16 @@ Perform this test before testing anything else regarding the cables in case they
 
 ### Potential Biases and Error Sources
 
-- **Output Measurement Cable** Since the output is being measured at the end of the bias tee, the cables that are being used may introduce noise and impedance mismatching. This will cause the S-parameters to record greater losses than will be actually experienced in the circuit.
-- **Independent Testing** Since the clock and communications frequencies are tested separately, there may be some interferences in normal operation that are not being tested.
+- **Tx Board Missing** Since the output of the Tx board is limited to square waves and probing the board will introduce too much noise, the team is not able to test it directly with this method. As such, the results will demonstrate the frequency behaviors at the input of the reciever board
+- **Cable Orientation** The cables that are being used are long and unweildy, so the cables may be laid down on the floor or coiled in such a way that impacts the overall performance of the test.
+
+### Expected Results
+
+| Measurement | Units | Measurement method | Expected Result |
+|---|---|---|---|
+| Narrow $S_{21}$ | dB | VNA | <50% signal loss |
+
+### Actual Results
 
 ---
 
