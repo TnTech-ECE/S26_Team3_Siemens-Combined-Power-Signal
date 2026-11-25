@@ -1,6 +1,6 @@
 clear
 
-folderpath = 'S parameter data\';
+folderpath = 'Cable Data\';
 
 % Get all of the s parameter data files in the folder
 SDataFiles = dir(append(folderpath,'*.s2p'));
@@ -10,6 +10,6 @@ numFiles = length(SDataFiles);
 for k = 1:numFiles
     figure(k)
     S = sparameters(append(folderpath, SDataFiles(k).name));
-    smithplot(S, 1, 2);
+    rfplot(S);
     title(SDataFiles(k).name)
 end
