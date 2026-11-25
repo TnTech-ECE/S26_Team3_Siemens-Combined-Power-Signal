@@ -163,7 +163,7 @@ Perform at least three independent startup trials. Each trial should include pow
 
 As described in Experiment 1, the signal conditioning path that provided the reference clock signal for the Si5345B was not operational and as a result this experiment could not be conducted properly. Ultimately the only measure of success for this subsystem that was achievable was the successful programming of MCU to transfer register information to the Si5345B, as seen below.
 
- <img width="1247" height="930" alt="MCU successful programming" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/SUCCESS!.png" />
+ <img width="1247" height="930" alt="MCU successful programming" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/MCU.png" />
 
 
 ### Interpretation and Conclusions
