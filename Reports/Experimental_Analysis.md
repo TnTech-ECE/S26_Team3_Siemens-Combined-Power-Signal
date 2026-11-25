@@ -398,6 +398,14 @@ Perform this test before testing anything else regarding the cables in case they
 
 # Conducted Experiments
 
+## Experiment 1 – Signal Conditioning
+
+1. Although multiple Tx and Rx PCBs were planned to be constructed for experimentation, only one set of the boards was ultimately constructed due to time constraints upon receiving all required parts. While the initial Tx board passed physical inspection with no notable assembly issues or shorts detected, the initial Rx board required the use of a dead-bugged component (ADA4899-1) due to the incorrect, non-smd part version being ordered. Inspection of the Rx board revealed that this component had a short between one of its pins and the bridge to its ground pad. An attempt was made to replace this component with the correct smd part upon its arrival, however limitations in proper equipment to solder this part prevented proper seating of the IC and its pins. Consequently, an attempt to assemble a second Rx board was made in order to take advantage of fresh solder paste placed using a stencil for the board and this experiment was conducted multiple times using the two separate Rx boards fabricated for the ComCaP system. The second Rx board constructed revealed multiple defects upon inspection including solder bridges shorting both the 12V and 3.3V supply rails to ground and the newly placed ADA4899-1 having a short between its positive and negative input terminals, inhibiting the intended feedback network. While the power supply shorts were solved by removing and reattaching components as needed, the available equipment ultimately proved insufficient to attach the ADA4899-1 IC correctly.
+
+## Experiment 2 – Si5345B Clock Generation and Output Verification
+
+## Experiment 3 – Clock Jitter and Relative Timing Characterization
+
 # Results Analysis and Conclusions
 
 # Documented and Tracked Components
