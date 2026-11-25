@@ -375,13 +375,13 @@ The purpose of this experiment is to verify the proper output voltages of the po
 
 ### Data Collection
 
-| Measurement | Value (V) | Measurement method |
+| Measurement | Units | Measurement method |
 |---|---|---|
-| 12 V Rail of LT80602 (Tx) | 11.99 | DMM |
-| 12 V Rail of LT80602 (Rx) | 11.98 | DMM |
-| 5 V Rail of MAX6793 (Rx) | 4.99 | DMM |
-| 1.8 V Rail of MAX6793 (Rx) | 1.81 | DMM |
-| 3.3 V Rail of MAX6795(Rx) | 3.33 | DMM |
+| 12 V Rail of LT80602 (Tx) | V | DMM |
+| 12 V Rail of LT80602 (Rx) | V | DMM |
+| 5 V Rail of MAX6793 (Rx) | V | DMM |
+| 1.8 V Rail of MAX6793 (Rx) | V | DMM |
+| 3.3 V Rail of MAX6795(Rx) | V | DMM |
 
 ### Trials
 
