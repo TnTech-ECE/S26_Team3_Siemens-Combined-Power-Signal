@@ -315,6 +315,10 @@ Perform this test before testing anything else regarding the cables in case they
 
 ### Actual Results
 
+ <img width="1247" height="930" alt="MCU successful programming" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/S21%20short%20dB.png" />
+
+  <img width="1247" height="930" alt="MCU successful programming" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/S21%20short%20angle.png" />
+
 ---
 
 ## Experiment 5 - Cable DC Voltage and Current Verification
