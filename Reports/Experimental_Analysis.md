@@ -1,6 +1,6 @@
 # Experimental Analysis: ComCaP System
 
-# Designed Experiments
+# Experiments
 
 ## Experiment 1 – Signal Conditioning
 
@@ -40,7 +40,7 @@ These criteria are important because the Si5345B requires a sufficiently clean i
 
 **Environmental conditions:** Conduct testing under stable laboratory conditions. Maintain consistent wiring, cable lengths, supply voltage, and instrument settings between trials.
 
-### Data Collection
+### Expected Results
 
 Record the following information for each measurement:
 
@@ -57,6 +57,18 @@ Record the following information for each measurement:
 | Supply current | A | DC power supply |
 
 Save oscilloscope screenshots for the received reference, amplifier output, and comparator output. Record numerical measurements in a spreadsheet, with one row per trial.
+
+### Actual Results
+
+Although multiple Tx and Rx PCBs were planned to be constructed for experimentation, only one set of the boards was ultimately constructed due to time constraints upon receiving all required parts. While the initial Tx board passed physical inspection with no notable assembly issues or shorts detected, the initial Rx board required the use of a dead-bugged component (ADA4899-1) due to the incorrect, non-smd part version being ordered. Inspection of the Rx board revealed that this component had a short between one of its pins and the bridge to its ground pad which was not correctable without more precise soldering equipment. An attempt was made to replace this component with the correct smd part upon its arrival, however limitations in proper equipment to solder this part prevented proper seating of the IC and its pins. Consequently, an attempt to assemble a second Rx board was made in order to take advantage of fresh solder paste placed using a stencil for the board and this experiment was conducted multiple times using the two separate Rx boards fabricated for the ComCaP system. The second Rx board constructed revealed multiple defects upon inspection. Solder bridges were found shorting both the 12V and 3.3V supply rails to ground via capacitors C35 and C5 respectively. Additionally, the newly placed ADA4899-1 had a short between its positive and negative input terminals, inhibiting the intended feedback network. While the power supply shorts were solved by removing and reattaching components as needed, the available equipment ultimately proved insufficient to attach the ADA4899-1 IC correctly.
+
+ <img width="2880" height="2160" alt="Power Supply Configuration" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Supply_Config.jpg" />
+
+ <img width="2880" height="2160" alt="Power Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Settings.jpg" />
+
+ <img width="800" height="480" alt="Reference Clock Signal" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Reference_Clock_Signal.png" />
+ 
+ <img width="2880" height="2160" alt="Waveform Generator Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Waveform_Gen_Settings.jpg" />
 
 ### Trials
 
@@ -391,26 +403,11 @@ Perform this test when powering up the boards for the first time after assembly 
 
 - **Hand Assembly** The passive components were assembled by hand on the boards used to test. This could have potentially caused some inconsistent connections on various components causing the voltage to deviate slightly from the expected result. This could cause issues for setting the proper voltages.
 
-# Conducted Experiments
+## Summary and Findings
 
-## Experiment 1 – Signal Conditioning
 
-Although multiple Tx and Rx PCBs were planned to be constructed for experimentation, only one set of the boards was ultimately constructed due to time constraints upon receiving all required parts. While the initial Tx board passed physical inspection with no notable assembly issues or shorts detected, the initial Rx board required the use of a dead-bugged component (ADA4899-1) due to the incorrect, non-smd part version being ordered. Inspection of the Rx board revealed that this component had a short between one of its pins and the bridge to its ground pad which was not correctable without more precise soldering equipment. An attempt was made to replace this component with the correct smd part upon its arrival, however limitations in proper equipment to solder this part prevented proper seating of the IC and its pins. Consequently, an attempt to assemble a second Rx board was made in order to take advantage of fresh solder paste placed using a stencil for the board and this experiment was conducted multiple times using the two separate Rx boards fabricated for the ComCaP system. The second Rx board constructed revealed multiple defects upon inspection. Solder bridges were found shorting both the 12V and 3.3V supply rails to ground via capacitors C35 and C5 respectively. Additionally, the newly placed ADA4899-1 had a short between its positive and negative input terminals, inhibiting the intended feedback network. While the power supply shorts were solved by removing and reattaching components as needed, the available equipment ultimately proved insufficient to attach the ADA4899-1 IC correctly.
+# Documented Parts
 
- <img width="2880" height="2160" alt="Power Supply Configuration" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Supply_Config.jpg" />
-
- <img width="2880" height="2160" alt="Power Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Settings.jpg" />
-
- <img width="800" height="480" alt="Reference Clock Signal" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Reference_Clock_Signal.png" />
- 
- <img width="2880" height="2160" alt="Waveform Generator Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Waveform_Gen_Settings.jpg" />
-## Experiment 2 – Si5345B Clock Generation and Output Verification
-
-## Experiment 3 – Clock Jitter and Relative Timing Characterization
-
-# Results Analysis and Conclusions
-
-# Documented and Tracked Components
 
 ## Statement of Contributions
 
