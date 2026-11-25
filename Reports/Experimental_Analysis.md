@@ -28,8 +28,10 @@ These criteria are important because the Si5345B requires a sufficiently clean i
 **Preparation and testing:**
 
 1. Inspect the transmitter and receiver PCBs for assembly issues, incorrect component placement, and potential shorts.
-2. Configure the Rigol DP832 to provide the required 48 V supply. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated. Set a conservative current limit before powering the circuit.
-3. Configure the Siglent SDG2042X to generate a 2.5 MHz sine wave with an initial amplitude of 50 mV peak and 0 V offset. Verify the generator's load setting to ensure the actual signal amplitude is correct.
+2. Configure the Rigol DP832 to provide the required 48 V supply, as seen below. If using two channels in series, verify that the supply supports the intended series configuration and that the outputs are appropriately isolated. Set a conservative current limit before powering the circuit.
+   <img width="2880" height="2160" alt="Power Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Settings.jpg" />
+3. Configure the Siglent SDG2042X to generate a 2.5 MHz sine wave with an initial amplitude of 100 mVpp and 0 V offset, as seen below. Verify the generator's load setting to ensure the actual signal amplitude is correct.
+    <img width="2880" height="2160" alt="Waveform Generator Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Waveform_Gen_Settings.jpg" />
 4. Connect the waveform generator to the transmitter PCB's reference clock input.
 5. Connect the transmitter and receiver PCBs through the intended 48 V power line connection.
 6. Power the system and measure the reference signal at the receiver side Bias-T output using the Rigol DS1104.
@@ -40,7 +42,7 @@ These criteria are important because the Si5345B requires a sufficiently clean i
 
 **Environmental conditions:** Conduct testing under stable laboratory conditions. Maintain consistent wiring, cable lengths, supply voltage, and instrument settings between trials.
 
-Perform at least three independent trials, including a complete power cycle between trials. If multiple transmitter or receiver prototypes are available, repeat the experiment using different PCB combinations. Three trials provide an initial assessment of repeatability. Additional testing should be performed if significant variation occurs between trials.
+Perform at least three independent trials, including a complete power cycle between trials. If multiple transmitter or receiver prototypes are available, repeat the experiment using different PCB combinations. Three trials provide an initial assessment of repeatability. Additional testing should be performed if significant variation occurs between trials.Save oscilloscope screenshots for the received reference, amplifier output, and comparator output. Record numerical measurements in a spreadsheet, with one row per trial.
 
 #### Potential Biases and Error Sources
 
@@ -52,34 +54,39 @@ Perform at least three independent trials, including a complete power cycle betw
 
 ### Expected Results
 
-| Measurement | Units | Measurement method |
-|---|---|---|
-| Generator frequency | MHz | Waveform generator setting and oscilloscope |
-| Generator amplitude | mV peak / mVpp | Oscilloscope |
-| Received clock amplitude | mV peak / mVpp | Oscilloscope |
-| Received clock frequency | MHz | Oscilloscope |
-| Amplifier output amplitude | V peak / Vpp | Oscilloscope |
-| Comparator output voltage levels | V | Oscilloscope |
-| Comparator output frequency | MHz | Oscilloscope |
-| Supply voltage | V | DC power supply / multimeter |
-| Supply current | A | DC power supply |
-
-Save oscilloscope screenshots for the received reference, amplifier output, and comparator output. Record numerical measurements in a spreadsheet, with one row per trial.
+| Measurement | Units | Measurement method | Expected Result |
+|---|---|---|---|
+| Generator frequency | MHz | Waveform generator setting and oscilloscope | 2.5 |
+| Generator amplitude | mVpp | Oscilloscope | 100 |
+| Received clock amplitude | mVpp | Oscilloscope | 60 |
+| Received clock frequency | MHz | Oscilloscope | 2.5 |
+| Amplifier output amplitude | Vpp | Oscilloscope | 1.5 |
+| Comparator output voltage levels | V | Oscilloscope | 1.0 - 1.4 |
+| Comparator output frequency | MHz | Oscilloscope | 2.5 |
+| Supply voltage | V | DC power supply | 48 |
+| Supply current | A | DC power supply | 3 |
 
 ### Actual Results
 
 Although multiple Tx and Rx PCBs were planned to be constructed for experimentation, only one set of the boards was ultimately constructed due to time constraints upon receiving all required parts. While the initial Tx board passed physical inspection with no notable assembly issues or shorts detected, the initial Rx board required the use of a dead-bugged component (ADA4899-1) due to the incorrect, non-smd part version being ordered. Inspection of the Rx board revealed that this component had a short between one of its pins and the bridge to its ground pad which was not correctable without more precise soldering equipment. An attempt was made to replace this component with the correct smd part upon its arrival, however limitations in proper equipment to solder this part prevented proper seating of the IC and its pins. Consequently, an attempt to assemble a second Rx board was made in order to take advantage of fresh solder paste placed using a stencil for the board and this experiment was conducted multiple times using the two separate Rx boards fabricated for the ComCaP system. The second Rx board constructed revealed multiple defects upon inspection. Solder bridges were found shorting both the 12V and 3.3V supply rails to ground via capacitors C35 and C5 respectively. Additionally, the newly placed ADA4899-1 had a short between its positive and negative input terminals, inhibiting the intended feedback network. While the power supply shorts were solved by removing and reattaching components as needed, the available equipment ultimately proved insufficient to attach the ADA4899-1 IC correctly.
 
+The Rigol DP832 was connected to the Tx PCB as seen below, utilizing two channels two provide a total of 48 V to the intended screw terminals. 
  <img width="2880" height="2160" alt="Power Supply Configuration" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Supply_Config.jpg" />
-
- <img width="2880" height="2160" alt="Power Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Power_Settings.jpg" />
-
+The reference signal provided by the Siglent SDG2042X waveform generator was confirmed by the Rigol DS1104 oscilloscope reading seen below.
  <img width="800" height="480" alt="Reference Clock Signal" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Reference_Clock_Signal.png" />
- 
- <img width="2880" height="2160" alt="Waveform Generator Settings" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Waveform_Gen_Settings.jpg" />
+The waveform for the received clock signal provided by the bias tee subsystem was confirmed via the oscilloscope as seen below.  
+ <img width="800" height="480" alt="Bias tee output" src="https://github.com/TnTech-ECE/S26_Team3_Siemens-Combined-Power-Signal/blob/Experimental_Analysis/images/Bias-tee out.png" />
+
+| Measurement | Units | Measurement method | Result |
+|---|---|---|---|
+| Generator frequency | MHz | Waveform generator setting and oscilloscope | 2.5 |
+| Generator amplitude | mVpp | Oscilloscope | 100 |
+| Received clock amplitude | mVpp | Oscilloscope | 85.6 |
+| Received clock frequency | MHz | Oscilloscope | 2.52 |
 
 ### Interpretation and Conclusions
 
+Without achieving successful operation of the ADA4899-1 OpAmp, we were unable to confirm operation of this subsystem at any capacity. If this board were to be assembled using a proper pick and place machine and a reflow oven, it is likely the connections would improve and the next section of the system would produce correct signals. The simulations previously run indicate that the system should function if all components were assembled properly.
 
 ---
 
@@ -122,7 +129,16 @@ The outputs are configured for 3.3 V LVCMOS operation to simplify testing and in
 
 **Environmental conditions:** Maintain consistent supply voltages, wiring, and instrument settings. Allow the system to stabilize after startup before recording measurements.
 
-### Data Collection
+Perform at least three independent startup trials. Each trial should include powering down the subsystem, restarting it, and verifying both output clocks.If multiple receiver PCB prototypes are available, test each prototype to evaluate consistency across hardware assemblies. Save oscilloscope screenshots of both output clocks. Record the measured values and whether the subsystem successfully initializes during each trial.
+
+#### Potential Biases and Error Sources
+
+- **Oscilloscope bandwidth:** The MSO2024's 200 MHz bandwidth limits its ability to accurately characterize fast clock edges.
+- **Configuration errors:** Incorrect register settings may result in incorrect output frequencies or voltage levels. Verify the programmed configuration before testing.
+- **Power supply variation:** Changes in supply voltage may affect output performance.
+- **Measurement uncertainty:** Oscilloscope frequency and voltage measurements should be treated as verification of basic operation, not proof of jitter performance.
+
+### Expected Results
 
 | Measurement | Units | Measurement method |
 |---|---|---|
@@ -136,20 +152,9 @@ The outputs are configured for 3.3 V LVCMOS operation to simplify testing and in
 | Output period | ns / µs | Oscilloscope |
 | Startup success | Pass/Fail | Observation |
 
-Save oscilloscope screenshots of both output clocks. Record the measured values and whether the subsystem successfully initializes during each trial.
+### Actual Results
 
-### Trials
-
-Perform at least three independent startup trials. Each trial should include powering down the subsystem, restarting it, and verifying both output clocks.
-
-If multiple receiver PCB prototypes are available, test each prototype to evaluate consistency across hardware assemblies.
-
-### Potential Biases and Error Sources
-
-- **Oscilloscope bandwidth:** The MSO2024's 200 MHz bandwidth limits its ability to accurately characterize fast clock edges.
-- **Configuration errors:** Incorrect register settings may result in incorrect output frequencies or voltage levels. Verify the programmed configuration before testing.
-- **Power supply variation:** Changes in supply voltage may affect output performance.
-- **Measurement uncertainty:** Oscilloscope frequency and voltage measurements should be treated as verification of basic operation, not proof of jitter performance.
+### Interpretation and Conclusions
 
 ---
 
@@ -202,7 +207,24 @@ The customer's primary concern is reliable synchronization between ComCaP system
 
 **Environmental conditions:** Perform measurements in a stable laboratory environment. Maintain consistent cable lengths, oscilloscope settings, triggering conditions, and power supply conditions. Minimize electrical interference and avoid changing the measurement setup between acquisitions.
 
-### Data Collection
+Perform at least three independent acquisitions for each jitter measurement condition. Each acquisition should contain at least 10,000 measured edges when supported by the instrument. If multiple ComCaP prototypes are available, perform relative timing measurements between different prototype combinations. This will help determine whether timing performance is consistent across systems. Three independent acquisitions are useful for assessing repeatability, but the number of edges and the statistical distribution should also be considered when evaluating jitter. Store the captured waveform data and measurement results in a spreadsheet. Include oscilloscope screenshots, acquisition settings, and instrument identification with each dataset.
+
+The Rigol DS1104 can support preliminary verification of clock operation and waveform characteristics. However, its 200 MHz bandwidth and 1 GS/s maximum sampling rate do not establish that it can reliably verify the project's picosecond level jitter requirements. A higher performance measurement instrument should therefore be used for final jitter acceptance testing, such as the Rohde & Schwarz RT064 Oscilloscope available to Siemens Healthineers.
+
+#### Potential Biases and Error Sources
+
+- **Oscilloscope timebase jitter:** The instrument's internal timebase may contribute timing uncertainty. Its jitter must be substantially lower than the expected measurement to avoid dominating the result.
+- **Sampling rate:** Insufficient sampling resolution can affect edge interpolation and timing measurements. Higher sampling rates generally improve the available timing information, but do not guarantee accurate picosecond measurements.
+- **Analog bandwidth:** Insufficient bandwidth can distort clock edges and affect threshold crossing measurements.
+- **Trigger noise:** Trigger uncertainty can introduce additional timing variation. Use consistent trigger settings and thresholds.
+- **Channel-to-channel skew:** Relative measurements using two channels may be affected by differences in channel delay and cable length.
+- **Signal noise:** Electrical noise on the clock edges can shift the measured threshold crossing time.
+- **Measurement sample size:** Too few measured edges may produce misleading statistical results. Use at least 10,000 edges per acquisition where possible.
+- **Instrument limitations:** The existing MSO2024 is appropriate for preliminary clock verification but should not be considered sufficient evidence of sub picosecond jitter or a 20–30 ps relative jitter result without a documented measurement floor.
+
+A higher performance oscilloscope with approximately 1–2 GHz analog bandwidth, 4 GS/s or greater sampling capability, and documented low timing jitter would be preferable for this experiment.
+
+### Expected Results
 
 | Measurement | Units | Measurement method |
 |---|---|---|
@@ -217,32 +239,9 @@ The customer's primary concern is reliable synchronization between ComCaP system
 | Peak-to-peak timing variation | ps | Maximum minus minimum |
 | Number of measured edges | Count | Acquisition settings |
 
-Store the captured waveform data and measurement results in a spreadsheet. Include oscilloscope screenshots, acquisition settings, and instrument identification with each dataset.
+### Actual Results
 
-### Trials
-
-Perform at least three independent acquisitions for each jitter measurement condition. Each acquisition should contain at least 10,000 measured edges when supported by the instrument.
-
-If multiple ComCaP prototypes are available, perform relative timing measurements between different prototype combinations. This will help determine whether timing performance is consistent across systems.
-
-Three independent acquisitions are useful for assessing repeatability, but the number of edges and the statistical distribution should also be considered when evaluating jitter.
-
-### Potential Biases and Error Sources
-
-- **Oscilloscope timebase jitter:** The instrument's internal timebase may contribute timing uncertainty. Its jitter must be substantially lower than the expected measurement to avoid dominating the result.
-- **Sampling rate:** Insufficient sampling resolution can affect edge interpolation and timing measurements. Higher sampling rates generally improve the available timing information, but do not guarantee accurate picosecond measurements.
-- **Analog bandwidth:** Insufficient bandwidth can distort clock edges and affect threshold crossing measurements.
-- **Trigger noise:** Trigger uncertainty can introduce additional timing variation. Use consistent trigger settings and thresholds.
-- **Channel-to-channel skew:** Relative measurements using two channels may be affected by differences in channel delay and cable length.
-- **Signal noise:** Electrical noise on the clock edges can shift the measured threshold crossing time.
-- **Measurement sample size:** Too few measured edges may produce misleading statistical results. Use at least 10,000 edges per acquisition where possible.
-- **Instrument limitations:** The existing MSO2024 is appropriate for preliminary clock verification but should not be considered sufficient evidence of sub picosecond jitter or a 20–30 ps relative jitter result without a documented measurement floor.
-
-A higher performance oscilloscope with approximately 1–2 GHz analog bandwidth, 4 GS/s or greater sampling capability, and documented low timing jitter would be preferable for this experiment.
-
----
-
-The Rigol DS1104can support preliminary verification of clock operation and waveform characteristics. However, its 200 MHz bandwidth and 1 GS/s maximum sampling rate do not establish that it can reliably verify the project's picosecond level jitter requirements. A higher performance measurement instrument should therefore be used for final jitter acceptance testing.
+### Interpretation and Conclusions
 
 ---
 
